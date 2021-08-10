@@ -10,8 +10,8 @@
   "node_modules": "node_modules/",
   "package": "package/",
   "public": "public/",
-  "src": "src/govuk/",
-    "components": "src/govuk/components/",
+  "src": "src/lbs/",
+    "components": "src/lbs/components/",
   "ports": {
     "app": 3000,
     "test": 8888
