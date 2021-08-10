@@ -67,24 +67,22 @@ module.exports = (options) => {
   // Set up middleware to serve static assets
   app.use('/public', express.static(configPaths.public))
 
-  app.use('/docs', express.static(configPaths.sassdoc))
-
-  // serve html5-shiv from node modules
-  app.use('/vendor/html5-shiv/', express.static('node_modules/html5shiv/dist/'))
-
-  // serve legacy code from node modules
-  app.use('/vendor/govuk_template/', express.static('node_modules/govuk_template_jinja/assets/'))
-  app.use('/vendor/govuk_frontend_toolkit/assets', express.static('node_modules/govuk_frontend_toolkit/images'))
-  app.use('/vendor/govuk_frontend_toolkit/', express.static('node_modules/govuk_frontend_toolkit/javascripts/govuk/'))
-  app.use('/vendor/jquery/', express.static('node_modules/jquery/dist'))
+  // // serve html5-shiv from node modules
+  // app.use('/vendor/html5-shiv/', express.static('node_modules/html5shiv/dist/'))
+  //
+  // // serve legacy code from node modules
+  // app.use('/vendor/govuk_template/', express.static('node_modules/govuk_template_jinja/assets/'))
+  // app.use('/vendor/govuk_frontend_toolkit/assets', express.static('node_modules/govuk_frontend_toolkit/images'))
+  // app.use('/vendor/govuk_frontend_toolkit/', express.static('node_modules/govuk_frontend_toolkit/javascripts/govuk/'))
+  // app.use('/vendor/jquery/', express.static('node_modules/jquery/dist'))
 
   app.use('/assets', express.static(path.join(configPaths.src, 'assets')))
 
   // Turn form POSTs into data that can be used for validation.
   app.use(bodyParser.urlencoded({ extended: true }))
 
-  // Handle the banner component serverside.
-  require('./banner.js')(app)
+  // // Handle the banner component serverside.
+  // require('./banner.js')(app)
 
   // Define middleware for all routes
   app.use('*', function (request, response, next) {
@@ -202,8 +200,8 @@ module.exports = (options) => {
     })
   })
 
-  // Full page example views
-  require('./full-page-examples.js')(app)
+  // // Full page example views
+  // require('./full-page-examples.js')(app)
 
   return app
 }

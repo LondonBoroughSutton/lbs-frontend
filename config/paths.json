@@ -13,7 +13,7 @@
   "src": "src/lbs/",
     "components": "src/lbs/components/",
   "ports": {
-    "app": 3000,
+    "app": 3001,
     "test": 8888
   }
 }
