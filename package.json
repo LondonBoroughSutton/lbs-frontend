@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "lbs-frontend-repository",
+  "description": "Used only for the development of LBS Frontend, see `package/package.json` for the published `package.json`",
+  "engines": {
+    "node": "14.17.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp dev"
+  },
+  "devDependencies": {
+    "govuk-frontend": "3.13.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4"
+  },
+  "browserslist": [
+    ">0.1%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Samsung versions",
+    "Safari >= 9",
+    "ie 8-11",
+    "iOS >= 9"
+  ],
+  "jest": {
+    "preset": "jest-puppeteer",
+    "setupFilesAfterEnv": [
+      "./config/jest-setup.js"
+    ],
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ]
+  }
+}
