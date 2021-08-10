@@ -14,16 +14,18 @@ const configPaths = require('../config/paths.json')
 
 // Set up views
 const appViews = [
+  "node_modules/govuk-frontend/",
   configPaths.layouts,
   configPaths.views,
-  configPaths.examples,
-  configPaths.fullPageExamples,
+  // configPaths.examples,
+  // configPaths.fullPageExamples,
   configPaths.components,
   configPaths.src,
   configPaths.node_modules
 ]
 
 module.exports = (options) => {
+
   const nunjucksOptions = options ? options.nunjucks : {}
 
   // Configure nunjucks
@@ -99,14 +101,15 @@ module.exports = (options) => {
 
   // Index page - render the component list template
   app.get('/', async function (req, res) {
+    console.log(123)
     const components = fileHelper.allComponents
-    const examples = await readdir(path.resolve(configPaths.examples))
-    const fullPageExamples = fileHelper.fullPageExamples()
+    // const examples = await readdir(path.resolve(configPaths.examples))
+    // const fullPageExamples = fileHelper.fullPageExamples()
 
     res.render('index', {
       componentsDirectory: components,
-      examplesDirectory: examples,
-      fullPageExamples: fullPageExamples
+      // examplesDirectory: examples,
+      // fullPageExamples: fullPageExamples
     })
   })
 
