@@ -1,2 +1,11 @@
+node_modules/
 .idea
-node_modules
+npm-debug.log
+.DS_Store
+preview/
+tmp/
+axeReports/
+public/
+package/package-lock.json
+examples/**/package-lock.json
+*.zip

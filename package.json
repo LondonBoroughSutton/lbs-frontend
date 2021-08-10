@@ -2,6 +2,7 @@
   "private": true,
   "name": "lbs-frontend-repository",
   "description": "Used only for the development of LBS Frontend, see `package/package.json` for the published `package.json`",
+  "version": "0.0.1",
   "engines": {
     "node": "14.17.0"
   },
@@ -10,6 +11,7 @@
     "start": "gulp dev"
   },
   "devDependencies": {
+    "express": "^4.16.4",
     "govuk-frontend": "3.13.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
