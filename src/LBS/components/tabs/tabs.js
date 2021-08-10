@@ -1,8 +1,8 @@
-import '../../vendor/polyfills/Function/prototype/bind'
-import '../../vendor/polyfills/Element/prototype/classList'
-import '../../vendor/polyfills/Element/prototype/nextElementSibling'
-import '../../vendor/polyfills/Element/prototype/previousElementSibling'
-import '../../vendor/polyfills/Event' // addEventListener and event.target normaliziation
+import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
+import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
+import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/nextElementSibling'
+import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/previousElementSibling'
+import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
 import { nodeListForEach } from '../../common'
 
 function Tabs ($module) {
