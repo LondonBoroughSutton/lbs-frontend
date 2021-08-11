@@ -101,7 +101,6 @@ module.exports = (options) => {
 
   // Index page - render the component list template
   app.get('/', async function (req, res) {
-    console.log(123)
     const components = fileHelper.allComponents
     // const examples = await readdir(path.resolve(configPaths.examples))
     // const fullPageExamples = fileHelper.fullPageExamples()

@@ -15,9 +15,15 @@ function initAll (options) {
     nodeListForEach($tabs, function ($tabs) {
         new Tabs($tabs).init()
     })
+
+    var $example = scope.querySelectorAll('.lbs_example')
+    nodeListForEach($example, function ($example) {
+        new Example($example) // Don't need to init
+    })
 }
 
 export {
     initAll,
-    Tabs
+    Tabs,
+    Example
 }
