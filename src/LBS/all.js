@@ -1,6 +1,7 @@
 import { nodeListForEach } from './common'
 // import Header from './components/header/header'
 import Tabs from './components/tabs/tabs'
+import Example from './components/example/example'
 
 function initAll (options) {
     // Set the options to an empty object by default if no options are passed.
