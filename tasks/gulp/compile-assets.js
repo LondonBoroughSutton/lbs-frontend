@@ -36,7 +36,7 @@ const destinationPath = function () {
   if (taskArguments.destination === 'dist' || taskArguments.destination === 'public') {
     return taskArguments.destination
   } else {
-    return `${taskArguments.destination}/govuk/`
+    return `${taskArguments.destination}/lbs/`
   }
 }
 
