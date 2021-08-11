@@ -7,5 +7,6 @@ tmp/
 axeReports/
 public/
 package/package-lock.json
+package-lock.json
 examples/**/package-lock.json
 *.zip
