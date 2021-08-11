@@ -10,6 +10,7 @@
   "scripts": {
     "start": "gulp dev",
     "test": "npm run test:dependencies && standard && gulp test && gulp copy-assets",
+    "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "test:dependencies": "npm ls --depth=0"
   },
   "devDependencies": {
