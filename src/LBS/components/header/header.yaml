@@ -1,0 +1,37 @@
+params:
+  - name: href
+    type: string
+    required: false
+
+examples:
+  - name: default
+    description: Standard application of the header element.
+    data:
+      - navigation:
+          - href: '#1'
+            text: Navigation item 1
+            active: true
+          - href: '#2'
+            text: Navigation item 2
+          - href: '#3'
+            text: Navigation item 3
+          - href: '#4'
+            text: Navigation item 4
+
+  - name: with no search
+    description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
+    data:
+      search: false
+
+  - name: with no navigation
+    description: Header with no main navigation.
+    data:
+      navigation: false
+
+
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'
