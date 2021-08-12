@@ -1,6 +1,19 @@
 .lbs-header {
-  background: aqua;
+  border-bottom: 5px solid $lbs-green-1;
+  padding: $lbs-margin/2 0;
+  @include govuk-media-query($from: desktop) {
+    padding: $lbs-margin 0;
+  }
   &__logo {
     
+  }
+  &__nav-container {
+    .lbs-header__navigation {
+      @extend .govuk-header__navigation;
+
+    }
+  }
+  &__search {
+
   }
 }

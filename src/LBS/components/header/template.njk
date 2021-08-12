@@ -3,7 +3,7 @@
     <div class="govuk-width-container">
         <div class="lbs-header__logo">
             <a href="{{ hrefValue }}">
-                <!--[if gt IE 8]><!-->
+{#                <!--[if gt IE 8]><!-->#}
                 {#- 0.002% of traffic in last 13 months came from IE 8 and below. Approx. 3.5k of 1.5M views - possibly not worth supporting sub IE11 browsers? #}
 
                 {#- We use an inline SVG for the crown so that we can cascade the
@@ -68,10 +68,10 @@
                         </g>
                     </g>
                 </svg>
-                <!--<![endif]-->
-                <!--[if IE 8]>
-          <img src="{{ params.assetsPath | default('/assets/images') }}/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
-          <![endif]-->
+{#                <!--<![endif]-->#}
+{#                <!--[if IE 8]>#}
+{#          <img src="{{ params.assetsPath | default('/assets/images') }}/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">#}
+{#          <![endif]-->#}
             </a>
         </div>
 
@@ -84,7 +84,7 @@
                     <span class="govuk-visually-hidden">Search</span>
                 </button>
                 {% endif %}
-            {% if params.navigation !== false %}
+            {% if params.navigation %}
                 <button class="lbs-header__mobile-menu-btn govuk-header__menu-button govuk-js-header-toggle"
                         id="lbs-header__mobile__menu-btn" type="button" aria-controls="lbs-header__navigation"
                         aria-label="{{ params.menuButtonLabel | default('Show or hide navigation menu') }}">
@@ -98,19 +98,19 @@
                 </button>
             {% endif %}
             </div>
-            {% if params.navigation !== false %}
+            {% if params.navigation %}
                 <nav role="navigation" id="lbs-header__navigation" class="lbs-header__navigation">
-                    <ul class="lbs-header__main-navigation--level1"
+                    <ul class="lbs-header__navigation--level1"
                         aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
                         {% for item in params.navigation %}
                             <li>
                                 <a href="{{ item.href }}"
-                                   class="lbs-header__navigation__item--level1">{{ item.title }}</a>
+                                   class="lbs-header__navigation__item--level1">{{ item.text }}</a>
                                 {% if item.subItems.length > 0 %}
                                     <ul class="lbs-header__navigation--level2">
-                                        {% for subItem in params.subItem %}
+                                        {% for subItem in item.subItems %}
                                             <li>
-                                                <a href="/{{ subItem.href }}/">{{ subItem.title }}</a>
+                                                <a href="/{{ subItem.href }}/">{{ subItem.text }}</a>
                                             </li>
                                         {% endfor %}
                                     </ul>
