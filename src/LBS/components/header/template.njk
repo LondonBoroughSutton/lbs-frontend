@@ -126,6 +126,10 @@
         {% if params.search !== false %}
         <div class="lbs-header__search" id="lbs-header__search">
             {{ lbsSearch() }}
+            <button class="lbs_header__search__close-btn govuk-header__menu-button govuk-js-header-toggle"
+                    aria-controls="lbs-header__search-block" id="lbs-header__search__close-btn">
+                Close
+            </button>
         </div>
         {% endif %}
     </div>

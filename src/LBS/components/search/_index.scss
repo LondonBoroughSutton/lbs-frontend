@@ -1,39 +1,21 @@
-.lbs-header {
-  border-bottom: 5px solid $lbs-green-1;
-  padding: $lbs-margin/3 0;
-  @include govuk-media-query($from: desktop) {
-    padding: $lbs-margin/2 0;
-  }
-
-  .govuk-width-container {
-    display: flex; // Floats or flex? Flex feels best but floats are better supported
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    @include govuk-media-query($from: desktop) {
-      flex-direction: row;
-      position: relative;
+.lbs-search {
+  display: flex;
+  &__input {
+    //@extend .govuk-input;
+    padding: $lbs-margin/2;
+    border-radius: $lbs-margin*2 0 0 $lbs-margin*2;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px $govuk-focus-colour;
+    }
+    @include govuk-media-query($from: tablet) {
+      border-width: 2px;
+      border-color: rgba($lbs-grey, 0.5);
+      padding: $lbs-margin/2;
     }
   }
-
-  &__logo {
-    @include govuk-media-query($from: desktop) {
-      flex: 1 0 20%;
-    }
-  }
-
-  &__nav-container {
-    @include govuk-media-query($from: desktop) {
-      flex: 1 0 40%;
-    }
-    .lbs-header__navigation {
-      @extend .govuk-header__navigation;
-    }
-  }
-
-  &__search {
-    @include govuk-media-query($from: desktop) {
-      flex: 1 0 40%;
-    }
+  &__btn {
+    background: $lbs-green-1;
+    border-radius: 0 $lbs-margin*2 $lbs-margin*2 0;
   }
 }
