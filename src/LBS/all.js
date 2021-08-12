@@ -2,6 +2,7 @@ import { nodeListForEach } from './common'
 import Example from './components/example/example'
 import Header from './components/header/header'
 import Tabs from './components/tabs/tabs'
+import Search from './components/search/search'
 
 function initAll (options) {
     // Set the options to an empty object by default if no options are passed.
@@ -31,5 +32,6 @@ export {
     initAll,
     Example,
     Header,
-    Tabs
+    Tabs,
+    Search
 }

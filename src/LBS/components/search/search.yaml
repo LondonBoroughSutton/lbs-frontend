@@ -1,0 +1,19 @@
+params:
+  - name: href
+    type: string
+    required: false
+  - name: placeholderText
+    type: string
+    required: false
+
+examples:
+  - name: default
+    description: Standard application of the search bar.
+    data:
+
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'

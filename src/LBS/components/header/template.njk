@@ -1,3 +1,5 @@
+{% from "search/macro.njk" import lbsSearch %}
+
 {% set hrefValue = params.href if params.href %}
 <header class="lbs-header" role="banner">
     <div class="govuk-width-container">
@@ -123,14 +125,7 @@
         </div>
         {% if params.search !== false %}
         <div class="lbs-header__search" id="lbs-header__search">
-            <form id="lbs-header__search-form" action="/" method="post" autocomplete="off">
-                <input type="text" name="search" class="input" id="lbs__searchBox" placeholder="Search">
-                <button type="submit" class="search" id="search-btn"></button>
-            </form>
-            <button class="lbs_header__search__close-btn govuk-header__menu-button govuk-js-header-toggle"
-                    aria-controls="lbs-header__search-block" id="lbs_header__search__close-btn">
-                Close
-            </button>
+            {{ lbsSearch() }}
         </div>
         {% endif %}
     </div>
