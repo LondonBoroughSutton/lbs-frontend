@@ -11,6 +11,12 @@ examples:
     description: Standard application of the search bar.
     data:
 
+  - name: Full width
+    description: Full width variant of the search bar with custom placeholder text.
+    data:
+      fullWidth: true
+      placeholderText: Search for advice, information and services
+
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
