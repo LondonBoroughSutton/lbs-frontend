@@ -101,26 +101,7 @@
                 {% endif %}
             </div>
             {% if params.navigation %}
-                <nav role="navigation" id="lbs-header__navigation" class="lbs-header__navigation">
-                    <ul class="lbs-header__navigation--level1"
-                        aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
-                        {% for item in params.navigation %}
-                            <li>
-                                <a href="{{ item.href }}"
-                                   class="lbs-header__navigation__item--level1">{{ item.text }}</a>
-                                {% if item.subItems.length > 0 %}
-                                    <ul class="lbs-header__navigation--level2">
-                                        {% for subItem in item.subItems %}
-                                            <li>
-                                                <a href="/{{ subItem.href }}/">{{ subItem.text }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
+               {%- include './navigation.njk' %}
             {% endif %}
         </div>
         {% if params.search !== false %}
