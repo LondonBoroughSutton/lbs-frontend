@@ -1,21 +1,33 @@
 {# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
-<nav role="navigation" id="lbs-header__navigation" class="lbs-header__navigation">
+<nav id="lbs-header__navigation" class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
     <ul class="lbs-header__navigation--level1"
-        aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
+        role="menubar"
+        aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
+    >
         {% for item in params.navigation %}
-            <li>
+            <li role="none">
                 {% if item.subItems.length > 0 %}
                     <button
-                       class="lbs-header__navigation__item--level1"
-                       aria-haspopup="true"
-                       aria-expanded="false">
-                        {{ item.text }}
+                            class="lbs-header__navigation__item--level1"
+                            role="menuitem"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                        <span class="govuk-visually-hidden">Show menu for</span> {{ item.text }}
                     </button>
                     {% if item.subItems.length > 0 %}
-                        <ul class="lbs-header__navigation--level2" role="menu">
+                        <ul
+                            class="lbs-header__navigation--level2"
+                            role="menu"
+                            aria-label="{{ item.text }}"
+                        >
                             {% for subItem in item.subItems %}
-                                <li role="menuitem">
-                                    <a href="/{{ subItem.href }}/">{{ subItem.text }}</a>
+                                <li role="none">
+                                    <a
+                                        href="/{{ subItem.href }}/"
+                                        role="menuitem"
+                                    >
+                                        {{ subItem.text }}
+                                    </a>
                                 </li>
                             {% endfor %}
                         </ul>
