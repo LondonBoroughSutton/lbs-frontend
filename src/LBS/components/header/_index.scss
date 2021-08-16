@@ -17,6 +17,10 @@
   }
 
   &__logo {
+    & > a {
+      display: inline-block;
+    }
+
     @include govuk-media-query($from: desktop) {
       flex: 1 0 20%;
     }
@@ -26,9 +30,7 @@
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }
-    .lbs-header__navigation {
-      @extend .govuk-header__navigation;
-    }
+    @import "./navigation";
   }
 
   &__search {

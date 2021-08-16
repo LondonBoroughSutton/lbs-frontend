@@ -5,7 +5,7 @@
     <div class="govuk-width-container">
         <div class="lbs-header__logo">
             <a href="{{ hrefValue }}">
-{#                <!--[if gt IE 8]><!-->#}
+                {# <!--[if gt IE 8]><!--> #}
                 {#- 0.002% of traffic in last 13 months came from IE 8 and below. Approx. 3.5k of 1.5M views - possibly not worth supporting sub IE11 browsers? #}
 
                 {#- We use an inline SVG for the crown so that we can cascade the
@@ -70,35 +70,35 @@
                         </g>
                     </g>
                 </svg>
-{#                <!--<![endif]-->#}
-{#                <!--[if IE 8]>#}
-{#          <img src="{{ params.assetsPath | default('/assets/images') }}/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">#}
-{#          <![endif]-->#}
+                {# <!--<![endif]--> #}
+                {# <!--[if IE 8]> #}
+                {# <img src="{{ params.assetsPath | default('/assets/images') }}/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32"> #}
+                {# <![endif]--> #}
             </a>
         </div>
 
         <div class="lbs-header__nav-container">
-            {% if params.search !== false %}
             <div class="lbs-header__mobile-icons">
-                <button class="lbs-header__mobile-search-btn govuk-header__menu-button govuk-js-header-toggle"
-                        id="lbs-header__mobile__search-btn" type="button" aria-controls="lbs-header__search"
-                        aria-label="{{ params.searchButtonLabel | default('Show or hide search box') }}">
-                    <span class="govuk-visually-hidden">Search</span>
-                </button>
+                {% if params.search !== false %}
+                    <button class="lbs-header__mobile-search-btn govuk-header__menu-button govuk-js-header-toggle"
+                            id="lbs-header__mobile__search-btn" type="button" aria-controls="lbs-header__search"
+                            aria-label="{{ params.searchButtonLabel | default('Show or hide search box') }}">
+                        <span class="govuk-visually-hidden">Search</span>
+                    </button>
                 {% endif %}
-            {% if params.navigation %}
-                <button class="lbs-header__mobile-menu-btn govuk-header__menu-button govuk-js-header-toggle"
-                        id="lbs-header__mobile__menu-btn" type="button" aria-controls="lbs-header__navigation"
-                        aria-label="{{ params.menuButtonLabel | default('Show or hide navigation menu') }}">
-                    <span class="govuk-visually-hidden">Menu</span>
-                    <svg class="lbs-header__mobile__burger-btn" viewBox="0 0 40 26"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <rect class="lbs-header__mobile-menu-btn--1" width="40" height="4" rx="3" ry="3"/>
-                        <rect class="lbs-header__mobile_burger-btn--2" width="40" height="4" y="10" rx="3" ry="3"/>
-                        <rect class="lbs-header__mobile_burger-btn--3" width="40" height="4" y="20" rx="3" ry="3"/>
-                    </svg>
-                </button>
-            {% endif %}
+                {% if params.navigation %}
+                    <button class="lbs-header__mobile-menu-btn govuk-header__menu-button govuk-js-header-toggle"
+                            id="lbs-header__mobile__menu-btn" type="button" aria-controls="lbs-header__navigation"
+                            aria-label="{{ params.menuButtonLabel | default('Show or hide navigation menu') }}">
+                        <span class="govuk-visually-hidden">Menu</span>
+                        <svg class="lbs-header__mobile__burger-btn" viewBox="0 0 40 26"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect class="lbs-header__mobile-menu-btn--1" width="40" height="4" rx="3" ry="3"/>
+                            <rect class="lbs-header__mobile_burger-btn--2" width="40" height="4" y="10" rx="3" ry="3"/>
+                            <rect class="lbs-header__mobile_burger-btn--3" width="40" height="4" y="20" rx="3" ry="3"/>
+                        </svg>
+                    </button>
+                {% endif %}
             </div>
             {% if params.navigation %}
                 <nav role="navigation" id="lbs-header__navigation" class="lbs-header__navigation">
@@ -124,15 +124,15 @@
             {% endif %}
         </div>
         {% if params.search !== false %}
-        <div class="lbs-header__search" id="lbs-header__search">
-            {{ lbsSearch({
-                fullWidth: true
-            }) }}
-            <button class="lbs_header__search__close-btn govuk-header__menu-button govuk-js-header-toggle"
-                    aria-controls="lbs-header__search-block" id="lbs-header__search__close-btn">
-                Close
-            </button>
-        </div>
+            <div class="lbs-header__search" id="lbs-header__search">
+                {{ lbsSearch({
+                    fullWidth: true
+                }) }}
+                <button class="lbs_header__search__close-btn govuk-header__menu-button govuk-js-header-toggle"
+                        aria-controls="lbs-header__search-block" id="lbs-header__search__close-btn">
+                    Close
+                </button>
+            </div>
         {% endif %}
     </div>
 </header>

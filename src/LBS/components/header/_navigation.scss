@@ -1,0 +1,10 @@
+.lbs-header__navigation {
+  //@extend .govuk-header__navigation; // Not 100% what this is adding at the moment
+  &--level1 {
+    background-color: #1d70b8;
+  }
+  &--level2 {
+    position: absolute;
+    left: -9999em;
+  }
+}
