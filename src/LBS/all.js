@@ -1,7 +1,8 @@
 import { nodeListForEach } from './common'
-// import Header from './components/header/header'
-import Tabs from './components/tabs/tabs'
 import Example from './components/example/example'
+import Header from './components/header/header'
+import Tabs from './components/tabs/tabs'
+import Search from './components/search/search'
 
 function initAll (options) {
     // Set the options to an empty object by default if no options are passed.
@@ -20,10 +21,17 @@ function initAll (options) {
     nodeListForEach($example, function ($example) {
         new Example($example) // Don't need to init
     })
+
+    var $header = scope.querySelectorAll('.lbs_header')
+    nodeListForEach($header, function ($header) {
+        new Header($header) // Don't need to init
+    })
 }
 
 export {
     initAll,
+    Example,
+    Header,
     Tabs,
-    Example
+    Search
 }
