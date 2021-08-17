@@ -1,0 +1,41 @@
+{# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
+<nav class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
+    <ul class="lbs-header__navigation--level1"
+        id="lbs-header__navigation"
+        aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
+    >
+        {% for item in params.navigation %}
+            <li class="" data-has-submenu="true" data-submenu-open="false">
+                {% if item.subItems.length > 0 %}
+                    <a
+                            class="lbs-header__navigation__item--level1"
+                            href="#"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                        <span class="govuk-visually-hidden">Show menu for</span> {{ item.text }}
+                    </a>
+                    {% if item.subItems.length > 0 %}
+                        <ul
+                            class="lbs-header__navigation--level2"
+                        >
+                            {% for subItem in item.subItems %}
+                                <li>
+                                    <a
+                                        href="/{{ subItem.href }}/"
+                                    >
+                                        {{ subItem.text }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ item.href }}"
+                       class="lbs-header__navigation__item--level1">
+                        {{ item.text }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

@@ -1,0 +1,51 @@
+.lbs-header__navigation {
+  //@extend .govuk-header__navigation; // Not 100% what this is adding at the moment
+  &--level1 {
+    @extend .govuk-list;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1d70b8;
+    @include govuk-media-query($from: desktop) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    & button {
+      @extend .govuk-link;
+      //background-color: yellow;
+      padding: 0;
+      background: transparent;
+      appearance: none;
+      outline: none;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    [aria-haspopup="true"]::after {
+      content: url('../../assets/img/arrow-down--red.svg');
+      padding-right: 2em;
+    }
+
+    li {
+      &:hover, &[data-submenu-open="true"] {
+        cursor: pointer;
+
+        .lbs-header__navigation--level2 {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &--level2 {
+    display: none;
+    background: red;
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+    }
+  }
+}
