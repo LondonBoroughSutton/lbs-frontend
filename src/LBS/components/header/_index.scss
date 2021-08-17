@@ -87,6 +87,9 @@
       #lbs-header__mobile__search-btn {
         //background: aqua;
         //background: red;
+        .lbs-header__mobile_search-btn--2, .lbs-header__mobile_search-btn--3 {
+          opacity: 0;
+        }
         &.active {
           .lbs-header__mobile_search-btn--1 {
             opacity: 0;

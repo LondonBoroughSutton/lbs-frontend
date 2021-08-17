@@ -23,7 +23,7 @@ Header.prototype.init = function () {
         return
     }
     if (this.$menuButton) {
-        this.syncState(this.$menuButton, this.$menu.classList.contains('govuk-header__navigation--open'))
+        this.syncState(this.$menuButton, this.$menu.classList.contains('active'))
         this.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this))
     }
     if (this.$searchButton) {
@@ -91,7 +91,7 @@ Header.prototype.syncState = function (button, isVisible) {
  */
 Header.prototype.handleMenuButtonClick = function () {
     console.log('menu clicked')
-    let isVisible = this.$menu.classList.toggle('govuk-header__navigation--open')
+    let isVisible = this.$menu.classList.toggle('active')
     this.syncState(this.$menuButton, isVisible)
 }
 
@@ -103,7 +103,7 @@ Header.prototype.handleMenuButtonClick = function () {
  */
 Header.prototype.handleSearchButtonClick = function () {
     console.log('search clicked')
-    let isVisible = this.$search.classList.toggle('govuk-header__navigation--open')
+    let isVisible = this.$search.classList.toggle('active')
     this.syncState(this.$searchButton, isVisible)
     this.$module.querySelector('#lbs-search__box').focus()
 
