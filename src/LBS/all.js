@@ -24,19 +24,11 @@ function initAll (options) {
 
     var $headers = scope.querySelectorAll('.lbs-header')
     nodeListForEach($headers, function ($header) {
+        new Header($header)
         let menu = false
         if (document.getElementById('lbs-header__navigation')) {
-            menu = document.getElementById('lbs-header__navigation')
+
         }
-        new Header($header, menu).init() // Don't need to init
-        // new Header($header) // Don't need to init
-        // if (document.getElementById('lbs-header__navigation2')) {
-        //     console.log('1233')
-        //     // new Header($header).Menubar(document.getElementById('lbs-header__navigation2')).init();
-        //     let menu = new Header($header);
-        //     menu.init()
-        //
-        // }
     })
 }
 

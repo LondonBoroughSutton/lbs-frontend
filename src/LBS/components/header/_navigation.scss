@@ -31,8 +31,9 @@
     }
 
     li {
-      &:hover {
+      &:hover, &.open {
         cursor: pointer;
+
         .lbs-header__navigation--level2 {
           display: block;
         }
@@ -42,7 +43,9 @@
 
   &--level2 {
     display: none;
-    position: absolute;
     background: red;
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+    }
   }
 }
