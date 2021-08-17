@@ -24,11 +24,7 @@ function initAll (options) {
 
     var $headers = scope.querySelectorAll('.lbs-header')
     nodeListForEach($headers, function ($header) {
-        new Header($header)
-        let menu = false
-        if (document.getElementById('lbs-header__navigation')) {
-
-        }
+        new Header($header).init()
     })
 }
 

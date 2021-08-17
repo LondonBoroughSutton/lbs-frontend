@@ -80,28 +80,41 @@
         <div class="lbs-header__nav-container">
             <div class="lbs-header__mobile-icons">
                 {% if params.search !== false %}
-                    <button class="lbs-header__mobile-search-btn govuk-js-header-toggle"
-                            id="lbs-header__mobile__search-btn" type="button" aria-controls="lbs-header__search"
-                            aria-label="{{ params.searchButtonLabel | default('Show or hide search box') }}">
+                    <button class="lbs-header__mobile-search-btn govuk-js-header-toggle active"
+                            id="lbs-header__mobile__search-btn"
+                            type="button"
+                            aria-controls="lbs-header__search"
+                            aria-label="{{ params.searchButtonLabel | default('Show or hide search box') }}"
+                    >
                         <span class="govuk-visually-hidden">Search</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 488 488"
+                        >
+                            <path class="lbs-header__mobile_search-btn--1"
+                                  d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1    c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4    c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z"/>
+                            <rect class="lbs-header__mobile_search-btn--2" width="488" height="48" y="244" rx="20" ry="20"/>
+                            <rect class="lbs-header__mobile_search-btn--3" width="488" height="48" y="244" rx="20" ry="20"/>
+                        </svg>
                     </button>
                 {% endif %}
                 {% if params.navigation %}
-                    <button class="lbs-header__mobile-menu-btn govuk-js-header-toggle"
-                            id="lbs-header__mobile__menu-btn" type="button" aria-controls="lbs-header__navigation"
+                    <button class="lbs-header__mobile-menu-btn govuk-js-header-toggle active"
+                            id="lbs-header__mobile__menu-btn"
+                            type="button"
+                            aria-controls="lbs-header__navigation"
                             aria-label="{{ params.menuButtonLabel | default('Show or hide navigation menu') }}">
                         <span class="govuk-visually-hidden">Menu</span>
-                        <svg class="lbs-header__mobile__burger-btn" viewBox="0 0 40 26"
+                        <svg class="lbs-header__mobile__burger-btn" viewBox="0 0 48 48"
                              xmlns="http://www.w3.org/2000/svg">
-                            <rect class="lbs-header__mobile-menu-btn--1" width="40" height="4" rx="3" ry="3"/>
-                            <rect class="lbs-header__mobile_burger-btn--2" width="40" height="4" y="10" rx="3" ry="3"/>
-                            <rect class="lbs-header__mobile_burger-btn--3" width="40" height="4" y="20" rx="3" ry="3"/>
+                            <rect class="lbs-header__mobile_burger-btn--1" width="40" height="4" y="10" x="4" rx="3" ry="3"/>
+                            <rect class="lbs-header__mobile_burger-btn--2" width="40" height="4" y="22" x="4" rx="3" ry="3"/>
+                            <rect class="lbs-header__mobile_burger-btn--3" width="40" height="4" y="34" x="4" rx="3" ry="3"/>
                         </svg>
                     </button>
                 {% endif %}
             </div>
             {% if params.navigation %}
-               {%- include './navigation.njk' %}
+                {%- include './navigation.njk' %}
             {% endif %}
         </div>
         {% if params.search !== false %}

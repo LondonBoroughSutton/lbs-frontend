@@ -42,23 +42,76 @@
       @include govuk-media-query($from: desktop) {
         display: none;
       }
+      svg {
+        overflow: visible;
+        vertical-align: center;
+        //margin-top: 0.25rem;
+        rect, path {
+          fill: $lbs-green-1;
+          transition: all 0.2s;
+          transform-origin: center center;
+        }
+      }
       button {
         appearance: none;
         border: none;
         width: 40px;
         height: 40px;
+        padding: 0;
+        background: transparent;
+        &:hover {
+          cursor: pointer;
+        }
+        &:last-child {
+          margin-left: $lbs-margin;
+        }
       }
 
       #lbs-header__mobile__menu-btn {
-        background: red;
+        //background: red;
+        &.active {
+          .lbs-header__mobile_burger-btn--1 {
+            transform: translate(6px, 12px) rotate(45deg);
+          }
+
+          .lbs-header__mobile_burger-btn--2 {
+            transform: translateX(20px);
+            opacity: 0;
+          }
+
+          .lbs-header__mobile_burger-btn--3 {
+            transform: translate(2px, -10px) rotate(-45deg);
+          }
+        }
       }
       #lbs-header__mobile__search-btn {
-        background: aqua;
+        //background: aqua;
+        //background: red;
+        &.active {
+          .lbs-header__mobile_search-btn--1 {
+            opacity: 0;
+          }
+          .lbs-header__mobile_search-btn--2 {
+            opacity: 1;
+            transform: translate(-7px, 7px) rotate(45deg);
+          }
+
+          .lbs-header__mobile_search-btn--3 {
+            opacity: 1;
+            transform: translate(10px, -16px) rotate(-45deg);
+          }
+        }
       }
     }
   }
 
   &__search {
+    @include govuk-media-query($until: desktop) {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }
