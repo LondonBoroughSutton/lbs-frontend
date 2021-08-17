@@ -1,16 +1,16 @@
 {# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
 <nav class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
     <ul class="lbs-header__navigation--level1"
-        role="menubar"
+{#        role="menubar"#}
         id="lbs-header__navigation"
         aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
     >
         {% for item in params.navigation %}
-            <li role="none">
+            <li>
                 {% if item.subItems.length > 0 %}
                     <a
                             class="lbs-header__navigation__item--level1"
-                            role="menuitem"
+{#                            role="menuitem"#}
                             aria-haspopup="true"
                             aria-expanded="false">
                         <span class="govuk-visually-hidden">Show menu for</span> {{ item.text }}
@@ -18,14 +18,14 @@
                     {% if item.subItems.length > 0 %}
                         <ul
                             class="lbs-header__navigation--level2"
-                            role="menu"
-                            aria-label="{{ item.text }}"
+{#                            role="menu"#}
+{#                            aria-label="{{ item.text }}"#}
                         >
                             {% for subItem in item.subItems %}
-                                <li role="none">
+                                <li>
                                     <a
                                         href="/{{ subItem.href }}/"
-                                        role="menuitem"
+{#                                        role="menuitem"#}
                                     >
                                         {{ subItem.text }}
                                     </a>

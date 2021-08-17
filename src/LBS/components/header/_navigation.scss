@@ -32,23 +32,17 @@
 
     li {
       &:hover {
+        cursor: pointer;
         .lbs-header__navigation--level2 {
-          &[role="menu"] {
-            display: block;
-          }
+          display: block;
         }
       }
     }
   }
 
   &--level2 {
-    &[role="menubar"], &[role="menu"] {
-      display: none;
-      position: absolute;
-      background: red;
-    }
-
-    //position: absolute;
-    //left: -9999em;
+    display: none;
+    position: absolute;
+    background: red;
   }
 }
