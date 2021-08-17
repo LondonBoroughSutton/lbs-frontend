@@ -6,7 +6,7 @@
         aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
     >
         {% for item in params.navigation %}
-            <li class="has-submenu">
+            <li class="" data-has-submenu="true" data-submenu-open="false">
                 {% if item.subItems.length > 0 %}
                     <a
                             class="lbs-header__navigation__item--level1"
