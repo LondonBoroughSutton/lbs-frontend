@@ -68,7 +68,6 @@
       }
 
       #lbs-header__mobile__menu-btn {
-        //background: red;
         &.active {
           .lbs-header__mobile_burger-btn--1 {
             transform: translate(-10px, 10px) rotate(45deg);
@@ -85,23 +84,28 @@
         }
       }
       #lbs-header__mobile__search-btn {
-        //background: aqua;
-        //background: red;
-        .lbs-header__mobile_search-btn--2, .lbs-header__mobile_search-btn--3 {
-          opacity: 0;
-        }
-        &.active {
-          .lbs-header__mobile_search-btn--1 {
+        svg {
+          transform: scale(0.8);
+          .lbs-header__mobile_search-btn--2, .lbs-header__mobile_search-btn--3 {
             opacity: 0;
           }
-          .lbs-header__mobile_search-btn--2 {
-            opacity: 1;
-            transform: translate(-7px, 7px) rotate(45deg);
-          }
+        }
 
-          .lbs-header__mobile_search-btn--3 {
-            opacity: 1;
-            transform: translate(10px, -16px) rotate(-45deg);
+        &.active {
+          svg {
+            .lbs-header__mobile_search-btn--1 {
+              opacity: 0;
+            }
+
+            .lbs-header__mobile_search-btn--2 {
+              opacity: 1;
+              transform: translate(40px, 0px) rotate(45deg);
+            }
+
+            .lbs-header__mobile_search-btn--3 {
+              opacity: 1;
+              transform: translate(-10px, -8px) rotate(-45deg);
+            }
           }
         }
       }
