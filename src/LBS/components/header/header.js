@@ -105,6 +105,8 @@ Header.prototype.handleSearchButtonClick = function () {
     console.log('search clicked')
     let isVisible = this.$search.classList.toggle('govuk-header__navigation--open')
     this.syncState(this.$searchButton, isVisible)
+    this.$module.querySelector('#lbs-search__box').focus()
+
 }
 
 export default Header

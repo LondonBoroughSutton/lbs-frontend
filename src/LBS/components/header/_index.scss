@@ -112,6 +112,7 @@
         display: block;
       }
     }
+    flex: 1 0 100%;
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }
