@@ -80,14 +80,14 @@
         <div class="lbs-header__nav-container">
             <div class="lbs-header__mobile-icons">
                 {% if params.search !== false %}
-                    <button class="lbs-header__mobile-search-btn govuk-header__menu-button govuk-js-header-toggle"
+                    <button class="lbs-header__mobile-search-btn govuk-js-header-toggle"
                             id="lbs-header__mobile__search-btn" type="button" aria-controls="lbs-header__search"
                             aria-label="{{ params.searchButtonLabel | default('Show or hide search box') }}">
                         <span class="govuk-visually-hidden">Search</span>
                     </button>
                 {% endif %}
                 {% if params.navigation %}
-                    <button class="lbs-header__mobile-menu-btn govuk-header__menu-button govuk-js-header-toggle"
+                    <button class="lbs-header__mobile-menu-btn govuk-js-header-toggle"
                             id="lbs-header__mobile__menu-btn" type="button" aria-controls="lbs-header__navigation"
                             aria-label="{{ params.menuButtonLabel | default('Show or hide navigation menu') }}">
                         <span class="govuk-visually-hidden">Menu</span>

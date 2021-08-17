@@ -21,16 +21,41 @@
       display: inline-block;
     }
 
+    flex: 1 0 50%;
     @include govuk-media-query($from: desktop) {
       flex: 1 0 20%;
     }
   }
 
   &__nav-container {
+    flex: 1 0 50%;
+
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }
     @import "./navigation";
+
+    .lbs-header__mobile-icons {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      @include govuk-media-query($from: desktop) {
+        display: none;
+      }
+      button {
+        appearance: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+      }
+
+      #lbs-header__mobile__menu-btn {
+        background: red;
+      }
+      #lbs-header__mobile__search-btn {
+        background: aqua;
+      }
+    }
   }
 
   &__search {

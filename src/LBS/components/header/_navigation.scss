@@ -1,4 +1,8 @@
 .lbs-header__navigation {
+  @include govuk-media-query($until: desktop) {
+    position: absolute;
+    left: -100%;
+  }
   //@extend .govuk-header__navigation; // Not 100% what this is adding at the moment
   &--level1 {
     @extend .govuk-list;
