@@ -1,19 +1,20 @@
 {# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
-<nav id="lbs-header__navigation" class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
+<nav class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
     <ul class="lbs-header__navigation--level1"
         role="menubar"
+        id="lbs-header__navigation"
         aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
     >
         {% for item in params.navigation %}
             <li role="none">
                 {% if item.subItems.length > 0 %}
-                    <button
+                    <a
                             class="lbs-header__navigation__item--level1"
                             role="menuitem"
                             aria-haspopup="true"
                             aria-expanded="false">
                         <span class="govuk-visually-hidden">Show menu for</span> {{ item.text }}
-                    </button>
+                    </a>
                     {% if item.subItems.length > 0 %}
                         <ul
                             class="lbs-header__navigation--level2"
