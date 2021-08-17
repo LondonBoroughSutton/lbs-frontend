@@ -1,13 +1,14 @@
 .lbs-search {
   display: flex;
   &__input {
-    //@extend .govuk-input;
+    @extend .govuk-input;
     appearance: none;
     padding: $lbs-margin/2;
     border-radius: $lbs-margin*2 0 0 $lbs-margin*2;
     border-style: solid;
     border-width: 2px;
     border-color: rgba($lbs-grey, 0.5);
+    height: initial;
     &--full-width {
       width: 100%;
     }

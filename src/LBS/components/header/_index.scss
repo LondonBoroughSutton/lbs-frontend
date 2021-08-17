@@ -123,5 +123,8 @@
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }
+    .lbs-search__input {
+
+    }
   }
 }
