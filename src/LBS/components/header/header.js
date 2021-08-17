@@ -1,5 +1,6 @@
 function Header($module) {
     this.$module = $module
+    // The following implementation is from https://www.w3.org/WAI/tutorials/menus/flyout/#flyoutnavmousefixed - understood to be accessible and current best practice
     let menuItems = document.querySelectorAll('li[data-has-submenu]');
     Array.prototype.forEach.call(menuItems, function (el, i) {
         el.querySelector('a').addEventListener("click", function (event) {

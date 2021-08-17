@@ -1,7 +1,6 @@
 {# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
 <nav class="lbs-header__navigation" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
     <ul class="lbs-header__navigation--level1"
-{#        role="menubar"#}
         id="lbs-header__navigation"
         aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
     >
@@ -10,7 +9,6 @@
                 {% if item.subItems.length > 0 %}
                     <a
                             class="lbs-header__navigation__item--level1"
-{#                            role="menuitem"#}
                             href="#"
                             aria-haspopup="true"
                             aria-expanded="false">
@@ -19,14 +17,11 @@
                     {% if item.subItems.length > 0 %}
                         <ul
                             class="lbs-header__navigation--level2"
-{#                            role="menu"#}
-{#                            aria-label="{{ item.text }}"#}
                         >
                             {% for subItem in item.subItems %}
                                 <li>
                                     <a
                                         href="/{{ subItem.href }}/"
-{#                                        role="menuitem"#}
                                     >
                                         {{ subItem.text }}
                                     </a>
