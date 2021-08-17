@@ -90,7 +90,7 @@ Header.prototype.syncState = function (button, isVisible) {
  * sync the accessibility state and menu button state
  */
 Header.prototype.handleMenuButtonClick = function () {
-    console.log('menu clicked')
+    // todo - reset search state when menu is active
     let isVisible = this.$menu.classList.toggle('active')
     this.syncState(this.$menuButton, isVisible)
 }
@@ -102,11 +102,10 @@ Header.prototype.handleMenuButtonClick = function () {
  * sync the accessibility state and search button state
  */
 Header.prototype.handleSearchButtonClick = function () {
-    console.log('search clicked')
     let isVisible = this.$search.classList.toggle('active')
     this.syncState(this.$searchButton, isVisible)
+    // todo - stop zoom on focus
     this.$module.querySelector('#lbs-search__box').focus()
-
 }
 
 export default Header

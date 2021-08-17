@@ -71,7 +71,7 @@
         //background: red;
         &.active {
           .lbs-header__mobile_burger-btn--1 {
-            transform: translate(6px, 12px) rotate(45deg);
+            transform: translate(-10px, 10px) rotate(45deg);
           }
 
           .lbs-header__mobile_burger-btn--2 {
@@ -80,7 +80,7 @@
           }
 
           .lbs-header__mobile_burger-btn--3 {
-            transform: translate(2px, -10px) rotate(-45deg);
+            transform: translate(-10px, -8px) rotate(-45deg);
           }
         }
       }
