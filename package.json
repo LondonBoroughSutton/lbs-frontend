@@ -9,14 +9,15 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp dev",
-    "heroku": "gulp copy-assets && node app/start.js",
+    "heroku": "node ./node_modules/gulp/bin/gulp copy-assets && node app/start.js",
     "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package' && npm run test:build:package",
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist' && npm run test:build:dist",
     "test": "npm run test:dependencies && standard && gulp test && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
     "test:build:package": "jest tasks/gulp/__tests__/after-build-package.test.js",
-    "test:build:dist": "jest tasks/gulp/__tests__/after-build-dist.test.js"  },
+    "test:build:dist": "jest tasks/gulp/__tests__/after-build-dist.test.js"
+  },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "body-parser": "^1.18.3",
