@@ -1,14 +1,36 @@
 .lbs-header__navigation {
-  //@extend .govuk-header__navigation; // Not 100% what this is adding at the moment
+  @include govuk-media-query($until: desktop) {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    transition: all 0.2s ease;
+    width: 80vw;
+    box-shadow: 3px 0px 6px 0px rgba($lbs-black, 0.3);
+    //overflow-y: scroll;
+    &.active {
+      left: 0;
+    }
+  }
+  @include govuk-media-query($from: desktop) {
+    height: 100%;
+  }
+
   &--level1 {
     @extend .govuk-list;
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #1d70b8;
+    @include govuk-media-query($until: desktop) {
+      height: 100vh;
+      background: $lbs-green-1;
+      overflow-y: scroll;
+    }
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
       justify-content: space-around;
+      height: 100%;
+      align-items: center;
     }
 
     & button {
@@ -25,17 +47,80 @@
       }
     }
 
-    [aria-haspopup="true"]::after {
-      content: url('../../assets/img/arrow-down--red.svg');
-      padding-right: 2em;
+    [aria-haspopup="true"] {
+      &:after {
+        content: "";
+        background: url('../../assets/img/arrow-down--red.svg') no-repeat right center;
+        height: $lbs-margin;
+        width: $lbs-margin;
+        vertical-align: center;
+        padding-left: $lbs-margin/4;
+        display: inline-block;
+        transform-origin: center;
+        transition: all 0.2s;
+      }
+    }
+
+    [aria-expanded="true"] {
+      &:after {
+        //transform: scale(1, -1);
+      }
     }
 
     li {
-      &:hover, &[data-submenu-open="true"] {
-        cursor: pointer;
+      margin: 0;
+
+      &[data-submenu-open="true"] {
+        [aria-haspopup="true"] {
+          &:after {
+            transform: scale(1, -1);
+          }
+        }
 
         .lbs-header__navigation--level2 {
           display: block;
+          @include govuk-media-query($from: desktop) {
+            display: flex;
+          }
+        }
+      }
+
+      @include govuk-media-query($from: desktop) {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &[data-has-submenu="true"] {
+          &:hover, &[data-submenu-open="true"] {
+            //cursor: pointer;
+            background: $lbs-green-1;
+
+            a {
+              color: $lbs-white;
+
+              &:after {
+                transition: none;
+                background: url('../../assets/img/arrow-down--white.svg') no-repeat right center;
+              }
+            }
+
+            .lbs-header__navigation--level2 {
+              display: flex;
+            }
+          }
+        }
+      }
+
+      a {
+        display: block;
+        color: $lbs-green-1;
+        font-weight: 600;
+        @include govuk-media-query($until: desktop) {
+          background: rgba($lbs-white, 1);
+          padding: $lbs-margin $lbs-margin/2;
+        }
+        @include govuk-media-query($from: desktop) {
+          padding: 0 $lbs-margin;
+
         }
       }
     }
@@ -43,9 +128,57 @@
 
   &--level2 {
     display: none;
-    background: red;
+    background: $lbs-green-1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include govuk-media-query($from: desktop) {
+      width: 100%;
+    }
+
+    li {
+      a {
+        font-weight: normal;
+
+        &:before {
+          content: "";
+          height: $lbs-margin/2;
+          width: $lbs-margin/2;
+          margin-right: $lbs-margin/2;
+          display: inline-block;
+          background: url("../../assets/img/right-chevron--green.svg") no-repeat center;
+        }
+      }
+    }
+
+    @include govuk-media-query($until: desktop) {
+      li {
+        //margin-left: 5px;
+        a {
+          background: rgba($lbs-white, 0.9);
+        }
+      }
+    }
     @include govuk-media-query($from: desktop) {
       position: absolute;
+      padding: $lbs-margin $lbs-margin*2;
+      top: 100%;
+      left: 0;
+      min-height: 30vh;
+      box-shadow: 0 3px 5px rgba($lbs-black, 0.2);
+      border-radius: 0 0 $lbs-border-radius $lbs-border-radius;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      li {
+        flex: 1 0 50%;
+
+        a {
+          padding: $lbs-margin 0;
+          color: $lbs-white;
+        }
+      }
     }
+
   }
+
 }
