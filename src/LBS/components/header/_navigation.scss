@@ -50,11 +50,11 @@
     [aria-haspopup="true"] {
       &:after {
         content: "";
-        background: url('../../assets/img/arrow-down--red.svg') no-repeat center;
+        background: url('../../assets/img/arrow-down--red.svg') no-repeat right center;
         height: $lbs-margin;
         width: $lbs-margin;
         vertical-align: center;
-        padding: 0 $lbs-margin/2;
+        padding-left: $lbs-margin/4;
         display: inline-block;
         transform-origin: center;
         transition: all 0.2s;
@@ -68,6 +68,8 @@
     }
 
     li {
+      margin: 0;
+
       &[data-submenu-open="true"] {
         [aria-haspopup="true"] {
           &:after {
@@ -77,6 +79,9 @@
 
         .lbs-header__navigation--level2 {
           display: block;
+          @include govuk-media-query($from: desktop) {
+            display: flex;
+          }
         }
       }
 
@@ -84,11 +89,23 @@
         height: 100%;
         display: flex;
         align-items: center;
-        &:hover {
-          cursor: pointer;
+        &[data-has-submenu="true"] {
+          &:hover, &[data-submenu-open="true"] {
+            //cursor: pointer;
+            background: $lbs-green-1;
 
-          .lbs-header__navigation--level2 {
-            display: flex;
+            a {
+              color: $lbs-white;
+
+              &:after {
+                transition: none;
+                background: url('../../assets/img/arrow-down--white.svg') no-repeat right center;
+              }
+            }
+
+            .lbs-header__navigation--level2 {
+              display: flex;
+            }
           }
         }
       }
@@ -98,8 +115,12 @@
         color: $lbs-green-1;
         font-weight: 600;
         @include govuk-media-query($until: desktop) {
-          padding: $lbs-margin $lbs-margin/2;
           background: rgba($lbs-white, 1);
+          padding: $lbs-margin $lbs-margin/2;
+        }
+        @include govuk-media-query($from: desktop) {
+          padding: 0 $lbs-margin;
+
         }
       }
     }
@@ -150,6 +171,7 @@
       align-content: flex-start;
       li {
         flex: 1 0 50%;
+
         a {
           padding: $lbs-margin 0;
           color: $lbs-white;
@@ -158,4 +180,5 @@
     }
 
   }
+
 }
