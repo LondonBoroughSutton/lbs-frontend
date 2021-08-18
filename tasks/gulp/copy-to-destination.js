@@ -49,7 +49,7 @@ gulp.task('copy-files', () => {
       path.extname = '.json'
     }))
     .pipe(yamlFiles.restore)
-    .pipe(gulp.dest(taskArguments.destination + '/lbs/'))
+    .pipe(gulp.dest(taskArguments.destination + '/LBS/'))
 })
 
 function generateFixtures (file) {

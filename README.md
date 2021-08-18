@@ -1,4 +1,4 @@
-# London Borough of Sutton (LBS) Frontend 
+# London Borough of Sutton (LBS) Frontend
 
 This repository contains the code you need to start building user interfaces for LBS platforms and services.
 
