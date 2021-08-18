@@ -1,8 +1,8 @@
 $govuk-show-breakpoints: true;
 $govuk-new-link-styles: true;
-@import '../../../src/lbs/variables/colours';
-@import '../../../src/lbs/variables/variables';
-@import "../../../src/lbs/overrides/lbs";
+@import '../../../src/LBS/variables/colours';
+@import '../../../src/LBS/variables/variables';
+@import "../../../src/LBS/overrides/lbs";
 @import "node_modules/govuk-frontend/govuk/all";
-@import "../../../src/lbs/all";
+@import "../../../src/LBS/all";
 @import "partials/app";
