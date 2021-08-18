@@ -115,6 +115,7 @@
   &__search {
     @include govuk-media-query($until: desktop) {
       display: none;
+      padding: $lbs-margin/2 0;
       &.active {
         display: block;
       }

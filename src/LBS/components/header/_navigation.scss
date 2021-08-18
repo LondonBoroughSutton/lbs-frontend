@@ -1,11 +1,13 @@
 .lbs-header__navigation {
   @include govuk-media-query($until: desktop) {
-    position: absolute;
+    position: fixed;
     left: -100%;
     top: 0;
     height: 100vh;
     transition: all 0.2s ease;
     width: 80vw;
+    box-shadow: 3px 0px 6px 0px rgba($lbs-black, 0.3);
+    //overflow-y: scroll;
     &.active {
       left: 0;
     }
@@ -20,6 +22,7 @@
     @include govuk-media-query($until: desktop) {
       height: 100vh;
       background: $lbs-green-1;
+      overflow-y: scroll;
     }
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
@@ -42,7 +45,7 @@
 
     [aria-haspopup="true"]::after {
       content: url('../../assets/img/arrow-down--red.svg');
-      padding-right: 2em;
+      padding: 0 $lbs-margin/2;
     }
 
     li {
@@ -53,14 +56,55 @@
           display: block;
         }
       }
+
+      a {
+        display: block;
+        color: $lbs-green-1;
+        font-weight: 600;
+        @include govuk-media-query($until: desktop) {
+          padding: $lbs-margin $lbs-margin/2;
+          background: rgba($lbs-white, 1);
+        }
+        @include govuk-media-query($from: desktop) {
+
+        }
+      }
     }
   }
 
   &--level2 {
     display: none;
-    background: red;
+    background: $lbs-green-1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      a {
+        font-weight: normal;
+
+        &:before {
+          content: "";
+          height: $lbs-margin/2;
+          width: $lbs-margin/2;
+          margin-right: $lbs-margin/2;
+          display: inline-block;
+          background: url("../../assets/img/right-chevron--green.svg") no-repeat center;
+        }
+      }
+    }
+
+    @include govuk-media-query($until: desktop) {
+      li {
+        //margin-left: 5px;
+        a {
+          background: rgba($lbs-white, 0.9);
+        }
+      }
+    }
     @include govuk-media-query($from: desktop) {
       position: absolute;
     }
+
   }
 }
