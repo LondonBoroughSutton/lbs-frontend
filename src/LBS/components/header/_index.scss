@@ -3,6 +3,7 @@
   padding: $lbs-margin/3 0;
   @include govuk-media-query($from: desktop) {
     padding: $lbs-margin/2 0;
+    position: relative;
   }
 
   .govuk-width-container {
@@ -13,10 +14,12 @@
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
       position: relative;
+      align-items: stretch;
     }
   }
 
   &__logo {
+    align-self: center;
     & > a {
       display: inline-block;
     }
@@ -32,6 +35,7 @@
 
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
+      //height: 100%;
     }
     @import "./navigation";
 
@@ -113,6 +117,8 @@
   }
 
   &__search {
+    flex: 1 0 100%;
+    align-self: center;
     @include govuk-media-query($until: desktop) {
       display: none;
       padding: $lbs-margin/2 0;
@@ -120,7 +126,6 @@
         display: block;
       }
     }
-    flex: 1 0 100%;
     @include govuk-media-query($from: desktop) {
       flex: 1 0 40%;
     }

@@ -12,13 +12,15 @@
       left: 0;
     }
   }
-  //@extend .govuk-header__navigation; // Not 100% what this is adding at the moment
+  @include govuk-media-query($from: desktop) {
+    height: 100%;
+  }
+
   &--level1 {
     @extend .govuk-list;
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #1d70b8;
     @include govuk-media-query($until: desktop) {
       height: 100vh;
       background: $lbs-green-1;
@@ -27,6 +29,8 @@
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
       justify-content: space-around;
+      height: 100%;
+      align-items: center;
     }
 
     & button {
@@ -56,6 +60,7 @@
         transition: all 0.2s;
       }
     }
+
     [aria-expanded="true"] {
       &:after {
         //transform: scale(1, -1);
@@ -69,18 +74,21 @@
             transform: scale(1, -1);
           }
         }
+
         .lbs-header__navigation--level2 {
           display: block;
         }
       }
 
       @include govuk-media-query($from: desktop) {
-
+        height: 100%;
+        display: flex;
+        align-items: center;
         &:hover {
           cursor: pointer;
 
           .lbs-header__navigation--level2 {
-            display: block;
+            display: flex;
           }
         }
       }
@@ -93,9 +101,6 @@
           padding: $lbs-margin $lbs-margin/2;
           background: rgba($lbs-white, 1);
         }
-        @include govuk-media-query($from: desktop) {
-
-        }
       }
     }
   }
@@ -106,6 +111,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    @include govuk-media-query($from: desktop) {
+      width: 100%;
+    }
 
     li {
       a {
@@ -132,6 +140,21 @@
     }
     @include govuk-media-query($from: desktop) {
       position: absolute;
+      padding: $lbs-margin $lbs-margin*2;
+      top: 100%;
+      left: 0;
+      min-height: 30vh;
+      box-shadow: 0 3px 5px rgba($lbs-black, 0.2);
+      border-radius: 0 0 $lbs-border-radius $lbs-border-radius;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      li {
+        flex: 1 0 50%;
+        a {
+          padding: $lbs-margin 0;
+          color: $lbs-white;
+        }
+      }
     }
 
   }
