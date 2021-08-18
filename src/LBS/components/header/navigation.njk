@@ -1,11 +1,10 @@
-{# @todo - add button/link or type attr to the params - this would differentiate between a 'real link' and a button (or similar) that exposes an additional menu (https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/) #}
 <nav class="lbs-header__navigation" id="lbs-header__navigation_container" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
     <ul class="lbs-header__navigation--level1"
         id="lbs-header__navigation"
         aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
     >
         {% for item in params.navigation %}
-            <li class="" data-has-submenu="true" data-submenu-open="false">
+            <li class="" {% if item.subItems.length > 0 %}data-has-submenu="true" data-submenu-open="false"{% endif %}>
                 {% if item.subItems.length > 0 %}
                     <a
                             class="lbs-header__navigation__item--level1"
