@@ -1,0 +1,29 @@
+{
+  "name": "lbs-frontend",
+  "description": "LBS Frontend contains the code you need to start building a user interface for London Borough of Sutton platforms and services.",
+  "version": "0.0.1",
+  "main": "LBS/all.js",
+  "sass": "LBS/all.scss",
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "author": {
+    "name": "LBS Team",
+    "email": "TBC"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TBC"
+  },
+  "bugs": {
+    "url": "TBC"
+  },
+  "homepage": "TBC",
+  "keywords": [
+    "LBS",
+    "frontend",
+    "design system",
+    "template"
+  ],
+  "license": "MIT"
+}

@@ -2,9 +2,11 @@ params:
   - name: href
     type: string
     required: false
+    description: If `href` is set, it will become value in `action` attribute
   - name: placeholderText
     type: string
     required: false
+    description: If `placeholderText` is set, it will become value in `placeholder` attribute
 
 examples:
   - name: default
