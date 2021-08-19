@@ -42,7 +42,7 @@ gulp.task('copy:assets', () => {
 // Runs js, scss and accessibility tests
 // --------------------------------------
 gulp.task('test', gulp.series(
-  // 'scss:lint',
+  'scss:lint',
   'scss:compile'
 ))
 

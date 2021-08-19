@@ -2,7 +2,7 @@
   display: flex;
 
   &__input {
-    @extend %govuk-input;
+    @extend .govuk-input;
     appearance: none;
     height: initial;
     padding: $lbs-margin / 2;
