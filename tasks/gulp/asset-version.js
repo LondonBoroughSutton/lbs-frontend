@@ -19,10 +19,9 @@ const isDist = taskArguments.destination === 'dist' || false
 gulp.task('update-assets-version', () => {
   const pkg = require('../../' + configPaths.package + 'package.json')
   console.log(isDist)
-  // fs.writeFileSync(taskArguments.destination + '/VERSION.txt', pkg.version + '\r\n')
+  fs.writeFileSync(taskArguments.destination + '/VERSION.txt', pkg.version + '\r\n')
   return gulp.src([
     taskArguments.destination + '/lbs-frontend.min.css',
-    // taskArguments.destination + '/lbs-frontend-ie8.min.css',
     taskArguments.destination + '/lbs-frontend.min.js'
   ])
     .pipe(vinylPaths(del))
