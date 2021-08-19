@@ -68,7 +68,7 @@ function compileStyles (done) {
     ])))
     .pipe(gulpif(isDist,
       rename({
-        basename: 'govuk-frontend',
+        basename: 'lbs-frontend',
         extname: '.min.css'
       })
     ))
@@ -107,7 +107,7 @@ function compileStyles (done) {
 //     ])))
 //     .pipe(gulpif(isDist,
 //       rename({
-//         basename: 'govuk-frontend-ie8',
+//         basename: 'lbs-frontend-ie8',
 //         extname: '.min.css'
 //       })
 //     ))
