@@ -1,0 +1,174 @@
+.lbs-header {
+  padding: $lbs-margin / 3 0;
+  border-bottom: 5px solid $lbs-green-1;
+  @include govuk-media-query($from: desktop) {
+    position: relative;
+    padding: $lbs-margin / 2 0;
+  }
+
+  .govuk-width-container {
+    display: -ms-flexbox;
+    display: flex; // Floats or flex? Flex feels best but floats are better supported
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    @include govuk-media-query($from: desktop) {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      position: relative;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+    }
+  }
+
+  &__logo {
+    -ms-flex-item-align: center;
+        align-self: center;
+    -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+    @include govuk-media-query($from: desktop) {
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
+    }
+
+    & > a {
+      display: inline-block;
+    }
+  }
+
+  &__nav-container {
+    -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+
+    @include govuk-media-query($from: desktop) {
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
+      //height: 100%;
+    }
+    @import "./navigation";
+
+    .lbs-header__mobile-icons {
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+      @include govuk-media-query($from: desktop) {
+        display: none;
+      }
+
+      svg {
+        overflow: visible;
+        vertical-align: center;
+
+        rect,
+        path {
+          transition: all .2s linear;
+          fill: $lbs-green-1;
+          -webkit-transform-origin: center center;
+              -ms-transform-origin: center center;
+                  transform-origin: center center;
+        }
+      }
+
+      button {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background: transparent;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:last-child {
+          margin-left: $lbs-margin;
+        }
+      }
+
+      #lbs-header__mobile__menu-btn {
+        &.active {
+          .lbs-header__mobile_burger-btn--1 {
+            -webkit-transform: translate(-10px, 10px) rotate(45deg);
+                -ms-transform: translate(-10px, 10px) rotate(45deg);
+                    transform: translate(-10px, 10px) rotate(45deg);
+          }
+
+          .lbs-header__mobile_burger-btn--2 {
+            -webkit-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                    transform: translateX(20px);
+            opacity: 0;
+          }
+
+          .lbs-header__mobile_burger-btn--3 {
+            -webkit-transform: translate(-10px, -8px) rotate(-45deg);
+                -ms-transform: translate(-10px, -8px) rotate(-45deg);
+                    transform: translate(-10px, -8px) rotate(-45deg);
+          }
+        }
+      }
+
+      #lbs-header__mobile__search-btn {
+        svg {
+          -webkit-transform: scale(.8);
+              -ms-transform: scale(.8);
+                  transform: scale(.8);
+
+          .lbs-header__mobile_search-btn--2,
+          .lbs-header__mobile_search-btn--3 {
+            opacity: 0;
+          }
+        }
+
+        &.active {
+          svg {
+            .lbs-header__mobile_search-btn--1 {
+              opacity: 0;
+            }
+
+            .lbs-header__mobile_search-btn--2 {
+              -webkit-transform: translate(40px, 0) rotate(45deg);
+                  -ms-transform: translate(40px, 0) rotate(45deg);
+                      transform: translate(40px, 0) rotate(45deg);
+              opacity: 1;
+            }
+
+            .lbs-header__mobile_search-btn--3 {
+              -webkit-transform: translate(-10px, -8px) rotate(-45deg);
+                  -ms-transform: translate(-10px, -8px) rotate(-45deg);
+                      transform: translate(-10px, -8px) rotate(-45deg);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__search {
+    -ms-flex: 1 0 100%;
+        flex: 1 0 100%;
+    -ms-flex-item-align: center;
+        align-self: center;
+    @include govuk-media-query($until: desktop) {
+      display: none;
+      padding: $lbs-margin / 2 0;
+
+      &.active {
+        display: block;
+      }
+    }
+    @include govuk-media-query($from: desktop) {
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
+    }
+  }
+}

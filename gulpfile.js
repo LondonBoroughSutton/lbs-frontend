@@ -26,7 +26,7 @@ gulp.task('scripts', gulp.series(
 // Runs scss lint and compilation
 // --------------------------------------
 gulp.task('styles', gulp.series(
-  // 'scss:lint',
+  'scss:lint',
   'scss:compile'
 ))
 
@@ -42,7 +42,7 @@ gulp.task('copy:assets', () => {
 // Runs js, scss and accessibility tests
 // --------------------------------------
 gulp.task('test', gulp.series(
-  // 'scss:lint',
+  'scss:lint',
   'scss:compile'
 ))
 

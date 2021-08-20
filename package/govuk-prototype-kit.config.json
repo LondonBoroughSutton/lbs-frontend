@@ -1,0 +1,14 @@
+{
+  "nunjucksPaths": [
+    "/"
+  ],
+  "scripts": [
+    "/LBS/all.js"
+  ],
+  "assets": [
+    "/LBS/assets"
+  ],
+  "sass": [
+    "/LBS/all.scss"
+  ]
+}

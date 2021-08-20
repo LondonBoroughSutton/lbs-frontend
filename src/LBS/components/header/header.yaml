@@ -2,6 +2,7 @@ params:
   - name: href
     type: string
     required: false
+    description: If href is set, it will become the value for the href attribute
 
 examples:
   - name: default
