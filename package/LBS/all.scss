@@ -1,4 +1,5 @@
-@import "node_modules/govuk-frontend/govuk/all";
 @import './variables/colours';
 @import './variables/variables';
+@import './overrides/lbs';
+@import "node_modules/govuk-frontend/govuk/all";
 @import "./components/all";
