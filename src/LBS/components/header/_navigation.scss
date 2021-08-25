@@ -99,7 +99,7 @@
 
               &:after {
                 transition: none;
-                background: url('../../assets/img/arrow-down--white.svg') no-repeat right center;
+                background: url($lbs-assets + '/img/arrow-down--white.svg') no-repeat right center;
               }
             }
 
@@ -127,6 +127,7 @@
 
   &--level2 {
     display: none;
+    z-index: 1000;
     margin: 0;
     padding: 0;
     background: $lbs-green-1;
