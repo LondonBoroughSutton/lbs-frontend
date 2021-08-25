@@ -38,7 +38,7 @@
     border: 4px solid $lbs-green-2;
     border-left: transparent;
     border-radius: 0 $lbs-margin * 2 $lbs-margin * 2 0;
-    background: $lbs-green-1 url("../../assets/img/search--white.svg") no-repeat 40% 50%;
+    background: $lbs-green-1 url($lbs-assets-path + 'img/search--white.svg') no-repeat 40% 50%;
     background-size: 50%;
     text-indent: -5000px;
 
