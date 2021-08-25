@@ -61,7 +61,9 @@
         height: $lbs-margin;
         padding-left: $lbs-margin / 4;
         transition: all .2s;
-        background: url($lbs-assets-path + 'img/arrow-down--red.svg') no-repeat right center;
+        //background: url($lbs-assets-path + 'img/arrow-down--red.svg') no-repeat right center;
+        background: no-repeat right center;
+        @include background-svg('<svg width="9" height="5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.811765 0 0 0 0 0.086275 0 0 0 0 0.262745 0 0 0 1.000000 0"/></filter><path d="M7.5 10c-.1425 0-.284375-.048125-.4-.145L3.35 6.73c-.265-.220625-.30125-.615-.08-.88.220625-.265.614375-.300625.88-.08l3.356875 2.7975 3.35125-2.696875c.26875-.21625.6625-.17375.87875.095.21625.26875.17375.661875-.095.87875l-3.75 3.0175C7.7775 9.95375 7.63875 10 7.5 10" id="b"/></defs><g transform="translate(-3 -5)" filter="url(#a)" fill="none" fill-rule="evenodd"><use fill="#0D1C2E" fill-rule="nonzero" xlink:href="#b"/></g></svg>');
         vertical-align: center;
         -webkit-transform-origin: center;
             -ms-transform-origin: center;
@@ -106,6 +108,7 @@
         &[data-has-submenu="true"] {
           &:hover,
           &[data-submenu-open="true"] {
+            border-radius: $lbs-border-radius $lbs-border-radius 0 0;
             background: $lbs-green-1;
 
             a {
@@ -113,7 +116,8 @@
 
               &:after {
                 transition: none;
-                background: url($lbs-assets-path + 'img/arrow-down--white.svg') no-repeat right center;
+                background: no-repeat right center;
+                @include background-svg('<svg width="9" height="5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter><path d="M7.5 10c-.1425 0-.284375-.048125-.4-.145L3.35 6.73c-.265-.220625-.30125-.615-.08-.88.220625-.265.614375-.300625.88-.08l3.356875 2.7975 3.35125-2.696875c.26875-.21625.6625-.17375.87875.095.21625.26875.17375.661875-.095.87875l-3.75 3.0175C7.7775 9.95375 7.63875 10 7.5 10" id="b"/></defs><g transform="translate(-3 -5)" filter="url(#a)" fill="none" fill-rule="evenodd"><use fill="#0D1C2E" fill-rule="nonzero" xlink:href="#b"/></g></svg>');
               }
             }
 
@@ -161,7 +165,8 @@
           width: $lbs-margin / 2;
           height: $lbs-margin / 2;
           margin-right: $lbs-margin / 2;
-          background: url($lbs-assets-path + 'img/right-chevron--green.svg''') no-repeat center;
+          background: no-repeat center;
+          @include background-svg('<svg width="7" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.250980 0 0 0 0 0.639216 0 0 0 0 0.376471 0 0 0 1.000000 0"/></filter><path d="M9.9995 19c-.226 0-.453-.076-.64-.232-.424-.353-.481-.984-.128-1.408l4.476-5.371-4.315-5.362c-.346-.43-.278-1.06.152-1.406.431-.346 1.06-.278 1.407.152l4.828 6c.298.371.294.901-.011 1.267l-5 6c-.198.237-.482.36-.769.36" id="b"/></defs><g transform="translate(-9 -5)" filter="url(#a)" fill="none" fill-rule="evenodd"><use fill="#0D1C2E" fill-rule="nonzero" xlink:href="#b"/></g></svg>');
         }
       }
     }
