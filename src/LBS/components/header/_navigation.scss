@@ -54,7 +54,7 @@
         height: $lbs-margin;
         padding-left: $lbs-margin / 4;
         transition: all .2s;
-        background: url('../../assets/img/arrow-down--red.svg') no-repeat right center;
+        background: url($lbs-assets-path + 'img/arrow-down--red.svg') no-repeat right center;
         vertical-align: center;
         transform-origin: center;
       }
@@ -99,7 +99,7 @@
 
               &:after {
                 transition: none;
-                background: url($lbs-assets + '/img/arrow-down--white.svg') no-repeat right center;
+                background: url($lbs-assets-path + 'img/arrow-down--white.svg') no-repeat right center;
               }
             }
 
@@ -146,7 +146,7 @@
           width: $lbs-margin / 2;
           height: $lbs-margin / 2;
           margin-right: $lbs-margin / 2;
-          background: url("../../assets/img/right-chevron--green.svg") no-repeat center;
+          background: url($lbs-assets-path + 'img/right-chevron--green.svg''') no-repeat center;
         }
       }
     }
