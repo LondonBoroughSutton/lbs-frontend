@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="7px" height="14px" viewBox="0 0 7 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>arrow-ios-right</title>
     <defs>
         <filter id="filter-1">
             <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.250980 0 0 0 0 0.639216 0 0 0 0 0.376471 0 0 0 1.000000 0"></feColorMatrix>
         </filter>
         <path d="M9.9995,19 C9.7735,19 9.5465,18.924 9.3595,18.768 C8.9355,18.415 8.8785,17.784 9.2315,17.36 L13.7075,11.989 L9.3925,6.627 C9.0465,6.197 9.1145,5.567 9.5445,5.221 C9.9755,4.875 10.6045,4.943 10.9515,5.373 L15.7795,11.373 C16.0775,11.744 16.0735,12.274 15.7685,12.64 L10.7685,18.64 C10.5705,18.877 10.2865,19 9.9995,19" id="path-2"></path>
     </defs>
-    <g id="PageNav" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrow-ios-right" transform="translate(-9.000000, -5.000000)" filter="url(#filter-1)">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-9.000000, -5.000000)" filter="url(#filter-1)">
             <g>
-                <mask id="mask-3" fill="white">
+                <mask fill="white">
                     <use xlink:href="#path-2"></use>
                 </mask>
                 <use id="🎨-Icon-Сolor" fill="#0D1C2E" fill-rule="nonzero" xlink:href="#path-2"></use>

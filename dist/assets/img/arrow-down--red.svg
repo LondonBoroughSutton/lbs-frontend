@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>arrow-ios-down--red</title>
     <defs>
         <filter color-interpolation-filters="auto" id="filter-1">
             <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.811765 0 0 0 0 0.086275 0 0 0 0 0.262745 0 0 0 1.000000 0"></feColorMatrix>
         </filter>
         <path d="M7.5,10 C7.3575,10 7.215625,9.951875 7.1,9.855 L3.35,6.73 C3.085,6.509375 3.04875,6.115 3.27,5.85 C3.490625,5.585 3.884375,5.549375 4.15,5.77 L7.506875,8.5675 L10.858125,5.870625 C11.126875,5.654375 11.520625,5.696875 11.736875,5.965625 C11.953125,6.234375 11.910625,6.6275 11.641875,6.844375 L7.891875,9.861875 C7.7775,9.95375 7.63875,10 7.5,10" id="path-2"></path>
     </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="UI/Links/TopMenuLink" transform="translate(-102.000000, -10.000000)">
-            <g id="arrow-ios-down" transform="translate(99.000000, 5.000000)" filter="url(#filter-1)">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-102.000000, -10.000000)">
+            <g transform="translate(99.000000, 5.000000)" filter="url(#filter-1)">
                 <g>
                     <mask id="mask-3" fill="white">
                         <use xlink:href="#path-2"></use>
