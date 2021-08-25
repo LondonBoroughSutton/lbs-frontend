@@ -9,15 +9,16 @@ const { render, getExamples, htmlWithClassName } = require('../../../../lib/jest
 
 const examples = getExamples('search')
 
-const WORD_BOUNDARY = '\\b'
-const WHITESPACE = '\\s'
+// const WORD_BOUNDARY = '\\b'
+// const WHITESPACE = '\\s'
 
 describe('Search', () => {
   describe('default example', () => {
     it('passes accessibility tests', async () => {
       const $ = render('search', examples.default)
-
+      console.log($.html())
       const results = await axe($.html())
+      // console.log(results)
       expect(results).toHaveNoViolations()
     })
 
