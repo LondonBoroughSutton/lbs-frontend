@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const {renderSass} = require('../../../lib/jest-helpers')
+const { renderSass } = require('../../../lib/jest-helpers')
 
 const lib = require('../../../lib/file-helper')
 const configPaths = require('../../../config/paths.json')

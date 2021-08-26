@@ -55,7 +55,8 @@ describe('Search', () => {
       const $ = render('search', examples['with placeholder'])
 
       const $component = $('.lbs-search__input')
-      expect($component.attr('placeholder')).toEqual('Search for advice, information and services')    })
+      expect($component.attr('placeholder')).toEqual('Search for advice, information and services')
+    })
   })
 
   describe('with dependant components', () => {
@@ -100,5 +101,4 @@ describe('Search', () => {
   //     expect($component.attr('autocomplete')).toEqual('postal-code')
   //   })
   // })
-
 })
