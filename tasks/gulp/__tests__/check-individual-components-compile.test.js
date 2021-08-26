@@ -14,13 +14,27 @@ describe('Individual components', () => {
     const getSassRenders = () => {
       return componentNames.map(name => {
         const filePath = path.join(configPaths.components, name, `_${name}.scss`)
-        return renderSass({ file: filePath })
+        // Modified from the original - we do not have an elegant way of importing variables into our component file so this test pulls the variables in when testing the render
+        return renderSass({
+          data: `
+            @import '` + path.join(configPaths.src, 'variables', '_colours.scss') + `';
+            @import '` + configPaths.src + `variables/_variables.scss';
+            @import '` + configPaths.src + `variables/_mixins.scss';
+            @import '` + configPaths.src + `overrides/_lbs.scss';
+            @import '` + configPaths.node_modules + `govuk-frontend/govuk/all.scss';
+            @import '` + filePath + `'
+          `
+        })
       })
     }
 
     Promise
       .all(getSassRenders())
-      .then(() => { done() })
-      .catch(error => { throw error })
+      .then(() => {
+        done()
+      })
+      .catch(error => {
+        throw error
+      })
   })
 })

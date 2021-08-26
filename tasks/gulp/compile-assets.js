@@ -1,6 +1,6 @@
 'use strict'
 
-const path = require('path')
+// const path = require('path')
 
 const gulp = require('gulp')
 const configPaths = require('../../config/paths.json')

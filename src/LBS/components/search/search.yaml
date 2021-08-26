@@ -13,7 +13,7 @@ examples:
     description: Standard application of the search bar.
     data:
 
-  - name: Full width
+  - name: with placeholder
     description: Full width variant of the search bar with custom placeholder text.
     data:
       fullWidth: true

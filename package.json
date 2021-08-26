@@ -57,6 +57,7 @@
     "postcss-scss": "^2.1.1",
     "puppeteer": "^9.1.1",
     "recursive-readdir": "^2.2.2",
+    "standard": "^14.3.4",
     "stylelint": "^13.7.1",
     "stylelint-config-gds": "^0.1.0",
     "stylelint-order": "^4.1.0",
@@ -72,6 +73,19 @@
     "ie 8-11",
     "iOS >= 9"
   ],
+  "standard": {
+    "globals": [
+      "page",
+      "browser",
+      "context",
+      "jestPuppeteer"
+    ],
+    "ignore": [
+      "/dist/**/*.js",
+      "/package/**/*.js",
+      "/src/govuk/vendor/polyfills/**/*.js"
+    ]
+  },
   "jest": {
     "preset": "jest-puppeteer",
     "setupFilesAfterEnv": [

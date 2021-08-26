@@ -2,11 +2,11 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const nunjucks = require('nunjucks')
-const util = require('util')
-const fs = require('fs')
+// const util = require('util')
+// const fs = require('fs')
 const path = require('path')
 
-const readdir = util.promisify(fs.readdir)
+// const readdir = util.promisify(fs.readdir)
 
 const helperFunctions = require('../lib/helper-functions')
 const fileHelper = require('../lib/file-helper')
@@ -14,7 +14,7 @@ const configPaths = require('../config/paths.json')
 
 // Set up views
 const appViews = [
-  "node_modules/govuk-frontend/",
+  'node_modules/govuk-frontend/',
   configPaths.layouts,
   configPaths.views,
   // configPaths.examples,
@@ -25,7 +25,6 @@ const appViews = [
 ]
 
 module.exports = (options) => {
-
   const nunjucksOptions = options ? options.nunjucks : {}
 
   // Configure nunjucks
@@ -106,7 +105,7 @@ module.exports = (options) => {
     // const fullPageExamples = fileHelper.fullPageExamples()
 
     res.render('index', {
-      componentsDirectory: components,
+      componentsDirectory: components
       // examplesDirectory: examples,
       // fullPageExamples: fullPageExamples
     })
