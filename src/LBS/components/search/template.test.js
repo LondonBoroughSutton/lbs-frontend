@@ -16,9 +16,8 @@ describe('Search', () => {
   describe('default example', () => {
     it('passes accessibility tests', async () => {
       const $ = render('search', examples.default)
-      console.log($.html())
+
       const results = await axe($.html())
-      // console.log(results)
       expect(results).toHaveNoViolations()
     })
 
@@ -43,10 +42,10 @@ describe('Search', () => {
       expect($component.attr('placeholder')).toEqual('Search')
     })
 
-    it('renders with a form group wrapper', () => {
+    it('renders with a form', () => {
       const $ = render('search', examples.default)
 
-      const $formGroup = $('.govuk-form-group')
+      const $formGroup = $('form')
       expect($formGroup.length).toBeTruthy()
     })
   })
@@ -59,27 +58,39 @@ describe('Search', () => {
       expect($component.attr('placeholder')).toEqual('Search for advice, information and services')    })
   })
 
-  // describe('with dependant components', () => {
-  //   it('have correct nesting order', () => {
-  //     const $ = render('search', examples.default)
-  //
-  //     const $component = $('.govuk-form-group > .govuk-input')
-  //     expect($component.length).toBeTruthy()
-  //   })
-  //
-  //   it('renders with label', () => {
-  //     const $ = render('search', examples.default)
-  //
-  //     expect(htmlWithClassName($, '.govuk-label')).toMatchSnapshot()
-  //   })
-  //
-  //   it('renders label with "for" attribute reffering the input "id"', () => {
-  //     const $ = render('search', examples.default)
-  //
-  //     const $label = $('.govuk-label')
-  //     expect($label.attr('for')).toEqual('input-example')
-  //   })
-  // })
+  describe('with dependant components', () => {
+    it('have correct nesting order', () => {
+      const $ = render('search', examples.default)
+
+      const $component = $('.lbs-search > .lbs-search__input')
+      expect($component.length).toBeTruthy()
+    })
+
+    it('renders with form', () => {
+      const $ = render('search', examples.default)
+
+      expect(htmlWithClassName($, '.lbs-search')).toMatchSnapshot()
+    })
+
+    it('renders with label', () => {
+      const $ = render('search', examples.default)
+
+      expect(htmlWithClassName($, '.govuk-label')).toMatchSnapshot()
+    })
+
+    it('renders with button', () => {
+      const $ = render('search', examples.default)
+
+      expect(htmlWithClassName($, '.lbs-search__btn')).toMatchSnapshot()
+    })
+
+    it('renders label with "for" attribute reffering the input "id"', () => {
+      const $ = render('search', examples.default)
+
+      const $label = $('.govuk-label')
+      expect($label.attr('for')).toEqual('lbs-search__box')
+    })
+  })
 
   // describe('when it includes an autocomplete attribute', () => {
   //   it('renders the autocomplete attribute', () => {
