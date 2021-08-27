@@ -45,6 +45,12 @@ examples:
     data:
       navigation: false
 
+  - name: with no navigation or search
+    description: Header with no main navigation or search function.
+    data:
+      navigation: false
+      search: false
+
 
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
