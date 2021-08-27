@@ -67,3 +67,9 @@
   str-length($search)), $search, $replace),
   $string);
 }
+
+//  Background gradient mixin
+@mixin lbs-background-gradient() {
+  background: linear-gradient(45deg, $lbs-green-1, $lbs-green-2);
+  //background: $lbs-green-1;
+}

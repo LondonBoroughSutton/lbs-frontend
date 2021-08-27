@@ -1,0 +1,20 @@
+params:
+  - name: title
+    type: string
+    required: false
+    description: If `title` is set, it will become h1 value
+  - name: breadcrumb
+    type: array
+    required: false
+    description: If `breadcrumb` array is passed, values will appear in the `breadcrumb` component
+
+examples:
+  - name: default
+    description: Standard application of the page header
+    data:
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'
