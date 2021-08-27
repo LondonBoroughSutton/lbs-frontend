@@ -41,7 +41,6 @@ describe('Header', () => {
       const $component = $('.lbs-header .lbs-header__logo span')
       expect($component.text()).toContain('Sutton.gov.uk')
     })
-
   })
 
   describe('when it is instructed to omit items', () => {
@@ -93,5 +92,4 @@ describe('Header', () => {
   })
 
   // Todo - add tests to cover JS interaction on mobile e.g. focus shifts to input on click and nav opens on click
-
 })
