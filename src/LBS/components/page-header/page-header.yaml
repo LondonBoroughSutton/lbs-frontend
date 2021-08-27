@@ -1,7 +1,7 @@
 params:
-  - name: title
+  - name: heading
     type: string
-    required: false
+    required: true
     description: If `title` is set, it will become h1 value
   - name: breadcrumb
     type: array
@@ -12,6 +12,7 @@ examples:
   - name: default
     description: Standard application of the page header
     data:
+      heading: Test page example
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
