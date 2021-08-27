@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search with dependant components renders with button 1`] = `
+<button type="submit"
+        class="lbs-search__btn"
+        id="lbs-search__btn"
+>
+  Search Sutton.gov.uk
+</button>
+`;
+
+exports[`Search with dependant components renders with form 1`] = `
+<form class="lbs-search"
+      action="/"
+      method="post"
+      autocomplete="off"
+      role="search"
+>
+  <input type="text"
+         name="search"
+         class="lbs-search__input "
+         id="lbs-search__box"
+         placeholder="Search"
+  >
+  <button type="submit"
+          class="lbs-search__btn"
+          id="lbs-search__btn"
+  >
+    Search Sutton.gov.uk
+  </button>
+</form>
+`;
+
+exports[`Search with dependant components renders with label 1`] = `
+<label class="govuk-label govuk-label--l govuk-visually-hidden"
+       for="lbs-search__box"
+>
+  Search Sutton.gov.uk
+</label>
+`;

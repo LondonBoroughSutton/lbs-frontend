@@ -1,0 +1,12 @@
+.lbs-page-header {
+  @include lbs-background-gradient;
+  padding: $lbs-margin 0;
+
+  * {
+    color: $lbs-white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
