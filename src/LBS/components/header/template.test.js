@@ -63,33 +63,33 @@ describe('Header', () => {
     })
   })
 
-  it('renders without the nav', () => {
-    const $ = render('header', examples['with no navigation'])
+  describe('macro parameters', () => {
+    it('renders without the nav', () => {
+      const $ = render('header', examples['with no navigation'])
 
-    const $component = $('.lbs-header > #lbs-header__navigation_container')
-    expect($component.length).not.toBeTruthy()
-    expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
+      const $component = $('.lbs-header > #lbs-header__navigation_container')
+      expect($component.length).not.toBeTruthy()
+      expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
+    })
+
+    it('renders without the nav but with the search', () => {
+      const $ = render('header', examples['with no navigation'])
+
+      const $component = $('.lbs-header #lbs-header__search')
+      expect($component.length).toBeTruthy()
+      const $component2 = $('.lbs-header > #lbs-header__navigation_container')
+      expect($component2.length).not.toBeTruthy()
+      expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
+    })
+
+    it('renders without the nav and without the search', () => {
+      const $ = render('header', examples['with no navigation or search'])
+
+      const $component = $('.lbs-header #lbs-header__search')
+      expect($component.length).not.toBeTruthy()
+      const $component2 = $('.lbs-header #lbs-header__navigation_container')
+      expect($component2.length).not.toBeTruthy()
+      expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
+    })
   })
-
-  it('renders without the nav but with the search', () => {
-    const $ = render('header', examples['with no navigation'])
-
-    const $component = $('.lbs-header #lbs-header__search')
-    expect($component.length).toBeTruthy()
-    const $component2 = $('.lbs-header > #lbs-header__navigation_container')
-    expect($component2.length).not.toBeTruthy()
-    expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
-  })
-
-  it('renders without the nav and without the search', () => {
-    const $ = render('header', examples['with no navigation or search'])
-
-    const $component = $('.lbs-header #lbs-header__search')
-    expect($component.length).not.toBeTruthy()
-    const $component2 = $('.lbs-header #lbs-header__navigation_container')
-    expect($component2.length).not.toBeTruthy()
-    expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
-  })
-
-  // Todo - add tests to cover JS interaction on mobile e.g. focus shifts to input on click and nav opens on click
 })
