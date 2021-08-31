@@ -10,9 +10,22 @@
     <h1>{{ params.heading }}</h1>
   </div>
   {% if params.description or params.meta %}
+    {% if params.description %}
+      {% set content = params.description %}
+    {% endif %}
+    {% if params.meta %}
+      {% set content %}
+        <dl>
+        {% for item in params.meta %}
+          <dt>{{ item.key }}:</dt>
+          <dd>{{ item.value }}</dd>
+        {% endfor %}
+        </dl>
+      {% endset %}
+    {% endif %}
     <div class="lbs-page-header__row lbs-page-header__row--light">
       <div class="govuk-width-container">
-        {{ params.description }}
+        {{ content | safe}}
       </div>
     </div>
   {% endif %}

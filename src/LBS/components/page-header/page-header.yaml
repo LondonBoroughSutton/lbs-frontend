@@ -28,13 +28,42 @@ examples:
     description: Page header with a description
     data:
       heading: Test page example
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
       description: This is an example of some description text
 
   - name: with meta data
     description: Page header with a meta data
     data:
       heading: Test page example
-      meta: This is an example of some description text
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
+      meta: [
+        {
+          key: 'Cost',
+          value: '£31.80'
+        },
+        {
+          key: 'Time',
+          value: 'One week'
+        }
+      ]
 
   - name: without breadcrumbs
     description: Page header with no breadcrumbs
