@@ -14,6 +14,24 @@ examples:
     data:
       heading: Test page example
 
+  - name: with description
+    description: Page header with a description
+    data:
+      heading: Test page example
+      description: This is an example of some description text
+
+  - name: with meta data
+    description: Page header with a meta data
+    data:
+      heading: Test page example
+      meta: This is an example of some description text
+
+  - name: without breadcrumbs
+    description: Page header with no breadcrumbs
+    data:
+      heading: Test page example
+      breadcrumbs: false
+
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
     hidden: true

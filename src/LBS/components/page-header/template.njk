@@ -2,4 +2,11 @@
   <div class="govuk-width-container">
     <h1>{{ params.heading }}</h1>
   </div>
+  {% if params.description or params.meta %}
+  <div class="lbs-page-header__row lbs-page-header__row--light">
+    <div class="govuk-width-container">
+      {{ params.description }}
+    </div>
+  </div>
+  {% endif %}
 </div>
