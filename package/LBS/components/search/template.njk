@@ -1,5 +1,5 @@
 <form class="lbs-search" action="/" method="post" autocomplete="off" role="search">
-    <label class="govuk-label govuk-label--l govuk-visually-hidden" for="search">
+    <label class="govuk-label govuk-label--l govuk-visually-hidden" for="lbs-search__box">
         Search Sutton.gov.uk
     </label>
     <input type="text" name="search" class="lbs-search__input {% if params.fullWidth === true %}lbs-search__input--full-width{% endif %}" id="lbs-search__box" placeholder="{{ params.placeholderText | default('Search') }}" />

@@ -1,6 +1,7 @@
 .lbs-header__navigation {
   @include govuk-media-query($until: desktop) {
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: -100%;
     width: 80vw;
