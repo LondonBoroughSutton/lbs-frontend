@@ -1,6 +1,7 @@
 .lbs-page-header {
   @include lbs-background-gradient;
-  padding-top: $lbs-margin;
+  //box-sizing: content-box;
+  //padding-top: $lbs-margin;
 
   * {
     //color: $lbs-white;

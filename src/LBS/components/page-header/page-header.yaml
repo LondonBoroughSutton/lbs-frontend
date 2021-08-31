@@ -13,6 +13,16 @@ examples:
     description: Standard application of the page header
     data:
       heading: Test page example
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
 
   - name: with description
     description: Page header with a description

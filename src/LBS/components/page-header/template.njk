@@ -1,12 +1,19 @@
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
 <div class="lbs-page-header">
   <div class="govuk-width-container">
+    {% if params.breadCrumbItems %}
+      {{ govukBreadcrumbs({
+        items: params.breadCrumbItems
+      }) }}
+    {% endif %}
     <h1>{{ params.heading }}</h1>
   </div>
   {% if params.description or params.meta %}
-  <div class="lbs-page-header__row lbs-page-header__row--light">
-    <div class="govuk-width-container">
-      {{ params.description }}
+    <div class="lbs-page-header__row lbs-page-header__row--light">
+      <div class="govuk-width-container">
+        {{ params.description }}
+      </div>
     </div>
-  </div>
   {% endif %}
 </div>
