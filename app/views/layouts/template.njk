@@ -37,6 +37,7 @@
   class="govuk-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{ attribute }}="{{ value }}"{% endfor %}
 >
 <script{% if cspNonce %} nonce="{{ cspNonce }}"{% endif %}>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
 {% block bodyStart %}{% endblock %}
 
 {% block skipLink %}
@@ -48,7 +49,6 @@
 
 {% block header %}
   {{ lbsHeader() }}
-  <p>HEADER</p>
 {% endblock %}
 
 {% block main %}
@@ -66,5 +66,5 @@
 {% endblock %}
 
 {% block bodyEnd %}{% endblock %}
-  </body>
+</body>
 </html>
