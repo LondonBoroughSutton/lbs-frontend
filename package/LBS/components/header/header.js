@@ -8,8 +8,6 @@ function Header ($module) {
   this.$module = $module;
   this.$searchButton = $module && $module.querySelector('#lbs-header__mobile__search-btn');
   this.$menuButton = $module && $module.querySelector('#lbs-header__mobile__menu-btn');
-  // console.log(this.$searchButton)
-  // console.log(this.$menuButton)
   this.$menu = this.$menuButton && $module.querySelector(
     '#' + this.$menuButton.getAttribute('aria-controls')
   );
@@ -33,7 +31,6 @@ Header.prototype.init = function () {
     this.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this));
   }
   if (this.$searchButton) {
-    console.log(this.$search);
     this.syncState(this.$searchButton, this.$search.classList.contains('active'));
     this.$searchButton.addEventListener('click', this.handleSearchButtonClick.bind(this));
   }
