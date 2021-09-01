@@ -1,0 +1,28 @@
+$lbs-heading-font: "proxima-nova", "Helvetica", "Arial", sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lbs-heading {
+  font-family: $lbs-heading-font;
+}
+
+ol,
+ul {
+  @extend .govuk-list;
+}
+
+ol {
+  @extend .govuk-list--number;
+}
+
+ul {
+  @extend .govuk-list--bullet;
+
+  ::marker {
+    color: $lbs-green-2;
+  }
+}

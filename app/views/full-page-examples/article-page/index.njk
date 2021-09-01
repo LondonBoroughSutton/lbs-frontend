@@ -3,6 +3,7 @@ scenario: You want to read this article about '2018’s oddest requests from Bri
 notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
 ---
 
+{% from 'govuk/components/button/macro.njk' import govukButton %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 
 {% extends "_generic.njk" %}
@@ -25,10 +26,14 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% block content %}
 
-  <p>You can have a wide range of large or bulky items collected from your property by the council using the bulky waste
+  <p class="govuk-body-l">You can have a wide range of large or bulky items collected from your property by the council using the bulky waste
     collection service.</p>
 
-  <a href="#" class="lbs__Button">Book your bulky item collection</a>
+  {{ govukButton({
+    text: "Book your bulky item collection",
+    classes: "lbs-button",
+    isStartButton: true
+  }) }}
 
   <h2>Before you book</h2>
 
