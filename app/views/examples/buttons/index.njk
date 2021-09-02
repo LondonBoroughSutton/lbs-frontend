@@ -3,6 +3,7 @@ scenario: Button types in situ.
 notes: These buttons are powered by GOVUK Frontend and 'enhanced' by LBS classes to effect style changes only
 ---
 
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
 {% from 'govuk/components/button/macro.njk' import govukButton %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 
@@ -15,6 +16,11 @@ notes: These buttons are powered by GOVUK Frontend and 'enhanced' by LBS classes
 {% endblock %}
 
 {% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
 
   <h2>Start button</h2>
   {{ govukButton({
