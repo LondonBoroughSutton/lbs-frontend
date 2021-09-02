@@ -1,5 +1,7 @@
 {% extends "layout.njk" %}
 
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
 {% block content %}
   <h1 class="govuk-heading-xl">
     LBS Frontend
@@ -36,8 +38,6 @@
         <li><a href="/full-page-examples/{{ example.path }}{{ legacyQuery }}" class="govuk-link">{{ example.name | replace("-", " ") | capitalize }}</a></li>
       {% endfor %}
       </ul>
-
-      <h2 class="govuk-heading-m">Misc</h2>
 
     </div>
   </div>

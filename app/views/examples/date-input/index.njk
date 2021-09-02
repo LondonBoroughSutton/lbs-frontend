@@ -1,0 +1,73 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Default</h2>
+
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "When was your passport issued?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "For example, 12 11 2007"
+    }
+  }) }}
+
+  <h2>Error state</h2>
+
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "When was your passport issued?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "For example, 27 3 2007"
+    },
+    errorMessage: {
+      text: "The date your passport was issued must include a year"
+    },
+    items: [
+      {
+        classes: "govuk-input--width-2",
+        name: "day",
+        value: "6"
+      },
+      {
+        classes: "govuk-input--width-2",
+        name: "month",
+        value: "3"
+      },
+      {
+        classes: "govuk-input--width-4 govuk-input--error",
+        name: "year"
+      }
+    ]
+  }) }}
+
+{% endblock %}

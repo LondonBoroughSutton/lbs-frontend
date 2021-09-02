@@ -1,0 +1,209 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Basic implementation</h2>
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukCheckboxes({
+    idPrefix: "waste",
+    name: "waste",
+    fieldset: {
+      legend: {
+        text: "Which types of waste do you transport?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply."
+    },
+    items: [
+      {
+        value: "carcasses",
+        text: "Waste from animal carcasses"
+      },
+      {
+        value: "mines",
+        text: "Waste from mines or quarries"
+      },
+      {
+        value: "farm",
+        text: "Farm or agricultural waste"
+      }
+    ]
+  }) }}
+
+  <h2>Conditional reveals</h2>
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {% set emailHtml %}
+    {{ govukInput({
+      id: "contact-by-email",
+      name: "contact-by-email",
+      type: "email",
+      autocomplete: "email",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Email address"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set phoneHtml %}
+    {{ govukInput({
+      id: "contact-by-phone",
+      name: "contact-by-phone",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Phone number"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set textHtml %}
+    {{ govukInput({
+      id: "contact-by-text",
+      name: "contact-by-text",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Mobile phone number"
+      }
+    }) }}
+  {% endset -%}
+
+  {{ govukCheckboxes({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        text: "How would you like to be contacted?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all options that are relevant to you."
+    },
+    items: [
+      {
+        value: "email",
+        text: "Email",
+        conditional: {
+        html: emailHtml
+      }
+      },
+      {
+        value: "phone",
+        text: "Phone",
+        conditional: {
+        html: phoneHtml
+      }
+      },
+      {
+        value: "text message",
+        text: "Text message",
+        conditional: {
+        html: textHtml
+      }
+      }
+    ]
+  }) }}
+
+  <h2>Smaller checkboxes</h2>
+
+  {{ govukCheckboxes({
+    idPrefix: "organisation",
+    name: "organisation",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "Organisation",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "hmrc",
+        text: "HM Revenue and Customs (HMRC)"
+      },
+      {
+        value: "employment-tribunal",
+        text: "Employment Tribunal"
+      },
+      {
+        value: "MOD",
+        text: "Ministry of Defence"
+      },
+      {
+        value: "DfT",
+        text: "Department for Transport"
+      }
+    ]
+  }) }}
+
+  <h2>Error state</h2>
+
+  {{ govukCheckboxes({
+    idPrefix: "countries2",
+    name: "countries2",
+    fieldset: {
+      legend: {
+        text: "Will you be travelling to any of these countries?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: {
+      text: "Select countries you will be travelling to, or select “No, I will not be travelling to any of these countries”"
+    },
+    items: [
+      {
+        value: "france",
+        text: "France",
+        checked: true
+      },
+      {
+        value: "portugal",
+        text: "Portugal"
+      },
+      {
+        value: "spain",
+        text: "Spain"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "No, I will not be travelling to any of these countries",
+        checked: true,
+        behaviour: "exclusive"
+      }
+    ]
+  }) }}
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/select/macro.njk' import govukSelect %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Default</h2>
+
+  {{ govukSelect({
+    id: "sort",
+    name: "sort",
+    label: {
+      text: "Sort by"
+    },
+    items: [
+      {
+        value: "published",
+        text: "Recently published"
+      },
+      {
+        value: "updated",
+        text: "Recently updated",
+        selected: true
+      },
+      {
+        value: "views",
+        text: "Most views"
+      },
+      {
+        value: "comments",
+        text: "Most comments"
+      }
+    ]
+  }) }}
+
+{% endblock %}

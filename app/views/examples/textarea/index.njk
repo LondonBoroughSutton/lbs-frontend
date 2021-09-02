@@ -1,0 +1,86 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/textarea/macro.njk' import govukTextarea %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Default</h2>
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+    }
+  }) }}
+
+  <h2>With hint text</h2>
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+    }
+  }) }}
+
+  <h2>Appropriately sized areas</h2>
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    rows: "8",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+    }
+  }) }}
+
+  <h2>Error state</h2>
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+    },
+    errorMessage: {
+      text: "Enter more detail"
+    }
+  }) }}
+
+
+
+{% endblock %}
