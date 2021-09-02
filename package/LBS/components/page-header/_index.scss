@@ -1,0 +1,44 @@
+.lbs-page-header {
+  @include lbs-background-gradient;
+  display: flow-root;
+
+  * {
+    color: $lbs-white;
+  }
+
+  .govuk-breadcrumbs__list-item {
+    a {
+      color: $lbs-white;
+    }
+
+    &:before {
+      border-color: rgba($lbs-white, .5);
+    }
+  }
+
+  .lbs-page-header__row {
+    padding: $lbs-margin 0;
+
+    &--light {
+      background: rgba($lbs-white, .9);
+
+      * {
+        color: $lbs-green-1;
+      }
+    }
+
+    dl {
+      display: table-row;
+
+      dt {
+        font-weight: 700;
+      }
+
+      dt,
+      dd {
+        display: table-cell;
+        padding-right: $lbs-margin / 2;
+      }
+    }
+  }
+}

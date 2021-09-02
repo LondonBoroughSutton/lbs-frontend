@@ -1,0 +1,87 @@
+{
+    "component": "page-header",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "heading": "Test page example",
+                "breadCrumbItems": [
+                    {
+                        "text": "Home",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Example",
+                        "href": "#"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-page-header\">\n  <div class=\"govuk-width-container\">\n    \n      <div class=\"govuk-breadcrumbs\">\n  <ol class=\"govuk-breadcrumbs__list\">\n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Home</a>\n    </li>\n    \n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Example</a>\n    </li>\n    \n  \n  </ol>\n</div>\n\n    \n    <h1>Test page example</h1>\n  </div>\n  \n</div>",
+            "hidden": false
+        },
+        {
+            "name": "with description",
+            "options": {
+                "heading": "Test page example",
+                "breadCrumbItems": [
+                    {
+                        "text": "Home",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Example",
+                        "href": "#"
+                    }
+                ],
+                "description": "This is an example of some description text"
+            },
+            "html": "<div class=\"lbs-page-header\">\n  <div class=\"govuk-width-container\">\n    \n      <div class=\"govuk-breadcrumbs\">\n  <ol class=\"govuk-breadcrumbs__list\">\n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Home</a>\n    </li>\n    \n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Example</a>\n    </li>\n    \n  \n  </ol>\n</div>\n\n    \n    <h1>Test page example</h1>\n  </div>\n  \n    \n      \n    \n    \n    <div class=\"lbs-page-header__row lbs-page-header__row--light\">\n      <div class=\"govuk-width-container\">\n        This is an example of some description text\n      </div>\n    </div>\n  \n</div>",
+            "hidden": false
+        },
+        {
+            "name": "with meta data",
+            "options": {
+                "heading": "Test page example",
+                "breadCrumbItems": [
+                    {
+                        "text": "Home",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Example",
+                        "href": "#"
+                    }
+                ],
+                "meta": [
+                    {
+                        "key": "Cost",
+                        "value": "£31.80"
+                    },
+                    {
+                        "key": "Time",
+                        "value": "One week"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-page-header\">\n  <div class=\"govuk-width-container\">\n    \n      <div class=\"govuk-breadcrumbs\">\n  <ol class=\"govuk-breadcrumbs__list\">\n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Home</a>\n    </li>\n    \n  \n    \n    <li class=\"govuk-breadcrumbs__list-item\">\n      <a class=\"govuk-breadcrumbs__link\" href=\"#\">Example</a>\n    </li>\n    \n  \n  </ol>\n</div>\n\n    \n    <h1>Test page example</h1>\n  </div>\n  \n    \n    \n      \n    \n    <div class=\"lbs-page-header__row lbs-page-header__row--light\">\n      <div class=\"govuk-width-container\">\n        \n        <dl>\n        \n          <dt>Cost:</dt>\n          <dd>£31.80</dd>\n        \n          <dt>Time:</dt>\n          <dd>One week</dd>\n        \n        </dl>\n      \n      </div>\n    </div>\n  \n</div>",
+            "hidden": false
+        },
+        {
+            "name": "without breadcrumbs",
+            "options": {
+                "heading": "Test page example",
+                "breadcrumbs": false
+            },
+            "html": "<div class=\"lbs-page-header\">\n  <div class=\"govuk-width-container\">\n    \n    <h1>Test page example</h1>\n  </div>\n  \n</div>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "href": "/"
+            },
+            "html": "<div class=\"lbs-page-header\">\n  <div class=\"govuk-width-container\">\n    \n    <h1></h1>\n  </div>\n  \n</div>",
+            "hidden": true
+        }
+    ]
+}
