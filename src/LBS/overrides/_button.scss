@@ -1,9 +1,15 @@
 .lbs-button {
-  transition: .2s all;
+  transition: .2s background-color;
   //border-radius: $lbs-border-radius;
   color: $lbs-black;
   background: $lbs-yellow;
   font-family: $lbs-heading-font;
+
+  &:link,
+  &:active,
+  &:visited {
+    color: $lbs-black;
+  }
 
   svg {
     transition: .2s all;
@@ -31,6 +37,12 @@
     color: $lbs-green-1;
     background: $lbs-white;
     box-shadow: none;
+
+    &:link,
+    &:active,
+    &:visited {
+      color: $lbs-green-1;
+    }
 
     &:hover {
       background: rgba($lbs-green-1, .1);

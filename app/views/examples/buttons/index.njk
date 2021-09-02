@@ -29,10 +29,24 @@ notes: These buttons are powered by GOVUK Frontend and 'enhanced' by LBS classes
     isStartButton: true
   }) }}
 
+  {{ govukButton({
+    text: "Start link",
+    classes: "lbs-button",
+    href: "#",
+    isStartButton: true
+  }) }}
+
   <h2>Primary button</h2>
   {{ govukButton({
     text: "Primary button",
     classes: "lbs-button",
+    isStartButton: false
+  }) }}
+
+  {{ govukButton({
+    text: "Primary link",
+    classes: "lbs-button",
+    href: "#",
     isStartButton: false
   }) }}
 
@@ -43,10 +57,22 @@ notes: These buttons are powered by GOVUK Frontend and 'enhanced' by LBS classes
     isStartButton: false
   }) }}
 
+  {{ govukButton({
+    text: "Secondary link",
+    classes: "lbs-button lbs-button--secondary",
+    href: "#"
+  }) }}
+
   <h2>Tertiary button</h2>
   {{ govukButton({
     text: "Tertiary button",
     classes: "lbs-button lbs-button--tertiary",
     isStartButton: false
+  }) }}
+
+  {{ govukButton({
+    text: "Tertiary link",
+    classes: "lbs-button lbs-button--tertiary",
+    href: "#"
   }) }}
 {% endblock %}

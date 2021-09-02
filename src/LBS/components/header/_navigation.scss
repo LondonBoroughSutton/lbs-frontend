@@ -187,3 +187,8 @@
     }
   }
 }
+
+// Required to override top margin in header navigation (specificity)
+#lbs-header__navigation .lbs-header__navigation--level2 {
+  margin-top: 0;
+}
