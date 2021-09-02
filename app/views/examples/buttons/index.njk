@@ -1,0 +1,46 @@
+---
+scenario: Button types in situ.
+notes: These buttons are powered by GOVUK Frontend and 'enhanced' by LBS classes to effect style changes only
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <h2>Start button</h2>
+  {{ govukButton({
+    text: "Start button",
+    classes: "lbs-button",
+    isStartButton: true
+  }) }}
+
+  <h2>Primary button</h2>
+  {{ govukButton({
+    text: "Primary button",
+    classes: "lbs-button",
+    isStartButton: false
+  }) }}
+
+  <h2>Secondary button</h2>
+  {{ govukButton({
+    text: "Secondary button",
+    classes: "lbs-button lbs-button--secondary",
+    isStartButton: false
+  }) }}
+
+  <h2>Tertiary button</h2>
+  {{ govukButton({
+    text: "Tertiary button",
+    classes: "lbs-button lbs-button--tertiary",
+    isStartButton: false
+  }) }}
+{% endblock %}
