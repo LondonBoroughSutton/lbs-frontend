@@ -101,6 +101,10 @@
             a {
               color: $lbs-white;
 
+              &:focus {
+                color: initial;
+              }
+
               &:after {
                 transition: none;
                 background: no-repeat right center;
@@ -125,6 +129,10 @@
         }
         @include govuk-media-query($from: desktop) {
           padding: 0 $lbs-margin;
+        }
+
+        &:focus {
+          color: initial;
         }
       }
     }
