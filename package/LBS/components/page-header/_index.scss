@@ -9,6 +9,10 @@
   .govuk-breadcrumbs__list-item {
     a {
       color: $lbs-white;
+
+      &:focus {
+        color: initial;
+      }
     }
 
     &:before {
