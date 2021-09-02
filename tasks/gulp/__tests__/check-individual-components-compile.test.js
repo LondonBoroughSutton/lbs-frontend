@@ -21,6 +21,7 @@ describe('Individual components', () => {
             @import '` + configPaths.src + `variables/_variables.scss';
             @import '` + configPaths.src + `variables/_mixins.scss';
             @import '` + configPaths.src + `overrides/_lbs.scss';
+            @import '` + configPaths.src + `variables/_typography.scss';
             @import '` + configPaths.node_modules + `govuk-frontend/govuk/all.scss';
             @import '` + filePath + `'
           `

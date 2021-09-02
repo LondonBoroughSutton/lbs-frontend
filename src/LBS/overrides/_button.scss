@@ -1,0 +1,27 @@
+.lbs-button {
+  transition: .2s all;
+  color: $lbs-black;
+  background: $lbs-yellow;
+  font-family: $lbs-heading-font;
+
+  &:hover {
+    color: $lbs-black;
+    background: darken($lbs-yellow, 15%);
+  }
+
+  &:focus {
+    outline: 3px solid $lbs-black;
+    background: darken($lbs-yellow, 15%);
+    box-shadow: none;
+  }
+
+  &--secondary {
+    background: $lbs-grey;
+  }
+
+  &--tertiary {
+    border-color: $lbs-green-2;
+    color: $lbs-green-2;
+    background: $lbs-white;
+  }
+}

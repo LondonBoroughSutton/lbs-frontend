@@ -39,7 +39,7 @@
   {% block styles %}{% endblock %}
 {% endblock %}
 
-{% set mainClasses = 'govuk-main-wrapper--auto-spacing' %}
+{#{% set mainClasses = 'govuk-main-wrapper--auto-spacing' %}#}
 
 {% block bodyEnd %}
   {% if legacy %}
@@ -48,7 +48,6 @@
 
   <script src="/public/all.js"></script>
   <script>
-    window.GOVUKFrontend.initAll()
     window.LBSFrontend.initAll()
   </script>
 {% endblock %}

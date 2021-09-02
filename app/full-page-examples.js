@@ -11,7 +11,6 @@ module.exports = (app) => {
         console.log(error)
         next(error)
       } else {
-        console.log('123')
         res.send(html)
       }
     })
@@ -21,10 +20,9 @@ module.exports = (app) => {
   app.get('/full-page-examples/:example', function (req, res, next) {
     res.render(`${req.params.example}/index`, function (error, html) {
       if (error) {
-        console.log('asd')
+        console.log(error)
         next(error)
       } else {
-        console.log('321')
         res.send(html)
       }
     })
