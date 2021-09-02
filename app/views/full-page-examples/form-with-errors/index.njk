@@ -1,0 +1,93 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+        {{ govukBackLink({
+          text: "Back",
+          href: "/"
+        }) }}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Select an ethnic group or ‘Prefer not to say’",
+              href: "#ethnicity"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "ethnicity",
+          name: "ethnicity",
+          fieldset: {
+            legend: {
+              text: "What is your ethnic group?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          errorMessage: {
+            text: "Select an ethnic group or ‘Prefer not to say’"
+          },
+          items: [
+            {
+              value: "white",
+              text: "White"
+            },
+            {
+              value: "multiple",
+              text: "Mixed or multiple ethnic groups"
+            },
+            {
+              value: "asian",
+              text: "Asian or Asian British"
+            },
+            {
+              value: "black",
+              text: "Black, African, Caribbean or Black British"
+            },
+            {
+              value: "other",
+              text: "Other ethnic group"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "skip",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "lbs-button"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

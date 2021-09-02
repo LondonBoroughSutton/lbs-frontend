@@ -19,7 +19,8 @@ require('./tasks/gulp/stylelint.js')
 // Runs js lint and compilation
 // --------------------------------------
 gulp.task('scripts', gulp.series(
-  'js:compile'
+  'js:compile',
+  'js:copy-govukfrontend'
 ))
 
 // Umbrella styles tasks for preview ----

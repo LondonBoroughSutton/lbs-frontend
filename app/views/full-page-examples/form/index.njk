@@ -1,0 +1,77 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+        {{ govukBackLink({
+          text: "Back",
+          href: "/"
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {% set hintHtml %}
+          <p class="govuk-!-margin-top-0">These questions are optional. [Add a couple of sentences explaining why you’re
+            asking the questions and what you’ll do with the information].</p>
+          <p>Your answers will not affect your application.</p>
+        {% endset -%}
+
+        <h1 class="govuk-heading-l">We have received your application</h1>
+
+        <p class="govuk-body">Before you finish using the service, we’d like to ask some equality questions.</p>
+
+        {{ govukRadios({
+          idPrefix: "equalities-info",
+          name: "equalities-info",
+          fieldset: {
+            legend: {
+              text: "Do you want to answer the equality questions?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: hintHtml
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, answer the equality questions (takes 2 minutes)"
+            },
+            {
+              value: "no",
+              text: "No, skip the equality questions"
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Why we ask equality questions",
+          text: "[Consider adding an optional longer explanation of what you’re asking the questions and what you’ll do with the information]."
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: 'lbs-button'
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

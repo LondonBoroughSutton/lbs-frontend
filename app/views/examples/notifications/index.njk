@@ -1,0 +1,49 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from 'govuk/components/notification-banner/macro.njk' import govukNotificationBanner %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+ <h2>Default notification</h2>
+
+  {% set html %}
+    <p class="govuk-notification-banner__heading">
+      You have 7 days left to send your application.
+      <a class="govuk-notification-banner__link" href="#">View application</a>.
+    </p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
+
+  <h2>Success notification</h2>
+
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Training outcome recorded and trainee withdrawn
+    </h3>
+    <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
+{% endblock %}
