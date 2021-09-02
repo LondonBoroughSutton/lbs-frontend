@@ -27,139 +27,151 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 {% endblock %}
 
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">You can have a wide range of large or bulky items collected from your property by the
+        council using the bulky waste
+        collection service.</p>
 
-  <p class="govuk-body-l">You can have a wide range of large or bulky items collected from your property by the council using the bulky waste
-    collection service.</p>
+      {{ govukButton({
+        text: "Book your bulky item collection",
+        classes: "lbs-button",
+        isStartButton: true
+      }) }}
 
-  {{ govukButton({
-    text: "Book your bulky item collection",
-    classes: "lbs-button",
-    isStartButton: true
-  }) }}
+      <h2>Before you book</h2>
 
-  <h2>Before you book</h2>
+      <p>There are lots of places that let you donate bulky items for free.
+      </p>
 
-  <p>There are lots of places that let you donate bulky items for free.
-  </p>
+      <p>If you have smaller items to get rid of, you might be able to take them to the Household Reuse and Recycling
+        Centre
+        at Kimpton Park way, or include them in your weekly bin collection. Check how to dispose of them in our A to Z
+        of
+        rubbish and recycling
+      </p>
 
-  <p>If you have smaller items to get rid of, you might be able to take them to the Household Reuse and Recycling Centre
-    at Kimpton Park way, or include them in your weekly bin collection. Check how to dispose of them in our A to Z of
-    rubbish and recycling
-  </p>
+      <h2>Cost</h2>
 
-  <h2>Cost</h2>
+      <ul>
+        <li>1-3 items for £31
+        </li>
+        <li> 4-6 items for £52
+        </li>
+      </ul>
 
-  <ul>
-    <li>1-3 items for £31
-    </li>
-    <li> 4-6 items for £52
-    </li>
-  </ul>
+      <h2>What we collect
+      </h2>
 
-  <h2>What we collect
-  </h2>
+      <p>We are able to collect large and bulky household items which can be carried by 1 or 2 people, such as beds,
+        mattresses and electrical appliances such as printers and microwaves.
+      </p>
 
-  <p>We are able to collect large and bulky household items which can be carried by 1 or 2 people, such as beds,
-    mattresses and electrical appliances such as printers and microwaves.
-  </p>
+      <h2>What we cannot collect
+      </h2>
 
-  <h2>What we cannot collect
-  </h2>
+      <ul>
+        <li>asbestos</li>
+        <li>black bags or general waste</li>
+        <li>boilers</li>
+        <li>bricks</li>
+        <li>builders bags</li>
+        <li>builders waste</li>
+        <li>cardboard</li>
+        <li>car batteries</li>
+        <li>car parts</li>
+        <li>carpets (over 4m x 4m) or underlay</li>
+        <li>any chemicals</li>
+        <li>concrete</li>
+        <li>copper piping</li>
+        <li>fence Panels over 6ft x 6ft</li>
+        <li>fish ponds and tanks</li>
+        <li>flooring (laminate)</li>
+        <li>fluorescent lights</li>
+        <li>garden waste</li>
+        <li>gas bottles</li>
+        <li>greenhouses</li>
+        <li>glass (must be removed from items before collection)</li>
+        <li>Insulation</li>
+        <li>Kitchen worktops or units</li>
+        <li>ladders (over 9ft)</li>
+        <li>large play equipment</li>
+        <li>mirrors (must be removed from items before collection)</li>
+        <li>mobility scooters</li>
+        <li>oil</li>
+        <li>organic waste (garden waste, food waste)</li>
+        <li>paint</li>
+        <li>patio doors</li>
+        <li>paving slabs</li>
+        <li>pianos</li>
+        <li>plasterboard</li>
+        <li>polystyrene</li>
+        <li>radiators</li>
+        <li>rubble</li>
+        <li>sheds</li>
+        <li>storage heaters</li>
+        <li>tiles</li>
 
-  <ul>
-    <li>asbestos</li>
-    <li>black bags or general waste</li>
-    <li>boilers</li>
-    <li>bricks</li>
-    <li>builders bags</li>
-    <li>builders waste</li>
-    <li>cardboard</li>
-    <li>car batteries</li>
-    <li>car parts</li>
-    <li>carpets (over 4m x 4m) or underlay</li>
-    <li>any chemicals</li>
-    <li>concrete</li>
-    <li>copper piping</li>
-    <li>fence Panels over 6ft x 6ft</li>
-    <li>fish ponds and tanks</li>
-    <li>flooring (laminate)</li>
-    <li>fluorescent lights</li>
-    <li>garden waste</li>
-    <li>gas bottles</li>
-    <li>greenhouses</li>
-    <li>glass (must be removed from items before collection)</li>
-    <li>Insulation</li>
-    <li>Kitchen worktops or units</li>
-    <li>ladders (over 9ft)</li>
-    <li>large play equipment</li>
-    <li>mirrors (must be removed from items before collection)</li>
-    <li>mobility scooters</li>
-    <li>oil</li>
-    <li>organic waste (garden waste, food waste)</li>
-    <li>paint</li>
-    <li>patio doors</li>
-    <li>paving slabs</li>
-    <li>pianos</li>
-    <li>plasterboard</li>
-    <li>polystyrene</li>
-    <li>radiators</li>
-    <li>rubble</li>
-    <li>sheds</li>
-    <li>storage heaters</li>
-    <li>tiles</li>
+      </ul>
 
-  </ul>
+      <p>You can find the correct way to dispose of these items in our A to Z of rubbish and recycling.
+      </p>
 
-  <p>You can find the correct way to dispose of these items in our A to Z of rubbish and recycling.
-  </p>
+      <h2>Where we collect from
+      </h2>
 
-  <h2>Where we collect from
-  </h2>
+      <p>Once you’ve booked, you just need to leave your bulky items out at the front of your house (placed as close to
+        the
+        pavement as possible, but not on it) by 6am on the day of your collection.
+      </p>
 
-  <p>Once you’ve booked, you just need to leave your bulky items out at the front of your house (placed as close to the
-    pavement as possible, but not on it) by 6am on the day of your collection.
-  </p>
+      <p>If access to your property is gated, an access code must be given when booking your collection.
+      </p>
+      <p>If you live in a block of flats, you can place your items by your communal bin store area. if more than one bin
+        store, please specify which one on booking your collection)
+      </p>
+      <p>Our collection crews will not enter your home or retrieve items from inside properties, inside blocks of flats,
+        back gardens, garages, bin stores or sheds.
+      </p>
+      <p>You do not need to be in on collection day.
+      </p>
+      <p>If you cannot move the item yourself, contact <a href="#">Community Action Sutton</a> for local support.
+      </p>
 
-  <p>If access to your property is gated, an access code must be given when booking your collection.
-  </p>
-  <p>If you live in a block of flats, you can place your items by your communal bin store area. if more than one bin
-    store, please specify which one on booking your collection)
-  </p>
-  <p>Our collection crews will not enter your home or retrieve items from inside properties, inside blocks of flats,
-    back gardens, garages, bin stores or sheds.
-  </p>
-  <p>You do not need to be in on collection day.
-  </p>
-  <p>If you cannot move the item yourself, contact <a href="#">Community Action Sutton</a> for local support.
-  </p>
+      <h2>When we collect
+      </h2>
 
-  <h2>When we collect
-  </h2>
+      <p>We will make every effort to carry out collections on your collection day between 6am and 4pm. In the event
+        that a
+        collection can not be completed or is delayed, I excluding not presented) it will be completed by the end of the
+        next working day (Monday to Friday, excluding bank holidays). The Council will endeavour to provide notice to
+        you of
+        this.
+      </p>
 
-  <p>We will make every effort to carry out collections on your collection day between 6am and 4pm. In the event that a
-    collection can not be completed or is delayed, I excluding not presented) it will be completed by the end of the
-    next working day (Monday to Friday, excluding bank holidays). The Council will endeavour to provide notice to you of
-    this.
-  </p>
+      <h2>Cancellations and amendments
+      </h2>
 
-  <h2>Cancellations and amendments
-  </h2>
+      <p>You can cancel or amend the collection up to 2 days before the collection date. The council will refund the
+        payment
+        if you cancel the collection. Please contact us on 0208 770 5000 (Monday to Friday, 9am to 5pm), within 48 hours
+        of
+        the collection or manage your booking
+      </p>
 
-  <p>You can cancel or amend the collection up to 2 days before the collection date. The council will refund the payment
-    if you cancel the collection. Please contact us on 0208 770 5000 (Monday to Friday, 9am to 5pm), within 48 hours of
-    the collection or manage your booking
-  </p>
+      <h2>If we can’t collect your item
+      </h2>
 
-  <h2>If we can’t collect your item
-  </h2>
-
-  <p>No refunds will be given for items that are not in the designated space by 6am on collection day. You will have to
-    book another collection with us at your own expense.
-  </p>
-  <p>Only items that you specify when booking the collection will be collected on the day.
-  </p>
-  <p>We reserve the right for collection staff to refuse items on inspection which breach safety and environmental
-    legislation, such as asbestos, chemicals and other hazardous waste.
-  </p>
+      <p>No refunds will be given for items that are not in the designated space by 6am on collection day. You will have
+        to
+        book another collection with us at your own expense.
+      </p>
+      <p>Only items that you specify when booking the collection will be collected on the day.
+      </p>
+      <p>We reserve the right for collection staff to refuse items on inspection which breach safety and environmental
+        legislation, such as asbestos, chemicals and other hazardous waste.
+      </p>
+    </div>
+  </div>
 
 {% endblock %}
