@@ -1,0 +1,29 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+ <h2>Default</h2>
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}

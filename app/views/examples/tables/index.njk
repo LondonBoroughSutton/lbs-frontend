@@ -1,0 +1,126 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+ <h2>Default</h2>
+
+  {{ govukTable({
+    caption: "Dates and amounts",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Date"
+      },
+      {
+        text: "Amount"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "First 6 weeks"
+        },
+        {
+          text: "£109.80 per week"
+        }
+      ],
+      [
+        {
+          text: "Next 33 weeks"
+        },
+        {
+          text: "£109.80 per week"
+        }
+      ],
+      [
+        {
+          text: "Total estimated pay"
+        },
+        {
+          text: "£4,282.20"
+        }
+      ]
+    ]
+  }) }}
+
+  <h2>Tables with numbers</h2>
+
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+  {{ govukTable({
+    caption: "Months and rates",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Month you apply"
+      },
+      {
+        text: "Rate for bicycles",
+        format: "numeric"
+      },
+      {
+        text: "Rate for vehicles",
+        format: "numeric"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "January"
+        },
+        {
+          text: "£85",
+          format: "numeric"
+        },
+        {
+          text: "£95",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "February"
+        },
+        {
+          text: "£75",
+          format: "numeric"
+        },
+        {
+          text: "£55",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "March"
+        },
+        {
+          text: "£165",
+          format: "numeric"
+        },
+        {
+          text: "£125",
+          format: "numeric"
+        }
+      ]
+    ]
+  }) }}
+
+{% endblock %}

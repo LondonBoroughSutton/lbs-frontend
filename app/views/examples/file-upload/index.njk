@@ -1,0 +1,30 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Default</h2>
+
+  {{ govukFileUpload({
+    id: "file-upload-1",
+    name: "file-upload-1",
+    label: {
+      text: "Upload a file"
+    }
+  }) }}
+
+{% endblock %}
