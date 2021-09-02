@@ -46,8 +46,10 @@
     {% include "partials/legacyJavaScript.njk" %}
   {% endif %}
 
+  <script src="/public/govuk-frontend.js"></script>
   <script src="/public/all.js"></script>
   <script>
+    window.GOVUKFrontend.initAll()
     window.LBSFrontend.initAll()
   </script>
 {% endblock %}

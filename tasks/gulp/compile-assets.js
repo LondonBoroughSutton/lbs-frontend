@@ -213,3 +213,25 @@ gulp.task('js:compile', () => {
     .pipe(eol())
     .pipe(gulp.dest(destinationPath))
 })
+
+// Compile js task for preview ----------
+// --------------------------------------
+gulp.task('js:copy-govukfrontend', () => {
+  console.log('Running')
+  if (!isDist) {
+    console.log(destinationPath())
+    // console.log(configPaths.node_modules + 'govuk-frontend/govuk/all.js')
+    return gulp.src([
+      configPaths.node_modules + 'govuk-frontend/govuk/all.js'
+    ])
+      .pipe(
+        rename({
+          basename: 'govuk-frontend',
+          extname: '.js'
+        })
+      )
+      // .pipe(eol())
+      .pipe(gulp.dest(destinationPath()))
+  }
+})
+
