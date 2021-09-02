@@ -2,11 +2,11 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const nunjucks = require('nunjucks')
-// const util = require('util')
-// const fs = require('fs')
+const util = require('util')
+const fs = require('fs')
 const path = require('path')
 
-// const readdir = util.promisify(fs.readdir)
+const readdir = util.promisify(fs.readdir)
 
 const helperFunctions = require('../lib/helper-functions')
 const fileHelper = require('../lib/file-helper')
@@ -17,7 +17,7 @@ const appViews = [
   'node_modules/govuk-frontend/',
   configPaths.layouts,
   configPaths.views,
-  // configPaths.examples,
+  configPaths.examples,
   configPaths.fullPageExamples,
   configPaths.components,
   configPaths.src,
@@ -101,12 +101,12 @@ module.exports = (options) => {
   // Index page - render the component list template
   app.get('/', async function (req, res) {
     const components = fileHelper.allComponents
-    // const examples = await readdir(path.resolve(configPaths.examples))
+    const examples = await readdir(path.resolve(configPaths.examples))
     const fullPageExamples = fileHelper.fullPageExamples()
 
     res.render('index', {
       componentsDirectory: components,
-      // examplesDirectory: examples,
+      examplesDirectory: examples,
       fullPageExamples: fullPageExamples
     })
   })
