@@ -15,13 +15,14 @@ $govuk-page-width: 1100px; // Taken from current sutton.gov.uk site
 $govuk-link-colour: $lbs-green-1;
 $govuk-link-visited-colour: darken($lbs-green-1, 20%);
 
+$govuk-brand-colour: $lbs-blue;
+$govuk-success-colour: $lbs-green-1;
+
+$govuk-error-colour: $lbs-red;
+
 ////$govuk-input-border-colour: $lbs-blue;
 ////$govuk-border-width-form-element: $lbs-grey;
 ////$govuk-border-colour: $lbs-blue-2;
-//
-//$govuk-secondary-button-colour: $lbs-grey;
-//$govuk-secondary-button-text-colour: $lbs-black;
-//$govuk-secondary-button-hover-colour: darken($lbs-grey, 20);
 //
 //$govuk-warning-button-colour: $lbs-grey;
 //$govuk-warning-button-text-colour: $lbs-black;
