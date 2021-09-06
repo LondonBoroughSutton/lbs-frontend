@@ -1,0 +1,21 @@
+params:
+  - name: href
+    type: string
+    required: false
+    description: If set, entire card will be wrapped in a link
+
+examples:
+  - name: default
+    description: Standard application of a card.
+    data:
+
+  - name: clickable card
+    description: Clickable version of the card.
+    data:
+      - href: '#'
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'
