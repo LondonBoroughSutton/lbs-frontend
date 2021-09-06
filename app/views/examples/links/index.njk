@@ -1,0 +1,27 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <p><a href="#">I'm an internal link</a></p>
+
+  <p><a href="#" target="_blank" rel="external">I'm an external link</a></p>
+
+  <p><a href="#" class="lbs-link--action">I'm an 'action' link</a></p>
+
+
+
+{% endblock %}
