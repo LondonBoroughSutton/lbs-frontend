@@ -12,8 +12,8 @@ $govuk-global-styles: true; // Applies styles to entire site eg. p and ul
 $govuk-page-width: 1100px; // Taken from current sutton.gov.uk site
 //
 //$govuk-text-colour: $lbs-black;
-$govuk-link-colour: $lbs-green-1;
-$govuk-link-visited-colour: darken($lbs-green-1, 20%);
+$govuk-link-colour: $lbs-blue;
+$govuk-link-visited-colour: darken($govuk-link-colour, 20%);
 
 $govuk-brand-colour: $lbs-blue;
 $govuk-success-colour: $lbs-green-1;
