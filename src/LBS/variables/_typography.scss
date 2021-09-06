@@ -44,3 +44,16 @@ a {
     }
   }
 }
+
+.lbs-link--action {
+  &:before {
+    content: "";
+    display: inline-block;
+    width: $lbs-margin * 1.5;
+    height: $lbs-margin * 1.5;
+    margin-right: $lbs-margin / 4;
+    @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22"><defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.000000 0 0 0 0 0.552941 0 0 0 0 0.443137 0 0 0 1.000000 0"/></filter><path d="M18.416 13.006V13c0-.035-.017-.065-.02-.1a1.015 1.015 0 00-.062-.305c-.029-.073-.079-.132-.123-.197-.034-.048-.052-.103-.093-.146l-3.102-3.25a1.083 1.083 0 10-1.568 1.496l1.355 1.42H8.667a1.083 1.083 0 100 2.166h6.051l-1.4 1.4a1.082 1.082 0 101.531 1.532l3.25-3.25a1.077 1.077 0 00.317-.76M13 21.666c-4.779 0-8.667-3.887-8.667-8.666S8.221 4.333 13 4.333 21.667 8.221 21.667 13 17.779 21.667 13 21.667m0-19.5C7.027 2.167 2.167 7.027 2.167 13c0 5.974 4.86 10.833 10.833 10.833 5.974 0 10.833-4.86 10.833-10.833S18.973 2.167 13 2.167" id="b"/></defs><g transform="translate(-2 -2)" filter="url(#a)" fill="none" fill-rule="evenodd"><use fill="#0D1C2E" fill-rule="nonzero" xlink:href="#b"/></g></svg>');
+    background-size: contain;
+    vertical-align: bottom;
+  }
+}
