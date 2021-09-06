@@ -1,4 +1,19 @@
 .lbs-card {
-  padding: $lbs-margin / 2;
-  background-color: rgba($lbs-green-1, .1);
+  margin-bottom: $lbs-margin;
+  padding: $lbs-margin;
+  border-radius: $lbs-border-radius;
+  box-shadow: $lbs-shadow;
+
+  &--alt {
+    //border: 1px solid $lbs-white;
+    background-color: rgba($lbs-green-2, .1);
+    box-shadow: none;
+  }
+
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5 {
+    color: $lbs-green-1;
+  }
 }

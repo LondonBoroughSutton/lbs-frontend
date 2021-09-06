@@ -8,6 +8,8 @@ See the [main README quick start guide](https://github.com/alphagov/govuk-fronte
 
 Cards are containers used to organize high-level content. Using cards can make your web product more appealing and navigable.
 
+Use a card to give users a brief summary of content or a task, often with a link to more detail. You can display a card alongside other cards to group related content or tasks.
+
 Find out when to use the tabs component in your service in the [LBS Design System](https://design-system.service.gov.uk/components/tabs).
 
 ## Component options
