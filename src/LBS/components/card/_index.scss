@@ -15,8 +15,13 @@
     cursor: pointer;
 
     &:hover {
+      //transform: scale(1.02);
+      border-bottom-color: rgba($lbs-green-2, 1);
+      box-shadow: $lbs-shadow--l;
+
       a {
         @extend .govuk-link:hover;
+        color: $lbs-green-1;
       }
     }
   }
