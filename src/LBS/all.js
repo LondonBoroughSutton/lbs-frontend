@@ -1,4 +1,5 @@
 import { nodeListForEach } from './common'
+import Card from './components/card/card'
 import Header from './components/header/header'
 import Search from './components/search/search'
 
@@ -18,6 +19,7 @@ function initAll (options) {
 
 export {
   initAll,
+  Card,
   Header,
   Search
 }

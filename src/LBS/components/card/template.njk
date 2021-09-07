@@ -1,6 +1,14 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
-<div class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %}">
-  <h{{ headingLevel}} class="govuk-heading-m">{{ params.heading.title }}</h{{ headingLevel}}>
+<div class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}">
+  <h{{ headingLevel}} class="govuk-heading-m">
+    {% if params.heading.href %}
+    <a href="{{ params.heading.href }}">
+      {{ params.heading.title }}
+    </a>
+    {% else %}
+      {{ params.heading.title }}
+    {% endif %}
+  </h{{ headingLevel}}>
   {%- if params.cardBodyHtml %}
   {{ params.cardBodyHtml | safe }}
   {%- endif %}

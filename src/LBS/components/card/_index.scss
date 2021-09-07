@@ -1,7 +1,8 @@
 .lbs-card {
   margin-bottom: $lbs-margin;
   padding: $lbs-margin;
-  border-radius: $lbs-border-radius;
+  border-bottom: 4px solid rgba($lbs-green-2, .5);
+  //border-radius: $lbs-border-radius;
   box-shadow: $lbs-shadow;
 
   &--alt {
@@ -10,10 +11,40 @@
     box-shadow: none;
   }
 
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      a {
+        @extend .govuk-link:hover;
+      }
+    }
+  }
+
   & > h2,
   & > h3,
   & > h4,
   & > h5 {
     color: $lbs-green-1;
+
+    a {
+      display: flex;
+      color: $lbs-green-1;
+      align-items: center;
+      justify-content: space-between;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        width: $lbs-margin;
+        height: $lbs-margin * 1.25;
+        margin-left: $lbs-margin / 4;
+        @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 7 15"><defs><path d="M9.9995 19c-.226 0-.453-.076-.64-.232-.424-.353-.481-.984-.128-1.408l4.476-5.371-4.315-5.362c-.346-.43-.278-1.06.152-1.406.431-.346 1.06-.278 1.407.152l4.828 6c.298.371.294.901-.011 1.267l-5 6c-.198.237-.482.36-.769.36" id="a"/></defs><use fill="' + $lbs-green-1 + '" fill-rule="nonzero" xlink:href="#a" transform="translate(-9 -4.5)"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        vertical-align: middle;
+      }
+    }
   }
 }
