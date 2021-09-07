@@ -15,6 +15,9 @@ Card.prototype.init = function () {
   if (this.$module.classList.contains('lbs-card--clickable')) {
     this.handleClickable()
   }
+  if (this.$module.querySelector('.js__is-hidden')) {
+    this.showAllItems()
+  }
 }
 
 Card.prototype.handleClickable = function () {
@@ -23,6 +26,21 @@ Card.prototype.handleClickable = function () {
         this.$module.querySelector('a').click();
       });
     }
+}
+
+Card.prototype.showAllItems = function () {
+  const module = this.$module
+  const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
+  // const showMoreHtml = '<a href="">Show more items (' + itemCount + ')</a>'
+  const showMoreHtml = document.createElement("a")
+  showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
+  showMoreHtml.addEventListener('click', function(e) {
+    module.querySelector('ul').classList.add('show-hidden')
+    e.preventDefault()
+  })
+  console.log(showMoreHtml)
+  // this.$module.insertAdjacentHTML('beforeend', showMoreHtml);
+  this.$module.append(showMoreHtml);
 }
 
 export default Card

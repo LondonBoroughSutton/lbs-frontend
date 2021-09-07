@@ -18,37 +18,37 @@
   {%- if params.linkItems %}
     <ul>
       {% for item in params.linkItems %}
-{#        {% if loop.index <= linkLimit %}#}
+        {% if loop.index <= linkLimit or params.showMore %}
           <li {% if loop.index > linkLimit %}class="js__is-hidden"{% endif %}><a href="{{ item.href }}">{{ item.title }}</a></li>
-{#        {% endif %}#}
+        {% endif %}
       {% endfor %}
     </ul>
-    {% if params.showMore %}
-      {% if params.linkItems.length > linkLimit %}
+{#    {% if params.showMore %}#}
+{#      {% if params.linkItems.length > linkLimit %}#}
 
-        {% set detailSummary %}
-          Show more
-        {% endset %}
+{#        {% set detailSummary %}#}
+{#          Show more#}
+{#        {% endset %}#}
 
-        {% set detailHtml %}
-          <ul>
-            {% for level3 in level2.level3items %}
-              {% if loop.index > 4 %}
-                <li>
-                  <a
-                    href="/{{ versionDirectory }}/{{ service.slug }}/{{ level2.slug }}/{{ level3.slug }}/">{{ level3.serviceTitle }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        {% endset %}
+{#        {% set detailHtml %}#}
+{#          <ul>#}
+{#            {% for level3 in level2.level3items %}#}
+{#              {% if loop.index > 4 %}#}
+{#                <li>#}
+{#                  <a#}
+{#                    href="/{{ versionDirectory }}/{{ service.slug }}/{{ level2.slug }}/{{ level3.slug }}/">{{ level3.serviceTitle }}</a>#}
+{#                </li>#}
+{#              {% endif %}#}
+{#            {% endfor %}#}
+{#          </ul>#}
+{#        {% endset %}#}
 
-        {{ govukDetails({
-          summaryText: detailSummary,
-          html: detailHtml
-        }) }}
+{#        {{ govukDetails({#}
+{#          summaryText: detailSummary,#}
+{#          html: detailHtml#}
+{#        }) }}#}
 
-      {% endif %}
-    {% endif %}
+{#      {% endif %}#}
+{#    {% endif %}#}
   {%- endif %}
 </div>

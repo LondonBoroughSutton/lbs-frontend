@@ -80,4 +80,8 @@
     //@extend .govuk-visually-hidden;
     display: none; // Hide completely from screen readers
   }
+
+  .show-hidden & {
+    display: block;
+  }
 }
