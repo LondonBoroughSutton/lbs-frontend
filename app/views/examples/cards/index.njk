@@ -75,22 +75,194 @@
     <div class="govuk-grid-column-one-half-from-desktop">
       {{ lbsCard({
         heading: {
-          title: 'Example 1',
-          href: '#'
+          title: 'Example 1'
         },
-        cardBodyHtml: cardCopy,
-        clickable: true
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ]
       }) }}
     </div>
 
     <div class="govuk-grid-column-one-half-from-desktop">
       {{ lbsCard({
         heading: {
-          title: 'Example 2',
-          href: '#'
+          title: 'Example 1'
         },
-        cardBodyHtml: cardCopy,
-        clickable: true
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ]
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Card group with navigation lists limited to 5 items</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        linkLimit: 5
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        linkLimit: 5
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Card group with navigation lists and `show more items` feature</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        showMore: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        showMore: true
       }) }}
     </div>
 

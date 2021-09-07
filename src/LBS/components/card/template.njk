@@ -1,22 +1,54 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
-<div class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}">
-  <h{{ headingLevel}} class="govuk-heading-m">
+{% set linkLimit = params.linkLimit if params.linkLimit else 3 %}
+{% from 'govuk/components/details/macro.njk' import govukDetails %}
+<div
+  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}">
+  <h{{ headingLevel }} class="govuk-heading-m">
     {% if params.heading.href %}
-    <a href="{{ params.heading.href }}">
-      {{ params.heading.title }}
-    </a>
+      <a href="{{ params.heading.href }}">
+        {{ params.heading.title }}
+      </a>
     {% else %}
       {{ params.heading.title }}
     {% endif %}
-  </h{{ headingLevel}}>
+  </h{{ headingLevel }}>
   {%- if params.cardBodyHtml %}
-  {{ params.cardBodyHtml | safe }}
+    {{ params.cardBodyHtml | safe }}
   {%- endif %}
   {%- if params.linkItems %}
     <ul>
-   {% for item in params.linkItems %}
-     <li><a href="{{ item.href }}">{{ item.title }}</a></li>
-    {% endfor %}
+      {% for item in params.linkItems %}
+{#        {% if loop.index <= linkLimit %}#}
+          <li {% if loop.index > linkLimit %}class="js__is-hidden"{% endif %}><a href="{{ item.href }}">{{ item.title }}</a></li>
+{#        {% endif %}#}
+      {% endfor %}
     </ul>
+    {% if params.showMore %}
+      {% if params.linkItems.length > linkLimit %}
+
+        {% set detailSummary %}
+          Show more
+        {% endset %}
+
+        {% set detailHtml %}
+          <ul>
+            {% for level3 in level2.level3items %}
+              {% if loop.index > 4 %}
+                <li>
+                  <a
+                    href="/{{ versionDirectory }}/{{ service.slug }}/{{ level2.slug }}/{{ level3.slug }}/">{{ level3.serviceTitle }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endset %}
+
+        {{ govukDetails({
+          summaryText: detailSummary,
+          html: detailHtml
+        }) }}
+
+      {% endif %}
+    {% endif %}
   {%- endif %}
 </div>
