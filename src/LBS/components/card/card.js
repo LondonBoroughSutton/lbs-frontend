@@ -1,15 +1,28 @@
 function Card ($module) {
   this.$module = $module
-  // Loops through dom and finds all elements with nhsuk-card--clickable class
-  document.querySelectorAll('.lbs-card--clickable').forEach((card) => {
-    // Check if card has a link within it
-    if (card.querySelector('a') !== null) {
-      // Clicks the link within the heading to navigate to desired page
-      card.addEventListener('click', () => {
-        card.querySelector('a').click();
+}
+
+/**
+ * Initialise header
+ *
+ * Check for the presence of cards - if any are
+ * missing then there's nothing to do so return early.
+ */
+Card.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+  if (this.$module.classList.contains('lbs-card--clickable')) {
+    this.handleClickable()
+  }
+}
+
+Card.prototype.handleClickable = function () {
+    if (this.$module.querySelector('a') !== null) {
+      this.$module.addEventListener('click', () => {
+        this.$module.querySelector('a').click();
       });
     }
-  });
 }
 
 export default Card

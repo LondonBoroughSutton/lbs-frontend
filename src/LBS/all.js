@@ -15,6 +15,11 @@ function initAll (options) {
   nodeListForEach($headers, function ($header) {
     new Header($header).init()
   })
+
+  var $cards= scope.querySelectorAll('.lbs-card')
+  nodeListForEach($cards, function ($card) {
+    new Card($card).init()
+  })
 }
 
 export {
