@@ -17,11 +17,11 @@ describe('Individual components', () => {
         // Modified from the original - we do not have an elegant way of importing variables into our component file so this test pulls the variables in when testing the render
         return renderSass({
           data: `
-            @import '` + path.join(configPaths.src, 'variables', '_colours.scss') + `';
-            @import '` + configPaths.src + `variables/_variables.scss';
-            @import '` + configPaths.src + `variables/_mixins.scss';
-            @import '` + configPaths.src + `overrides/_lbs.scss';
-            @import '` + configPaths.src + `variables/_typography.scss';
+            @import '` + path.join(configPaths.src, 'settings', '_colours.scss') + `';
+            @import '` + configPaths.src + `settings/_variables.scss';
+            @import '` + configPaths.src + `tools/_mixins.scss';
+            @import '` + configPaths.src + `settings/_govuk-overrides.scss';
+            @import '` + configPaths.src + `settings/_typography.scss';
             @import '` + configPaths.node_modules + `govuk-frontend/govuk/all.scss';
             @import '` + filePath + `'
           `
