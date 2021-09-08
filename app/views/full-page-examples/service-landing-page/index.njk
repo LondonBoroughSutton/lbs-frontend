@@ -29,10 +29,34 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       <div class="lbs-row__container">
 {#        <div class="govuk-grid-row">#}
           <h2>Popular</h2>
-          <ol>
-            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 1</a></li>
-            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 2</a></li>
-            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 3</a></li>
+          <ol class="lbs-popular-items__list">
+            <li class="govuk-grid-column-one-third-from-desktop">
+              {{ lbsCard({
+                heading: {
+                  title: 'When are my bins collected',
+                  href: '#'
+                },
+                popularItem: true
+              }) }}
+            </li>
+            <li class="govuk-grid-column-one-third-from-desktop">
+              {{ lbsCard({
+                heading: {
+                  title: 'Report a missed bin collection',
+                  href: '#'
+                },
+                popularItem: true
+              }) }}
+            </li>
+            <li class="govuk-grid-column-one-third-from-desktop">
+              {{ lbsCard({
+                heading: {
+                  title: 'Get rid of bulky items',
+                  href: '#'
+                },
+                popularItem: true
+              }) }}
+            </li>
           </ol>
 {#        </div>#}
       </div>
@@ -87,11 +111,23 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
             href: '#'
           },
           {
-            title: 'Link 2',
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          },
+          {
+            title: 'Link 6',
             href: '#'
           }
-
-        ]
+        ],
+        showMore: true
       }) }}
     </div>
   </div>
