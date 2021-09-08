@@ -27,7 +27,6 @@ describe('Card', () => {
       const $ = render('card', examples.default)
       expect(htmlWithClassName($, '.lbs-card')).toMatchSnapshot()
     })
-
   })
 
   describe('link in header example', () => {
