@@ -1,0 +1,57 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  {% set cardCopy = 'Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging regular na modelo simula pa noong 1500s' %}
+
+  <h2>Popular items</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        popularItem: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        popularItem: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 3',
+          href: '#'
+        },
+        popularItem: true
+      }) }}
+    </div>
+
+  </div>
+
+{% endblock %}

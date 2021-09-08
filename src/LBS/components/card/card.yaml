@@ -3,6 +3,10 @@ params:
     type: boolean
     required: false
     description: If set, entire card will be clickable (requires JavaScript)
+  - name: popularItem
+    type: boolean
+    required: false
+    description: If set, card will be styled to appear like a popular item
   - name: cardBodyHtml
     type: string
     required: false
@@ -65,6 +69,14 @@ examples:
         title: Example heading
         href: '#'
       cardBodyHtml: 'This is a description'
+
+  - name: popular item
+    description: Visual treatment for popular item
+    data:
+      heading:
+        title: Popular item
+        href: '#'
+      popularItem: true
 
   - name: card with links
     description: Alternative version of the card.
