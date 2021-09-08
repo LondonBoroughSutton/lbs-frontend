@@ -1,9 +1,5 @@
 @import url("https://use.typekit.net/pjh3eai.css"); // Ben's personal licensed copy of Proxima Nova
 $govuk-show-breakpoints: true;
 $govuk-new-link-styles: true;
-@import '../../../src/LBS/variables/colours';
-@import '../../../src/LBS/variables/variables';
-@import "../../../src/LBS/overrides/lbs";
-@import "node_modules/govuk-frontend/govuk/all";
 @import "../../../src/LBS/all";
 @import "partials/app";
