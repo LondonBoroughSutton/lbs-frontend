@@ -231,4 +231,3 @@ gulp.task('js:copy-govukfrontend', () => {
       .pipe(gulp.dest(destinationPath()))
   }
 })
-

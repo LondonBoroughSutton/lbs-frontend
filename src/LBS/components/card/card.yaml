@@ -76,6 +76,8 @@ examples:
           href: '#'
         - title: Item 2
           href: '#'
+        - title: Item 3
+          href: '#'
 
   - name: card with increased limit of links
     description: Default value of the items in a link list can be overidden to show more or less

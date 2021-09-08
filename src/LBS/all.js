@@ -16,7 +16,7 @@ function initAll (options) {
     new Header($header).init()
   })
 
-  var $cards= scope.querySelectorAll('.lbs-card')
+  var $cards = scope.querySelectorAll('.lbs-card')
   nodeListForEach($cards, function ($card) {
     new Card($card).init()
   })
