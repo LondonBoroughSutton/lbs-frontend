@@ -77,6 +77,46 @@ examples:
         - title: Item 2
           href: '#'
 
+  - name: card with increased limit of links
+    description: Default value of the items in a link list can be overidden to show more or less
+    data:
+      heading:
+        title: Example heading
+      linkLimit: 5
+      linkItems:
+        - title: Item 1
+          href: '#'
+        - title: Item 2
+          href: '#'
+        - title: Item 3
+          href: '#'
+        - title: Item 4
+          href: '#'
+        - title: Item 5
+          href: '#'
+        - title: Item 6
+          href: '#'
+
+  - name: card with increased limit of links and `show more` feature
+    description: A `show more` feature can be added to allow more links to be exposed at the user's instruction
+    data:
+      heading:
+        title: Example heading
+      showMore: true
+      linkItems:
+        - title: Item 1
+          href: '#'
+        - title: Item 2
+          href: '#'
+        - title: Item 3
+          href: '#'
+        - title: Item 4
+          href: '#'
+        - title: Item 5
+          href: '#'
+        - title: Item 6
+          href: '#'
+
   - name: clickable card
     description: Clickable version of the card.
     data:
