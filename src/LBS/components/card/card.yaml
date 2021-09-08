@@ -1,0 +1,144 @@
+params:
+  - name: clickable
+    type: boolean
+    required: false
+    description: If set, entire card will be clickable (requires JavaScript)
+  - name: cardBodyHtml
+    type: string
+    required: false
+    description: If set, card body will display this value
+  - name: bgColour
+    type: boolean
+    required: false
+    description: If set, will turn the background of the tile 'green'
+  - name: heading
+    type: array
+    required: true
+    description: If set, entire card will be wrapped in a link
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the card heading
+      - name: href
+        type: string
+        required: false
+        description: If set, the heading will contain a link
+      - name: headingLevel
+        type: int
+        required: false
+        description: Sets the heading level - if omitted will default to H2
+  - name: linkItems
+    type: array
+    required: false
+    description: If set, a list of navigation items will show
+    params:
+     - name: title
+       type: string
+       required: true
+       description: The title of the card heading
+     - name: href
+       type: string
+       required: true
+       description: Sets the link value
+  - name: listLimit
+    type: int
+    required: false
+    description: Used to set the number of links shown provided by `linkItems`. Default value is 4
+  - name: showMore
+    type: boolean
+    required: false
+    description: If set to true, an option to view more navigation options (linkItems) will be displayed
+
+examples:
+  - name: default
+    description: Standard application of a card.
+    data:
+      heading:
+        title: Example heading
+      cardBodyHtml: 'This is a description'
+
+  - name: card with link in header
+    description: Standard application of a card with a link in the header.
+    data:
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: 'This is a description'
+
+  - name: card with links
+    description: Alternative version of the card.
+    data:
+      heading:
+        title: Example heading
+      linkItems:
+        - title: Item 1
+          href: '#'
+        - title: Item 2
+          href: '#'
+        - title: Item 3
+          href: '#'
+
+  - name: card with increased limit of links
+    description: Default value of the items in a link list can be overidden to show more or less
+    data:
+      heading:
+        title: Example heading
+      linkLimit: 5
+      linkItems:
+        - title: Item 1
+          href: '#'
+        - title: Item 2
+          href: '#'
+        - title: Item 3
+          href: '#'
+        - title: Item 4
+          href: '#'
+        - title: Item 5
+          href: '#'
+        - title: Item 6
+          href: '#'
+
+  - name: card with increased limit of links and `show more` feature
+    description: A `show more` feature can be added to allow more links to be exposed at the user's instruction
+    data:
+      heading:
+        title: Example heading
+      showMore: true
+      linkItems:
+        - title: Item 1
+          href: '#'
+        - title: Item 2
+          href: '#'
+        - title: Item 3
+          href: '#'
+        - title: Item 4
+          href: '#'
+        - title: Item 5
+          href: '#'
+        - title: Item 6
+          href: '#'
+
+  - name: clickable card
+    description: Clickable version of the card.
+    data:
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: 'This is a description'
+      clickable: true
+
+  - name: card with background colour
+    description: Alternative version of the card.
+    data:
+      bgColour: true
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: 'This is a description'
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'

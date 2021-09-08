@@ -1,0 +1,100 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Waste and recycling',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Waste and recycling',
+        href: '#'
+      }
+    ]
+  }) }}
+  <div class="lbs-row">
+      <div class="govuk-width-container">
+{#        <div class="govuk-grid-row">#}
+          <h2>Popular</h2>
+          <ol>
+            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 1</a></li>
+            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 2</a></li>
+            <li><a href="#" class="lbs-link--action lbs-card lbs-card--popular-item govuk-!-width-one-third">Popular item 3</a></li>
+          </ol>
+{#        </div>#}
+      </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Group 1'
+        },
+        bgColour: false,
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        showMore: true
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Group 2'
+        },
+        bgColour: true,
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          }
+
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

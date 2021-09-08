@@ -1,0 +1,300 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  {% set cardCopy = 'Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging regular na modelo simula pa noong 1500s' %}
+
+  <h2>Basic card group</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        cardBodyHtml: cardCopy
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2'
+        },
+        cardBodyHtml: cardCopy
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Clickable card group</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Card group with navigation lists</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ]
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Card group with navigation lists limited to 5 items</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        linkLimit: 5
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        linkLimit: 5
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Card group with navigation lists and `show more items` feature</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        showMore: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2'
+        },
+        linkItems: [
+          {
+            title: 'Link 1',
+            href: '#'
+          },
+          {
+            title: 'Link 2',
+            href: '#'
+          },
+          {
+            title: 'Link 3',
+            href: '#'
+          },
+          {
+            title: 'Link 4',
+            href: '#'
+          },
+          {
+            title: 'Link 5',
+            href: '#'
+          }
+        ],
+        showMore: true
+      }) }}
+    </div>
+
+  </div>
+
+  <h2>Alternative background card group</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        bgColour: true,
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        bgColour: true,
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+  </div>
+
+{% endblock %}

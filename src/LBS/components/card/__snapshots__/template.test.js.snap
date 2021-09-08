@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card default example matches snapshot 1`] = `
+<div class="lbs-card   ">
+  This is a description
+</div>
+`;
+
+exports[`Card navigation list examples matches snapshot 1`] = `[Function]`;
+
+exports[`Card navigation list examples matches snapshot 2`] = `[Function]`;

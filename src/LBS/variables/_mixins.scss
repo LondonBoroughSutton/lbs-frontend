@@ -73,3 +73,15 @@
   background: linear-gradient(45deg, $lbs-green-1, $lbs-green-2);
   //background: $lbs-green-1;
 }
+
+// Utility
+.js__is-hidden {
+  .js-enabled & {
+    //@extend .govuk-visually-hidden;
+    display: none; // Hide completely from screen readers
+  }
+
+  .show-hidden & {
+    display: list-item;
+  }
+}
