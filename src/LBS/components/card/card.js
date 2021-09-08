@@ -29,17 +29,18 @@ Card.prototype.handleClickable = function () {
 }
 
 Card.prototype.showAllItems = function () {
+  // todo - consider moving focus to previously hidden items on toggle
   const module = this.$module
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
-  // const showMoreHtml = '<a href="">Show more items (' + itemCount + ')</a>'
   const showMoreHtml = document.createElement("a")
   showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
+  showMoreHtml.setAttribute('class', 'show-more-link')
+  showMoreHtml.setAttribute('href', '#')
   showMoreHtml.addEventListener('click', function(e) {
     module.querySelector('ul').classList.add('show-hidden')
+    module.removeChild(this)
     e.preventDefault()
   })
-  console.log(showMoreHtml)
-  // this.$module.insertAdjacentHTML('beforeend', showMoreHtml);
   this.$module.append(showMoreHtml);
 }
 
