@@ -1,0 +1,18 @@
+.lbs-row {
+  .lbs-row__container {
+    @extend .govuk-width-container;
+    padding: $lbs-margin 0;
+  }
+
+  &--alt {
+    background: rgba($lbs-green-2, .1);
+  }
+
+  &--alt2 {
+    background: rgba($lbs-grey, .2);
+  }
+
+  &--alt3 {
+    background: rgba($lbs-green-1, 1);
+  }
+}
