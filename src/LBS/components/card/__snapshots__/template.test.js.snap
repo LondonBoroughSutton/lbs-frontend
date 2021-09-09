@@ -9,3 +9,5 @@ exports[`Card default example matches snapshot 1`] = `
 exports[`Card navigation list examples matches snapshot 1`] = `[Function]`;
 
 exports[`Card navigation list examples matches snapshot 2`] = `[Function]`;
+
+exports[`Card popular items matches snapshot 1`] = `[Function]`;
