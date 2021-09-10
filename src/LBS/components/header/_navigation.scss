@@ -30,7 +30,7 @@
     }
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-end;
       height: 100%;
       align-items: center;
     }

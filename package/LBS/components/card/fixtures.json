@@ -1,0 +1,172 @@
+{
+    "component": "card",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "heading": {
+                    "title": "Example heading"
+                },
+                "cardBodyHtml": "This is a description"
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      This is a description\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "card with link in header",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "cardBodyHtml": "This is a description"
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "popular item",
+            "options": {
+                "heading": {
+                    "title": "Popular item",
+                    "href": "#"
+                },
+                "popularItem": true
+            },
+            "html": "<a href=\"#\"\n   class=\"lbs-card lbs-link--action   lbs-card--popular-item lbs-card--clickable\">\n  Popular item\n</a>",
+            "hidden": false
+        },
+        {
+            "name": "card with links",
+            "options": {
+                "heading": {
+                    "title": "Example heading"
+                },
+                "linkItems": [
+                    {
+                        "title": "Item 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 2",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 3",
+                        "href": "#"
+                    }
+                ]
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      <ul>\n        \n          \n            <li ><a\n                href=\"#\">Item 1</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 2</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 3</a></li>\n          \n        \n      </ul>\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "card with increased limit of links",
+            "options": {
+                "heading": {
+                    "title": "Example heading"
+                },
+                "linkLimit": 5,
+                "linkItems": [
+                    {
+                        "title": "Item 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 2",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 3",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 4",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 5",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 6",
+                        "href": "#"
+                    }
+                ]
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      <ul>\n        \n          \n            <li ><a\n                href=\"#\">Item 1</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 2</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 3</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 4</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 5</a></li>\n          \n        \n          \n        \n      </ul>\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "card with increased limit of links and `show more` feature",
+            "options": {
+                "heading": {
+                    "title": "Example heading"
+                },
+                "showMore": true,
+                "linkItems": [
+                    {
+                        "title": "Item 1",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 2",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 3",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 4",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 5",
+                        "href": "#"
+                    },
+                    {
+                        "title": "Item 6",
+                        "href": "#"
+                    }
+                ]
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      <ul>\n        \n          \n            <li ><a\n                href=\"#\">Item 1</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 2</a></li>\n          \n        \n          \n            <li ><a\n                href=\"#\">Item 3</a></li>\n          \n        \n          \n            <li class=\"js__is-hidden\"><a\n                href=\"#\">Item 4</a></li>\n          \n        \n          \n            <li class=\"js__is-hidden\"><a\n                href=\"#\">Item 5</a></li>\n          \n        \n          \n            <li class=\"js__is-hidden\"><a\n                href=\"#\">Item 6</a></li>\n          \n        \n      </ul>\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "clickable card",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "cardBodyHtml": "This is a description",
+                "clickable": true
+            },
+            "html": "<div\n    class=\"lbs-card  lbs-card--clickable \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "card with background colour",
+            "options": {
+                "bgColour": true,
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "cardBodyHtml": "This is a description"
+            },
+            "html": "<div\n    class=\"lbs-card lbs-card--alt  \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "href": "/"
+            },
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        \n      \n    </h2>\n  </div>",
+            "hidden": true
+        }
+    ]
+}

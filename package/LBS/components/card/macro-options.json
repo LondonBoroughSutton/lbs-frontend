@@ -1,0 +1,84 @@
+[
+    {
+        "name": "clickable",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, entire card will be clickable (requires JavaScript)"
+    },
+    {
+        "name": "popularItem",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, card will be styled to appear like a popular item"
+    },
+    {
+        "name": "cardBodyHtml",
+        "type": "string",
+        "required": false,
+        "description": "If set, card body will display this value"
+    },
+    {
+        "name": "bgColour",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, will turn the background of the tile 'green'"
+    },
+    {
+        "name": "heading",
+        "type": "array",
+        "required": true,
+        "description": "If set, entire card will be wrapped in a link",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title of the card heading"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "If set, the heading will contain a link"
+            },
+            {
+                "name": "headingLevel",
+                "type": "int",
+                "required": false,
+                "description": "Sets the heading level - if omitted will default to H2"
+            }
+        ]
+    },
+    {
+        "name": "linkItems",
+        "type": "array",
+        "required": false,
+        "description": "If set, a list of navigation items will show",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title of the card heading"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "Sets the link value"
+            }
+        ]
+    },
+    {
+        "name": "listLimit",
+        "type": "int",
+        "required": false,
+        "description": "Used to set the number of links shown provided by `linkItems`. Default value is 4"
+    },
+    {
+        "name": "showMore",
+        "type": "boolean",
+        "required": false,
+        "description": "If set to true, an option to view more navigation options (linkItems) will be displayed"
+    }
+]

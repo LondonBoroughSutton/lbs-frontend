@@ -1,0 +1,9 @@
+.js__is-hidden {
+  .js-enabled & {
+    display: none; // Hide completely from screen readers
+  }
+
+  .show-hidden & {
+    display: list-item;
+  }
+}
