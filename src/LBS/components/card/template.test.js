@@ -83,14 +83,14 @@ describe('Card', () => {
     it('renders as an anchor element', () => {
       const $ = render('card', examples['popular item'])
       const $component = $('.lbs-card')
-      expect($component[0]['name']).toBe('a')
+      expect($component[0].name).toBe('a')
     })
 
     it('contains expected classes', () => {
       const $ = render('card', examples['popular item'])
       const $component = $('.lbs-card')
-      expect($component[0]['attribs']['class']).toContain('lbs-card--popular-item')
-      expect($component[0]['attribs']['class']).toContain('lbs-card--clickable')
+      expect($component[0].attribs.class).toContain('lbs-card--popular-item')
+      expect($component[0].attribs.class).toContain('lbs-card--clickable')
     })
 
     it('matches snapshot', () => {
@@ -99,7 +99,7 @@ describe('Card', () => {
     })
   })
 
-    describe('navigation list examples', () => {
+  describe('navigation list examples', () => {
     it('passes accessibility tests', async () => {
       const $ = render('card', examples['card with increased limit of links and `show more` feature'])
 

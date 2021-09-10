@@ -50,7 +50,7 @@ Card.prototype.setHeight = function () {
   let tallestCard = 0
   document.querySelectorAll('.lbs-card').forEach(card => {
     if (card.clientHeight > tallestCard) {
-      const cs = getComputedStyle(card)
+      const cs = window.getComputedStyle(card)
       tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
     }
   })
