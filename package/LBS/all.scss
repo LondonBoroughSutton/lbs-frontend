@@ -1,7 +1,6 @@
-@import './variables/colours';
-@import './variables/variables';
-@import './variables/mixins';
-@import './overrides/lbs';
-@import './variables/typography';
+@import './tools/all';
+@import './settings/all';
+@import './utilities/all';
 @import "node_modules/govuk-frontend/govuk/all";
+@import './elements/all';
 @import "./components/all";
