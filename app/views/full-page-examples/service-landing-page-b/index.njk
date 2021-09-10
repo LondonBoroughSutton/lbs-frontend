@@ -25,273 +25,105 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       }
     ]
   }) }}
-  <div class="lbs-row lbs-row--alt">
-      <div class="lbs-row__container">
-{#        <div class="govuk-grid-row">#}
-          <h2>Popular</h2>
-          <ol class="lbs-popular-items__list">
-            <li class="govuk-grid-column-one-third-from-desktop">
-              {{ lbsCard({
-                heading: {
-                  title: 'Pay Parking Notice Charge',
-                  href: '#'
-                },
-                popularItem: true
-              }) }}
-            </li>
-            <li class="govuk-grid-column-one-third-from-desktop">
-              {{ lbsCard({
-                heading: {
-                  title: 'Apply for parking permit',
-                  href: '#'
-                },
-                popularItem: true
-              }) }}
-            </li>
-            <li class="govuk-grid-column-one-third-from-desktop">
-              {{ lbsCard({
-                heading: {
-                  title: 'Report fly tipping',
-                  href: '#'
-                },
-                popularItem: true
-              }) }}
-            </li>
-          </ol>
-{#        </div>#}
-      </div>
-  </div>
+  {# <div class="lbs-row lbs-row--alt"> #}
+  {# <div class="lbs-row__container"> #}
+  {# <div class="govuk-grid-row"> #}
+  {# <h2>Popular</h2> #}
+  {# <ol class="lbs-popular-items__list"> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Pay Parking Notice Charge', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Apply for parking permit', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Report fly tipping', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# </ol> #}
+  {# </div> #}
+  {# </div> #}
+  {# </div> #}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half-from-desktop">
       {{ lbsCard({
         heading: {
-          title: 'Parking'
+          title: 'Parking',
+          href: '#'
         },
+        cardBodyHtml: 'Find out about permit parking areas and how to apply for and renew parking permits and visitor vouchers',
         bgColour: false,
-        linkItems: [
-          {
-            title: 'Penalty charges notices (parking tickets)',
-            href: '#'
-          },
-          {
-            title: 'About controlled parking zones CPZ',
-            href: '#'
-          },
-          {
-            title: 'Car parks',
-            href: '#'
-          },
-          {
-            title: 'Parking accounts and data',
-            href: '#'
-          },
-          {
-            title: 'Street parking and enforcement',
-            href: '#'
-          },
-          {
-            title: 'Parking Permits',
-            href: '#'
-          },
-          {
-            title: 'Parking dispensations and suspensions',
-            href: '#'
-          },
-          {
-            title: 'Blue badge scheme',
-            href: '#'
-          },
-          {
-            title: 'Parking consultation',
-            href: '#'
-          },
-          {
-            title: 'Policies and strategies for parking transport and streets',
-            href: '#'
-          },
-          {
-            title: 'Traffic bulletin',
-            href: '#'
-          }
-        ],
-        showMore: true
+        clickable: true
       }) }}
     </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Streets, roads and highways',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about road works, highway mainentance and more',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
     <div class="govuk-grid-column-one-half-from-desktop">
       {{ lbsCard({
         heading: {
           title: 'Street cleaning',
           href: '#'
         },
-        linkItems: [
-          {
-            title: 'Fly tipping',
-            href: '#'
-          },
-          {
-            title: 'Graffiti or fly posting',
-            href: '#'
-          },
-          {
-            title: 'Householder and business responsibility',
-            href: '#'
-          },
-          {
-            title: 'Gully Cleaning',
-            href: '#'
-          },
-          {
-            title: 'Street cleaning service performance',
-            href: '#'
-          },
-          {
-            title: 'Clean Streets Sutton',
-            href: '#'
-          },
-          {
-            title: 'Gritting',
-            href: '#'
-          },
-          {
-            title: 'Street, park and open space cleaning',
-            href: '#'
-          },
-          {
-            title: 'Report street cleaning problems',
-            href: '#'
-          },
-          {
-            title: 'Street cleaning',
-            href: '#'
-          },
-          {
-            title: 'Litter bins',
-            href: '#'
-          },
-          {
-            title: 'Leaf clearing',
-            href: '#'
-          },
-          {
-            title: 'Dog fouling',
-            href: '#'
-          },
-          {
-            title: 'Community Clean ups',
-            href: '#'
-          },
-          {
-            title: 'Roadkill (dead animals)',
-            href: '#'
-          }
-        ],
-        showMore: true
+        cardBodyHtml: 'Find out about road works, highway mainentance and more',
+        bgColour: false,
+        clickable: true
       }) }}
     </div>
-  <div class="govuk-grid-column-one-half-from-desktop">
-    {{ lbsCard({
-      heading: {
-        title: 'Travel and transport'
-      },
-      bgColour: false,
-      linkItems: [
-        {
-          title: 'Penalty charges notices (parking tickets)',
-          href: '#'
-        },
-        {
-          title: 'About controlled parking zones CPZ',
-          href: '#'
-        },
-        {
-          title: 'Car parks',
-          href: '#'
-        },
-        {
-          title: 'Link 4',
-          href: '#'
-        },
-        {
-          title: 'Link 5',
-          href: '#'
-        }
-      ],
-      showMore: true
-    }) }}
-  </div>
-  <div class="govuk-grid-column-one-half-from-desktop">
-    {{ lbsCard({
-      heading: {
-        title: 'Streets, roads and highways'
-      },
-      linkItems: [
-        {
-          title: 'Link 1',
-          href: '#'
-        },
-        {
-          title: 'Link 2',
-          href: '#'
-        },
-        {
-          title: 'Link 3',
-          href: '#'
-        },
-        {
-          title: 'Link 4',
-          href: '#'
-        },
-        {
-          title: 'Link 5',
-          href: '#'
-        },
-        {
-          title: 'Link 6',
-          href: '#'
-        }
-      ],
-      showMore: true
-    }) }}
-  </div>
 
-  <div class="govuk-grid-column-one-half-from-desktop">
-    {{ lbsCard({
-      heading: {
-        title: 'Highways and street lighting'
-      },
-      linkItems: [
-        {
-          title: 'Link 1',
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Travel and transport',
           href: '#'
         },
-        {
-          title: 'Link 2',
-          href: '#'
-        },
-        {
-          title: 'Link 3',
-          href: '#'
-        },
-        {
-          title: 'Link 4',
-          href: '#'
-        },
-        {
-          title: 'Link 5',
-          href: '#'
-        },
-        {
-          title: 'Link 6',
-          href: '#'
-        }
-      ],
-      showMore: true
-    }) }}
-  </div>
+        cardBodyHtml: 'Find out about cycling initiatives and sustainable travel in the borough',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
 
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Highways and street lighting',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about cycling initiatives and sustainable travel in the borough',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
 
   </div>
 
