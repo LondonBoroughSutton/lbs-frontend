@@ -74,7 +74,7 @@ function generateFixtures (file) {
         configPaths.node_modules
       ]
 
-      nunjucks.configure(appViews);
+      nunjucks.configure(appViews)
 
       examplesJson.forEach(function (example) {
         const fixture = {
