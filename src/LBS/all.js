@@ -20,6 +20,7 @@ function initAll (options) {
   nodeListForEach($cards, function ($card) {
     new Card($card).init()
   })
+  new Card().setHeight()
 }
 
 export {

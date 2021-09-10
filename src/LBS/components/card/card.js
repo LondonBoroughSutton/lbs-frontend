@@ -18,6 +18,7 @@ Card.prototype.init = function () {
   if (this.$module.querySelector('.js__is-hidden')) {
     this.showAllItems()
   }
+  // this.setHeight()
 }
 
 Card.prototype.handleClickable = function () {
@@ -42,6 +43,20 @@ Card.prototype.showAllItems = function () {
     e.preventDefault()
   })
   this.$module.append(showMoreHtml)
+}
+
+Card.prototype.setHeight = function () {
+  // todo - consider adding parameter to ignore certain items (opt in)
+  let tallestCard = 0
+  document.querySelectorAll('.lbs-card').forEach(card => {
+    if (card.clientHeight > tallestCard) {
+      const cs = getComputedStyle(card)
+      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
+    }
+  })
+  document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {
+    x.style.minHeight = tallestCard + 'px'
+  })
 }
 
 export default Card
