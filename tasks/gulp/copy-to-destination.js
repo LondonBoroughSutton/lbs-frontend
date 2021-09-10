@@ -66,10 +66,21 @@ function generateFixtures (file) {
         fixtures: []
       }
 
+      const appViews = [
+        '',
+        configPaths.src,
+        'node_modules/govuk-frontend/',
+        configPaths.components,
+        configPaths.node_modules
+      ]
+
+      nunjucks.configure(appViews);
+
       examplesJson.forEach(function (example) {
         const fixture = {
           name: example.name,
           options: example.data,
+          // html: nunjucks.render(componentTemplatePath, { params: example.data }).trim(),
           html: nunjucks.render(componentTemplatePath, { params: example.data }).trim(),
           hidden: Boolean(example.hidden)
         }
