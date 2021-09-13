@@ -1,10 +1,12 @@
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 <nav class="lbs-page-group-list">
-  <h2 class="lbs-page-group-list__title">{{ params.heading | default('In this section') }}</h2>
+  <h2 class="lbs-page-group-list__title">{{ params.heading | default('In this section:') }}</h2>
   <ol>
     {% for item in params.linkItems %}
-      <li><a href="{{ item.href }}">{{ item.text }}</a></li>
+      <li {% if item.current %}class="lbs-page-group-list__item--active"{% endif %}>
+      {% if item.current !== true %}<a href="{{ item.href }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}
+      </li>
     {% endfor %}
   </ol>
 </nav>
