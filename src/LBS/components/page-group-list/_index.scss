@@ -1,0 +1,32 @@
+.lbs-page-group-list {
+  overflow: hidden;
+  border-radius: $lbs-border-radius;
+
+  &__title {
+    margin: 0;
+    padding: $lbs-margin;
+    //color: $lbs-white;
+    //background: $lbs-green-2;
+    color: $lbs-green-1;
+    background: rgba($lbs-green-2, .2);
+  }
+
+  ol {
+    padding: $lbs-margin;
+    background: rgba($lbs-green-2, .1);
+    list-style: none;
+  }
+
+  li {
+    a {
+      &:before {
+        content: "";
+        display: inline-block;
+        width: $lbs-margin;
+        height: $lbs-margin;
+        margin-right: $lbs-margin / 2;
+        background: $lbs-yellow;
+      }
+    }
+  }
+}
