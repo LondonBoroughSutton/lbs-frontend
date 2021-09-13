@@ -1,0 +1,30 @@
+{
+    "component": "page-group-list",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "linkItems": [
+                    {
+                        "text": "Item 1",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Item 2",
+                        "href": "#"
+                    }
+                ]
+            },
+            "html": "<nav class=\"lbs-page-group-list\">\n  <h2 class=\"lbs-page-group-list__title\">In this section:</h2>\n  <ol>\n    \n      <li >\n      <a href=\"#\">Item 1</a>\n      </li>\n    \n      <li >\n      <a href=\"#\">Item 2</a>\n      </li>\n    \n  </ol>\n</nav>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "href": "/"
+            },
+            "html": "<nav class=\"lbs-page-group-list\">\n  <h2 class=\"lbs-page-group-list__title\">In this section:</h2>\n  <ol>\n    \n  </ol>\n</nav>",
+            "hidden": true
+        }
+    ]
+}

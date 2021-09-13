@@ -1,0 +1,14 @@
+[
+    {
+        "name": "heading",
+        "type": "string",
+        "required": true,
+        "description": "If `title` is set, it will become h1 value"
+    },
+    {
+        "name": "linkItems",
+        "type": "array",
+        "required": false,
+        "description": "If array is passed, values will appear in the as a navigation list"
+    }
+]
