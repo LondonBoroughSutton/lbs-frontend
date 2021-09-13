@@ -1,0 +1,30 @@
+params:
+  - name: heading
+    type: string
+    required: true
+    description: If `title` is set, it will become h1 value
+  - name: linkItems
+    type: array
+    required: false
+    description: If array is passed, values will appear in the as a navigation list
+
+examples:
+  - name: default
+    description: Standard application of the page group list
+    data:
+      linkItems: [
+        {
+          text: "Item 1",
+          href: "#"
+        },
+        {
+          text: "Item 2",
+          href: "#"
+        }
+      ]
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'

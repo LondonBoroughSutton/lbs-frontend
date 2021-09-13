@@ -1,0 +1,94 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/page-group-list/macro.njk' import lbsPageGroupList %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Garden waste collection',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Waste and recycling',
+        href: '#'
+      },
+      {
+        text: 'Bins and collections',
+        href: '#'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-lead">You can sign up for a 1-year subscription. We will collect your garden waste every 2
+        weeks.</p>
+
+      {{ govukButton({
+        text: 'Sign up now',
+        classes: 'lbs-button',
+        isStartButton: true
+      }) }}
+
+      <h2>What you’ll need</h2>
+      <p>To subscribe online, you’ll need:</p>
+      <ul>
+        <li>a debit or credit card to pay for this service</li>
+        <li>an email address</li>
+      </ul>
+      <h2>Cost</h2>
+      <p>The annual subscription fee is £68.80 per bin, and you can have as many bins as you want.</p>
+      <h2>Service details</h2>
+      <p>You will receive your garden waste bins within 15 days of making payment.</p>
+      <p>Your annual subscription will officially start on the day of the first garden waste collection. You will
+        receive 26
+        collections over the 12-month period of your subscription. You can use our <a href="#">Find my local services
+          tool</a> to find out
+        the collection schedule once you have received your bins.</p>
+      <p>We will remove all garden waste bins once your subscription comes to an end. If there is any damage, or if the
+        containers are defaced, the Council reserves the right to charge you for the repair or replacement of the
+        containers.</p>
+      <h2>Other ways to apply</h2>
+      <p>If you are unable to pay by card or do not have an email address please contact us on 0208 770 5000 (Monday to
+        Friday, 9am to 5pm).</p>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ lbsPageGroupList({
+        linkItems: [
+          {
+            text: 'Item 1',
+            href: '#'
+          },
+          {
+            text: 'Item 2',
+            href: '#'
+          },
+          {
+            text: 'Item 3',
+            href: '#',
+            current: true
+          },
+          {
+            text: 'Item 4',
+            href: '#'
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

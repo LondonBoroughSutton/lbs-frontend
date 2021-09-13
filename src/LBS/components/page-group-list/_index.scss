@@ -1,0 +1,51 @@
+.lbs-page-group-list {
+  overflow: hidden;
+  border: 4px solid rgba($lbs-green-2, .2);
+  border-radius: $lbs-border-radius;
+  //box-shadow: $lbs-shadow--l;
+
+  &__title {
+    @extend .govuk-heading-s;
+    margin: 0;
+    padding: $lbs-margin;
+    //color: $lbs-white;
+    //background: $lbs-green-2;
+    color: $lbs-green-1;
+    //background: rgba($lbs-green-2, .2);
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    background: rgba($lbs-green-2, .1);
+    list-style: none;
+  }
+
+  .lbs-page-group-list__item--active {
+    padding: $lbs-margin;
+    //border-left: 4px solid $lbs-white;
+    color: $lbs-white;
+    background: rgba($lbs-green-1, .9);
+    font-weight: bold;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: $lbs-margin / 1.5 $lbs-margin;
+      border-top: 1px solid rgba($lbs-green-2, .2);
+
+      //&:before {
+      //  content: "";
+      //  display: inline-block;
+      //  width: $lbs-margin;
+      //  height: $lbs-margin;
+      //  margin-right: $lbs-margin / 2;
+      //  background: $lbs-yellow;
+      //}
+    }
+  }
+}
