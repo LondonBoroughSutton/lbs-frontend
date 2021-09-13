@@ -12,7 +12,6 @@ examples:
   - name: default
     description: Standard application of the page group list
     data:
-      heading: In this section
       linkItems: [
         {
           text: "Item 1",

@@ -29,5 +29,12 @@ describe('Page Group List', () => {
       expect(title.length).toBeTruthy()
       expect(body.length).toBeTruthy()
     })
+
+    it('renders default heading', () => {
+      const $ = render('page-group-list', examples.default)
+
+      const title = $('.lbs-page-group-list .lbs-page-group-list__title')
+      expect(title.text()).toEqual('In this section:')
+    })
   })
 })
