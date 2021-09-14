@@ -36,5 +36,26 @@ describe('Page Group List', () => {
       const title = $('.lbs-page-group-list .lbs-page-group-list__title')
       expect(title.text()).toEqual('In this section:')
     })
+
+    it('renders one `current` item', () => {
+      const $ = render('page-group-list', examples.default)
+
+      const current = $('.lbs-page-group-list .lbs-page-group-list__item--active')
+      expect(current.length).toEqual(1)
+    })
+
+    it('renders one `current` item without a link', () => {
+      const $ = render('page-group-list', examples.default)
+
+      const current = $('.lbs-page-group-list .lbs-page-group-list__item--active a')
+      expect(current.length).toEqual(0)
+    })
+
+    it('renders two links', () => {
+      const $ = render('page-group-list', examples.default)
+
+      const current = $('.lbs-page-group-list a')
+      expect(current.length).toEqual(2)
+    })
   })
 })

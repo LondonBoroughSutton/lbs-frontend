@@ -19,8 +19,13 @@ examples:
         },
         {
           text: "Item 2",
-          href: "#"
-        }
+          href: "#",
+          current: true
+        },
+       {
+         text: "Item 3",
+         href: "#"
+       }
       ]
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
