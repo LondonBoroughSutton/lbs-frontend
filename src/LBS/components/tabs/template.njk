@@ -1,3 +1,38 @@
 <div class="lbs-tabs">
-  The tabs
+
+{#  <button class="accordion-tab accordion-active" data-lbsTab-group="0" data-lbsTab-id="1">Popular</button>#}
+
+{#  <button class="accordion-tab" data-lbsTab-group="0" data-lbsTab-id="2">Report something</button>#}
+
+{#  <button class="accordion-tab" data-lbsTab-group="0" data-lbsTab-id="3">Pay for something</button>#}
+
+  <ul class="lbs-tabs__list">
+    {% for item in params.items %}
+      {% if item %}
+        {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
+        <li class="lbs-tabs__list-item{% if loop.index == 1 %} lbs-tabs__list-item--selected{% endif %}">
+          <a class="lbs-tabs__tab" href="#{{ id }}" data-lbsTab-group="{{ params.id }}"
+             data-lbsTab-id="{{ loop.index }}"
+          {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          {{ item.label }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</div>
+
+<div class="lbs-tabs__content">
+  {% for item in params.items %}
+    {% if item %}
+      <div class="lbs-tabs__content__item lbs-tabs__content__item--active" data-lbsTab-group="{{ params.id }}"
+           data-lbsTab-id="{{ loop.index }}">
+        <h3 class="lbs-tabs__content__item__title">{{ item.label }}</h3>
+        <div class="lbs-tabs__content__item__container">
+          {{ item.content }}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>

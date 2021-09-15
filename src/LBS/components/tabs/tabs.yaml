@@ -1,14 +1,32 @@
 params:
-  - name: title
-    type: boolean
-    required: false
-    description: If set, entire card will be clickable (requires JavaScript)
+  - name: id
+    type: string
+    required: true
+    description: Sets the group ID to allow multiple tab groups on one page
+  - name: items
+    type: array
+    required: true
+    description: Sets the item data for tab headings and content
+    params:
+      - items:
+          - label: string
+          - content: string
 
 examples:
   - name: default
     description: Standard application of the tabs.
     data:
-      title: Example heading
+      id: group1,
+      items: [
+        {
+          label: 'Item 1',
+          content: '657 567 567 5675 67567 '
+        },
+        {
+          label: 'Item 2',
+          content: '123 123 123 1231 23 123 123'
+        }
+      ]
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
