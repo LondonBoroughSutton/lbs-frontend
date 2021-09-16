@@ -7,16 +7,42 @@ params:
     type: array
     required: true
     description: Sets the item data for tab headings and content
+  - name: headingLevel
+    type: int
+    required: false
+    description: If present, the default heading level will be adjust to match
     params:
       - items:
-          - label: string
-          - content: string
+          - name: label
+            type: string
+            required: true
+            description: Sets the tab label and content heading
+          - name: content
+            type: string
+            required: true
+            description: Sets the content of the tab
 
 examples:
   - name: default
     description: Standard application of the tabs.
     data:
       id: group1,
+      items: [
+        {
+          label: 'Item 1',
+          content: '657 567 567 5675 67567 '
+        },
+        {
+          label: 'Item 2',
+          content: '123 123 123 1231 23 123 123'
+        }
+      ]
+
+  - name: with H3 headings
+    description: Standard application of the tabs.
+    data:
+      id: group1,
+      headingLevel: 3
       items: [
         {
           label: 'Item 1',
