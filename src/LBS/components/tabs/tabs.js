@@ -1,5 +1,6 @@
 function Tabs ($module) {
   this.$module = $module
+  this.$tabs = $module.querySelectorAll('.lbs-tabs__tab')
 }
 
 /**
@@ -12,13 +13,23 @@ Tabs.prototype.init = function () {
   if (!this.$module) {
     return
   }
-  if (this.$module.classList.contains('lbs-card--clickable')) {
-    this.handleClickable()
-  }
-  if (this.$module.querySelector('.js__is-hidden')) {
-    this.showAllItems()
-  }
+
+  console.log('Hello')
+  this.setup()
+
   // this.setHeight()
+}
+
+Tabs.prototype.setup = function () {
+  let $module = this.$module
+  let $tabs = this.$tabs
+  let $tabList = $module.querySelector('.lbs-tabs__list')
+  let $tabListItems = $module.querySelectorAll('.lbs-tabs__list-item')
+  if (!$tabs || !$tabList || !$tabListItems) {
+    return
+  }
+  $tabList.setAttribute('role', 'tablist')
+
 }
 
 Tabs.prototype.handleClickable = function () {
