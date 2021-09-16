@@ -23,6 +23,11 @@
           padding: $lbs-margin;
           color: $lbs-green-1;
           background: rgba($lbs-green-2, .4);
+
+          &:focus {
+            color: $lbs-black;
+            background: $lbs-yellow;
+          }
         }
 
         &--selected {
