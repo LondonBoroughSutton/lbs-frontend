@@ -48,10 +48,10 @@ Tabs.prototype.checkMode = function () {
 }
 
 Tabs.prototype.setupTabs = function () {
-  let $module = this.$module
-  let $tabs = this.$tabs
-  let $tabList = $module.querySelector('.lbs-tabs__list')
-  let $tabListItems = $module.querySelectorAll('.lbs-tabs__list-item')
+  const $module = this.$module
+  const $tabs = this.$tabs
+  const $tabList = $module.querySelector('.lbs-tabs__list')
+  const $tabListItems = $module.querySelectorAll('.lbs-tabs__list-item')
   if (!$tabs || !$tabList || !$tabListItems) {
     return
   }
@@ -71,7 +71,6 @@ Tabs.prototype.setupTabs = function () {
     // Handle events
     $tab.addEventListener('click', $tab.boundTabClick, true)
   }.bind(this))
-
 }
 
 Tabs.prototype.setupAccordion = function () {
@@ -90,7 +89,6 @@ Tabs.prototype.setupAccordion = function () {
     // Handle events
     $panel.addEventListener('click', $panel.boundTabClick, true)
   }.bind(this))
-
 }
 
 Tabs.prototype.teardownTabs = function () {
@@ -116,11 +114,10 @@ Tabs.prototype.teardownTabs = function () {
     // Unset HTML attributes
     this.unsetAttributes($tab)
   }.bind(this))
-
 }
 
 Tabs.prototype.teardownAccordion = function () {
-  let $panels = this.$panels
+  const $panels = this.$panels
   if (!$panels) {
     return
   }
@@ -134,19 +131,18 @@ Tabs.prototype.teardownAccordion = function () {
     // Unset HTML attributes
     this.unsetAccordionAttributes($panel)
   }.bind(this))
-
 }
 
 Tabs.prototype.setAttributes = function ($tab) {
   // set tab attributes
-  let panelId = $tab.getAttribute('data-lbs-tab-id')
+  const panelId = $tab.getAttribute('data-lbs-tab-id')
   $tab.setAttribute('id', 'tab_' + panelId)
   $tab.setAttribute('role', 'tab')
   $tab.setAttribute('aria-controls', 'panel_tab_' + panelId)
   $tab.setAttribute('aria-selected', 'false')
 
   // set panel attributes
-  let $panel = this.getPanel($tab)
+  const $panel = this.getPanel($tab)
   $panel.setAttribute('id', 'panel_' + $tab.id)
   $panel.setAttribute('role', 'tabpanel')
   $panel.setAttribute('aria-labelledby', $tab.id)
@@ -167,7 +163,7 @@ Tabs.prototype.unsetAttributes = function ($tab) {
   $tab.removeAttribute('tabindex')
 
   // unset panel attributes
-  let $panel = this.getPanel($tab)
+  const $panel = this.getPanel($tab)
   $panel.removeAttribute('role')
   $panel.removeAttribute('aria-labelledby')
 }
@@ -195,16 +191,16 @@ Tabs.prototype.onTabClick = function (e) {
     return false
   }
   e.preventDefault()
-  let $newTab = e.target
-  let $currentTab = this.getCurrentTab()
+  const $newTab = e.target
+  const $currentTab = this.getCurrentTab()
   this.hideTab($currentTab)
   this.showTab($newTab)
 }
 
 Tabs.prototype.onAccordionClick = function (e) {
   e.preventDefault()
-  let $newPanel = e.target.parentNode
-  let $currentPanel = this.getCurrentPanel()
+  const $newPanel = e.target.parentNode
+  const $currentPanel = this.getCurrentPanel()
   this.hideAccordionPanel($currentPanel)
   this.showAccordionPanel($newPanel)
 }
@@ -222,12 +218,12 @@ Tabs.prototype.getPanel = function ($tab) {
 }
 
 Tabs.prototype.showPanel = function ($tab) {
-  let $panel = this.getPanel($tab)
+  const $panel = this.getPanel($tab)
   $panel.classList.add(this.activePanelClass)
 }
 
 Tabs.prototype.hidePanel = function ($tab) {
-  let $panel = this.getPanel($tab)
+  const $panel = this.getPanel($tab)
   $panel.classList.remove(this.activePanelClass)
 }
 
