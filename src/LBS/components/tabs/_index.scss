@@ -43,7 +43,7 @@
     .js-enabled & {
       .lbs-tabs__content__item {
         @include govuk-media-query($until: desktop) {
-          padding: $lbs-margin / 4 $lbs-margin / 2;
+          padding: 0 $lbs-margin / 2;
           border-bottom: 1px solid $lbs-green-1;
           background: rgba($lbs-green-1, .1);
         }
@@ -74,7 +74,7 @@
 
           .lbs-tabs__content__item__title {
             &:after {
-              transform: rotateX(180deg);
+              opacity: 0;
             }
           }
         }
@@ -85,6 +85,8 @@
           }
           @include govuk-media-query($until: desktop) {
             position: relative;
+            margin: 0;
+            padding: $lbs-margin 0;
 
             &:after {
               content: "";

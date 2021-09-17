@@ -68,7 +68,7 @@ Tabs.prototype.setupAccordion = function () {
   nodeListForEach($panels, function ($panel) {
     console.log($panel)
     // Set HTML attributes
-    // this.setAttributes($panel)
+    this.setAccordionAttributes($panel)
 
     // Save bounded functions to use when removing event listeners during teardown
     $panel.boundTabClick = this.onAccordionClick.bind(this)
@@ -93,6 +93,12 @@ Tabs.prototype.setAttributes = function ($tab) {
   let $panel = this.getPanel($tab)
   $panel.setAttribute('role', 'tabpanel')
   $panel.setAttribute('aria-labelledby', $tab.id)
+}
+
+Tabs.prototype.setAccordionAttributes = function ($panel) {
+  // set tab attributes
+  // let panelId = 1
+  $panel.setAttribute('aria-expanded', false)
 }
 
 Tabs.prototype.unsetAttributes = function ($tab) {
@@ -134,12 +140,9 @@ Tabs.prototype.onTabClick = function (e) {
 }
 
 Tabs.prototype.onAccordionClick = function (e) {
-  console.log(e)
   e.preventDefault()
   let $newPanel = e.target.parentNode
-  // console.log($newPanel)
   let $currentPanel = this.getCurrentPanel()
-  // console.log($currentPanel)
   this.hideAccordionPanel($currentPanel)
   this.showAccordionPanel($newPanel)
 }
@@ -155,10 +158,6 @@ Tabs.prototype.getCurrentPanel = function () {
 Tabs.prototype.getPanel = function ($tab) {
   return this.$module.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="' + $tab.getAttribute('data-lbs-tab-id') + '"]')
 }
-// Tabs.prototype.getAccordionPanel = function ($panelTitle) {
-//   console.log($panelTitle)
-//   return this.$module.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="' + $panelTitle.parentNode.getAttribute('data-lbs-tab-id') + '"]')
-// }
 
 Tabs.prototype.showPanel = function ($tab) {
   let $panel = this.getPanel($tab)
@@ -171,13 +170,12 @@ Tabs.prototype.hidePanel = function ($tab) {
 }
 
 Tabs.prototype.showAccordionPanel = function ($panel) {
-  // let $panel = this.getAccordionPanel($panelTitle)
+  $panel.setAttribute('aria-expanded', true)
   $panel.classList.add(this.activePanelClass)
 }
 
 Tabs.prototype.hideAccordionPanel = function ($panel) {
-  // let $panel = this.getAccordionPanel($panelTitle)
-  console.log($panel)
+  $panel.setAttribute('aria-expanded', false)
   $panel.classList.remove(this.activePanelClass)
 }
 
