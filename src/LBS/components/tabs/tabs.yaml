@@ -7,6 +7,10 @@ params:
     type: array
     required: true
     description: Sets the item data for tab headings and content
+  - name: overlapPageHeader
+    type: string
+    required: false
+    description: Alternative version that can be used to 'overlap' the page header
   - name: headingLevel
     type: int
     required: false
@@ -51,6 +55,22 @@ examples:
         {
           label: 'Item 2',
           content: '123 123 123 1231 23 123 123'
+        }
+      ]
+
+  - name: overlap page header
+    description: Alternative version that can be used to 'overlap' the page header.
+    data:
+      id: group1,
+      overlapPageHeader: true,
+      items: [
+        {
+          label: 'Item 1',
+          content: '11 11 11 11 11 11'
+        },
+        {
+          label: 'Item 2',
+          content: '22 22 22 22 22 22'
         }
       ]
 

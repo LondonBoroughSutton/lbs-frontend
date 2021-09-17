@@ -1,7 +1,8 @@
 {% set headingLevel = params.headingLevel if params.headingLevel else 2 %}
+{% set overlapPageHeader = params.overlapPageHeader if params.overlapPageHeader else false %}
 {% set idPrefix = params.id if params.id -%}
 
-<div class="lbs-tabs">
+<div class="lbs-tabs {% if overlapPageHeader %}lbs-tabs--overlap-page-header{% endif %}">
   {# Add this using JS? #}
   <ul class="lbs-tabs__list">
     {% for item in params.items %}

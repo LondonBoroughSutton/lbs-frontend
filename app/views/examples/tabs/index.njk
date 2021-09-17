@@ -2,7 +2,7 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {% from '../../../../src/LBS/components/tabs/macro.njk' import lbsTabs %}
 
-{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+{# {% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %} #}
 
 {% extends "_generic.njk" %}
 
@@ -12,29 +12,62 @@
 
 {% block content %}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "/"
-  }) }}
+  <div class="govuk-width-container">
+    {{ govukBackLink({
+      text: "Back",
+      href: "/"
+    }) }}
 
- <h2>Default</h2>
+    <h2>Default</h2>
 
-  {{ lbsTabs({
-    id: 'group0',
-    items: [
-      {
-        label: 'Popular',
-        content: '11 11 11 11 11 11 11 11'
-      },
-      {
-        label: 'Pay',
-        content: '22 22 22 22 22 22 22 22'
-      },
-      {
-        label: 'Report',
-        content: '33 33 33 33 33 33 33 33'
-      }
-    ]
-  }) }}
+    {{ lbsTabs({
+      id: 'group0',
+      items: [
+        {
+          label: 'Popular',
+          content: '11 11 11 11 11 11 11 11'
+        },
+        {
+          label: 'Pay',
+          content: '22 22 22 22 22 22 22 22'
+        },
+        {
+          label: 'Report',
+          content: '33 33 33 33 33 33 33 33'
+        }
+      ]
+    }) }}
+
+    <h2>Page Header Overlap</h2>
+
+  </div>
+  <div class="lbs-row lbs-row--alt3">
+    <div class="lbs-row__container">
+      <h1>Example heading</h1>
+    </div>
+  </div>
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+
+      {{ lbsTabs({
+        id: 'group1',
+        overlapPageHeader: true,
+        items: [
+          {
+            label: 'Popular',
+            content: '11 11 11 11 11 11 11 11'
+          },
+          {
+            label: 'Pay',
+            content: '22 22 22 22 22 22 22 22'
+          },
+          {
+            label: 'Report',
+            content: '33 33 33 33 33 33 33 33'
+          }
+        ]
+      }) }}
+    </div>
+  </div>
 
 {% endblock %}
