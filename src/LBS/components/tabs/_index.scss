@@ -1,17 +1,20 @@
+$border-colour: $lbs-grey;
+
 .lbs-tabs {
   .lbs-tabs__list {
     display: none;
     margin: 0;
     padding: 0;
+    border-bottom: 1px solid $border-colour;
 
     .js-enabled & {
       @include govuk-media-query($from: desktop) {
         display: flex;
       }
-      background: $lbs-green-2; // Remove soon
 
       .lbs-tabs__list-item {
         margin: 0 $lbs-margin / 2;
+        //border-radius: $lbs-border-radius $lbs-border-radius 0 0;
         list-style: none;
 
         &:first-child {
@@ -22,7 +25,7 @@
           display: block;
           padding: $lbs-margin;
           color: $lbs-green-1;
-          background: rgba($lbs-green-2, .4);
+          background: rgba($lbs-green-2, .1);
 
           &:focus {
             color: $lbs-black;
@@ -31,6 +34,11 @@
         }
 
         &--selected {
+          margin-bottom: -1px;
+          padding-bottom: 0;
+          border: 1px solid $border-colour;
+          border-bottom: none;
+
           a {
             background: rgba($lbs-white, 1);
           }
@@ -45,7 +53,7 @@
         @include govuk-media-query($until: desktop) {
           padding: 0 $lbs-margin / 2;
           border-bottom: 1px solid $lbs-green-1;
-          background: rgba($lbs-green-1, .1);
+          background: rgba($lbs-green-2, .1);
         }
 
         @include govuk-media-query($from: desktop) {
