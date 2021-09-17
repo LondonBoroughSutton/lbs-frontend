@@ -1,5 +1,4 @@
 $border-colour: $lbs-grey;
-$overlap: 4.5rem;
 
 .lbs-tabs {
   .lbs-tabs__list {
@@ -120,7 +119,7 @@ $overlap: 4.5rem;
 
   &.lbs-tabs--overlap-page-header {
     @include govuk-media-query($from: desktop) {
-      margin-top: -$overlap;
+      margin-top: -$lbs-tab-overlap;
     }
 
     .lbs-tabs__list {

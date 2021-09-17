@@ -41,11 +41,27 @@
     <h2>Page Header Overlap</h2>
 
   </div>
-  <div class="lbs-row lbs-row--alt3">
-    <div class="lbs-row__container">
-      <h1>Example heading</h1>
-    </div>
-  </div>
+{#  <div class="lbs-row lbs-row--alt3">#}
+{#    <div class="lbs-row__container">#}
+{#      <h1>Example heading</h1>#}
+{#    </div>#}
+{#  </div>#}
+  {% from "page-header/macro.njk" import lbsPageHeader %}
+
+  {{ lbsPageHeader({
+    "heading": "Test page example",
+    "overlappingTabs": true,
+    "breadCrumbItems": [
+      {
+        "text": "Home",
+        "href": "#"
+      },
+      {
+        "text": "Example",
+        "href": "#"
+      }
+    ]
+  }) }}
   <div class="lbs-row">
     <div class="lbs-row__container">
 

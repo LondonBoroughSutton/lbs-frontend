@@ -20,6 +20,12 @@
     }
   }
 
+  &--overlapping-tabs {
+    @include govuk-media-query($from: desktop) {
+      padding-bottom: $lbs-tab-overlap;
+    }
+  }
+
   .lbs-page-header__row {
     padding: $lbs-margin 0;
 

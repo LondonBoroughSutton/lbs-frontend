@@ -3,6 +3,10 @@ params:
     type: string
     required: true
     description: If `title` is set, it will become h1 value
+  - name: overlappingTabs
+    type: boolean
+    required: false
+    description: If `true` is set, additional padding is added to the bottom to facilate `overlapping tabs`
   - name: breadcrumb
     type: array
     required: false
@@ -71,6 +75,21 @@ examples:
       heading: Test page example
       breadcrumbs: false
 
+  - name: overlapping tabs
+    description: Page header with padding added for `overlapping tabs`
+    data:
+      heading: Test page example
+      overlappingTabs: true
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
     hidden: true
