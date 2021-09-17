@@ -3,6 +3,7 @@ import { nodeListForEach } from '../../common'
 function Tabs ($module) {
   this.$module = $module
   this.$tabs = $module.querySelectorAll('.lbs-tabs__tab')
+  this.$panels = $module.querySelectorAll('.lbs-tabs__content__item')
   this.activePanelClass = 'lbs-tabs__content__item--active'
   this.activeTabClass = 'lbs-tabs__list-item--selected'
 }
@@ -17,10 +18,13 @@ Tabs.prototype.init = function () {
   if (!this.$module) {
     return
   }
-  this.setup()
+  // Add media query and bind event listener for change?
+  this.setupTabs()
+  this.setupAccordion()
+
 }
 
-Tabs.prototype.setup = function () {
+Tabs.prototype.setupTabs = function () {
   let $module = this.$module
   let $tabs = this.$tabs
   let $tabList = $module.querySelector('.lbs-tabs__list')
@@ -44,6 +48,34 @@ Tabs.prototype.setup = function () {
 
     // Handle events
     $tab.addEventListener('click', $tab.boundTabClick, true)
+    // $tab.addEventListener('keydown', $tab.boundTabKeydown, true)
+  }.bind(this))
+
+}
+
+Tabs.prototype.setupAccordion = function () {
+  let $module = this.$module
+  let $panels = this.$panels
+  if (!$panels) {
+    return
+  }
+  // $tabList.setAttribute('role', 'tablist')
+
+  // nodeListForEach($tabListItems, function ($item) {
+  //   $item.setAttribute('role', 'presentation')
+  // })
+
+  nodeListForEach($panels, function ($panel) {
+    console.log($panel)
+    // Set HTML attributes
+    // this.setAttributes($panel)
+
+    // Save bounded functions to use when removing event listeners during teardown
+    $panel.boundTabClick = this.onAccordionClick.bind(this)
+    // $tab.boundTabKeydown = this.onTabKeydown.bind(this)
+
+    // Handle events
+    $panel.addEventListener('click', $panel.boundTabClick, true)
     // $tab.addEventListener('keydown', $tab.boundTabKeydown, true)
   }.bind(this))
 
@@ -101,13 +133,32 @@ Tabs.prototype.onTabClick = function (e) {
   this.showTab($newTab)
 }
 
+Tabs.prototype.onAccordionClick = function (e) {
+  console.log(e)
+  e.preventDefault()
+  let $newPanel = e.target.parentNode
+  // console.log($newPanel)
+  let $currentPanel = this.getCurrentPanel()
+  // console.log($currentPanel)
+  this.hideAccordionPanel($currentPanel)
+  this.showAccordionPanel($newPanel)
+}
+
 Tabs.prototype.getCurrentTab = function () {
   return this.$module.querySelector('.' + this.activeTabClass + ' .lbs-tabs__tab')
+}
+
+Tabs.prototype.getCurrentPanel = function () {
+  return this.$module.querySelector('.' + this.activePanelClass)
 }
 
 Tabs.prototype.getPanel = function ($tab) {
   return this.$module.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="' + $tab.getAttribute('data-lbs-tab-id') + '"]')
 }
+// Tabs.prototype.getAccordionPanel = function ($panelTitle) {
+//   console.log($panelTitle)
+//   return this.$module.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="' + $panelTitle.parentNode.getAttribute('data-lbs-tab-id') + '"]')
+// }
 
 Tabs.prototype.showPanel = function ($tab) {
   let $panel = this.getPanel($tab)
@@ -116,6 +167,17 @@ Tabs.prototype.showPanel = function ($tab) {
 
 Tabs.prototype.hidePanel = function ($tab) {
   let $panel = this.getPanel($tab)
+  $panel.classList.remove(this.activePanelClass)
+}
+
+Tabs.prototype.showAccordionPanel = function ($panel) {
+  // let $panel = this.getAccordionPanel($panelTitle)
+  $panel.classList.add(this.activePanelClass)
+}
+
+Tabs.prototype.hideAccordionPanel = function ($panel) {
+  // let $panel = this.getAccordionPanel($panelTitle)
+  console.log($panel)
   $panel.classList.remove(this.activePanelClass)
 }
 

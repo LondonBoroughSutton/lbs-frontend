@@ -73,10 +73,8 @@
           }
 
           .lbs-tabs__content__item__title {
-            a {
-              &:after {
-                transform: rotateX(180deg);
-              }
+            &:after {
+              transform: rotateX(180deg);
             }
           }
         }
@@ -85,9 +83,7 @@
           @include govuk-media-query($from: desktop) {
             display: none;
           }
-
-          a {
-            display: block;
+          @include govuk-media-query($until: desktop) {
             position: relative;
 
             &:after {
