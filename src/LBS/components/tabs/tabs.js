@@ -67,18 +67,15 @@ Tabs.prototype.setupTabs = function () {
 
     // Save bounded functions to use when removing event listeners during teardown
     $tab.boundTabClick = this.onTabClick.bind(this)
-    // $tab.boundTabKeydown = this.onTabKeydown.bind(this)
 
     // Handle events
     $tab.addEventListener('click', $tab.boundTabClick, true)
-    // $tab.addEventListener('keydown', $tab.boundTabKeydown, true)
   }.bind(this))
 
 }
 
 Tabs.prototype.setupAccordion = function () {
-  let $module = this.$module
-  let $panels = this.$panels
+  const $panels = this.$panels
   if (!$panels) {
     return
   }
@@ -89,11 +86,9 @@ Tabs.prototype.setupAccordion = function () {
 
     // Save bounded functions to use when removing event listeners during teardown
     $panel.boundTabClick = this.onAccordionClick.bind(this)
-    // $tab.boundTabKeydown = this.onTabKeydown.bind(this)
 
     // Handle events
     $panel.addEventListener('click', $panel.boundTabClick, true)
-    // $tab.addEventListener('keydown', $tab.boundTabKeydown, true)
   }.bind(this))
 
 }
@@ -117,7 +112,6 @@ Tabs.prototype.teardownTabs = function () {
   nodeListForEach($tabs, function ($tab) {
     // Remove events
     $tab.removeEventListener('click', $tab.boundTabClick, true)
-    // $tab.removeEventListener('keydown', $tab.boundTabKeydown, true)
 
     // Unset HTML attributes
     this.unsetAttributes($tab)
@@ -145,22 +139,23 @@ Tabs.prototype.teardownAccordion = function () {
 
 Tabs.prototype.setAttributes = function ($tab) {
   // set tab attributes
-  let panelId = 1
+  let panelId = $tab.getAttribute('data-lbs-tab-id')
   $tab.setAttribute('id', 'tab_' + panelId)
   $tab.setAttribute('role', 'tab')
-  $tab.setAttribute('aria-controls', panelId)
+  $tab.setAttribute('aria-controls', 'panel_tab_' + panelId)
   $tab.setAttribute('aria-selected', 'false')
 
   // set panel attributes
   let $panel = this.getPanel($tab)
+  $panel.setAttribute('id', 'panel_' + $tab.id)
   $panel.setAttribute('role', 'tabpanel')
   $panel.setAttribute('aria-labelledby', $tab.id)
 }
 
 Tabs.prototype.setAccordionAttributes = function ($panel) {
   // set tab attributes
-  // let panelId = 1
-  $panel.setAttribute('aria-expanded', false)
+  $panel.querySelector('.lbs-tabs__content__item__container').setAttribute('aria-expanded', false)
+  $panel.querySelector('.lbs-tabs__content__item__title').setAttribute('aria-role', 'button')
 }
 
 Tabs.prototype.unsetAttributes = function ($tab) {
@@ -178,7 +173,8 @@ Tabs.prototype.unsetAttributes = function ($tab) {
 }
 
 Tabs.prototype.unsetAccordionAttributes = function ($panel) {
-  $panel.removeAttribute('aria-expanded')
+  $panel.querySelector('.lbs-tabs__content__item__container').removeAttribute('aria-expanded')
+  $panel.querySelector('.lbs-tabs__content__item__title').removeAttribute('aria-role')
 }
 
 Tabs.prototype.hideTab = function ($tab) {
