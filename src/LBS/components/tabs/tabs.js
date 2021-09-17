@@ -14,14 +14,37 @@ function Tabs ($module) {
  * Check for the presence of tabs - if any are
  * missing then there's nothing to do so return early.
  */
-Tabs.prototype.init = function () {
-  if (!this.$module) {
-    return
-  }
-  // Add media query and bind event listener for change?
-  this.setupTabs()
-  this.setupAccordion()
+// Tabs.prototype.init = function () {
+//   if (!this.$module) {
+//     return
+//   }
+//   // Add media query and bind event listener for change?
+//   this.setupTabs()
+//   this.setupAccordion()
+// }
 
+Tabs.prototype.init = function () {
+  if (typeof window.matchMedia === 'function') {
+    this.setupResponsiveChecks()
+  } else {
+    this.setupTabs()
+  }
+}
+
+Tabs.prototype.setupResponsiveChecks = function () {
+  this.mql = window.matchMedia('(min-width: 40.0625em)')
+  this.mql.addListener(this.checkMode.bind(this))
+  this.checkMode()
+}
+
+Tabs.prototype.checkMode = function () {
+  if (this.mql.matches) {
+    this.teardownAccordion()
+    this.setupTabs()
+  } else {
+    this.teardownTabs()
+    this.setupAccordion()
+  }
 }
 
 Tabs.prototype.setupTabs = function () {
@@ -59,14 +82,8 @@ Tabs.prototype.setupAccordion = function () {
   if (!$panels) {
     return
   }
-  // $tabList.setAttribute('role', 'tablist')
-
-  // nodeListForEach($tabListItems, function ($item) {
-  //   $item.setAttribute('role', 'presentation')
-  // })
 
   nodeListForEach($panels, function ($panel) {
-    console.log($panel)
     // Set HTML attributes
     this.setAccordionAttributes($panel)
 
@@ -77,6 +94,51 @@ Tabs.prototype.setupAccordion = function () {
     // Handle events
     $panel.addEventListener('click', $panel.boundTabClick, true)
     // $tab.addEventListener('keydown', $tab.boundTabKeydown, true)
+  }.bind(this))
+
+}
+
+Tabs.prototype.teardownTabs = function () {
+  const $module = this.$module
+  const $tabs = this.$tabs
+  const $tabList = $module.querySelector('.lbs-tabs__list')
+  const $tabListItems = $module.querySelectorAll('.lbs-tabs__list-item')
+
+  if (!$tabs || !$tabList || !$tabListItems) {
+    return
+  }
+
+  $tabList.removeAttribute('role')
+
+  nodeListForEach($tabListItems, function ($item) {
+    $item.removeAttribute('role', 'presentation')
+  })
+
+  nodeListForEach($tabs, function ($tab) {
+    // Remove events
+    $tab.removeEventListener('click', $tab.boundTabClick, true)
+    // $tab.removeEventListener('keydown', $tab.boundTabKeydown, true)
+
+    // Unset HTML attributes
+    this.unsetAttributes($tab)
+  }.bind(this))
+
+}
+
+Tabs.prototype.teardownAccordion = function () {
+  let $panels = this.$panels
+  if (!$panels) {
+    return
+  }
+  if (!$panels) {
+    return
+  }
+  nodeListForEach($panels, function ($panel) {
+    // Remove events
+    $panel.removeEventListener('click', $panel.boundTabClick, true)
+
+    // Unset HTML attributes
+    this.unsetAccordionAttributes($panel)
   }.bind(this))
 
 }
@@ -113,6 +175,10 @@ Tabs.prototype.unsetAttributes = function ($tab) {
   let $panel = this.getPanel($tab)
   $panel.removeAttribute('role')
   $panel.removeAttribute('aria-labelledby')
+}
+
+Tabs.prototype.unsetAccordionAttributes = function ($panel) {
+  $panel.removeAttribute('aria-expanded')
 }
 
 Tabs.prototype.hideTab = function ($tab) {
