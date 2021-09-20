@@ -2,6 +2,7 @@ import { nodeListForEach } from './common'
 import Card from './components/card/card'
 import Header from './components/header/header'
 import Search from './components/search/search'
+import Tabs from './components/tabs/tabs'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -16,6 +17,11 @@ function initAll (options) {
     new Header($header).init()
   })
 
+  var $tabs = scope.querySelectorAll('.lbs-tabs')
+  nodeListForEach($tabs, function ($tabGroup) {
+    new Tabs($tabGroup).init()
+  })
+
   var $cards = scope.querySelectorAll('.lbs-card')
   nodeListForEach($cards, function ($card) {
     new Card($card).init()
@@ -27,5 +33,6 @@ export {
   initAll,
   Card,
   Header,
-  Search
+  Search,
+  Tabs
 }
