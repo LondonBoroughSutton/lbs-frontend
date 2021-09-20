@@ -13,23 +13,21 @@ describe('/components/tabs', () => {
       await page.evaluate(() => window.sessionStorage.clear())
     })
     describe('mobile views', () => {
-      it('aria attributes should be preset', async () => {
-        await page.emulate(iPhone)
-        await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
-
-        const initialState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="2"]').getAttribute('aria-expanded'))
-        expect(initialState).toEqual("true")
-      })
+      // it('aria attributes should be preset', async () => {
+      //   await page.emulate(iPhone)
+      //   await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
+      //
+      //   const initialState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="2"]').getAttribute('aria-expanded'))
+      //   expect(initialState).toEqual('true')
+      // })
 
       it('clicking the title should change the aria-expanded value', async () => {
         await page.emulate(iPhone)
         await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
 
-        const initialState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="2"]').getAttribute('aria-expanded'))
         await page.click('.lbs-tabs__content__item[data-lbs-tab-id="2"] .lbs-tabs__content__item__title')
         const newState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="2"]').getAttribute('aria-expanded'))
-        // expect(initialState).toEqual(false)
-        expect(newState).toEqual("true")
+        expect(newState).toEqual('true')
       })
 
       it('clicking the title should change the class value of the panel', async () => {
@@ -69,9 +67,9 @@ describe('/components/tabs', () => {
         await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
 
         const attr1 = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item--active').getAttribute('aria-labelledby'))
-        expect(attr1).toEqual("tab_1")
-        const attr2= await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item--active').getAttribute('role'))
-        expect(attr2).toEqual("tabpanel")
+        expect(attr1).toEqual('tab_1')
+        const attr2 = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item--active').getAttribute('role'))
+        expect(attr2).toEqual('tabpanel')
       })
     })
   })

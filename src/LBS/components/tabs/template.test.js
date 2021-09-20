@@ -82,7 +82,6 @@ describe('Tabs', () => {
     expect($firstPanel.get(0).tagName).toEqual('h2')
   })
 
-
   it('render title in a specified tag if instructed', () => {
     const $ = render('tabs', examples['with H3 headings'])
 
