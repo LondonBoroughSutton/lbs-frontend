@@ -11,6 +11,10 @@ params:
     type: array
     required: false
     description: If `breadcrumb` array is passed, values will appear in the `breadcrumb` component
+  - name: tabs
+    type: array
+    required: false
+    description: If `tabs` array is passed, values will appear in the `tab` component along the bottom of the pageHeader
 
 examples:
   - name: default
@@ -79,7 +83,6 @@ examples:
     description: Page header with padding added for `overlapping tabs`
     data:
       heading: Test page example
-      overlappingTabs: true
       breadCrumbItems: [
         {
           text: "Home",
@@ -88,6 +91,16 @@ examples:
         {
           text: "Example",
           href: "#"
+        }
+      ]
+      tabs: [
+        {
+          label: 'Item 1',
+          content: '11 11 11 11 11 11'
+        },
+        {
+          label: 'Item 2',
+          content: '22 22 22 22 22 22'
         }
       ]
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
