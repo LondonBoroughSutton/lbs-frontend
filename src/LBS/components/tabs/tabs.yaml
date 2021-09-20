@@ -34,11 +34,11 @@ examples:
       items: [
         {
           label: 'Item 1',
-          content: '657 567 567 5675 67567 '
+          content: '11 11 11 11 11 11 11'
         },
         {
           label: 'Item 2',
-          content: '123 123 123 1231 23 123 123'
+          content: '22 22 22 22 22 22 22'
         }
       ]
 
@@ -75,7 +75,24 @@ examples:
       ]
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
-  - name: classes
+  - name: no items
     hidden: true
     data:
-      href: '/'
+      id: group1
+
+  - name: empty items
+    hidden: true
+    data:
+      id: group1,
+      items: []
+
+  - name: html
+    hidden: true
+    data:
+      id: group1,
+      items: [
+        {
+          label: Item 1,
+          content: <p>This is a <strong>test</strong></p>
+        }
+      ]
