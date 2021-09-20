@@ -44,6 +44,7 @@ describe('/components/tabs', () => {
 
     describe('desktop views', () => {
       it('clicking the tab should change the class value of the tab parent', async () => {
+        await page.emulate(puppeteer.devices['iPad landscape'])
         await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
 
         const initialState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__tab[data-lbs-tab-id="2"]').parentElement.classList.contains('lbs-tabs__list-item--selected'))
@@ -54,6 +55,7 @@ describe('/components/tabs', () => {
       })
 
       it('clicking the tab should change the class value of the panel', async () => {
+        await page.emulate(puppeteer.devices['iPad landscape'])
         await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
 
         const initialState = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item[data-lbs-tab-id="2"]').classList.contains('lbs-tabs__content__item--active'))
@@ -64,6 +66,7 @@ describe('/components/tabs', () => {
       })
 
       it('should have the expected aria attributes on load', async () => {
+        await page.emulate(puppeteer.devices['iPad landscape'])
         await page.goto(baseUrl + '/components/tabs/preview', { waitUntil: 'load' })
 
         const attr1 = await page.evaluate(() => document.body.querySelector('.lbs-tabs__content__item--active').getAttribute('aria-labelledby'))
