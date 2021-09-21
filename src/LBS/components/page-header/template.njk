@@ -3,7 +3,7 @@
 {% set overlappingTabs = params.overlappingTabs if params.overlappingTabs else false %}
 {% set overlappingTabs = true if params.tabs %}
 
-<div class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}">
+<div class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %}">
   <div class="govuk-width-container">
     {% if params.breadCrumbItems %}
       {{ govukBreadcrumbs({
