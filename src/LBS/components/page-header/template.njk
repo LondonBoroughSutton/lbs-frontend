@@ -11,6 +11,9 @@
       }) }}
     {% endif %}
     <h1>{{ params.heading }}</h1>
+    {% if params.homepage or params.image %}
+      {% include './image.njk' %}
+    {% endif %}
   </div>
   {% if params.description or params.meta %}
     {% if params.description %}
