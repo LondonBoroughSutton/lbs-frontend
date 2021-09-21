@@ -1,0 +1,92 @@
+{
+    "component": "tabs",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "id": "group1,",
+                "items": [
+                    {
+                        "label": "Item 1",
+                        "content": "11 11 11 11 11 11 11"
+                    },
+                    {
+                        "label": "Item 2",
+                        "content": "22 22 22 22 22 22 22"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-tabs \">\n  \n  \n  <ul class=\"lbs-tabs__list\">\n    \n      \n        \n        <li class=\"lbs-tabs__list-item lbs-tabs__list-item--selected\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-1\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          Item 1\n          </a>\n        </li>\n      \n    \n      \n        \n        <li class=\"lbs-tabs__list-item\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-2\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          Item 2\n          </a>\n        </li>\n      \n    \n  </ul>\n\n  <div class=\"lbs-tabs__content\">\n    \n      \n        <div class=\"lbs-tabs__content__item  lbs-tabs__content__item--active\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          <h2 class=\"lbs-tabs__content__item__title\">Item 1</h2>\n          <div class=\"lbs-tabs__content__item__container\">\n            11 11 11 11 11 11 11\n          </div>\n        </div>\n      \n    \n      \n        <div class=\"lbs-tabs__content__item \"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          <h2 class=\"lbs-tabs__content__item__title\">Item 2</h2>\n          <div class=\"lbs-tabs__content__item__container\">\n            22 22 22 22 22 22 22\n          </div>\n        </div>\n      \n    \n  </div>\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "with H3 headings",
+            "options": {
+                "id": "group1,",
+                "headingLevel": 3,
+                "items": [
+                    {
+                        "label": "Item 1",
+                        "content": "657 567 567 5675 67567 "
+                    },
+                    {
+                        "label": "Item 2",
+                        "content": "123 123 123 1231 23 123 123"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-tabs \">\n  \n  \n  <ul class=\"lbs-tabs__list\">\n    \n      \n        \n        <li class=\"lbs-tabs__list-item lbs-tabs__list-item--selected\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-1\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          Item 1\n          </a>\n        </li>\n      \n    \n      \n        \n        <li class=\"lbs-tabs__list-item\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-2\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          Item 2\n          </a>\n        </li>\n      \n    \n  </ul>\n\n  <div class=\"lbs-tabs__content\">\n    \n      \n        <div class=\"lbs-tabs__content__item  lbs-tabs__content__item--active\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          <h3 class=\"lbs-tabs__content__item__title\">Item 1</h3>\n          <div class=\"lbs-tabs__content__item__container\">\n            657 567 567 5675 67567 \n          </div>\n        </div>\n      \n    \n      \n        <div class=\"lbs-tabs__content__item \"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          <h3 class=\"lbs-tabs__content__item__title\">Item 2</h3>\n          <div class=\"lbs-tabs__content__item__container\">\n            123 123 123 1231 23 123 123\n          </div>\n        </div>\n      \n    \n  </div>\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "overlap page header",
+            "options": {
+                "id": "group1,",
+                "overlapPageHeader": "true,",
+                "items": [
+                    {
+                        "label": "Item 1",
+                        "content": "11 11 11 11 11 11"
+                    },
+                    {
+                        "label": "Item 2",
+                        "content": "22 22 22 22 22 22"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-tabs lbs-tabs--overlap-page-header\">\n  \n  \n  <ul class=\"lbs-tabs__list\">\n    \n      \n        \n        <li class=\"lbs-tabs__list-item lbs-tabs__list-item--selected\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-1\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          Item 1\n          </a>\n        </li>\n      \n    \n      \n        \n        <li class=\"lbs-tabs__list-item\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-2\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          Item 2\n          </a>\n        </li>\n      \n    \n  </ul>\n\n  <div class=\"lbs-tabs__content\">\n    \n      \n        <div class=\"lbs-tabs__content__item  lbs-tabs__content__item--active\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          <h2 class=\"lbs-tabs__content__item__title\">Item 1</h2>\n          <div class=\"lbs-tabs__content__item__container\">\n            11 11 11 11 11 11\n          </div>\n        </div>\n      \n    \n      \n        <div class=\"lbs-tabs__content__item \"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"2\">\n          <h2 class=\"lbs-tabs__content__item__title\">Item 2</h2>\n          <div class=\"lbs-tabs__content__item__container\">\n            22 22 22 22 22 22\n          </div>\n        </div>\n      \n    \n  </div>\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "no items",
+            "options": {
+                "id": "group1"
+            },
+            "html": "<div class=\"lbs-tabs \">",
+            "hidden": true
+        },
+        {
+            "name": "empty items",
+            "options": {
+                "id": "group1,",
+                "items": []
+            },
+            "html": "<div class=\"lbs-tabs \">",
+            "hidden": true
+        },
+        {
+            "name": "html",
+            "options": {
+                "id": "group1,",
+                "items": [
+                    {
+                        "label": "Item 1",
+                        "content": "<p>This is a <strong>test</strong></p>"
+                    }
+                ]
+            },
+            "html": "<div class=\"lbs-tabs \">\n  \n  \n  <ul class=\"lbs-tabs__list\">\n    \n      \n        \n        <li class=\"lbs-tabs__list-item lbs-tabs__list-item--selected\">\n          <a class=\"lbs-tabs__tab\"\n             href=\"#group1,-1\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          Item 1\n          </a>\n        </li>\n      \n    \n  </ul>\n\n  <div class=\"lbs-tabs__content\">\n    \n      \n        <div class=\"lbs-tabs__content__item  lbs-tabs__content__item--active\"\n             data-lbs-tab-group=\"group1,\"\n             data-lbs-tab-id=\"1\">\n          <h2 class=\"lbs-tabs__content__item__title\">Item 1</h2>\n          <div class=\"lbs-tabs__content__item__container\">\n            <p>This is a <strong>test</strong></p>\n          </div>\n        </div>\n      \n    \n  </div>\n</div>",
+            "hidden": true
+        }
+    ]
+}

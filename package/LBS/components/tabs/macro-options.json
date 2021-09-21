@@ -1,0 +1,44 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": "Sets the group ID to allow multiple tab groups on one page"
+    },
+    {
+        "name": "items",
+        "type": "array",
+        "required": true,
+        "description": "Sets the item data for tab headings and content"
+    },
+    {
+        "name": "overlapPageHeader",
+        "type": "string",
+        "required": false,
+        "description": "Alternative version that can be used to 'overlap' the page header"
+    },
+    {
+        "name": "headingLevel",
+        "type": "int",
+        "required": false,
+        "description": "If present, the default heading level will be adjust to match",
+        "params": [
+            {
+                "items": [
+                    {
+                        "name": "label",
+                        "type": "string",
+                        "required": true,
+                        "description": "Sets the tab label and content heading"
+                    },
+                    {
+                        "name": "content",
+                        "type": "string",
+                        "required": true,
+                        "description": "Sets the content of the tab"
+                    }
+                ]
+            }
+        ]
+    }
+]

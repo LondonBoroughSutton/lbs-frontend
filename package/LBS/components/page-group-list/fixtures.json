@@ -11,11 +11,16 @@
                     },
                     {
                         "text": "Item 2",
+                        "href": "#",
+                        "current": true
+                    },
+                    {
+                        "text": "Item 3",
                         "href": "#"
                     }
                 ]
             },
-            "html": "<nav class=\"lbs-page-group-list\">\n  <h2 class=\"lbs-page-group-list__title\">In this section:</h2>\n  <ol>\n    \n      <li >\n      <a href=\"#\">Item 1</a>\n      </li>\n    \n      <li >\n      <a href=\"#\">Item 2</a>\n      </li>\n    \n  </ol>\n</nav>",
+            "html": "<nav class=\"lbs-page-group-list\">\n  <h2 class=\"lbs-page-group-list__title\">In this section:</h2>\n  <ol>\n    \n      <li >\n      <a href=\"#\">Item 1</a>\n      </li>\n    \n      <li class=\"lbs-page-group-list__item--active\">\n      Item 2\n      </li>\n    \n      <li >\n      <a href=\"#\">Item 3</a>\n      </li>\n    \n  </ol>\n</nav>",
             "hidden": false
         },
         {

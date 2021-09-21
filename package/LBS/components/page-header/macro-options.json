@@ -6,9 +6,33 @@
         "description": "If `title` is set, it will become h1 value"
     },
     {
+        "name": "overlappingTabs",
+        "type": "boolean",
+        "required": false,
+        "description": "If `true` is set, additional padding is added to the bottom to facilate `overlapping tabs`"
+    },
+    {
         "name": "breadcrumb",
         "type": "array",
         "required": false,
         "description": "If `breadcrumb` array is passed, values will appear in the `breadcrumb` component"
+    },
+    {
+        "name": "image",
+        "type": "object",
+        "required": false,
+        "description": "If present, image will appear in the 'porthole' container"
+    },
+    {
+        "name": "homepage",
+        "type": "boolean",
+        "required": false,
+        "description": "If present, homepage variant content will appear"
+    },
+    {
+        "name": "tabs",
+        "type": "array",
+        "required": false,
+        "description": "If `tabs` array is passed, values will appear in the `tab` component along the bottom of the pageHeader"
     }
 ]

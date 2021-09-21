@@ -1,0 +1,40 @@
+{% set headingLevel = params.headingLevel if params.headingLevel else 2 %}
+{% set overlapPageHeader = params.overlapPageHeader if params.overlapPageHeader else false %}
+{% set idPrefix = params.id if params.id -%}
+
+<div class="lbs-tabs {% if overlapPageHeader %}lbs-tabs--overlap-page-header{% endif %}">
+  {# Add this using JS? #}
+  {% if(params.items | length) %}
+  <ul class="lbs-tabs__list">
+    {% for item in params.items %}
+      {% if item %}
+        {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
+        <li class="lbs-tabs__list-item{% if loop.index == 1 %} lbs-tabs__list-item--selected{% endif %}">
+          <a class="lbs-tabs__tab"
+             href="#{{ id }}"
+             data-lbs-tab-group="{{ params.id }}"
+             data-lbs-tab-id="{{ loop.index }}"
+          {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          {{ item.label }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div class="lbs-tabs__content">
+    {% for item in params.items %}
+      {% if item %}
+        <div class="lbs-tabs__content__item {% if loop.index == 1 %} lbs-tabs__content__item--active{% endif %}"
+             data-lbs-tab-group="{{ params.id }}"
+             data-lbs-tab-id="{{ loop.index }}">
+          <h{{ headingLevel }} class="lbs-tabs__content__item__title">{{ item.label }}</h{{ headingLevel }}>
+          <div class="lbs-tabs__content__item__container">
+            {{ item.content | safe }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

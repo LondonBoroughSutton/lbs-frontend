@@ -1,7 +1,7 @@
 {
   "name": "@benwatsonuk/lbs-frontend",
   "description": "LBS Frontend contains the code you need to start building a user interface for London Borough of Sutton platforms and services.",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "LBS/all.js",
   "sass": "LBS/all.scss",
   "dependencies": {
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "TBC"
+    "url": "https://github.com/LondonBoroughSutton/lbs-frontend"
   },
   "bugs": {
-    "url": "TBC"
+    "url": "https://github.com/LondonBoroughSutton/lbs-frontend/issues"
   },
-  "homepage": "TBC",
+  "homepage": "https://lbs-component-library.herokuapp.com/",
   "keywords": [
     "LBS",
     "frontend",

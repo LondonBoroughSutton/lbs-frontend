@@ -1,13 +1,23 @@
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "../tabs/macro.njk" import lbsTabs %}
+{% set overlappingTabs = params.overlappingTabs if params.overlappingTabs else false %}
+{% set overlappingTabs = true if params.tabs %}
 
-<div class="lbs-page-header">
+<div class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %}">
   <div class="govuk-width-container">
     {% if params.breadCrumbItems %}
       {{ govukBreadcrumbs({
         items: params.breadCrumbItems
       }) }}
     {% endif %}
+    {% if params.homepage or params.image %}
+      {% include './homepage.njk' %}
+    {% else %}
     <h1>{{ params.heading }}</h1>
+    {% endif %}
+    {% if params.homepage or params.image %}
+      {% include './image.njk' %}
+    {% endif %}
   </div>
   {% if params.description or params.meta %}
     {% if params.description %}
@@ -16,17 +26,28 @@
     {% if params.meta %}
       {% set content %}
         <dl>
-        {% for item in params.meta %}
-          <dt>{{ item.key }}:</dt>
-          <dd>{{ item.value }}</dd>
-        {% endfor %}
+          {% for item in params.meta %}
+            <dt>{{ item.key }}:</dt>
+            <dd>{{ item.value }}</dd>
+          {% endfor %}
         </dl>
       {% endset %}
     {% endif %}
     <div class="lbs-page-header__row lbs-page-header__row--light">
       <div class="govuk-width-container">
-        {{ content | safe}}
+        {{ content | safe }}
       </div>
     </div>
   {% endif %}
 </div>
+{% if params.tabs %}
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      {{ lbsTabs({
+        id: "pageHeaderTabs",
+        overlapPageHeader: true,
+        items: params.tabs
+      }) }}
+    </div>
+  </div>
+{% endif %}
