@@ -1,0 +1,40 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    homepage: true,
+    breadcrumbs: false,
+    tabs: [
+      {
+        "label": "Popular",
+        "content": "11 11 11 11 11 11"
+      },
+      {
+        "label": "Report",
+        "content": "22 22 22 22 22 22"
+      },
+      {
+        "label": "Pay",
+        "content": "33 33 33 33 33 33"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+  </div>
+
+{% endblock %}

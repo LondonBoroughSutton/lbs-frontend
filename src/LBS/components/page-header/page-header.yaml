@@ -11,6 +11,14 @@ params:
     type: array
     required: false
     description: If `breadcrumb` array is passed, values will appear in the `breadcrumb` component
+  - name: image
+    type: object
+    required: false
+    description: If present, image will appear in the 'porthole' container
+  - name: homepage
+    type: boolean
+    required: false
+    description: If present, homepage variant content will appear
   - name: tabs
     type: array
     required: false
@@ -78,6 +86,28 @@ examples:
     data:
       heading: Test page example
       breadcrumbs: false
+
+  - name: homepage
+    description: Page header used on home page. Contains image and search bar
+    image: true
+    data:
+      heading: Test page example
+      homepage: true
+      breadcrumbs: false
+      tabs: [
+        {
+          label: 'Popular',
+          content: '11 11 11 11 11 11'
+        },
+        {
+          label: 'Report',
+          content: '22 22 22 22 22 22'
+        },
+        {
+          label: 'Pay',
+          content: '33 33 33 33 33 33'
+        }
+      ]
 
   - name: overlapping tabs
     description: Page header with padding added for `overlapping tabs`

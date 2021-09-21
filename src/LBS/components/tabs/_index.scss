@@ -119,6 +119,8 @@ $border-colour: $lbs-grey;
 
   &.lbs-tabs--overlap-page-header {
     @include govuk-media-query($from: desktop) {
+      position: relative;
+      z-index: 2;
       margin-top: -$lbs-tab-overlap;
     }
 
