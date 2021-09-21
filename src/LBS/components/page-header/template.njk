@@ -10,7 +10,11 @@
         items: params.breadCrumbItems
       }) }}
     {% endif %}
+    {% if params.homepage or params.image %}
+      {% include './homepage.njk' %}
+    {% else %}
     <h1>{{ params.heading }}</h1>
+    {% endif %}
     {% if params.homepage or params.image %}
       {% include './image.njk' %}
     {% endif %}
