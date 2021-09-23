@@ -19,3 +19,9 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+.lbs-list--grid-list {
+  li {
+    margin-bottom: $lbs-margin * 1.5;
+  }
+}

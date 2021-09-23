@@ -10,15 +10,49 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% extends "_generic.njk" %}
 
+{% block header %}
+  {{ lbsHeader({
+    search: false
+  }) }}
+{% endblock %}
+
 {% set popularItems %}
-  <ol class="govuk-grid-row">
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">123</a></li>
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Book visit to the recycling centre</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Check your bin collection days</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">View and comment on applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Jobs and careers</a></li>
+  </ol>
+{% endset %}
+
+{% set reportItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Book visit to the recycling centre</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Check your bin collection days</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">View and comment on applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Jobs and careers</a></li>
+  </ol>
+{% endset %}
+
+{% set payItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Book visit to the recycling centre</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Check your bin collection days</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">View and comment on applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Jobs and careers</a></li>
   </ol>
 {% endset %}
 
 {% block beforeContent %}
   {{ lbsPageHeader({
     homepage: true,
+    image: '/assets/img/home-image--1.jpg',
     breadcrumbs: false,
     tabs: [
       {
@@ -26,12 +60,12 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
         "content": popularItems
       },
       {
-        "label": "Report",
-        "content": "22 22 22 22 22 22"
+        "label": "Report an issue",
+        "content": reportItems
       },
       {
-        "label": "Pay",
-        "content": "33 33 33 33 33 33"
+        "label": "Pay for something",
+        "content": payItems
       }
     ]
   }) }}
