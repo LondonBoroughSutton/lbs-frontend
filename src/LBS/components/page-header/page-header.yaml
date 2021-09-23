@@ -12,9 +12,9 @@ params:
     required: false
     description: If `breadcrumb` array is passed, values will appear in the `breadcrumb` component
   - name: image
-    type: object
+    type: string
     required: false
-    description: If present, image will appear in the 'porthole' container
+    description: If present, image will appear in the 'porthole' container. Relative or absolute path to image is required
   - name: homepage
     type: boolean
     required: false
@@ -93,6 +93,7 @@ examples:
     data:
       heading: Test page example
       homepage: true
+      image: /assets/img/home-image--1.jpg
       breadcrumbs: false
       tabs: [
         {
