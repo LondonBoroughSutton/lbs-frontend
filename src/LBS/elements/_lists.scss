@@ -1,0 +1,21 @@
+ol,
+ul {
+  @extend .govuk-list;
+
+  ::marker {
+    color: $lbs-green-2;
+  }
+}
+
+ol {
+  @extend .govuk-list--number;
+}
+
+ul {
+  @extend .govuk-list--bullet;
+}
+
+.lbs-list--no-style {
+  padding: 0;
+  list-style: none;
+}

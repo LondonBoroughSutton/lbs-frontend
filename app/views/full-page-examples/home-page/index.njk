@@ -10,6 +10,12 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% extends "_generic.njk" %}
 
+{% set popularItems %}
+  <ol class="govuk-grid-row">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">123</a></li>
+  </ol>
+{% endset %}
+
 {% block beforeContent %}
   {{ lbsPageHeader({
     homepage: true,
@@ -17,7 +23,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
     tabs: [
       {
         "label": "Popular",
-        "content": "11 11 11 11 11 11"
+        "content": popularItems
       },
       {
         "label": "Report",

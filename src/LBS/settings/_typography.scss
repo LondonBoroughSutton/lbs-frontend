@@ -14,23 +14,6 @@ h6,
   font-family: $lbs-heading-font;
 }
 
-ol,
-ul {
-  @extend .govuk-list;
-}
-
-ol {
-  @extend .govuk-list--number;
-}
-
-ul {
-  @extend .govuk-list--bullet;
-
-  ::marker {
-    color: $lbs-green-2;
-  }
-}
-
 a {
   &[rel="external"], {
     &:after {
