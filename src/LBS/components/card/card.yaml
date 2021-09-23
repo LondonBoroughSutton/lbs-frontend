@@ -15,6 +15,10 @@ params:
     type: boolean
     required: false
     description: If set, will turn the background of the tile 'green'
+  - name: naked
+    type: boolean
+    required: false
+    description: If set, will display a very basic version of the 'card'
   - name: heading
     type: array
     required: true
@@ -139,6 +143,16 @@ examples:
         href: '#'
       cardBodyHtml: 'This is a description'
       clickable: true
+
+  - name: naked card
+    description: Basic stripped back version of the card.
+    data:
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: 'This is a description'
+      clickable: true
+      naked: true
 
   - name: card with background colour
     description: Alternative version of the card.
