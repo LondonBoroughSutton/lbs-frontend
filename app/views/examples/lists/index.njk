@@ -1,0 +1,72 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Unordered Lists</h2>
+
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Ordered Lists</h2>
+
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+
+  <h2>Lists with list-style removed</h2>
+
+  <ul class="lbs-list--no-style">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Nested unordered lists</h2>
+
+  <ul>
+    <li>Item 1
+      <ul>
+        <li>Sub item 1</li>
+        <li>Sub item 2</li>
+        <li>Sub item 3</li>
+      </ul>
+    </li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Nested Ordered lists</h2>
+
+  <ol>
+    <li>Item 1
+      <ul>
+        <li>Sub item 1</li>
+        <li>Sub item 2</li>
+        <li>Sub item 3</li>
+      </ul>
+    </li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+
+
+
+{% endblock %}

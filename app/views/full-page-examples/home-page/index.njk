@@ -10,22 +10,62 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% extends "_generic.njk" %}
 
+{% block header %}
+  {{ lbsHeader({
+    search: false
+  }) }}
+{% endblock %}
+
+{% set popularItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Book visit to the recycling centre</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Check your bin collection days</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">View and comment on applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Jobs and careers</a></li>
+  </ol>
+{% endset %}
+
+{% set reportItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report a missed bin collection</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report an abandoned vehicle</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report a safeguarding concern</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report fly-tipping</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report graffiti</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Report footway defects or faults</a></li>
+  </ol>
+{% endset %}
+
+{% set payItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Council tax and business rates</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Penalty charge notice (PCN)</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Parking permits</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Garden waste collections</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Fixed Penalty notice (FPN) Covid </a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action">Building control</a></li>
+  </ol>
+{% endset %}
+
 {% block beforeContent %}
   {{ lbsPageHeader({
     homepage: true,
+    image: '/assets/img/home-image--1.jpg',
     breadcrumbs: false,
     tabs: [
       {
         "label": "Popular",
-        "content": "11 11 11 11 11 11"
+        "content": popularItems
       },
       {
-        "label": "Report",
-        "content": "22 22 22 22 22 22"
+        "label": "Report an issue",
+        "content": reportItems
       },
       {
-        "label": "Pay",
-        "content": "33 33 33 33 33 33"
+        "label": "Pay for something",
+        "content": payItems
       }
     ]
   }) }}
