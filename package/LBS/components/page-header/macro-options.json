@@ -19,9 +19,9 @@
     },
     {
         "name": "image",
-        "type": "object",
+        "type": "string",
         "required": false,
-        "description": "If present, image will appear in the 'porthole' container"
+        "description": "If present, image will appear in the 'porthole' container. Relative or absolute path to image is required"
     },
     {
         "name": "homepage",

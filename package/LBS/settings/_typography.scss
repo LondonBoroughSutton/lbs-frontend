@@ -32,7 +32,7 @@ ul {
 }
 
 a {
-  &[target="_blank"] {
+  &[rel="external"], {
     &:after {
       content: "";
       display: inline-block;

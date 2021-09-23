@@ -1,5 +1,5 @@
 <div class="lbs-page-header__image-container">
-  <div class="lbs-page-header__image">
+  <div class="lbs-page-header__image" {% if params.image %}style="background: url({{ params.image }}) no-repeat center; background-size: cover;"{% endif %}>
     <!-- Container for the background image -->
   </div>
 </div>
