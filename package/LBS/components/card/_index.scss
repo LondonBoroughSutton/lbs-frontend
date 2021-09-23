@@ -62,6 +62,21 @@
     }
   }
 
+  &--naked {
+    padding: unset;
+    border: unset;
+    box-shadow: none;
+
+    h2 a {
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+    }
+
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+
   .show-more-link {
     color: $lbs-green-1;
     cursor: pointer;

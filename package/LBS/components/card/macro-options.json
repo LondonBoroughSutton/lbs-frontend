@@ -24,6 +24,12 @@
         "description": "If set, will turn the background of the tile 'green'"
     },
     {
+        "name": "naked",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, will display a very basic version of the 'card'"
+    },
+    {
         "name": "heading",
         "type": "array",
         "required": true,
