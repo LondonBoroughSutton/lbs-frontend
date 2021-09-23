@@ -1,31 +1,118 @@
 params:
-  - name: heading
-    type: string
-    required: true
-    description: If `title` is set, it will become h1 value
-  - name: linkItems
+  - name: listItems
     type: array
+    required: true
+    description: Provides the data object for pages in the section
+    params:
+      - name: title
+        type: string
+        required: true
+        description: The title of the page
+      - name: slug
+        type: string
+        required: true
+        description: The slug of the page
+  - name: listItemIndex
+    type: int
+    required: true
+    description: Tells the component which page from `listItems` is current
+  - name: inline
+    type: boolean
     required: false
-    description: If array is passed, values will appear in the as a navigation list
+    description: Places the navigation items inline
 
 examples:
   - name: default
-    description: Standard application of the page group list
+    description: Standard application of the page group navigation (page in middle of the group)
     data:
-      linkItems: [
+      listItemIndex: 2
+      listItems: [
         {
-          text: "Item 1",
-          href: "#"
+          title: "Item 1",
+          slug: "#"
         },
         {
-          text: "Item 2",
-          href: "#",
-          current: true
+          title: "Item 2",
+          slug: "#"
         },
-       {
-         text: "Item 3",
-         href: "#"
-       }
+        {
+          title: "Item 3",
+          slug: "#"
+        },
+        {
+          title: "Item 4",
+          slug: "#"
+        }
+      ]
+
+  - name: inline
+    description: Inline version of the page group navigation (page in middle of the group)
+    data:
+      listItemIndex: 2
+      inline: true
+      listItems: [
+        {
+          title: "Item 1",
+          slug: "#"
+        },
+        {
+          title: "Item 2",
+          slug: "#"
+        },
+        {
+          title: "Item 3",
+          slug: "#"
+        },
+        {
+          title: "Item 4",
+          slug: "#"
+        }
+      ]
+
+  - name: first
+    description: Current page is first in group
+    data:
+      listItemIndex: 0
+      listItems: [
+        {
+          title: "Item 1",
+          slug: "#"
+        },
+        {
+          title: "Item 2",
+          slug: "#"
+        },
+        {
+          title: "Item 3",
+          slug: "#"
+        },
+        {
+          title: "Item 4",
+          slug: "#"
+        }
+      ]
+
+  - name: last
+    description: Current page is last in group
+    data:
+      listItemIndex: 3
+      listItems: [
+        {
+          title: "Item 1",
+          slug: "#"
+        },
+        {
+          title: "Item 2",
+          slug: "#"
+        },
+        {
+          title: "Item 3",
+          slug: "#"
+        },
+        {
+          title: "Item 4",
+          slug: "#"
+        }
       ]
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures

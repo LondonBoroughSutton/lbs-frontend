@@ -1,3 +1,29 @@
 .lbs-page-group__navigation {
-  background: $lbs-yellow;
+  border-top: 1px solid $lbs-grey;
+  //background: $lbs-yellow;
+
+  .lbs-page-group__navigation__list {
+    padding: $lbs-margin 0;
+    list-style: none;
+
+    li {
+      margin-bottom: $lbs-margin;
+    }
+
+    &--inline {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .lbs-page-group__navigation__list-item__link-direction {
+    margin-left: $lbs-margin / 2;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .lbs-page-group__navigation__list-item__text {
+    display: block;
+    margin-left: $lbs-margin * 2;
+  }
 }
