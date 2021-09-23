@@ -6,6 +6,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 {% from 'govuk/components/button/macro.njk' import govukButton %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 {% from '../../../../src/LBS/components/page-group-list/macro.njk' import lbsPageGroupList %}
+{% from '../../../../src/LBS/components/page-group-navigation/macro.njk' import lbsPageGroupNavigation %}
 
 {% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
 
@@ -64,6 +65,29 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       <h2>Other ways to apply</h2>
       <p>If you are unable to pay by card or do not have an email address please contact us on 0208 770 5000 (Monday to
         Friday, 9am to 5pm).</p>
+
+      {{ lbsPageGroupNavigation({
+        "listItemIndex": 2,
+        "inline": true,
+        "listItems": [
+          {
+            "title": "Item 1",
+            "slug": "#"
+          },
+          {
+            "title": "Item 2",
+            "slug": "#"
+          },
+          {
+            "title": "Item 3",
+            "slug": "#"
+          },
+          {
+            "title": "Item 4",
+            "slug": "#"
+          }
+        ]
+      }) }}
 
     </div>
     <div class="govuk-grid-column-one-third">
