@@ -1,0 +1,39 @@
+{
+    "component": "notification",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "html": "<h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p>"
+            },
+            "html": "<div class=\"govuk-notification-banner\" role=\"region\"\n  aria-labelledby=\"govuk-notification-banner-title\"\n  data-module=\"govuk-notification-banner\">\n  <div class=\"govuk-notification-banner__header\">\n    <h2 class=\"govuk-notification-banner__title\" id=\"govuk-notification-banner-title\" >\n      Important\n    </h2>\n  </div>\n  <div class=\"govuk-notification-banner__content\"><h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p></div>\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "success",
+            "options": {
+                "type": "success",
+                "html": "<h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p>"
+            },
+            "html": "<div class=\"govuk-notification-banner govuk-notification-banner--success\" role=\"alert\"\n  aria-labelledby=\"govuk-notification-banner-title\"\n  data-module=\"govuk-notification-banner\">\n  <div class=\"govuk-notification-banner__header\">\n    <h2 class=\"govuk-notification-banner__title\" id=\"govuk-notification-banner-title\" >\n      Success\n    </h2>\n  </div>\n  <div class=\"govuk-notification-banner__content\"><h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p></div>\n</div>",
+            "hidden": false
+        },
+        {
+            "name": "global",
+            "options": {
+                "type": "global",
+                "html": "<h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p>"
+            },
+            "html": "<div class=\"lbs-row lbs-notification lbs-notification--global\">\n    <div class=\"lbs-row__container govuk-notification-banner__content\">\n      <h2 class=\"govuk-notification-banner__heading\">Lorem ipsum</h2> <p class=\"\">Other content goes here and <a href\"#\">can contain links</a></p>\n    </div>\n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "classes",
+            "options": {
+                "href": "/"
+            },
+            "html": "<div class=\"govuk-notification-banner\" role=\"region\"\n  aria-labelledby=\"govuk-notification-banner-title\"\n  data-module=\"govuk-notification-banner\">\n  <div class=\"govuk-notification-banner__header\">\n    <h2 class=\"govuk-notification-banner__title\" id=\"govuk-notification-banner-title\" >\n      Important\n    </h2>\n  </div>\n  <div class=\"govuk-notification-banner__content\"></div>\n</div>",
+            "hidden": true
+        }
+    ]
+}

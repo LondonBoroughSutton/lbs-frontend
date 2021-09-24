@@ -1,0 +1,14 @@
+[
+    {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "description": "If set, alters the type of notifcation e.g. 'success', 'global'"
+    },
+    {
+        "name": "html",
+        "type": "string",
+        "required": true,
+        "description": "Sets the body of the message"
+    }
+]
