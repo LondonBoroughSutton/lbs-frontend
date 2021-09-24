@@ -7,20 +7,20 @@
                 "listItemIndex": 2,
                 "listItems": [
                     {
-                        "title": "Item 1",
-                        "slug": "#"
+                        "text": "Item 1",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 2",
-                        "slug": "#"
+                        "text": "Item 2",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 3",
-                        "slug": "#"
+                        "text": "Item 3",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 4",
-                        "slug": "#"
+                        "text": "Item 4",
+                        "href": "#"
                     }
                 ]
             },
@@ -34,20 +34,20 @@
                 "inline": true,
                 "listItems": [
                     {
-                        "title": "Item 1",
-                        "slug": "#"
+                        "text": "Item 1",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 2",
-                        "slug": "#"
+                        "text": "Item 2",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 3",
-                        "slug": "#"
+                        "text": "Item 3",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 4",
-                        "slug": "#"
+                        "text": "Item 4",
+                        "href": "#"
                     }
                 ]
             },
@@ -60,20 +60,20 @@
                 "listItemIndex": 0,
                 "listItems": [
                     {
-                        "title": "Item 1",
-                        "slug": "#"
+                        "text": "Item 1",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 2",
-                        "slug": "#"
+                        "text": "Item 2",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 3",
-                        "slug": "#"
+                        "text": "Item 3",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 4",
-                        "slug": "#"
+                        "text": "Item 4",
+                        "href": "#"
                     }
                 ]
             },
@@ -86,20 +86,20 @@
                 "listItemIndex": 3,
                 "listItems": [
                     {
-                        "title": "Item 1",
-                        "slug": "#"
+                        "text": "Item 1",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 2",
-                        "slug": "#"
+                        "text": "Item 2",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 3",
-                        "slug": "#"
+                        "text": "Item 3",
+                        "href": "#"
                     },
                     {
-                        "title": "Item 4",
-                        "slug": "#"
+                        "text": "Item 4",
+                        "href": "#"
                     }
                 ]
             },

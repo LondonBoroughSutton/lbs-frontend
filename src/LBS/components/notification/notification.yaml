@@ -1,0 +1,35 @@
+params:
+  - name: type
+    type: string
+    required: false
+    description: If set, alters the type of notifcation e.g. 'success', 'global'
+  - name: html
+    type: string
+    required: true
+    description: Sets the body of the message
+
+examples:
+  - name: default
+    description: Standard application of a notification.
+    data:
+      html: <h2 class="govuk-notification-banner__heading">Lorem ipsum</h2> <p class="">Other content goes here and <a href"#">can contain links</a></p>
+
+  - name: success
+    description: Success notification
+    data:
+      type: success
+      html: <h2 class="govuk-notification-banner__heading">Lorem ipsum</h2> <p class="">Other content goes here and <a href"#">can contain links</a></p>
+
+
+  - name: global
+    description: Global notification
+    data:
+      type: global
+      html: <h2 class="govuk-notification-banner__heading">Lorem ipsum</h2> <p class="">Other content goes here and <a href"#">can contain links</a></p>
+
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'

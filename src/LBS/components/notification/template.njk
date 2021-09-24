@@ -1,0 +1,15 @@
+{% from 'govuk/components/notification-banner/macro.njk' import govukNotificationBanner %}
+{% set type = params.type if params.type else null %}
+
+{% if params.type === 'global' %}
+  <div class="lbs-row lbs-notification lbs-notification--global">
+    <div class="lbs-row__container govuk-notification-banner__content">
+      {{ params.html | safe }}
+    </div>
+  </div>
+{% else %}
+  {{ govukNotificationBanner({
+    html: params.html,
+    type: type
+  }) }}
+{% endif %}
