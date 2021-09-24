@@ -21,41 +21,24 @@ describe('Page Group List', () => {
       expect(results).toHaveNoViolations()
     })
 
-    // it('renders with expected child elements', () => {
-    //   const $ = render('page-group-navigation', examples.default)
-    //
-    //   const title = $('.lbs-page-group-navigation .lbs-page-group-navigation__title')
-    //   const body = $('.lbs-page-group-navigation ol')
-    //   expect(title.length).toBeTruthy()
-    //   expect(body.length).toBeTruthy()
-    // })
-    //
-    // it('renders default heading', () => {
-    //   const $ = render('page-group-navigation', examples.default)
-    //
-    //   const title = $('.lbs-page-group-navigation .lbs-page-group-navigation__title')
-    //   expect(title.text()).toEqual('In this section:')
-    // })
-    //
-    // it('renders one `current` item', () => {
-    //   const $ = render('page-group-navigation', examples.default)
-    //
-    //   const current = $('.lbs-page-group-navigation .lbs-page-group-navigation__item--active')
-    //   expect(current.length).toEqual(1)
-    // })
-    //
-    // it('renders one `current` item without a link', () => {
-    //   const $ = render('page-group-navigation', examples.default)
-    //
-    //   const current = $('.lbs-page-group-navigation .lbs-page-group-navigation__item--active a')
-    //   expect(current.length).toEqual(0)
-    // })
-    //
-    // it('renders two links', () => {
-    //   const $ = render('page-group-navigation', examples.default)
-    //
-    //   const current = $('.lbs-page-group-navigation a')
-    //   expect(current.length).toEqual(2)
-    // })
+    it('renders with expected child elements', () => {
+      const $ = render('page-group-navigation', examples.default)
+
+      const container = $('.lbs-page-group__navigation .lbs-page-group__navigation__list')
+      const body = $('.lbs-page-group__navigation__list-item')
+      expect(container.length).toBeTruthy()
+      expect(body.length).toEqual(2)
+    })
+
+    it('renders with expected child elements inside nav item', () => {
+      const $ = render('page-group-navigation', examples.default)
+
+      const item1 = $('.lbs-page-group__navigation__list-item--previous .lbs-page-group__navigation__list-item__icon')
+      const item2 = $('.lbs-page-group__navigation__list-item--previous .lbs-page-group__navigation__list-item__link-direction')
+      const item3 = $('.lbs-page-group__navigation__list-item--previous .lbs-page-group__navigation__list-item__text')
+      expect(item1.length).toBeTruthy()
+      expect(item2.length).toBeTruthy()
+      expect(item3.length).toBeTruthy()
+    })
   })
 })
