@@ -6,16 +6,16 @@
         "description": "Provides the data object for pages in the section",
         "params": [
             {
-                "name": "title",
+                "name": "text",
                 "type": "string",
                 "required": true,
-                "description": "The title of the page"
+                "description": "The ttextof the page"
             },
             {
-                "name": "slug",
+                "name": "href",
                 "type": "string",
                 "required": true,
-                "description": "The slug of the page"
+                "description": "The href of the page"
             }
         ]
     },

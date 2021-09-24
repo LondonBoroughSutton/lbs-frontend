@@ -1,0 +1,144 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/notification/macro.njk' import lbsNotification %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Streets, Transport and Parking',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Streets, Transport and Parking',
+        href: '#'
+      }
+    ]
+  }) }}
+
+  {# <div class="lbs-row lbs-row--alt"> #}
+  {# <div class="lbs-row__container"> #}
+  {# <div class="govuk-grid-row"> #}
+  {# <h2>Popular</h2> #}
+  {# <ol class="lbs-popular-items__list"> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Pay Parking Notice Charge', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Apply for parking permit', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
+  {# {{ lbsCard({ #}
+  {# heading: { #}
+  {# title: 'Report fly tipping', #}
+  {# href: '#' #}
+  {# }, #}
+  {# popularItem: true #}
+  {# }) }} #}
+  {# </li> #}
+  {# </ol> #}
+  {# </div> #}
+  {# </div> #}
+  {# </div> #}
+{% endblock %}
+
+{% block content %}
+
+  {% set html %}
+    <p class="govuk-notification-banner__heading">
+      Urgent roadworks are taking place today on Cheam Road.
+      <a class="govuk-notification-banner__link" href="#">View details</a>.
+    </p>
+  {% endset %}
+
+  {{ lbsNotification({
+    html: html
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Parking',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about permit parking areas and how to apply for and renew parking permits and visitor vouchers',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Streets, roads and highways',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about road works, highway mainentance and more',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Street cleaning',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about road works, highway mainentance and more',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Travel and transport',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about cycling initiatives and sustainable travel in the borough',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-half-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Highways and street lighting',
+          href: '#'
+        },
+        cardBodyHtml: 'Find out about cycling initiatives and sustainable travel in the borough',
+        bgColour: false,
+        clickable: true
+      }) }}
+    </div>
+
+  </div>
+
+{% endblock %}

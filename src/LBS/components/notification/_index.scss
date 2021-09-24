@@ -1,0 +1,10 @@
+.lbs-notification {
+  &--global {
+    color: $lbs-black;
+    background: $lbs-yellow;
+
+    .govuk-notification-banner__content {
+      background: unset;
+    }
+  }
+}
