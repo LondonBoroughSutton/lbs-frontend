@@ -4,8 +4,8 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 ---
 
 {% from 'govuk/components/button/macro.njk' import govukButton %}
-{% from 'govuk/components/notification-banner/macro.njk' import govukNotificationBanner %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/notification/macro.njk' import lbsNotification %}
 {% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
 
 {% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
@@ -13,6 +13,18 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 {% extends "_generic.njk" %}
 
 {% block beforeContent %}
+
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Coronavirus
+    </h3>
+    <p class="govuk-body">National lockdown rules apply. See our <a class="govuk-notification-banner__link" href="#">COVID 19 information page</a> for details.</p>
+  {% endset %}
+
+  {{ lbsNotification({
+    html: html,
+    type: 'global'
+  }) }}
 
   {{ lbsPageHeader({
     heading: 'Streets, Transport and Parking',
