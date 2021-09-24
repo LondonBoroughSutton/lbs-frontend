@@ -1,0 +1,85 @@
+.lbs-page-group__navigation {
+  border-top: 1px solid $lbs-grey;
+  //background: $lbs-yellow;
+
+  .lbs-page-group__navigation__list {
+    padding: $lbs-margin 0;
+    list-style: none;
+
+    li {
+      margin-bottom: $lbs-margin;
+    }
+
+    &--inline {
+      @include govuk-media-query($from: desktop) {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+      }
+
+      .lbs-page-group__navigation__list-item--next {
+        .lbs-page-group__navigation__list-item__container {
+          @include govuk-media-query($from: desktop) {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+            -ms-flex-align: center;
+                align-items: center;
+
+            .lbs-page-group__navigation__list-item__link-direction {
+              margin-right: $lbs-margin / 2;
+              -ms-flex-order: -1;
+                  order: -1;
+            }
+          }
+        }
+
+        .lbs-page-group__navigation__list-item__text {
+          @include govuk-media-query($from: desktop) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .lbs-page-group__navigation__list-item {
+    a {
+      text-decoration: none;
+    }
+
+    .lbs-page-group__navigation__list-item__icon {
+      transition: all .2s;
+    }
+
+    .lbs-page-group__navigation__list-item__container {
+      text-decoration: none;
+    }
+
+    .lbs-page-group__navigation__list-item__text {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      .lbs-page-group__navigation__list-item__icon {
+        -webkit-transform: translateX($lbs-margin / 4);
+            -ms-transform: translateX($lbs-margin / 4);
+                transform: translateX($lbs-margin / 4);
+      }
+    }
+  }
+
+  .lbs-page-group__navigation__list-item__link-direction {
+    margin-left: $lbs-margin / 2;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .lbs-page-group__navigation__list-item__text {
+    display: block;
+    margin-left: $lbs-margin * 2;
+  }
+}

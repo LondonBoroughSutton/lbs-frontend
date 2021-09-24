@@ -1,0 +1,34 @@
+[
+    {
+        "name": "listItems",
+        "type": "array",
+        "required": true,
+        "description": "Provides the data object for pages in the section",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title of the page"
+            },
+            {
+                "name": "slug",
+                "type": "string",
+                "required": true,
+                "description": "The slug of the page"
+            }
+        ]
+    },
+    {
+        "name": "listItemIndex",
+        "type": "int",
+        "required": true,
+        "description": "Tells the component which page from `listItems` is current"
+    },
+    {
+        "name": "inline",
+        "type": "boolean",
+        "required": false,
+        "description": "Places the navigation items inline"
+    }
+]
