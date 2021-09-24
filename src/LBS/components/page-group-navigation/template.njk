@@ -2,7 +2,7 @@
   <ul class="lbs-page-group__navigation__list  {% if params.inline %}lbs-page-group__navigation__list--inline{% endif %}">
     {% if params.listItemIndex > 0 %}
       <li class="lbs-page-group__navigation__list-item lbs-page-group__navigation__list-item--previous">
-        <a href="{{ params.listItems[params.listItemIndex - 1].slug }}" rel="prev">
+        <a href="{{ params.listItems[params.listItemIndex - 1].href }}" rel="prev">
                         <span class="lbs-page-group__navigation__list-item__container">
                             <svg class="lbs-page-group__navigation__list-item__icon" xmlns="http://www.w3.org/2000/svg"
                                  height="13" width="17" viewBox="0 0 17 13">
@@ -15,13 +15,13 @@
                         </span>
           <span class="govuk-visually-hidden">page in this guide is:</span>
           <span
-            class="lbs-page-group__navigation__list-item__text">{{ params.listItems[params.listItemIndex - 1].title }}</span></a>
+            class="lbs-page-group__navigation__list-item__text">{{ params.listItems[params.listItemIndex - 1].text }}</span></a>
       </li>
     {% endif %}
 
     {% if params.listItemIndex < params.listItems.length - 1 %}
       <li class="lbs-page-group__navigation__list-item lbs-page-group__navigation__list-item--next">
-        <a href="{{ params.listItems[params.listItemIndex + 1].slug }}" rel="next">
+        <a href="{{ params.listItems[params.listItemIndex + 1].href }}" rel="next">
                         <span class="lbs-page-group__navigation__list-item__container">
                           <svg class="lbs-page-group__navigation__list-item__icon" xmlns="http://www.w3.org/2000/svg"
                                  height="13" width="17" viewBox="0 0 17 13">
@@ -33,7 +33,7 @@
                         </span>
           <span class="govuk-visually-hidden">page in this guide is:</span>
           <span
-            class="lbs-page-group__navigation__list-item__text">{{ params.listItems[params.listItemIndex + 1].title }}</span></a>
+            class="lbs-page-group__navigation__list-item__text">{{ params.listItems[params.listItemIndex + 1].text }}</span></a>
       </li>
     {% endif %}
   </ul>

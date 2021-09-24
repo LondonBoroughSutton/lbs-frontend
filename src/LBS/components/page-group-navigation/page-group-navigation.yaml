@@ -4,14 +4,14 @@ params:
     required: true
     description: Provides the data object for pages in the section
     params:
-      - name: title
+      - name: text
         type: string
         required: true
-        description: The title of the page
-      - name: slug
+        description: The ttextof the page
+      - name: href
         type: string
         required: true
-        description: The slug of the page
+        description: The href of the page
   - name: listItemIndex
     type: int
     required: true
@@ -28,20 +28,20 @@ examples:
       listItemIndex: 2
       listItems: [
         {
-          title: "Item 1",
-          slug: "#"
+          text: "Item 1",
+          href: "#"
         },
         {
-          title: "Item 2",
-          slug: "#"
+          text: "Item 2",
+          href: "#"
         },
         {
-          title: "Item 3",
-          slug: "#"
+          text: "Item 3",
+          href: "#"
         },
         {
-          title: "Item 4",
-          slug: "#"
+          text: "Item 4",
+          href: "#"
         }
       ]
 
@@ -52,20 +52,20 @@ examples:
       inline: true
       listItems: [
         {
-          title: "Item 1",
-          slug: "#"
+          text: "Item 1",
+          href: "#"
         },
         {
-          title: "Item 2",
-          slug: "#"
+          text: "Item 2",
+          href: "#"
         },
         {
-          title: "Item 3",
-          slug: "#"
+          text: "Item 3",
+          href: "#"
         },
         {
-          title: "Item 4",
-          slug: "#"
+          text: "Item 4",
+          href: "#"
         }
       ]
 
@@ -75,20 +75,20 @@ examples:
       listItemIndex: 0
       listItems: [
         {
-          title: "Item 1",
-          slug: "#"
+          text: "Item 1",
+          href: "#"
         },
         {
-          title: "Item 2",
-          slug: "#"
+          text: "Item 2",
+          href: "#"
         },
         {
-          title: "Item 3",
-          slug: "#"
+          text: "Item 3",
+          href: "#"
         },
         {
-          title: "Item 4",
-          slug: "#"
+          text: "Item 4",
+          href: "#"
         }
       ]
 
@@ -98,20 +98,20 @@ examples:
       listItemIndex: 3
       listItems: [
         {
-          title: "Item 1",
-          slug: "#"
+          text: "Item 1",
+          href: "#"
         },
         {
-          title: "Item 2",
-          slug: "#"
+          text: "Item 2",
+          href: "#"
         },
         {
-          title: "Item 3",
-          slug: "#"
+          text: "Item 3",
+          href: "#"
         },
         {
-          title: "Item 4",
-          slug: "#"
+          text: "Item 4",
+          href: "#"
         }
       ]
 
