@@ -2,12 +2,12 @@
 {% set linkLimit = params.linkLimit if params.linkLimit else 3 %}
 {% if params.popularItem %}
 <a href="{{ params.heading.href }}"
-   class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item lbs-card--clickable{% endif %}">
+   class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}{% if params.popularItem %} lbs-card--popular-item lbs-card--clickable{% endif %}">
   {{ params.heading.title }}
 </a>
 {% else %}
   <div
-    class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.naked %}lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
+    class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
     <h{{ headingLevel }} class="govuk-heading-m">
       {% if params.heading.href %}
         <a href="{{ params.heading.href }}">
