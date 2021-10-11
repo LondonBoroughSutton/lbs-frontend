@@ -4,6 +4,10 @@
   }
 
   .show-hidden & {
-    display: list-item;
+    display: block;
+
+    li {
+      display: list-item;
+    }
   }
 }

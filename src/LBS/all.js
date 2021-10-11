@@ -1,4 +1,4 @@
-import { nodeListForEach } from './common'
+import { nodeListForEach, ShowMore } from './common'
 import Card from './components/card/card'
 import Header from './components/header/header'
 import Search from './components/search/search'
@@ -27,6 +27,12 @@ function initAll (options) {
     new Card($card).init()
   })
   new Card().setHeight()
+
+  var $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
+  nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
+    new ShowMore($showMoreWrapper)
+  })
+
 }
 
 export {
