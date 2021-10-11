@@ -3,3 +3,7 @@ $govuk-show-breakpoints: true;
 $govuk-new-link-styles: true;
 @import "../../../src/LBS/all";
 @import "partials/app";
+
+.home-page {
+  padding-top: 0;
+}

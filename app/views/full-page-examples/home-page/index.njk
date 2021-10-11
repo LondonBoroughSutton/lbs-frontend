@@ -7,7 +7,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 {% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 
-{#{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}#}
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing home-page' %}
 
 {% extends "_generic.njk" %}
 
@@ -118,6 +118,39 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               href: '#'
             },
             cardBodyHtml: "Apply for planning permission, see planning applications and read about planning policy",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Jobs and careers',
+              href: '#'
+            },
+            cardBodyHtml: "Find out about council jobs, working in Sutton and getting career help. We welcome applications from local residents",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Streets, Transport and Parking',
+              href: '#'
+            },
+            cardBodyHtml: "Find out about our road and transport responsibilities and how we promote public transport, walking and road safety",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Housing',
+              href: '#'
+            },
+            cardBodyHtml: "Advice and information for council tenants, homeowners and private renters",
             clickable: true,
             bgColour: false
           }) }}

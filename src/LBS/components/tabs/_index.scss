@@ -66,6 +66,10 @@ $border-colour: $lbs-grey;
           @include govuk-media-query($until: desktop) {
             display: none;
           }
+
+          ol:last-child {
+            margin-bottom: 0;
+          }
         }
 
         &--active {
