@@ -2,7 +2,7 @@
   @include lbs-background-gradient;
   display: flow-root;
 
-  * {
+  *:not(input) {
     color: $lbs-white;
   }
 

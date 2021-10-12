@@ -26,3 +26,64 @@ export function generateUniqueID () {
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
   })
 }
+
+// export const showMore = (targetWrapper, targetItems, count) => {
+//   console.log('Hello')
+// }
+
+// Common function to only show a subset of items and insert CTA to show them
+
+export function ShowMore ($module) {
+  this.$module = $module
+  // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
+}
+
+ShowMore.prototype.init = function () {
+  this.addCallToAction()
+  if (this.$module.getAttribute('data-show-more-type')) {
+    if (this.$module.getAttribute('data-show-more-position')) {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'))
+    } else {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'))
+    }
+  }
+}
+
+ShowMore.prototype.addCallToAction = function () {
+  const module = this.$module
+  const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
+  const showMoreHtml = document.createElement('a')
+  showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
+  showMoreHtml.setAttribute('class', 'show-more-link')
+  showMoreHtml.setAttribute('href', '#')
+  showMoreHtml.addEventListener('click', function (e) {
+    e.preventDefault()
+    module.classList.add('show-hidden')
+    try {
+      module.removeChild(this)
+    } catch (err) {
+      module.parentNode.removeChild(this)
+    }
+  })
+  if (this.$module.getAttribute('data-show-more-position') === 'after') {
+    module.insertAdjacentElement('afterend', showMoreHtml)
+  } else {
+    module.append(showMoreHtml)
+  }
+}
+
+ShowMore.prototype.addClassToCallToAction = function (classes, position) {
+  const module = this.$module
+
+  DOMTokenList.prototype.addMany = function (classes) {
+    const array = classes.split(' ')
+    for (let i = 0, length = array.length; i < length; i++) {
+      this.add(array[i])
+    }
+  }
+  if (position === 'after') {
+    module.nextElementSibling.classList.addMany(classes)
+  } else {
+    module.querySelector('.show-more-link').classList.addMany(classes)
+  }
+}
