@@ -47,6 +47,7 @@ ShowMore.prototype.init = function () {
       this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'))
     }
   }
+  this.addAriaAttributes()
 }
 
 ShowMore.prototype.addCallToAction = function () {
@@ -56,6 +57,8 @@ ShowMore.prototype.addCallToAction = function () {
   showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
   showMoreHtml.setAttribute('class', 'show-more-link')
   showMoreHtml.setAttribute('href', '#')
+  showMoreHtml.setAttribute('aria-controls', module.id)
+  showMoreHtml.setAttribute('role', 'button')
   showMoreHtml.addEventListener('click', function (e) {
     e.preventDefault()
     module.classList.add('show-hidden')
@@ -64,6 +67,8 @@ ShowMore.prototype.addCallToAction = function () {
     } catch (err) {
       module.parentNode.removeChild(this)
     }
+    module.setAttribute('aria-expanded', true)
+    module.querySelector('.js__is-hidden a').focus()
   })
   if (this.$module.getAttribute('data-show-more-position') === 'after') {
     module.insertAdjacentElement('afterend', showMoreHtml)
@@ -86,4 +91,9 @@ ShowMore.prototype.addClassToCallToAction = function (classes, position) {
   } else {
     module.querySelector('.show-more-link').classList.addMany(classes)
   }
+}
+
+ShowMore.prototype.addAriaAttributes = function () {
+  const module = this.$module
+  module.setAttribute('aria-expanded', false)
 }

@@ -6,6 +6,10 @@
   background-color: $lbs-white;
   box-shadow: $lbs-shadow;
 
+  *:last-child {
+    margin-bottom: 0;
+  }
+
   &--alt {
     //border: 1px solid $lbs-white;
     background-color: rgba($lbs-green-2, .1);
