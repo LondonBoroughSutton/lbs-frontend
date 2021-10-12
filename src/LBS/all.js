@@ -30,9 +30,8 @@ function initAll (options) {
 
   var $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
-    new ShowMore($showMoreWrapper)
+    new ShowMore($showMoreWrapper).init()
   })
-
 }
 
 export {
@@ -40,5 +39,6 @@ export {
   Card,
   Header,
   Search,
+  ShowMore,
   Tabs
 }

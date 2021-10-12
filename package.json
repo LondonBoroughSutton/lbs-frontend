@@ -78,6 +78,7 @@
       "page",
       "browser",
       "context",
+      "DOMTokenList",
       "jestPuppeteer"
     ],
     "ignore": [

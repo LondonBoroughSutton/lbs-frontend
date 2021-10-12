@@ -36,9 +36,10 @@ export function generateUniqueID () {
 export function ShowMore ($module) {
   this.$module = $module
   // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
+}
 
+ShowMore.prototype.init = function () {
   this.addCallToAction()
-  console.log(this.$module.getAttribute('data-show-more-position'))
   if (this.$module.getAttribute('data-show-more-type')) {
     if (this.$module.getAttribute('data-show-more-position')) {
       this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'))
@@ -58,8 +59,9 @@ ShowMore.prototype.addCallToAction = function () {
   showMoreHtml.addEventListener('click', function (e) {
     e.preventDefault()
     module.classList.add('show-hidden')
-    try { module.removeChild(this) }
-    catch (err) {
+    try {
+      module.removeChild(this)
+    } catch (err) {
       module.parentNode.removeChild(this)
     }
   })
@@ -74,7 +76,7 @@ ShowMore.prototype.addClassToCallToAction = function (classes, position) {
   const module = this.$module
 
   DOMTokenList.prototype.addMany = function (classes) {
-    let array = classes.split(' ')
+    const array = classes.split(' ')
     for (let i = 0, length = array.length; i < length; i++) {
       this.add(array[i])
     }
