@@ -38,8 +38,13 @@ export function ShowMore ($module) {
   // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
 
   this.addCallToAction()
+  console.log(this.$module.getAttribute('data-show-more-position'))
   if (this.$module.getAttribute('data-show-more-type')) {
-    this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'))
+    if (this.$module.getAttribute('data-show-more-position')) {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'))
+    } else {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'))
+    }
   }
 }
 
@@ -51,25 +56,32 @@ ShowMore.prototype.addCallToAction = function () {
   showMoreHtml.setAttribute('class', 'show-more-link')
   showMoreHtml.setAttribute('href', '#')
   showMoreHtml.addEventListener('click', function (e) {
-    module.classList.add('show-hidden')
-    module.removeChild(this)
     e.preventDefault()
+    module.classList.add('show-hidden')
+    try { module.removeChild(this) }
+    catch (err) {
+      module.parentNode.removeChild(this)
+    }
   })
-  console.log('S: ' + showMoreHtml)
-  module.append(showMoreHtml)
+  if (this.$module.getAttribute('data-show-more-position') === 'after') {
+    module.insertAdjacentElement('afterend', showMoreHtml)
+  } else {
+    module.append(showMoreHtml)
+  }
 }
 
-ShowMore.prototype.addClassToCallToAction = function (classes) {
-  console.log('Enter')
+ShowMore.prototype.addClassToCallToAction = function (classes, position) {
   const module = this.$module
 
-  DOMTokenList.prototype.addMany = function(classes) {
-    var array = classes.split(' ');
-    for (var i = 0, length = array.length; i < length; i++) {
-      this.add(array[i]);
+  DOMTokenList.prototype.addMany = function (classes) {
+    let array = classes.split(' ')
+    for (let i = 0, length = array.length; i < length; i++) {
+      this.add(array[i])
     }
   }
-  console.log(module.querySelector('.show-more-link'))
-  module.querySelector('.show-more-link').classList.addMany(classes)
-  console.log(module.querySelector('.show-more-link'))
+  if (position === 'after') {
+    module.nextElementSibling.classList.addMany(classes)
+  } else {
+    module.querySelector('.show-more-link').classList.addMany(classes)
+  }
 }
