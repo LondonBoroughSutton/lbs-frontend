@@ -9,7 +9,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      This is a description\n  </div>",
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        Example heading\n      \n    </h2>\n      <p>This is a description</p>\n  </div>",
             "hidden": false
         },
         {
@@ -21,7 +21,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "html": "<div\n    class=\"lbs-card   \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      <p>This is a description</p>\n  </div>",
             "hidden": false
         },
         {
@@ -144,7 +144,7 @@
                 "cardBodyHtml": "This is a description",
                 "clickable": true
             },
-            "html": "<div\n    class=\"lbs-card  lbs-card--clickable \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "html": "<div\n    class=\"lbs-card  lbs-card--clickable \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      <p>This is a description</p>\n  </div>",
             "hidden": false
         },
         {
@@ -158,7 +158,7 @@
                 "clickable": true,
                 "naked": true
             },
-            "html": "<div\n    class=\"lbs-card  lbs-card--naked lbs-card--clickable \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "html": "<div\n    class=\"lbs-card  lbs-card--naked lbs-card--clickable \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      <p>This is a description</p>\n  </div>",
             "hidden": false
         },
         {
@@ -171,7 +171,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n    class=\"lbs-card lbs-card--alt  \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      This is a description\n  </div>",
+            "html": "<div\n    class=\"lbs-card lbs-card--alt  \">\n    <h2 class=\"govuk-heading-m\">\n      \n        <a href=\"#\">\n          Example heading\n        </a>\n      \n    </h2>\n      <p>This is a description</p>\n  </div>",
             "hidden": false
         },
         {

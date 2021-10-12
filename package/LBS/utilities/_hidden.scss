@@ -4,6 +4,15 @@
   }
 
   .show-hidden & {
+    display: block;
+  }
+}
+
+/* stylelint-disable */
+
+.show-hidden {
+  li.js__is-hidden {
     display: list-item;
   }
 }
+/* stylelint-enable */

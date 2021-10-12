@@ -18,7 +18,7 @@
       {% endif %}
     </h{{ headingLevel }}>
     {%- if params.cardBodyHtml %}
-      {{ params.cardBodyHtml | safe }}
+      <p>{{ params.cardBodyHtml | safe }}</p>
     {%- endif %}
     {%- if params.linkItems %}
       <ul>
