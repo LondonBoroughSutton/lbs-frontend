@@ -27,6 +27,10 @@ export function generateUniqueID () {
   })
 }
 
+export const settings = {
+  minWidth: '40.0625em'
+}
+
 // export const showMore = (targetWrapper, targetItems, count) => {
 //   console.log('Hello')
 // }
@@ -97,3 +101,4 @@ ShowMore.prototype.addAriaAttributes = function () {
   const module = this.$module
   module.setAttribute('aria-expanded', false)
 }
+
