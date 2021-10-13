@@ -42,7 +42,7 @@ Card.prototype.handleClickable = function () {
  */
 
 Cards.prototype.init = function () {
-  console.log('inti')
+  console.log('init Cards')
   if (!this.$module) {
     return
   }
@@ -66,6 +66,7 @@ Cards.prototype.setupResponsiveChecks = function () {
 Cards.prototype.checkMode = function () {
   if (this.mql.matches) {
     this.setHeight()
+    new ShowMore(this.$module).init()
   } else {
     this.teardownCards()
   }

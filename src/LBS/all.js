@@ -34,10 +34,10 @@ function initAll (options) {
     new Cards($cardContainer).init()
   })
 
-  let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
-  nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
-    new ShowMore($showMoreWrapper).init()
-  })
+  // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
+  // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
+  //   new ShowMore($showMoreWrapper).init()
+  // })
 }
 
 export {
