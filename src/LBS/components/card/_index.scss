@@ -1,4 +1,5 @@
 .lbs-card {
+  box-sizing: content-box;
   margin-bottom: $lbs-margin;
   padding: $lbs-margin;
   border-bottom: 4px solid rgba($lbs-green-2, .5);
