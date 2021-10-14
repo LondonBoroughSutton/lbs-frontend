@@ -25,7 +25,6 @@ Card.prototype.init = function () {
   if (this.$module.querySelector('.js__is-hidden')) {
     this.showAllItems()
   }
-  new ShowMore(this.$module).init()
 }
 
 Card.prototype.handleClickable = function () {
@@ -68,10 +67,11 @@ Cards.prototype.init = function () {
   } else {
     this.setupCardWrapper()
   }
+  new ShowMore(this.$module).init()
 }
 
 Cards.prototype.setupCardWrapper = function () {
-  console.log('Card setup')
+
 }
 
 Cards.prototype.setupResponsiveChecks = function () {
@@ -83,7 +83,7 @@ Cards.prototype.setupResponsiveChecks = function () {
 Cards.prototype.checkMode = function () {
   if (this.mql.matches) {
     this.setHeight()
-    new ShowMore(this.$module).init()
+    this.setupCardWrapper()
   } else {
     this.teardownCards()
   }

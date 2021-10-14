@@ -38,8 +38,12 @@ export function ShowMore ($module) {
 }
 
 ShowMore.prototype.init = function () {
-  this.hideItems()
-  if (this.$module.getAttribute('data-show-more')) {
+  const count = this.$module.getAttribute('data-show-count') || 6 // Roadmap item - add data item to dictate how many items to show
+  console.log(parseInt(this.$module.getAttribute('data-show-count')))
+  console.log(count)
+  this.hideItems(count)
+  if (this.$module.getAttribute('data-show-more') && count !== '0') {
+    console.log(1)
     this.addCallToAction()
     if (this.$module.getAttribute('data-show-more-type')) {
       if (this.$module.getAttribute('data-show-more-position')) {
@@ -52,16 +56,16 @@ ShowMore.prototype.init = function () {
   }
 }
 
-ShowMore.prototype.hideItems = function () {
-  const count = parseInt(this.$module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
+ShowMore.prototype.hideItems = function (count) {
   this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
-    if (index >= count) {
+    if (index >= count && count != 0) {
       x.parentNode.classList.add('js__is-hidden')
     }
   })
 }
 
 ShowMore.prototype.addCallToAction = function () {
+  console.log('hit')
   const module = this.$module
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
   const showMoreHtml = document.createElement('a')
