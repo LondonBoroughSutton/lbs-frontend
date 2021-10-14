@@ -33,30 +33,45 @@ function generateUniqueID () {
   })
 }
 
-// export const showMore = (targetWrapper, targetItems, count) => {
-//   console.log('Hello')
-// }
+const settings = {
+  minWidth: '40.0625em'
+};
 
 // Common function to only show a subset of items and insert CTA to show them
 
 function ShowMore ($module) {
   this.$module = $module;
-  // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
 }
 
 ShowMore.prototype.init = function () {
-  this.addCallToAction();
-  if (this.$module.getAttribute('data-show-more-type')) {
-    if (this.$module.getAttribute('data-show-more-position')) {
-      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
-    } else {
-      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+  const count = this.$module.getAttribute('data-show-count') || 6; // Roadmap item - add data item to dictate how many items to show
+  console.log(parseInt(this.$module.getAttribute('data-show-count')));
+  console.log(count);
+  this.hideItems(count);
+  if (this.$module.getAttribute('data-show-more') && count !== '0') {
+    console.log(1);
+    this.addCallToAction();
+    if (this.$module.getAttribute('data-show-more-type')) {
+      if (this.$module.getAttribute('data-show-more-position')) {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+      } else {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+      }
     }
+    this.addAriaAttributes();
   }
-  this.addAriaAttributes();
+};
+
+ShowMore.prototype.hideItems = function (count) {
+  this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
+    if (index >= count && count != 0) {
+      x.parentNode.classList.add('js__is-hidden');
+    }
+  });
 };
 
 ShowMore.prototype.addCallToAction = function () {
+  console.log('hit');
   const module = this.$module;
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length;
   const showMoreHtml = document.createElement('a');
@@ -106,6 +121,7 @@ ShowMore.prototype.addAriaAttributes = function () {
 
 exports.nodeListForEach = nodeListForEach;
 exports.generateUniqueID = generateUniqueID;
+exports.settings = settings;
 exports.ShowMore = ShowMore;
 
 })));

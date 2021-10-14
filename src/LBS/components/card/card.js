@@ -1,9 +1,16 @@
+import { ShowMore, settings } from '../../common'
+
 function Card ($module) {
   this.$module = $module
 }
 
+// All cards in collection
+export function Cards ($module) {
+  this.$module = $module
+}
+
 /**
- * Initialise header
+ * Initialise Card
  *
  * Check for the presence of cards - if any are
  * missing then there's nothing to do so return early.
@@ -18,7 +25,6 @@ Card.prototype.init = function () {
   if (this.$module.querySelector('.js__is-hidden')) {
     this.showAllItems()
   }
-  // this.setHeight()
 }
 
 Card.prototype.handleClickable = function () {
@@ -45,7 +51,51 @@ Card.prototype.showAllItems = function () {
   this.$module.append(showMoreHtml)
 }
 
-Card.prototype.setHeight = function () {
+/**
+ * Initialise Cards
+ *
+ * Check for the presence of card wrappers - if any are
+ * present, perform common actions such as setting common heights
+ */
+
+Cards.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+  if (typeof window.matchMedia === 'function') {
+    this.setupResponsiveChecks()
+  } else {
+    this.setupCardWrapper()
+  }
+  new ShowMore(this.$module).init()
+}
+
+Cards.prototype.setupCardWrapper = function () {
+
+}
+
+Cards.prototype.setupResponsiveChecks = function () {
+  this.mql = window.matchMedia('(min-width: ' + settings.minWidth + ')')
+  this.mql.addListener(this.checkMode.bind(this))
+  this.checkMode()
+}
+
+Cards.prototype.checkMode = function () {
+  if (this.mql.matches) {
+    this.setHeight()
+    this.setupCardWrapper()
+  } else {
+    this.teardownCards()
+  }
+}
+
+Cards.prototype.teardownCards = function () {
+  document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {
+    x.removeAttribute('style')
+  })
+}
+
+Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
   document.querySelectorAll('.lbs-card').forEach(card => {

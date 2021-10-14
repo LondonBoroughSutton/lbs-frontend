@@ -1,4 +1,4 @@
-import { nodeListForEach } from '../../common'
+import { nodeListForEach, settings } from '../../common'
 
 function Tabs ($module) {
   this.$module = $module
@@ -32,7 +32,7 @@ Tabs.prototype.init = function () {
 }
 
 Tabs.prototype.setupResponsiveChecks = function () {
-  this.mql = window.matchMedia('(min-width: 40.0625em)')
+  this.mql = window.matchMedia('(min-width: ' + settings.minWidth + ')')
   this.mql.addListener(this.checkMode.bind(this))
   this.checkMode()
 }

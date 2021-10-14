@@ -88,14 +88,14 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
   <div class="lbs-row lbs-row--alt2">
     <div class="lbs-row__container">
       <h2>Services</h2>
-      <div class="govuk-grid-row" data-show-more="true" data-show-count="3" data-show-more-type="govuk-button lbs-button" data-show-more-position="after" id="home-services">
+      <div class="govuk-grid-row lbs-card__wrapper" data-show-more="true" data-show-count="6" data-show-more-type="govuk-button lbs-button" data-show-more-position="after" id="home-services">
         <div class="govuk-grid-column-one-third-from-desktop">
           {{ lbsCard({
             heading: {
               title: 'Waste and recycling',
               href: '#'
             },
-            cardBodyHtml: "Find out your collection day, where to take your old appliances and what to do with your garden waste",
+            cardBodyHtml: "Check when to put your rubbish and recycling out for collection, report a missed collection, request new containers and find out more about how your waste collection service works.",
             clickable: true,
             bgColour: false
           }) }}
@@ -106,7 +106,29 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               title: 'Council Tax',
               href: '#'
             },
-            cardBodyHtml: "Paying, discounts and exemptions, what to do if you move",
+            cardBodyHtml: "Information about paying your council tax, your council tax band, applying for discounts and exemptions, and telling us about a house move.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Housing',
+              href: '#'
+            },
+            cardBodyHtml: "Apply for and bid for social housing or find support for homelessness.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Jobs and careers',
+              href: '#'
+            },
+            cardBodyHtml: "Apply for jobs, apprenticeships and social care roles and find out more about working at the Council",
             clickable: true,
             bgColour: false
           }) }}
@@ -117,18 +139,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               title: 'Planning and building',
               href: '#'
             },
-            cardBodyHtml: "Apply for planning permission, see planning applications and read about planning policy",
-            clickable: true,
-            bgColour: false
-          }) }}
-        </div>
-        <div class="govuk-grid-column-one-third-from-desktop">
-          {{ lbsCard({
-            heading: {
-              title: 'Jobs and careers',
-              href: '#'
-            },
-            cardBodyHtml: "Find out about council jobs, working in Sutton and getting career help. We welcome applications from local residents",
+            cardBodyHtml: "Apply for planning permission, view and comment on applications and information about building control.",
             clickable: true,
             bgColour: false
           }) }}
@@ -139,7 +150,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               title: 'Streets, Transport and Parking',
               href: '#'
             },
-            cardBodyHtml: "Find out about our road and transport responsibilities and how we promote public transport, walking and road safety",
+            cardBodyHtml: "Apply for or renew a parking permit, read about parking consultations, or report a street cleaning issue.",
             clickable: true,
             bgColour: false
           }) }}
@@ -147,43 +158,32 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
         <div class="govuk-grid-column-one-third-from-desktop">
           {{ lbsCard({
             heading: {
-              title: 'Housing',
+              title: 'Adult Social Care',
               href: '#'
             },
-            cardBodyHtml: "Advice and information for council tenants, homeowners and private renters",
+            cardBodyHtml: "This section facilitates you to get information about Care assessments and local services, Support for adults with certain needs and Support to live at home.",
             clickable: true,
             bgColour: false
           }) }}
         </div>
-        <div class="govuk-grid-column-one-third-from-desktop js__is-hidden">
+        <div class="govuk-grid-column-one-third-from-desktop">
           {{ lbsCard({
             heading: {
-              title: 'Jobs and careers',
+              title: 'Children, Families and Young peoples',
               href: '#'
             },
-            cardBodyHtml: "Find out about council jobs, working in Sutton and getting career help. We welcome applications from local residents",
+            cardBodyHtml: "Services for children, young people and families in Sutton, including information on children’s centres and childcare, supporting disabled children, fostering and child safeguarding.",
             clickable: true,
             bgColour: false
           }) }}
         </div>
-        <div class="govuk-grid-column-one-third-from-desktop js__is-hidden">
+        <div class="govuk-grid-column-one-third-from-desktop">
           {{ lbsCard({
             heading: {
-              title: 'Streets, Transport and Parking',
+              title: 'Births, Deaths, Marriages',
               href: '#'
             },
-            cardBodyHtml: "Find out about our road and transport responsibilities and how we promote public transport, walking and road safety",
-            clickable: true,
-            bgColour: false
-          }) }}
-        </div>
-        <div class="govuk-grid-column-one-third-from-desktop js__is-hidden">
-          {{ lbsCard({
-            heading: {
-              title: 'Housing',
-              href: '#'
-            },
-            cardBodyHtml: "Advice and information for council tenants, homeowners and private renters",
+            cardBodyHtml: "Register a birth, deaths or stillbirth, and find out about marriages and civil partnerships and citizenship ceremonies.",
             clickable: true,
             bgColour: false
           }) }}
