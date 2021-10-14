@@ -1,5 +1,4 @@
 import { ShowMore, settings } from '../../common'
-import Tabs from '../tabs/tabs'
 
 function Card ($module) {
   this.$module = $module
@@ -23,8 +22,11 @@ Card.prototype.init = function () {
   if (this.$module.classList.contains('lbs-card--clickable')) {
     this.handleClickable()
   }
+  if (this.$module.querySelector('.js__is-hidden')) {
+    this.showAllItems()
+  }
+  new ShowMore(this.$module).init()
 }
-
 
 Card.prototype.handleClickable = function () {
   if (this.$module.querySelector('a') !== null) {
@@ -32,6 +34,22 @@ Card.prototype.handleClickable = function () {
       this.$module.querySelector('a').click()
     })
   }
+}
+
+Card.prototype.showAllItems = function () {
+  // todo - consider moving focus to previously hidden items on toggle
+  const module = this.$module
+  const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
+  const showMoreHtml = document.createElement('a')
+  showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
+  showMoreHtml.setAttribute('class', 'show-more-link')
+  showMoreHtml.setAttribute('href', '#')
+  showMoreHtml.addEventListener('click', function (e) {
+    module.querySelector('ul').classList.add('show-hidden')
+    module.removeChild(this)
+    e.preventDefault()
+  })
+  this.$module.append(showMoreHtml)
 }
 
 /**
@@ -42,7 +60,6 @@ Card.prototype.handleClickable = function () {
  */
 
 Cards.prototype.init = function () {
-  console.log('init Cards')
   if (!this.$module) {
     return
   }
@@ -78,29 +95,13 @@ Cards.prototype.teardownCards = function () {
   })
 }
 
-Cards.prototype.showAllItems = function () {
-  // todo - consider moving focus to previously hidden items on toggle
-  const module = this.$module
-  const itemCount = this.$module.querySelectorAll('.js__is-hidden').length
-  const showMoreHtml = document.createElement('a')
-  showMoreHtml.innerText = 'Show more items (' + itemCount + ')'
-  showMoreHtml.setAttribute('class', 'show-more-link')
-  showMoreHtml.setAttribute('href', '#')
-  showMoreHtml.addEventListener('click', function (e) {
-    module.querySelector('ul').classList.add('show-hidden')
-    module.removeChild(this)
-    e.preventDefault()
-  })
-  this.$module.append(showMoreHtml)
-}
-
 Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
   document.querySelectorAll('.lbs-card').forEach(card => {
     if (card.clientHeight > tallestCard) {
       const cs = window.getComputedStyle(card)
-      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
+      tallestCard = card.offsetHeight - (parseFloat(cs.paddingBottom))
     }
   })
   document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {

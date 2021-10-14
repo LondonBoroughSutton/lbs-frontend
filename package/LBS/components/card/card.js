@@ -1,15 +1,115 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define('LBSFrontend', factory) :
-	(global.LBSFrontend = factory());
-}(this, (function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define('LBSFrontend', ['exports'], factory) :
+	(factory((global.LBSFrontend = {})));
+}(this, (function (exports) { 'use strict';
+
+/**
+ * TODO: Ideally this would be a NodeList.prototype.forEach polyfill
+ * This seems to fail in IE8, requires more investigation.
+ * See: https://github.com/imagitama/nodelist-foreach-polyfill
+ */
+
+const settings = {
+  minWidth: '40.0625em'
+};
+
+// export const showMore = (targetWrapper, targetItems, count) => {
+//   console.log('Hello')
+// }
+
+// Common function to only show a subset of items and insert CTA to show them
+
+function ShowMore ($module) {
+  this.$module = $module;
+  // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
+}
+
+ShowMore.prototype.init = function () {
+  console.log('ShowMore init');
+  console.log(this.$module);
+  this.hideItems();
+  if (this.$module.getAttribute('data-show-more')) {
+    this.addCallToAction();
+    if (this.$module.getAttribute('data-show-more-type')) {
+      if (this.$module.getAttribute('data-show-more-position')) {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+      } else {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+      }
+    }
+    this.addAriaAttributes();
+  }
+};
+
+ShowMore.prototype.hideItems = function () {
+  const count = parseInt(this.$module.getAttribute('data-show-count')) || 6; // Roadmap item - add data item to dictate how many items to show
+  this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
+    if (index >= count) {
+      x.parentNode.classList.add('js__is-hidden');
+    }
+  });
+};
+
+ShowMore.prototype.addCallToAction = function () {
+  const module = this.$module;
+  const itemCount = this.$module.querySelectorAll('.js__is-hidden').length;
+  const showMoreHtml = document.createElement('a');
+  showMoreHtml.innerText = 'Show more items (' + itemCount + ')';
+  showMoreHtml.setAttribute('class', 'show-more-link');
+  showMoreHtml.setAttribute('href', '#');
+  showMoreHtml.setAttribute('aria-controls', module.id);
+  showMoreHtml.setAttribute('role', 'button');
+  showMoreHtml.addEventListener('click', function (e) {
+    e.preventDefault();
+    module.classList.add('show-hidden');
+    try {
+      module.removeChild(this);
+    } catch (err) {
+      module.parentNode.removeChild(this);
+    }
+    module.setAttribute('aria-expanded', true);
+    module.querySelector('.js__is-hidden a').focus();
+  });
+  if (this.$module.getAttribute('data-show-more-position') === 'after') {
+    module.insertAdjacentElement('afterend', showMoreHtml);
+  } else {
+    module.append(showMoreHtml);
+  }
+};
+
+ShowMore.prototype.addClassToCallToAction = function (classes, position) {
+  const module = this.$module;
+
+  DOMTokenList.prototype.addMany = function (classes) {
+    const array = classes.split(' ');
+    for (let i = 0, length = array.length; i < length; i++) {
+      this.add(array[i]);
+    }
+  };
+  if (position === 'after') {
+    module.nextElementSibling.classList.addMany(classes);
+  } else {
+    module.querySelector('.show-more-link').classList.addMany(classes);
+  }
+};
+
+ShowMore.prototype.addAriaAttributes = function () {
+  const module = this.$module;
+  module.setAttribute('aria-expanded', false);
+};
 
 function Card ($module) {
   this.$module = $module;
 }
 
+// All cards in collection
+function Cards ($module) {
+  this.$module = $module;
+}
+
 /**
- * Initialise header
+ * Initialise Card
  *
  * Check for the presence of cards - if any are
  * missing then there's nothing to do so return early.
@@ -24,7 +124,7 @@ Card.prototype.init = function () {
   if (this.$module.querySelector('.js__is-hidden')) {
     this.showAllItems();
   }
-  // this.setHeight()
+  new ShowMore(this.$module).init();
 };
 
 Card.prototype.handleClickable = function () {
@@ -51,7 +151,51 @@ Card.prototype.showAllItems = function () {
   this.$module.append(showMoreHtml);
 };
 
-Card.prototype.setHeight = function () {
+/**
+ * Initialise Cards
+ *
+ * Check for the presence of card wrappers - if any are
+ * present, perform common actions such as setting common heights
+ */
+
+Cards.prototype.init = function () {
+  console.log('init Cards');
+  if (!this.$module) {
+    return
+  }
+  if (typeof window.matchMedia === 'function') {
+    this.setupResponsiveChecks();
+  } else {
+    this.setupCardWrapper();
+  }
+};
+
+Cards.prototype.setupCardWrapper = function () {
+  console.log('Card setup');
+};
+
+Cards.prototype.setupResponsiveChecks = function () {
+  this.mql = window.matchMedia('(min-width: ' + settings.minWidth + ')');
+  this.mql.addListener(this.checkMode.bind(this));
+  this.checkMode();
+};
+
+Cards.prototype.checkMode = function () {
+  if (this.mql.matches) {
+    this.setHeight();
+    new ShowMore(this.$module).init();
+  } else {
+    this.teardownCards();
+  }
+};
+
+Cards.prototype.teardownCards = function () {
+  document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {
+    x.removeAttribute('style');
+  });
+};
+
+Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0;
   document.querySelectorAll('.lbs-card').forEach(card => {
@@ -65,6 +209,7 @@ Card.prototype.setHeight = function () {
   });
 };
 
-return Card;
+exports.Cards = Cards;
+exports.default = Card;
 
 })));

@@ -31,20 +31,13 @@ export const settings = {
   minWidth: '40.0625em'
 }
 
-// export const showMore = (targetWrapper, targetItems, count) => {
-//   console.log('Hello')
-// }
-
 // Common function to only show a subset of items and insert CTA to show them
 
 export function ShowMore ($module) {
   this.$module = $module
-  // const count = parseInt($module.getAttribute('data-show-count')) || 6 // Roadmap item - add data item to dictate how many items to show
 }
 
 ShowMore.prototype.init = function () {
-  console.log('ShowMore init')
-  console.log(this.$module)
   this.hideItems()
   if (this.$module.getAttribute('data-show-more')) {
     this.addCallToAction()
@@ -115,4 +108,3 @@ ShowMore.prototype.addAriaAttributes = function () {
   const module = this.$module
   module.setAttribute('aria-expanded', false)
 }
-

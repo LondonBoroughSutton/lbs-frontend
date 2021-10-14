@@ -1,6 +1,5 @@
 import { nodeListForEach, ShowMore } from './common'
-import Card from './components/card/card'
-import { Cards } from './components/card/card'
+import Card, { Cards } from './components/card/card'
 import Header from './components/header/header'
 import Search from './components/search/search'
 import Tabs from './components/tabs/tabs'
@@ -12,24 +11,24 @@ function initAll (options) {
 
   // Allow the user to initialise GOV.UK Frontend in only certain sections of the page
   // Defaults to the entire document if nothing is set.
-  let scope = typeof options.scope !== 'undefined' ? options.scope : document
+  const scope = typeof options.scope !== 'undefined' ? options.scope : document
 
-  let $headers = scope.querySelectorAll('.lbs-header')
+  const $headers = scope.querySelectorAll('.lbs-header')
   nodeListForEach($headers, function ($header) {
     new Header($header).init()
   })
 
-  let $tabs = scope.querySelectorAll('.lbs-tabs')
+  const $tabs = scope.querySelectorAll('.lbs-tabs')
   nodeListForEach($tabs, function ($tabGroup) {
     new Tabs($tabGroup).init()
   })
 
-  let $cards = scope.querySelectorAll('.lbs-card')
+  const $cards = scope.querySelectorAll('.lbs-card')
   nodeListForEach($cards, function ($card) {
     new Card($card).init()
   })
   // new Card().setHeight()
-  let $cardContainers = scope.querySelectorAll('.lbs-card__wrapper')
+  const $cardContainers = scope.querySelectorAll('.lbs-card__wrapper')
   nodeListForEach($cardContainers, function ($cardContainer) {
     new Cards($cardContainer).init()
   })

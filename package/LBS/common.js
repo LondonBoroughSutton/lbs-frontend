@@ -33,6 +33,10 @@ function generateUniqueID () {
   })
 }
 
+const settings = {
+  minWidth: '40.0625em'
+};
+
 // export const showMore = (targetWrapper, targetItems, count) => {
 //   console.log('Hello')
 // }
@@ -45,15 +49,29 @@ function ShowMore ($module) {
 }
 
 ShowMore.prototype.init = function () {
-  this.addCallToAction();
-  if (this.$module.getAttribute('data-show-more-type')) {
-    if (this.$module.getAttribute('data-show-more-position')) {
-      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
-    } else {
-      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+  console.log('ShowMore init');
+  console.log(this.$module);
+  this.hideItems();
+  if (this.$module.getAttribute('data-show-more')) {
+    this.addCallToAction();
+    if (this.$module.getAttribute('data-show-more-type')) {
+      if (this.$module.getAttribute('data-show-more-position')) {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+      } else {
+        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+      }
     }
+    this.addAriaAttributes();
   }
-  this.addAriaAttributes();
+};
+
+ShowMore.prototype.hideItems = function () {
+  const count = parseInt(this.$module.getAttribute('data-show-count')) || 6; // Roadmap item - add data item to dictate how many items to show
+  this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
+    if (index >= count) {
+      x.parentNode.classList.add('js__is-hidden');
+    }
+  });
 };
 
 ShowMore.prototype.addCallToAction = function () {
@@ -106,6 +124,7 @@ ShowMore.prototype.addAriaAttributes = function () {
 
 exports.nodeListForEach = nodeListForEach;
 exports.generateUniqueID = generateUniqueID;
+exports.settings = settings;
 exports.ShowMore = ShowMore;
 
 })));
