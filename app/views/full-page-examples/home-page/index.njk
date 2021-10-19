@@ -88,7 +88,8 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
   <div class="lbs-row lbs-row--alt2">
     <div class="lbs-row__container">
       <h2>Services</h2>
-      <div class="govuk-grid-row lbs-card__wrapper" data-show-more="true" data-show-count="6" data-show-more-type="govuk-button lbs-button" data-show-more-position="after" id="home-services">
+      <div class="govuk-grid-row lbs-card__wrapper" data-show-more="true" data-show-count="6"
+           data-show-more-type="govuk-button lbs-button" data-show-more-position="after" id="home-services">
         <div class="govuk-grid-column-one-third-from-desktop">
           {{ lbsCard({
             heading: {
@@ -191,5 +192,21 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       </div>
     </div>
   </div>
-
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      <div class="sutton-scene-signup govuk-grid-row">
+        <h2 class="govuk-grid-column-one-quarter">Sutton Scene</h2>
+        <div class="govuk-grid-column-three-quarters">
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body-s">Stay up-to-date with the latest news and events in Sutton by signing up to our weekly newsletter</p>
+          </div>
+          <form action="#" class="govuk-grid-column-one-half">
+            <label>Email</label>
+            <input value="Hello" type="text"/>
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

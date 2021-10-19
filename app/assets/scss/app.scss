@@ -6,4 +6,20 @@ $govuk-new-link-styles: true;
 
 .home-page {
   padding-top: 0;
+
+  .sutton-scene-signup {
+    @extend .lbs-row--alt4;
+    display: flex;
+    padding: $lbs-margin;
+    border-radius: $lbs-border-radius;
+
+    .govuk-grid-column-three-quarters {
+      display: flex;
+      align-items: center;
+
+      > div p {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
