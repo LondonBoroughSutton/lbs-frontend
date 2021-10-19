@@ -30,20 +30,19 @@ function ShowMore ($module) {
 
 ShowMore.prototype.init = function () {
   const count = this.$module.getAttribute('data-show-count') || 6; // Roadmap item - add data item to dictate how many items to show
-  console.log(parseInt(this.$module.getAttribute('data-show-count')));
-  console.log(count);
   this.hideItems(count);
   if (this.$module.getAttribute('data-show-more') && count !== '0') {
-    console.log(1);
-    this.addCallToAction();
-    if (this.$module.getAttribute('data-show-more-type')) {
-      if (this.$module.getAttribute('data-show-more-position')) {
-        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
-      } else {
-        this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+    if (this.$module.querySelector('.js__is-hidden')) {
+      this.addCallToAction();
+      if (this.$module.getAttribute('data-show-more-type')) {
+        if (this.$module.getAttribute('data-show-more-position')) {
+          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+        } else {
+          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+        }
       }
+      this.addAriaAttributes();
     }
-    this.addAriaAttributes();
   }
 };
 
