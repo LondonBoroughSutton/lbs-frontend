@@ -15,4 +15,17 @@
   &--alt3 {
     background: rgba($lbs-green-1, 1);
   }
+
+  &--phase-banner {
+    //@include lbs-background-gradient;
+    background: rgba($lbs-green-1, .2);
+
+    .lbs-row__container {
+      padding: 0;
+
+      .govuk-phase-banner {
+        border-color: transparent;
+      }
+    }
+  }
 }
