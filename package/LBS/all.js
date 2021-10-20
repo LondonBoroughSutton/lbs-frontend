@@ -55,7 +55,6 @@ ShowMore.prototype.hideItems = function (count) {
 };
 
 ShowMore.prototype.addCallToAction = function () {
-  console.log('hit');
   const module = this.$module;
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length;
   const showMoreHtml = document.createElement('a');

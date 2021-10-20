@@ -1,0 +1,51 @@
+.sutton-scene-signup {
+  @extend .lbs-row--alt4;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: $lbs-margin;
+  border-radius: $lbs-border-radius;
+  @include govuk-media-query($from: desktop) {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+
+  .govuk-grid-column-three-quarters-from-desktop {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    @include govuk-media-query($from: desktop) {
+      -ms-flex-direction: row;
+          flex-direction: row;
+    }
+
+    > div p {
+      margin-bottom: 0;
+    }
+  }
+
+  form {
+    padding: $lbs-margin / 5;
+    border: 2px solid $lbs-grey;
+    background: $lbs-white;
+    @include govuk-media-query($until: desktop) {
+      margin-top: $lbs-margin;
+    }
+
+    input {
+      border: none;
+    }
+
+    button {
+      box-shadow: none;
+
+      @include govuk-media-query($until: desktop) {
+        width: 10rem;
+      }
+    }
+  }
+}
