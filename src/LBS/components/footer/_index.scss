@@ -1,0 +1,17 @@
+.lbs-footer {
+  padding: $lbs-margin / 3 0;
+  border-top: 5px solid $lbs-green-1;
+  background: rgba($lbs-grey, .1);
+
+  .govuk-width-container {
+    display: flex; // Floats or flex? Flex feels best but floats are better supported
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    @include govuk-media-query($from: desktop) {
+      flex-direction: row;
+      position: relative;
+      align-items: stretch;
+    }
+  }
+}
