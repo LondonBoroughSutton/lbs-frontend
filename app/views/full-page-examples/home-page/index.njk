@@ -195,16 +195,25 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
   <div class="lbs-row">
     <div class="lbs-row__container">
       <div class="sutton-scene-signup govuk-grid-row">
-        <h2 class="govuk-grid-column-one-quarter">Sutton Scene</h2>
-        <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-grid-column-one-quarter">
+          <img src="/public/assets/img/SuttonSceneLogo.svg" alt="Sutton Scene" />
+        </h2>
+        <div class="govuk-grid-column-three-quarters-from-desktop govuk-grid-row">
           <div class="govuk-grid-column-one-half">
             <p class="govuk-body-s">Stay up-to-date with the latest news and events in Sutton by signing up to our weekly newsletter</p>
           </div>
-          <form action="#" class="govuk-grid-column-one-half">
-            <label>Email</label>
-            <input value="Hello" type="text"/>
-            <button>Submit</button>
+{#          <form action="#" class="govuk-grid-column-one-half">#}
+{#            <label>Email</label>#}
+{#            <input value="Hello" type="text"/>#}
+{#            <button>Submit</button>#}
+          <form class="lbs-search govuk-grid-column-one-half" action="/" method="post">
+            <label class="govuk-label govuk-label--l govuk-visually-hidden" for="sutton-scene-signup">
+              Sign up for Sutton Scene newseltter
+            </label>
+            <input type="email" name="sutton-scene-signup" class="lbs-search__inputa govuk-input " id="lbs-search__box" placeholder="Enter your email address" />
+            <button type="submit" class="lbs-button govuk-button" style="margin-bottom: 0;">Subscribe</button>
           </form>
+{#          </form>#}
         </div>
       </div>
     </div>
