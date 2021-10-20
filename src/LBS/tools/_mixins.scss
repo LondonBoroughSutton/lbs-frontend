@@ -71,5 +71,8 @@
 //  Background gradient mixin
 @mixin lbs-background-gradient() {
   background: linear-gradient(45deg, $lbs-green-1, $lbs-green-2);
-  //background: $lbs-green-1;
+}
+
+@mixin lbs-background-gradient--yellow() {
+  background: linear-gradient(45deg, $lbs-yellow, $lbs-orange);
 }
