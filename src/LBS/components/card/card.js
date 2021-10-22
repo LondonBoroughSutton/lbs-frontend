@@ -67,7 +67,9 @@ Cards.prototype.init = function () {
   } else {
     this.setupCardWrapper()
   }
-  new ShowMore(this.$module).init()
+  if (this.$module.getAttribute('data-show-more')) {
+    new ShowMore(this.$module).init()
+  }
 }
 
 Cards.prototype.setupCardWrapper = function () {
