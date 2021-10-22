@@ -20,25 +20,27 @@
       margin-bottom: 0;
     }
   }
+}
 
-  form {
-    padding: $lbs-margin / 5;
-    border: 2px solid $lbs-grey;
-    background: $lbs-white;
+.sutton-scene-signup__form {
+  display: flex;
+  padding: $lbs-margin / 5;
+  border: 2px solid $lbs-grey;
+  background: $lbs-white;
+  @include govuk-media-query($until: desktop) {
+    margin-top: $lbs-margin;
+  }
+
+  input {
+    border: none;
+  }
+
+  button {
+    margin: 0;
+    box-shadow: none;
+
     @include govuk-media-query($until: desktop) {
-      margin-top: $lbs-margin;
-    }
-
-    input {
-      border: none;
-    }
-
-    button {
-      box-shadow: none;
-
-      @include govuk-media-query($until: desktop) {
-        width: 10rem;
-      }
+      width: 10rem;
     }
   }
 }
