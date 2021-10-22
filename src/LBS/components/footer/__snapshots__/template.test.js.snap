@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header macro parameters renders without the nav 1`] = `
+<header class="lbs-header"
+        role="banner"
+>
+</header>
+`;
+
+exports[`Header macro parameters renders without the nav and without the search 1`] = `
+<header class="lbs-header"
+        role="banner"
+>
+</header>
+`;
+
+exports[`Header macro parameters renders without the nav but with the search 1`] = `
+<header class="lbs-header"
+        role="banner"
+>
+</header>
+`;
+
+exports[`Header when it is instructed to omit items renders without the search 1`] = `
+<header class="lbs-header"
+        role="banner"
+>
+</header>
+`;
+
+exports[`Header when it is instructed to omit items renders without the search but with the nav 1`] = `
+<header class="lbs-header"
+        role="banner"
+>
+</header>
+`;

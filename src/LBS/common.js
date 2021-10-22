@@ -57,7 +57,7 @@ ShowMore.prototype.init = function () {
 
 ShowMore.prototype.hideItems = function (count) {
   this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
-    if (index >= count && count != 0) {
+    if (index >= count && parseInt(count) !== 0) {
       x.parentNode.classList.add('js__is-hidden')
     }
   })

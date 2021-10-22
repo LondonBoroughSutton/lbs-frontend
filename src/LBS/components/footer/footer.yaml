@@ -1,0 +1,33 @@
+params:
+  - name: feedback
+    type: boolean
+    required: false
+    description: If true, page feedback component will be shown
+  - name: phase
+    type: boolean
+    required: false
+    description: If true, phase banner will be shown
+
+examples:
+  - name: default
+    description: Standard application of the footer element.
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+
+        - href: '#2'
+          text: Navigation item 2
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'
