@@ -48,7 +48,7 @@ ShowMore.prototype.init = function () {
 
 ShowMore.prototype.hideItems = function (count) {
   this.$module.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach((x, index) => {
-    if (index >= count && count != 0) {
+    if (index >= count && parseInt(count) !== 0) {
       x.parentNode.classList.add('js__is-hidden');
     }
   });
@@ -169,7 +169,9 @@ Cards.prototype.init = function () {
   } else {
     this.setupCardWrapper();
   }
-  new ShowMore(this.$module).init();
+  if (this.$module.getAttribute('data-show-more')) {
+    new ShowMore(this.$module).init();
+  }
 };
 
 Cards.prototype.setupCardWrapper = function () {

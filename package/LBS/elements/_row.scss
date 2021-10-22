@@ -4,6 +4,10 @@
     padding: $lbs-margin 0;
   }
 
+  &--white {
+    background: rgba($lbs-white, 1);
+  }
+
   &--alt {
     background: rgba($lbs-green-2, .1);
   }

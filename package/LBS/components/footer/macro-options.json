@@ -1,0 +1,14 @@
+[
+    {
+        "name": "feedback",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, page feedback component will be shown"
+    },
+    {
+        "name": "phase",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, phase banner will be shown"
+    }
+]

@@ -1,0 +1,112 @@
+.lbs-footer {
+  @include govuk-font($size: 16);
+  padding: $lbs-margin / 3 0;
+  border-top: 5px solid $lbs-green-1;
+  background: rgba($lbs-grey, .1);
+
+  ul {
+    @extend .govuk-list;
+  }
+
+  .lbs-footer__icon-container {
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .lbs-footer__icon {
+    display: inline-block;
+    width: $lbs-margin * 1.25;
+    height: $lbs-margin * 1.25;
+    margin-right: $lbs-margin;
+    padding: $lbs-margin / 2;
+    border: 2px solid rgba($lbs-green-1, .25);
+    border-radius: 50%;
+    vertical-align: middle;
+    //background: $lbs-white;
+
+    svg {
+      fill: $lbs-green-1;
+    }
+  }
+
+  .govuk-width-container {
+    display: -ms-flexbox;
+    display: flex; // Floats or flex? Flex feels best but floats are better supported
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    @include govuk-media-query($from: desktop) {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      position: relative;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+    }
+  }
+
+  &--secondary {
+    //display: flex;
+
+    nav {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      padding: $lbs-margin / 2 0;
+
+      @include govuk-media-query($from: desktop) {
+        -ms-flex-direction: row;
+            flex-direction: row;
+      }
+
+      .lbs-footer__navigation {
+        @extend .govuk-list;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        @include govuk-media-query($from: desktop) {
+          -ms-flex-direction: row;
+              flex-direction: row;
+          -ms-flex-align: center;
+              align-items: center;
+          //justify-content: space-between;
+        }
+
+        li {
+          margin: 0 $lbs-margin * 2 0 0;
+          @include govuk-media-query($until: desktop) {
+            margin-bottom: $lbs-margin / 2;
+          }
+        }
+      }
+
+      .lbs-footer__navigation--social {
+        -ms-flex-direction: row;
+            flex-direction: row;
+        @include govuk-media-query($from: desktop) {
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+        }
+        @include govuk-media-query($until: desktop) {
+          margin-top: $lbs-margin;
+        }
+
+        li {
+          margin: 0 0 0 $lbs-margin * 2;
+          @include govuk-media-query($until: desktop) {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
