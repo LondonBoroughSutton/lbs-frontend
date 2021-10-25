@@ -3,9 +3,16 @@
     display: none;
     align-items: center;
     justify-content: space-between;
-    padding: $lbs-margin / 2 $lbs-margin;
+    padding: $lbs-margin $lbs-margin;
     border-radius: $lbs-border-radius $lbs-border-radius 0 0;
     background: rgba($lbs-green-1, .1);
+    @include govuk-media-query($until: desktop) {
+      flex-direction: column;
+
+      button {
+        margin-top: $lbs-margin;
+      }
+    }
     //@include lbs-background-gradient;
 
     * {
