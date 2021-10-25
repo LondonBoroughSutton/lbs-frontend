@@ -1,0 +1,39 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="lbs-page-feedback">
+  <div>
+    <h2>Message goes here</h2>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="lbs-page-feedback__form" action="/" method="post" autocomplete="off">
+        <h3 class="govuk-heading-m">Help us improve Sutton.gov.uk</h3>
+        <p id="feedback_explanation" class="gem-c-feedback__form-paragraph">Don’t include personal or financial
+          information like your National Insurance number or credit card details.</p>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What were you doing?"
+            },
+            id: "what_doing",
+            name: "what_doing"
+          }) }}
+        </div>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What went wrong?"
+            },
+            id: "what_wrong",
+            name: "what_wrong"
+          }) }}
+        </div>
+        {{ govukButton({
+          text: "Send",
+          classes: "lbs-button"
+        }) }}
+      </form>
+    </div>
+  </div>
+</div>
