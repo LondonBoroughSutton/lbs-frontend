@@ -23,5 +23,9 @@
     .js-enabled & {
       display: none;
     }
+
+    &.js_show {
+      display: block;
+    }
   }
 }
