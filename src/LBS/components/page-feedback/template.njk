@@ -2,8 +2,13 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 <div class="lbs-page-feedback">
-  <div>
+  <div class="lbs-page-feedback--prompt">
     <h2>Message goes here</h2>
+    <button class="govuk-button lbs-button--tertiary"
+            data-track-category="Onsite Feedback" data-track-action="GOV-UK Open Form"
+            aria-controls="something-is-wrong" aria-expanded="false">
+      Report a problem with this page
+    </button>
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
