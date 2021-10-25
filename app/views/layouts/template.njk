@@ -63,7 +63,9 @@
 {% endblock %}
 
 {% block footer %}
-  {{ lbsFooter() }}
+  {{ lbsFooter({
+    pageFeedback: true
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}{% endblock %}

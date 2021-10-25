@@ -1,6 +1,7 @@
 import { nodeListForEach, ShowMore } from './common'
 import Card, { Cards } from './components/card/card'
 import Header from './components/header/header'
+import PageFeedback from './components/page-feedback/page-feedback'
 import Search from './components/search/search'
 import Tabs from './components/tabs/tabs'
 
@@ -33,6 +34,11 @@ function initAll (options) {
     new Cards($cardContainer).init()
   })
 
+  const $pageFeedbackItems = scope.querySelectorAll('.lbs-page-feedback')
+  nodeListForEach($pageFeedbackItems, function ($pageFeedback) {
+    new PageFeedback($pageFeedback).init()
+  })
+
   // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
   //   new ShowMore($showMoreWrapper).init()
@@ -43,6 +49,7 @@ export {
   initAll,
   Card,
   Header,
+  PageFeedback,
   Search,
   ShowMore,
   Tabs

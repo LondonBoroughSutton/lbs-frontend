@@ -1,0 +1,53 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="lbs-page-feedback">
+  <div class="lbs-page-feedback__prompt">
+    <p>Help us improve our site by <a href="#">giving feedback</a></p>
+    <button class="govuk-button lbs-button--tertiary"
+            data-track-action="Sutton.gov.uk Open Page Feedback Form"
+            aria-controls="lbs-page-feedback" aria-expanded="false">
+      Report a problem with this page
+    </button>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="lbs-page-feedback__form" id="lbs-page-feedback__form" action="/" method="post" autocomplete="off">
+        <h3 class="govuk-heading-m">Help us improve Sutton.gov.uk</h3>
+        <p>Use this form to tell us if you've noticed something wrong with this page.</p>
+        <p>You can <a href="#">contact us</a> if you need help with a service or want to make a complaint.</p>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What were you doing?"
+            },
+            id: "what_doing",
+            name: "what_doing"
+          }) }}
+        </div>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What went wrong?"
+            },
+            id: "what_wrong",
+            name: "what_wrong"
+          }) }}
+        </div>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What would you do next?"
+            },
+            id: "what_next",
+            name: "what_next"
+          }) }}
+        </div>
+        {{ govukButton({
+          text: "Send",
+          classes: "lbs-button"
+        }) }}
+      </form>
+    </div>
+  </div>
+</div>
