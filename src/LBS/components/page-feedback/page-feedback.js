@@ -42,7 +42,8 @@ PageFeedback.prototype.updateAriaAttributes = function(t) {
 
 PageFeedback.prototype.toggleForm = function() {
   console.log('toggle form')
-  document.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass)
+  this.$module.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass)
+  this.$module.querySelector('.lbs-page-feedback__prompt').classList.toggle(this.jshiddenClass)
   // this.feedbackForm.classList.toggle(this.jshiddenClass)
   this.updateAriaAttributes()
 }
