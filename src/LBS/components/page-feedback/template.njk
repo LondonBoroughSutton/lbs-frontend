@@ -2,8 +2,8 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 <div class="lbs-page-feedback">
-  <div class="lbs-page-feedback--prompt">
-    <h2>Message goes here</h2>
+  <div class="lbs-page-feedback__prompt">
+    <p>Help us improve our site by <a href="#">giving feedback</a></p>
     <button class="govuk-button lbs-button--tertiary"
             data-track-category="Onsite Feedback" data-track-action="GOV-UK Open Form"
             aria-controls="something-is-wrong" aria-expanded="false">
@@ -14,8 +14,8 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="lbs-page-feedback__form" action="/" method="post" autocomplete="off">
         <h3 class="govuk-heading-m">Help us improve Sutton.gov.uk</h3>
-        <p id="feedback_explanation" class="gem-c-feedback__form-paragraph">Don’t include personal or financial
-          information like your National Insurance number or credit card details.</p>
+        <p>Use this form to tell us if you've noticed something wrong with this page.</p>
+        <p>You can <a href="#">contact us</a> if you need help with a service or want to make a complaint.</p>
         <div class="govuk-form-group">
           {{ govukInput({
             label: {
@@ -32,6 +32,15 @@
             },
             id: "what_wrong",
             name: "what_wrong"
+          }) }}
+        </div>
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "What would you do next?"
+            },
+            id: "what_next",
+            name: "what_next"
           }) }}
         </div>
         {{ govukButton({

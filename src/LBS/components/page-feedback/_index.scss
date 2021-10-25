@@ -1,15 +1,27 @@
 .lbs-page-feedback {
-  &--prompt {
-    display: flex;
+  &__prompt {
+    display: none;
     align-items: center;
     justify-content: space-between;
-    padding: $lbs-margin;
-    //@include lbs-background-gradient;
+    padding: $lbs-margin / 2 $lbs-margin;
     border-radius: $lbs-border-radius $lbs-border-radius 0 0;
     background: rgba($lbs-green-1, .25);
+    //@include lbs-background-gradient;
 
     * {
       margin: 0;
+    }
+
+    .js-enabled & {
+      display: flex;
+    }
+  }
+
+  &__form {
+    display: block;
+
+    .js-enabled & {
+      display: none;
     }
   }
 }
