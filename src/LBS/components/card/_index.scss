@@ -3,7 +3,7 @@
   margin-bottom: $lbs-margin;
   padding: $lbs-margin;
   border-bottom: 4px solid rgba($lbs-green-2, .5);
-  //border-radius: $lbs-border-radius;
+  border-radius: $lbs-border-radius;
   background-color: $lbs-white;
   box-shadow: $lbs-shadow;
 
@@ -15,6 +15,20 @@
     //border: 1px solid $lbs-white;
     background-color: rgba($lbs-green-2, .1);
     box-shadow: none;
+  }
+
+  &--news {
+    padding: 0;
+    overflow: hidden;
+    border-color: rgba($lbs-yellow, .5);
+
+    .lbs-card__container {
+      padding: $lbs-margin;
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   &--popular-item {
@@ -34,6 +48,25 @@
         @extend .govuk-link:hover;
         color: $lbs-green-1;
       }
+    }
+  }
+
+  &__date {
+    @extend .govuk-\!-font-size-14;
+    color: $lbs-grey;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: $lbs-margin * 1.25;
+      height: $lbs-margin * 1.25;
+      margin-right: $lbs-margin / 4;
+      @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M85.1 18.5H77V14c0-1.9-1.6-3.5-3.5-3.5h-5c-1.9 0-3.5 1.6-3.5 3.5v4.5H35.3V14c0-1.9-1.6-3.5-3.5-3.5h-5c-1.9 0-3.5 1.6-3.5 3.5v4.5h-8.5c-3.4 0-6.2 2.8-6.2 6.2v55.9c0 3.4 2.8 6.2 6.2 6.2h70.3c3.4 0 6.2-2.8 6.2-6.2V24.7c0-3.4-2.8-6.2-6.2-6.2zm-16.4-4.2h4.6v11h-4.6v-11zm-41.7 0h4.6v11H27v-11zm-12.1 7.9h8.5v3.3c0 1.9 1.6 3.5 3.5 3.5h5c1.9 0 3.5-1.6 3.5-3.5v-3.3H65v3.3c0 1.9 1.6 3.5 3.5 3.5h5c1.9 0 3.5-1.6 3.5-3.5v-3.3h8.2c1.4 0 2.5 1.1 2.5 2.5v10H12.4v-10c0-1.4 1.1-2.5 2.5-2.5zm70.2 60.9H14.9c-1.4 0-2.5-1.1-2.5-2.5V38.4h75.2v42.2c0 1.4-1.1 2.5-2.5 2.5zM28.7 48.5c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.8 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c.9-.1 1.8.8 1.8 1.8zm17.2 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.8 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.8 1.8 1.8zM28.7 60.8c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1 0 1.8.8 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c.9 0 1.8.8 1.8 1.8zm17.2 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1 0 1.8.8 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1 0 1.8.8 1.8 1.8zM28.7 73.2c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.7 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c.9-.1 1.8.7 1.8 1.8zm17.2 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.7 1.8 1.8zm17.3 0c0 1-.8 1.8-1.8 1.8h-6c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8h6c1-.1 1.8.7 1.8 1.8z"/></svg>');
+      opacity: .5;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      vertical-align: sub;
     }
   }
 

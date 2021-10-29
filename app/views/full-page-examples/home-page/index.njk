@@ -215,4 +215,49 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       </div>
     </div>
   </div>
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      <h2>Latest news</h2>
+      <div class="govuk-grid-row lbs-card__wrapper">
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 1',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+    </div>
+  </div>
 {% endblock %}

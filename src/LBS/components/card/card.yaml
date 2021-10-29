@@ -19,6 +19,14 @@ params:
     type: boolean
     required: false
     description: If set, will display a very basic version of the 'card'
+  - name: news
+    type: boolean
+    required: false
+    description: If set, will display the news version of the 'card'
+  - name: image
+    type: string
+    required: false
+    description: If set, will display an image in the card
   - name: heading
     type: array
     required: true
@@ -158,6 +166,18 @@ examples:
     description: Alternative version of the card.
     data:
       bgColour: true
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: 'This is a description'
+
+
+  - name: card with news
+    description: News version of the card.
+    data:
+      news: true
+      clickable: true
+      image: /assets/img/home-image--1.jpg
       heading:
         title: Example heading
         href: '#'
