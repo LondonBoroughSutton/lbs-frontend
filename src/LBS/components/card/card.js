@@ -100,13 +100,13 @@ Cards.prototype.teardownCards = function () {
 Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
-  document.querySelectorAll('.lbs-card').forEach(card => {
+  this.$module.querySelectorAll('.lbs-card').forEach(card => {
     if (card.clientHeight > tallestCard) {
       const cs = window.getComputedStyle(card)
-      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
+      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom) * 2)
     }
   })
-  document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {
+  this.$module.querySelectorAll('.lbs-card').forEach(x => {
     x.style.minHeight = tallestCard + 'px'
   })
 }

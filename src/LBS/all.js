@@ -48,6 +48,7 @@ function initAll (options) {
 export {
   initAll,
   Card,
+  Cards,
   Header,
   PageFeedback,
   Search,

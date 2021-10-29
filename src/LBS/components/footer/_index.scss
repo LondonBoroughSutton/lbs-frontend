@@ -42,6 +42,9 @@
 
   &--secondary {
     //display: flex;
+    .govuk-grid-row {
+      flex-grow: 1;
+    }
 
     nav {
       display: flex;

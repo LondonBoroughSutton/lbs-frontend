@@ -204,15 +204,60 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               weekly newsletter</p>
           </div>
           <form class="sutton-scene-signup__form govuk-grid-column-one-half" action="/" method="post">
-            <label class="govuk-label govuk-label--l govuk-visually-hidden" for="sutton-scene-signup">
+            <label class="govuk-label govuk-label--l govuk-visually-hidden" for="sutton-scene-signup--home">
               Sign up for Sutton Scene newsletter
             </label>
-            <input type="email" name="sutton-scene-signup" class="govuk-input" id="sutton-scene-signup"
+            <input type="email" name="sutton-scene-signup" class="govuk-input" id="sutton-scene-signup--home"
                    placeholder="Enter your email address"/>
             <button type="submit" class="lbs-button govuk-button">Subscribe</button>
           </form>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      <h2>Latest news</h2>
+      <div class="govuk-grid-row lbs-card__wrapper">
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 1',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/assets/img/home-image--1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
     </div>
   </div>
 {% endblock %}

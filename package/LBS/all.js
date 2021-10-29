@@ -324,6 +324,56 @@ Header.prototype.handleSearchButtonClick = function () {
   }
 };
 
+function PageFeedback ($module) {
+  this.$module = $module;
+  this.jshiddenClass = 'js_is-hidden';
+  this.jsShowClass = 'js_show';
+  this.prompt = 'lbs-page-feedback__prompt';
+  this.feedbackForm = 'lbs-page-feedback__form';
+  this.formToggleButton = 'lbs-page-feedback__form';
+}
+
+/**
+ * Initialise PageFeedback
+ *
+ * Check for the presence of page feedback form
+ */
+
+PageFeedback.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+  console.log('Page Feedback');
+  console.log(this.formToggleButton);
+  this.setInitialAriaAttributes();
+  this.$module.querySelector('[aria-controls="lbs-page-feedback"]').addEventListener("click", function(t) {
+    console.log('Clicked');
+    t.preventDefault();
+    let e = t.target;
+    this.toggleForm();
+  }.bind(this));
+};
+
+PageFeedback.prototype.setInitialAriaAttributes = function() {
+  console.log('set values');
+  document.getElementById(this.feedbackForm).setAttribute('aria-hidden', true);
+};
+
+PageFeedback.prototype.updateAriaAttributes = function(t) {
+  console.log('updateAriaAttributes');
+  // t.setAttribute("aria-expanded", !0);
+  // var e = t.getAttribute("aria-controls");
+  // document.querySelector("#" + e).setAttribute("aria-hidden", !1)
+};
+
+PageFeedback.prototype.toggleForm = function() {
+  console.log('toggle form');
+  this.$module.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass);
+  this.$module.querySelector('.lbs-page-feedback__prompt').classList.toggle(this.jshiddenClass);
+  // this.feedbackForm.classList.toggle(this.jshiddenClass)
+  this.updateAriaAttributes();
+};
+
 function Search ($module) {
   this.$module = $module;
 }
@@ -605,6 +655,11 @@ function initAll (options) {
     new Cards($cardContainer).init();
   });
 
+  const $pageFeedbackItems = scope.querySelectorAll('.lbs-page-feedback');
+  nodeListForEach($pageFeedbackItems, function ($pageFeedback) {
+    new PageFeedback($pageFeedback).init();
+  });
+
   // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
   //   new ShowMore($showMoreWrapper).init()
@@ -614,6 +669,7 @@ function initAll (options) {
 exports.initAll = initAll;
 exports.Card = Card;
 exports.Header = Header;
+exports.PageFeedback = PageFeedback;
 exports.Search = Search;
 exports.ShowMore = ShowMore;
 exports.Tabs = Tabs;
