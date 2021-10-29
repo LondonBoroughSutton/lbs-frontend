@@ -1,0 +1,46 @@
+.lbs-page-feedback {
+  &__prompt {
+    display: none;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    padding: $lbs-margin $lbs-margin;
+    border-radius: $lbs-border-radius $lbs-border-radius 0 0;
+    background: rgba($lbs-green-1, .1);
+    @include govuk-media-query($until: desktop) {
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+      button {
+        margin-top: $lbs-margin;
+      }
+    }
+    //@include lbs-background-gradient;
+
+    * {
+      margin: 0;
+    }
+
+    .js-enabled & {
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    &.js_is-hidden {
+      display: none;
+    }
+  }
+
+  &__form {
+    display: block;
+
+    .js-enabled & {
+      display: none;
+    }
+
+    &.js_show {
+      display: block;
+    }
+  }
+}
