@@ -17,35 +17,28 @@ PageFeedback.prototype.init = function () {
   if (!this.$module) {
     return
   }
-  console.log('Page Feedback')
-  console.log(this.formToggleButton)
   this.setInitialAriaAttributes()
-  this.$module.querySelector('[aria-controls="lbs-page-feedback"]').addEventListener("click", function(t) {
-    console.log('Clicked')
+  this.$module.querySelector('[aria-controls=' + this.feedbackForm + ']').addEventListener("click", function(t) {
     t.preventDefault();
     let e = t.target;
-    this.toggleForm()
+    this.toggleForm(e)
   }.bind(this))
 }
 
 PageFeedback.prototype.setInitialAriaAttributes = function() {
-  console.log('set values')
   document.getElementById(this.feedbackForm).setAttribute('aria-hidden', true)
 }
 
 PageFeedback.prototype.updateAriaAttributes = function(t) {
-  console.log('updateAriaAttributes')
-  // t.setAttribute("aria-expanded", !0);
-  // var e = t.getAttribute("aria-controls");
-  // document.querySelector("#" + e).setAttribute("aria-hidden", !1)
+  t.setAttribute("aria-expanded", !0);
+  let f = t.getAttribute("aria-controls");
+  document.querySelector("#" + f).setAttribute("aria-hidden", !1)
 }
 
-PageFeedback.prototype.toggleForm = function() {
-  console.log('toggle form')
+PageFeedback.prototype.toggleForm = function(t) {
   this.$module.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass)
   this.$module.querySelector('.lbs-page-feedback__prompt').classList.toggle(this.jshiddenClass)
-  // this.feedbackForm.classList.toggle(this.jshiddenClass)
-  this.updateAriaAttributes()
+  this.updateAriaAttributes(t)
 }
 
 export default PageFeedback

@@ -98,7 +98,6 @@ Cards.prototype.teardownCards = function () {
 }
 
 Cards.prototype.setHeight = function () {
-  console.log('SETHEIGHT')
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
   this.$module.querySelectorAll('.lbs-card').forEach(card => {
