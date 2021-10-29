@@ -202,13 +202,13 @@ Cards.prototype.teardownCards = function () {
 Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0;
-  document.querySelectorAll('.lbs-card').forEach(card => {
+  this.$module.querySelectorAll('.lbs-card').forEach(card => {
     if (card.clientHeight > tallestCard) {
       const cs = window.getComputedStyle(card);
-      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom));
+      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom) * 2);
     }
   });
-  document.querySelectorAll('.lbs-card:not(.lbs-card--popular-item)').forEach(x => {
+  this.$module.querySelectorAll('.lbs-card').forEach(x => {
     x.style.minHeight = tallestCard + 'px';
   });
 };
@@ -343,35 +343,26 @@ PageFeedback.prototype.init = function () {
   if (!this.$module) {
     return
   }
-  console.log('Page Feedback');
-  console.log(this.formToggleButton);
   this.setInitialAriaAttributes();
-  this.$module.querySelector('[aria-controls="lbs-page-feedback"]').addEventListener("click", function(t) {
-    console.log('Clicked');
+  this.$module.querySelector('[aria-controls=' + this.feedbackForm + ']').addEventListener('click', function (t) {
     t.preventDefault();
-    let e = t.target;
-    this.toggleForm();
+    this.toggleForm(t.target);
   }.bind(this));
 };
 
-PageFeedback.prototype.setInitialAriaAttributes = function() {
-  console.log('set values');
+PageFeedback.prototype.setInitialAriaAttributes = function () {
   document.getElementById(this.feedbackForm).setAttribute('aria-hidden', true);
 };
 
-PageFeedback.prototype.updateAriaAttributes = function(t) {
-  console.log('updateAriaAttributes');
-  // t.setAttribute("aria-expanded", !0);
-  // var e = t.getAttribute("aria-controls");
-  // document.querySelector("#" + e).setAttribute("aria-hidden", !1)
+PageFeedback.prototype.updateAriaAttributes = function (t) {
+  t.setAttribute('aria-expanded', !0);
+  document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !1);
 };
 
-PageFeedback.prototype.toggleForm = function() {
-  console.log('toggle form');
+PageFeedback.prototype.toggleForm = function (t) {
   this.$module.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass);
   this.$module.querySelector('.lbs-page-feedback__prompt').classList.toggle(this.jshiddenClass);
-  // this.feedbackForm.classList.toggle(this.jshiddenClass)
-  this.updateAriaAttributes();
+  this.updateAriaAttributes(t);
 };
 
 function Search ($module) {
@@ -668,6 +659,7 @@ function initAll (options) {
 
 exports.initAll = initAll;
 exports.Card = Card;
+exports.Cards = Cards;
 exports.Header = Header;
 exports.PageFeedback = PageFeedback;
 exports.Search = Search;

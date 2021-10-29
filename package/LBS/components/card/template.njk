@@ -1,34 +1,42 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
 {% set linkLimit = params.linkLimit if params.linkLimit else 3 %}
 {% if params.popularItem %}
-<a href="{{ params.heading.href }}"
-   class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}{% if params.popularItem %} lbs-card--popular-item lbs-card--clickable{% endif %}">
-  {{ params.heading.title }}
-</a>
+  <a href="{{ params.heading.href }}"
+     class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}{% if params.popularItem %} lbs-card--popular-item lbs-card--clickable{% endif %}">
+    {{ params.heading.title }}
+  </a>
 {% else %}
   <div
-    class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
-    <h{{ headingLevel }} class="govuk-heading-m">
-      {% if params.heading.href %}
-        <a href="{{ params.heading.href }}">
-          {{ params.heading.title }}
-        </a>
-      {% else %}
-        {{ params.heading.title }}
+    class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.news %}lbs-card--news{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
+    {% if params.news %}
+  <img src="{{ params.image }}" alt="Description of the image would go here"/>
+    <div class="lbs-card__container">
+      <div class="lbs-card__date">30 October 2021</div>
       {% endif %}
-    </h{{ headingLevel }}>
-    {%- if params.cardBodyHtml %}
-      <p>{{ params.cardBodyHtml | safe }}</p>
-    {%- endif %}
-    {%- if params.linkItems %}
-      <ul>
-        {% for item in params.linkItems %}
-          {% if loop.index <= linkLimit or params.showMore %}
-            <li {% if loop.index > linkLimit %}class="js__is-hidden"{% endif %}><a
-                href="{{ item.href }}">{{ item.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    {%- endif %}
+      <h{{ headingLevel }} class="govuk-heading-m">
+        {% if params.heading.href %}
+          <a href="{{ params.heading.href }}">
+            {{ params.heading.title }}
+          </a>
+        {% else %}
+          {{ params.heading.title }}
+        {% endif %}
+      </h{{ headingLevel }}>
+      {%- if params.cardBodyHtml %}
+        <p>{{ params.cardBodyHtml | safe }}</p>
+      {%- endif %}
+      {%- if params.linkItems %}
+        <ul>
+          {% for item in params.linkItems %}
+            {% if loop.index <= linkLimit or params.showMore %}
+              <li {% if loop.index > linkLimit %}class="js__is-hidden"{% endif %}><a
+                  href="{{ item.href }}">{{ item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {%- endif %}
+      {% if params.news %}
+    </div>
+    {% endif %}
   </div>
 {% endif %}

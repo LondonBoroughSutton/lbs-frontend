@@ -30,6 +30,18 @@
         "description": "If set, will display a very basic version of the 'card'"
     },
     {
+        "name": "news",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, will display the news version of the 'card'"
+    },
+    {
+        "name": "image",
+        "type": "string",
+        "required": false,
+        "description": "If set, will display an image in the card"
+    },
+    {
         "name": "heading",
         "type": "array",
         "required": true,
