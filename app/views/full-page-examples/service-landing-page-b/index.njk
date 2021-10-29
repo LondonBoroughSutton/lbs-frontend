@@ -25,42 +25,40 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       }
     ]
   }) }}
-  {# <div class="lbs-row lbs-row--alt"> #}
-  {# <div class="lbs-row__container"> #}
-  {# <div class="govuk-grid-row"> #}
-  {# <h2>Popular</h2> #}
-  {# <ol class="lbs-popular-items__list"> #}
-  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
-  {# {{ lbsCard({ #}
-  {# heading: { #}
-  {# title: 'Pay Parking Notice Charge', #}
-  {# href: '#' #}
-  {# }, #}
-  {# popularItem: true #}
-  {# }) }} #}
-  {# </li> #}
-  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
-  {# {{ lbsCard({ #}
-  {# heading: { #}
-  {# title: 'Apply for parking permit', #}
-  {# href: '#' #}
-  {# }, #}
-  {# popularItem: true #}
-  {# }) }} #}
-  {# </li> #}
-  {# <li class="govuk-grid-column-one-third-from-desktop"> #}
-  {# {{ lbsCard({ #}
-  {# heading: { #}
-  {# title: 'Report fly tipping', #}
-  {# href: '#' #}
-  {# }, #}
-  {# popularItem: true #}
-  {# }) }} #}
-  {# </li> #}
-  {# </ol> #}
-  {# </div> #}
-  {# </div> #}
-  {# </div> #}
+  <div class="lbs-row lbs-row--alt">
+    <div class="lbs-row__container">
+        <h2 class="govuk-heading-s">Popular</h2>
+        <ol class="lbs-popular-items__list lbs-card__wrapper">
+          <li class="govuk-grid-column-one-third-from-desktop">
+            {{ lbsCard({
+              heading: {
+                title: 'Pay Parking Notice Charge',
+                href: '#'
+              },
+              popularItem: true
+            }) }}
+          </li>
+          <li class="govuk-grid-column-one-third-from-desktop">
+            {{ lbsCard({
+              heading: {
+                title: 'Apply for parking permit',
+                href: '#'
+              },
+              popularItem: true
+            }) }}
+          </li>
+          <li class="govuk-grid-column-one-third-from-desktop">
+            {{ lbsCard({
+              heading: {
+                title: 'Report fly tipping',
+                href: '#'
+              },
+              popularItem: true
+            }) }}
+          </li>
+        </ol>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
