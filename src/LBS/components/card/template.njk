@@ -1,13 +1,16 @@
 {% set headingLevel = params.heading.headingLevel if params.heading.headingLevel else 2 %}
 {% set linkLimit = params.linkLimit if params.linkLimit else 3 %}
 {% if params.popularItem %}
-  <a href="{{ params.heading.href }}"
-     class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}{% if params.popularItem %} lbs-card--popular-item lbs-card--clickable{% endif %}">
-    {{ params.heading.title }}
-  </a>
+<a href="{{ params.heading.href }}"
+   class="lbs-card lbs-link--action {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %}{% if params.popularItem %} lbs-card--popular-item lbs-card--clickable{% endif %}">
+  {{ params.heading.title }}
+</a>
 {% else %}
-  <div
-    class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.news %}lbs-card--news{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
+<div
+  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.featureCard %}lbs-card--featured{% endif %} {% if params.news %}lbs-card--news{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %}">
+  {% if params.featureCard %}
+  <div class="lbs-card__container">
+    {% endif %}
     {% if params.news %}
   <img src="{{ params.image }}" alt="Description of the image would go here"/>
     <div class="lbs-card__container">
@@ -35,8 +38,16 @@
           {% endfor %}
         </ul>
       {%- endif %}
-      {% if params.news %}
+      {% if params.news or params.featureCard %}
     </div>
     {% endif %}
+    {% if params.featureCard and params.image %}
+      <div class="lbs-card__image-container">
+        <div class="lbs-card__image"
+             style="background: url({{ params.image }}) no-repeat center; background-size: cover;">
+          <!-- Container for the background image -->
+        </div>
+      </div>
+    {% endif %}
   </div>
-{% endif %}
+  {% endif %}

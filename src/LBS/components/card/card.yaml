@@ -19,6 +19,10 @@ params:
     type: boolean
     required: false
     description: If set, will display a very basic version of the 'card'
+  - name: featureCard
+    type: boolean
+    required: false
+    description: If set, card will be styled as a 'feature card'
   - name: news
     type: boolean
     required: false
@@ -182,6 +186,17 @@ examples:
         title: Example heading
         href: '#'
       cardBodyHtml: 'This is a description'
+
+  - name: feature card
+    description: Version of the card reserved for featured content.
+    data:
+      featureCard: true
+      clickable: true
+      image: /assets/img/home-image--1.jpg
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: '<p>This is a description</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">Find out more</a></p>'
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes

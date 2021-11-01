@@ -103,7 +103,7 @@ Cards.prototype.setHeight = function () {
   this.$module.querySelectorAll('.lbs-card').forEach(card => {
     if (card.clientHeight > tallestCard) {
       const cs = window.getComputedStyle(card)
-      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom) * 2)
+      tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
     }
   })
   this.$module.querySelectorAll('.lbs-card').forEach(x => {
