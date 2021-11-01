@@ -31,12 +31,46 @@
     }
   }
 
+  &--popular-item {
+    display: block;
+    border: none;
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      //transform: scale(1.02);
+      border-bottom-color: rgba($lbs-green-2, 1);
+      box-shadow: $lbs-shadow--l;
+
+      a {
+        @extend .govuk-link:hover;
+        color: $lbs-green-1;
+      }
+    }
+  }
+
   &--featured {
     @include lbs-background-gradient;
     display: flex;
     position: relative;
     overflow: hidden;
     border: none;
+
+    &:hover {
+      a:not(.lbs-button) {
+        color: $lbs-white;
+      }
+    }
+
+    h2,
+    h3,
+    h4 {
+      a {
+        color: $lbs-white;
+      }
+    }
 
     * {
       color: $lbs-white;
@@ -70,26 +104,6 @@
         border-radius: 50% 0 0 50%;
         background: $lbs-green-1;
         background-size: cover;
-      }
-    }
-  }
-
-  &--popular-item {
-    display: block;
-    border: none;
-  }
-
-  &--clickable {
-    cursor: pointer;
-
-    &:hover {
-      //transform: scale(1.02);
-      border-bottom-color: rgba($lbs-green-2, 1);
-      box-shadow: $lbs-shadow--l;
-
-      a {
-        @extend .govuk-link:hover;
-        color: $lbs-green-1;
       }
     }
   }
