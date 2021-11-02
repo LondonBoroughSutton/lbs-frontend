@@ -127,3 +127,19 @@
         {% endif %}
     </div>
 </header>
+{% if params.phaseBanner %}
+  <div class="lbs-row lbs-row--alt3 lbs-row--phase-banner">
+    <div class="lbs-row__container">
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Beta
+          </strong>
+          <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="https://forms.gle/8RD4jHBKbDkbauzk6">feedback</a> will help us to improve it.
+        </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endif %}

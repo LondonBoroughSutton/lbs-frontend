@@ -13,7 +13,8 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% block header %}
   {{ lbsHeader({
-    search: false
+    search: false,
+    phaseBanner: true
   }) }}
 {% endblock %}
 
@@ -27,8 +28,8 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
         days</a></li>
     <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Contact us</a></li>
     <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">COVID 19</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Comment on
-        applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">View or comment on
+        planning applications</a></li>
     <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Jobs and careers</a></li>
   </ol>
 {% endset %}

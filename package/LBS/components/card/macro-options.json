@@ -30,6 +30,12 @@
         "description": "If set, will display a very basic version of the 'card'"
     },
     {
+        "name": "featureCard",
+        "type": "boolean",
+        "required": false,
+        "description": "If set, card will be styled as a 'feature card'"
+    },
+    {
         "name": "news",
         "type": "boolean",
         "required": false,

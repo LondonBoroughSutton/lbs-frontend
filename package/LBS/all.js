@@ -209,7 +209,12 @@ Cards.prototype.setHeight = function () {
     }
   });
   this.$module.querySelectorAll('.lbs-card').forEach(x => {
-    x.style.minHeight = tallestCard + 'px';
+    if (x.classList.contains('lbs-card--popular-item')) {
+      const cs = window.getComputedStyle(x);
+      x.style.minHeight = tallestCard - (parseFloat(cs.paddingBottom)) + 'px';
+    } else {
+      x.style.minHeight = tallestCard + 'px';
+    }
   });
 };
 

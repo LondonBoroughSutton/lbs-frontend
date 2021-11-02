@@ -12,9 +12,9 @@
   }
 
   &--alt {
-    //border: 1px solid $lbs-white;
-    background-color: rgba($lbs-green-2, .1);
+    background-color: rgba($lbs-green-2, .075);
     box-shadow: none;
+    //box-shadow: $lbs-shadow--xs;
   }
 
   &--news {
@@ -34,6 +34,7 @@
   &--popular-item {
     display: block;
     border: none;
+    box-shadow: $lbs-shadow--xs;
   }
 
   &--clickable {
@@ -47,6 +48,65 @@
       a {
         @extend .govuk-link:hover;
         color: $lbs-green-1;
+      }
+    }
+  }
+
+  &--featured {
+    @include lbs-background-gradient;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border: none;
+
+    &:hover {
+      a:not(.lbs-button) {
+        color: $lbs-white;
+      }
+    }
+
+    h2,
+    h3,
+    h4 {
+      a {
+        color: $lbs-white;
+      }
+    }
+
+    * {
+      color: $lbs-white;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .lbs-card__container {
+      position: relative;
+      z-index: 2;
+      @include govuk-media-query($from: desktop) {
+        max-width: 50%;
+        padding: $lbs-margin;
+      }
+    }
+
+    .lbs-card__image-container {
+      @include lbs-image-container;
+
+      .lbs-card__image {
+        position: relative;
+        z-index: 2;
+        top: 50%;
+        right: 0;
+        width: 30rem;
+        height: 30rem;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        border-radius: 50% 0 0 50%;
+        background: $lbs-green-1;
+        background-size: cover;
       }
     }
   }
@@ -96,6 +156,22 @@
         background-position: center;
         background-size: contain;
         vertical-align: middle;
+      }
+
+      &[rel="external"] {
+        &:after {
+          content: "";
+          display: inline-block;
+          width: $lbs-margin;
+          height: $lbs-margin * 1.25;
+          margin-left: $lbs-margin / 4;
+          color: $lbs-black;
+          @include background-svg('<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          vertical-align: middle;
+        }
       }
     }
   }
