@@ -12,9 +12,9 @@
   }
 
   &--alt {
-    //border: 1px solid $lbs-white;
-    background-color: rgba($lbs-green-2, .1);
+    background-color: rgba($lbs-green-2, .075);
     box-shadow: none;
+    //box-shadow: $lbs-shadow--xs;
   }
 
   &--news {
@@ -34,6 +34,7 @@
   &--popular-item {
     display: block;
     border: none;
+    box-shadow: $lbs-shadow--xs;
   }
 
   &--clickable {

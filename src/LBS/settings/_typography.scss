@@ -29,11 +29,27 @@ a {
 }
 
 .lbs-link--action {
+  position: relative;
+  padding-left: $lbs-margin * 3;
   font-weight: 500;
+
+  &.lbs-card--popular-item {
+    margin-bottom: 0;
+    padding-left: $lbs-margin * 3;
+
+    &:before {
+      //margin-left: -$lbs-margin;
+      left: $lbs-margin;
+    }
+  }
 
   &:before {
     content: "";
-    display: inline-block;
+    //display: inline-block;
+    display: block;
+    position: absolute;
+    //left: 0;
+    left: $lbs-margin;
     width: $lbs-margin * 1.5;
     height: $lbs-margin * 1.5;
     margin-right: $lbs-margin / 2;

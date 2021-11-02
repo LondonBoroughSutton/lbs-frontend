@@ -109,9 +109,10 @@ Cards.prototype.setHeight = function () {
   this.$module.querySelectorAll('.lbs-card').forEach(x => {
     if (x.classList.contains('lbs-card--popular-item')) {
       const cs = window.getComputedStyle(x)
-      tallestCard = tallestCard - cs.paddingBottom
+      x.style.minHeight = tallestCard - (parseFloat(cs.paddingBottom)) + 'px'
+    } else {
+      x.style.minHeight = tallestCard + 'px'
     }
-    x.style.minHeight = tallestCard + 'px'
   })
 }
 
