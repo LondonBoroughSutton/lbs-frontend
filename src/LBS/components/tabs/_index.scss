@@ -59,7 +59,7 @@ $border-colour: $lbs-grey;
 
         @include govuk-media-query($from: desktop) {
           display: none;
-          padding: $lbs-margin * 2 0;
+          padding: $lbs-margin * 2 0 0;
         }
 
         .lbs-tabs__content__item__container {
