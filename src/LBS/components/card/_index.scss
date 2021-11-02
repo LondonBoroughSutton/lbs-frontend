@@ -151,6 +151,22 @@
         background-size: contain;
         vertical-align: middle;
       }
+
+      &[rel="external"] {
+        &:after {
+          content: "";
+          display: inline-block;
+          width: $lbs-margin;
+          height: $lbs-margin * 1.25;
+          margin-left: $lbs-margin / 4;
+          color: $lbs-black;
+          @include background-svg('<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          vertical-align: middle;
+        }
+      }
     }
   }
 

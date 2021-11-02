@@ -18,7 +18,7 @@
       {% endif %}
       <h{{ headingLevel }} class="govuk-heading-m">
         {% if params.heading.href %}
-          <a href="{{ params.heading.href }}">
+          <a href="{{ params.heading.href }}" {% if params.heading.externalLink %}rel="external"{% endif %}>
             {{ params.heading.title }}
           </a>
         {% else %}
