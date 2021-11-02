@@ -91,10 +91,9 @@
     }
 
     .lbs-card__image-container {
-      @extend .lbs-page-header__image-container;
+      @include lbs-image-container;
 
       .lbs-card__image {
-        @extend .lbs-page-header__image;
         position: relative;
         z-index: 2;
         top: 50%;
