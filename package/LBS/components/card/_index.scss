@@ -198,6 +198,12 @@
     }
   }
 
+  .lbs-card__content {
+    * {
+      @include govuk-font($size: 16);
+    }
+  }
+
   .show-more-link {
     color: $lbs-green-1;
     cursor: pointer;

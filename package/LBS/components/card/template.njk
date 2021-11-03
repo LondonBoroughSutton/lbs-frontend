@@ -28,7 +28,9 @@
         {% endif %}
       </h{{ headingLevel }}>
       {%- if params.cardBodyHtml %}
-        <p>{{ params.cardBodyHtml | safe }}</p>
+        <div class="lbs-card__content">
+          <p>{{ params.cardBodyHtml | safe }}</p>
+        </div>
       {%- endif %}
       {%- if params.linkItems %}
         <ul>
