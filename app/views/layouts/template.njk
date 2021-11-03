@@ -49,7 +49,9 @@
 {% endblock %}
 
 {% block header %}
-  {{ lbsHeader() }}
+  {{ lbsHeader({
+    phaseBanner: true
+  }) }}
 {% endblock %}
 
 {% block main %}

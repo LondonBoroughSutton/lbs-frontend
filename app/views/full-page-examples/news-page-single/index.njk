@@ -1,0 +1,83 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'COVID Garden of Reflection to Open in St Helier',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'News',
+        href: '#'
+      }
+    ],
+    "meta": [
+      {
+        "key": "Published",
+        "value": "23 March 2021"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>To mark the first anniversary since lockdown began, Sutton Council in partnership with Epsom and St Helier
+        University Hospitals NHS Trust and Sutton Housing Partnership is announcing plans for a COVID Garden of
+        Reflection on St Helier open space, opposite the hospital.</p>
+
+      <p>The idea for the garden emerged from local residents, Laura Devereux and Maureen Morant as a way to honour
+        those who have sadly passed away over the last year and to celebrate the community spirit and hard work of NHS
+        colleagues that has helped carry Sutton through the pandemic.</p>
+
+      <p>Work on creating the garden recently started with the planting of pine, birch and cherry trees. Additional
+        features will be introduced over the next 12 months with further planting taking place from autumn 2021. The
+        garden will officially open in spring 2022 and will include seating, carved sculptures, planted borders and
+        wildflower meadows.</p>
+
+      <p>Councillor Trish Fivey, Mayor of Sutton said:</p>
+
+      <blockquote>
+        <p>“We know that it has been a hugely challenging year for everyone, with COVID impacting all aspects of
+          our lives.
+        </p>
+
+        <p>“In spite of the difficulties, the response from the community, voluntary and business sector in
+          Sutton has been incredible and there are some truly remarkable and inspirational stories of people going out
+          of
+          their way to help neighbours, friends and family.</p>
+
+        <p>“I am delighted that now we will have a Garden of Reflection at St Helier which will serve as an
+          ongoing reminder of what we’ve all been through and that when times are tough, people in Sutton will come
+          together and will support each other”.</p>
+      </blockquote>
+
+
+      <p>Laura Devereux said:</p>
+
+      <blockquote>
+        <p>“We wanted to create somewhere special where people would have the opportunity to remember those they
+          have lost during the pandemic, when normal rituals and gatherings have not been possible.</p>
+
+        <p>"At the same time, the garden gives us a space to reflect on the strength of the community and give
+          thanks to the NHS who looked after loved ones when we were not able to be there.</p>
+
+        <p>“The growth of the trees and flowers, gives us hope of new beginnings.”</p>
+      </blockquote>
+    </div>
+  </div>
+
+{% endblock %}
