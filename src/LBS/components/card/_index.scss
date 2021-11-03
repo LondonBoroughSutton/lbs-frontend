@@ -34,7 +34,14 @@
   &--popular-item {
     display: block;
     border: none;
-    box-shadow: $lbs-shadow--xs;
+    //box-shadow: $lbs-shadow--xs;
+
+    &.lbs-card--alt {
+      //border-bottom: 4px solid rgba($lbs-green-1, .4);
+      @include lbs-background-gradient(.075);
+      //color: darken($lbs-green-1, 10%);
+      //background: rgba($lbs-grey, .05);
+    }
   }
 
   &--clickable {

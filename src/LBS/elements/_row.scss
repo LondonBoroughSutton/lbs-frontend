@@ -25,9 +25,13 @@
     background: linear-gradient(45deg, rgba($lbs-yellow, .2), rgba($lbs-orange, .2));
   }
 
+  &--alt5 {
+    @include lbs-background-gradient(.05);
+  }
+
   &--phase-banner {
     //@include lbs-background-gradient;
-    background: rgba($lbs-green-1, .15);
+    background: rgba($lbs-green-1, .1);
 
     .lbs-row__container {
       padding: 0;

@@ -18,50 +18,51 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
   }) }}
 {% endblock %}
 
-{% set popularCard = false %}
+{% set popularCard = true %}
+{% set popularCardAltBg = false %}
 
 {% set popularItems %}
   <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Book visit to the
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Book visit to the
         recycling centre</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Check your bin collection
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Check your bin collection
         days</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Contact us</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">COVID 19</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">View or comment on
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">View
         planning applications</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Jobs and careers</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Jobs and careers</a></li>
   </ol>
 {% endset %}
 
 {% set reportItems %}
   <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report a missed bin
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report a missed bin
         collection</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report an abandoned
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report an abandoned
         vehicle</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report a safeguarding
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report a safeguarding
         concern</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report fly-tipping</a>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report fly-tipping</a>
     </li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report graffiti</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Report footway defects or
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report graffiti</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report footway defects or
         faults</a></li>
   </ol>
 {% endset %}
 
 {% set payItems %}
   <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Council tax and business
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Council tax and business
         rates</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Penalty charge notice
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Penalty charge notice
         (PCN)</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Parking permits</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Garden waste
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Parking permits</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Garden waste
         collections</a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Fixed Penalty notice (FPN)
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Fixed Penalty notice (FPN)
         Covid </a></li>
-    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %}">Building control</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Building control</a></li>
   </ol>
 {% endset %}
 
@@ -88,7 +89,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 {% endblock %}
 
 {% block content %}
-  <div class="lbs-row lbs-row--alt2">
+  <div class="lbs-row lbs-row--alt5">
     <div class="lbs-row__container">
       <h2>Services</h2>
       <div class="govuk-grid-row lbs-card__wrapper" data-show-more="true" data-show-count="6"
@@ -230,7 +231,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               href: '#'
             },
             news: true,
-            image: '/assets/img/home-image--1.jpg',
+            image: '/public/assets/images/1.jpg',
             cardBodyHtml: cardCopy,
             clickable: true
           }) }}
@@ -243,7 +244,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               href: '#'
             },
             news: true,
-            image: '/assets/img/home-image--1.jpg',
+            image: '/public/assets/images/2.jpg',
             cardBodyHtml: cardCopy,
             clickable: true
           }) }}
@@ -256,7 +257,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
               href: '#'
             },
             news: true,
-            image: '/assets/img/home-image--1.jpg',
+            image: '/public/assets/images/3.jpg',
             cardBodyHtml: cardCopy,
             clickable: true
           }) }}
