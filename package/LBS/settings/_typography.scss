@@ -59,3 +59,16 @@ a {
     vertical-align: bottom;
   }
 }
+
+blockquote {
+  margin: 0 0 $lbs-margin;
+  padding: $lbs-margin;
+  border-radius: $lbs-border-radius;
+  color: rgba($lbs-black, .75);
+  background: rgba($lbs-green-1, .075);
+  font-style: italic;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
