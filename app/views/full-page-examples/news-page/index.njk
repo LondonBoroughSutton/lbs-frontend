@@ -1,0 +1,170 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'News',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'News',
+        href: '#'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      {{ lbsCard({
+        heading: {
+          title: 'Featured news item',
+          href: '#'
+        },
+        featureCard: true,
+        image: '/public/assets/images/2.jpg',
+        cardBodyHtml: '<p>Summary information about the article would go in here</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">View article</a></p>',
+        clickable: true
+      }) }}
+    </div>
+  </div>
+
+  <div class="lbs-row">
+  <div class="lbs-row__container">
+  <h2>Latest news</h2>
+  <div class="govuk-grid-row lbs-card__wrapper">
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/2.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/3.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/2.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/3.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/2.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        news: true,
+        image: '/public/assets/images/3.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+  </div>
+
+
+{% endblock %}
