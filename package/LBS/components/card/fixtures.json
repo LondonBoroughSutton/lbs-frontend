@@ -200,7 +200,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n  class=\"lbs-card   lbs-card--news lbs-card--clickable \">\n  \n    \n  <img src=\"/assets/img/home-image--1.jpg\" alt=\"Description of the image would go here\"/>\n    <div class=\"lbs-card__container\">\n      <div class=\"lbs-card__date\">30 October 2021</div>\n      \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <p>This is a description</p>\n      \n    </div>\n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card   lbs-card--news lbs-card--clickable \">\n  \n    \n    <div class=\"lbs-image__wrapper\">\n      <img src=\"/assets/img/home-image--1.jpg\" alt=\"Description of the image would go here\"/>\n    </div>\n    <div class=\"lbs-card__container\">\n      <div class=\"lbs-card__date\">30 October 2021</div>\n      \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <p>This is a description</p>\n      \n    </div>\n    \n    \n  </div>",
             "hidden": false
         },
         {

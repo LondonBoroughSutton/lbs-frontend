@@ -12,7 +12,9 @@
   <div class="lbs-card__container">
     {% endif %}
     {% if params.news %}
-  <img src="{{ params.image }}" alt="Description of the image would go here"/>
+    <div class="lbs-image__wrapper">
+      <img src="{{ params.image }}" alt="Description of the image would go here"/>
+    </div>
     <div class="lbs-card__container">
       <div class="lbs-card__date">30 October 2021</div>
       {% endif %}
