@@ -27,6 +27,8 @@
   }
 
   .lbs-page-header__row {
+    position: relative;
+    z-index: 2;
     padding: $lbs-margin 0;
 
     &--light {
@@ -52,18 +54,25 @@
     }
   }
 
-  &--homepage {
+  &--homepage,
+  &--image {
     .govuk-width-container {
       display: flow-root;
+      //overflow: hidden;
+
       @include govuk-media-query($until: desktop) {
         margin-bottom: $lbs-margin * 2;
+      }
+
+      .govuk-breadcrumbs {
+        margin-bottom: 0;
       }
     }
 
     @include govuk-media-query($from: desktop) {
       overflow: hidden;
 
-      .govuk-width-container {
+      > .govuk-width-container {
         position: relative;
         min-height: $lbs-margin * 10;
       }
