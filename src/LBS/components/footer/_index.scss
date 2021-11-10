@@ -4,6 +4,10 @@
   border-top: 5px solid $lbs-green-1;
   background: rgba($lbs-grey, .1);
 
+  p {
+    @include govuk-font($size: 16);
+  }
+
   ul {
     @extend .govuk-list;
   }
@@ -58,6 +62,7 @@
 
       .lbs-footer__navigation {
         @extend .govuk-list;
+        @include govuk-font($size: 16);
         display: flex;
         margin: 0;
         flex-direction: column;
