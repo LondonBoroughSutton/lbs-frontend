@@ -121,7 +121,7 @@
               transform: translateY(-50%);
       border-radius: 50%;
       background: $lbs-green-1;
-      background-size: cover;
+      background-size: contain;
     }
   }
 }

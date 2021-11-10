@@ -1,0 +1,19 @@
+table {
+  @extend .govuk-table;
+
+  th {
+    @extend .govuk-table__header;
+  }
+
+  tbody {
+    @extend .govuk-table__body !optional;
+  }
+
+  tr {
+    @extend .govuk-table__row !optional;
+  }
+
+  td {
+    @extend .govuk-table__cell;
+  }
+}
