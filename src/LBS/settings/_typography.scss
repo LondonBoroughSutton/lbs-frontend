@@ -1,7 +1,8 @@
 $lbs-heading-font: "proxima-nova", "Helvetica", "Arial", sans-serif;
+$lbs-font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
 
 * {
-  font-family: $govuk-font-family;
+  font-family: $lbs-font-family;
 }
 
 h1,
