@@ -52,7 +52,7 @@
       border-bottom-color: rgba($lbs-green-2, 1);
       box-shadow: $lbs-shadow--l;
 
-      a {
+      a:not(.lbs-button) {
         @extend .govuk-link:hover;
         color: $lbs-green-1;
       }
