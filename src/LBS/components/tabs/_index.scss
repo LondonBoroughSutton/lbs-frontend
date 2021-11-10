@@ -93,6 +93,8 @@ $border-colour: $lbs-grey;
         }
 
         .lbs-tabs__content__item__title {
+          @extend .govuk-heading-s;
+
           @include govuk-media-query($from: desktop) {
             display: none;
           }
