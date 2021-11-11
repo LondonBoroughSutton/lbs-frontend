@@ -1,0 +1,137 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Get rid of bulky items',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Waste and recycling',
+        href: '#'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-l">You can have a wide range of large or bulky items collected from your property by the
+      council using the bulky waste
+      collection service.</p>
+
+
+    <ol class="lbs-downloads">
+      <li class="lbs-downloads--item">
+        <a href="#" class="lbs-downloads--link">Activity Programme Dec 2020</a>
+        <ul class="lbs-downloads--meta">
+          <li><span class="govuk-visually-hidden">Document format:</span> <abbr title="Portable Document Format">PDF</abbr></li>
+          <li><span class="govuk-visually-hidden">Document size:</span> 732Kb</li>
+          <li><a href="#" class="">Download</a> <span class="govuk-visually-hidden">Activity Programme Dec 2020</span></li>
+        </ul>
+      </li>
+      <li class="lbs-downloads--item">
+        <a href="#" class="lbs-downloads--link">Activity Programme Dec 2020</a>
+        <ul class="lbs-downloads--meta">
+          <li><span class="govuk-visually-hidden">Document format:</span> <abbr title="Portable Document Format">PDF</abbr></li>
+          <li><span class="govuk-visually-hidden">Document size:</span> 732Kb</li>
+          <li><a href="#" class="">Download</a> <span class="govuk-visually-hidden">Activity Programme Dec 2020</span></li>
+        </ul>
+      </li>
+      <li class="lbs-downloads--item">
+        <a href="#" class="lbs-downloads--link">Activity Programme Dec 2020</a>
+        <ul class="lbs-downloads--meta">
+          <li><span class="govuk-visually-hidden">Document format:</span> <abbr title="Portable Document Format">PDF</abbr></li>
+          <li><span class="govuk-visually-hidden">Document size:</span> 732Kb</li>
+          <li><a href="#" class="">Download</a> <span class="govuk-visually-hidden">Activity Programme Dec 2020</span></li>
+        </ul>
+      </li>
+    </ol>
+
+{#{{ govukSummaryList({#}
+{#rows: [#}
+{#{#}
+{#  key: {#}
+{#  text: "Activity Programme Dec 2020"#}
+{#},#}
+{#  value: {#}
+{#  text: "PDF (0.26MB)"#}
+{#},#}
+{#  actions: {#}
+{#  items: [#}
+{#    {#}
+{#      href: "#",#}
+{#      text: "Download",#}
+{#      visuallyHiddenText: "filename.file"#}
+{#    }#}
+{#  ]#}
+{#}#}
+{#},{#}
+{#  key: {#}
+{#    text: "Summer Term Activity Programme 2021"#}
+{#  },#}
+{#  value: {#}
+{#    text: "PDF (1.07MB)"#}
+{#  },#}
+{#  actions: {#}
+{#    items: [#}
+{#      {#}
+{#        href: "#",#}
+{#        text: "Download",#}
+{#        visuallyHiddenText: "filename.file"#}
+{#      }#}
+{#    ]#}
+{#  }#}
+{#},#}
+{#{#}
+{#  key: {#}
+{#  text: "Summer Holidays 2021"#}
+{#},#}
+{#  value: {#}
+{#  text: "PDF (1.05MB)"#}
+{#},#}
+{#  actions: {#}
+{#  items: [#}
+{#    {#}
+{#      href: "#",#}
+{#      text: "Download",#}
+{#      visuallyHiddenText: "filename.file"#}
+{#    }#}
+{#  ]#}
+{#},#}
+{#  {#}
+{#  key: {#}
+{#  text: "Autumn Term 2021 Programme"#}
+{#},#}
+{#  value: {#}
+{#  text: "PDF (0.95MB)"#}
+{#},#}
+{#  actions: {#}
+{#  items: [#}
+{#    {#}
+{#      href: "#",#}
+{#      text: "Download",#}
+{#      visuallyHiddenText: "filename.file"#}
+{#    }#}
+{#  ]#}
+{#}#}
+{#  ]#}
+{#}) }}#}
+  </div>
+</div>
+
+{% endblock %}
