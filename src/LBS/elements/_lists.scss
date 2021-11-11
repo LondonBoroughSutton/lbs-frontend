@@ -69,6 +69,10 @@ ul {
       }
     }
 
+    &.lbs-downloads--extension {
+      text-transform: uppercase;
+    }
+
     @include govuk-media-query($from: desktop) {
       width: 40%;
       justify-content: space-between;
