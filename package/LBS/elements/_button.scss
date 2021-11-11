@@ -1,5 +1,5 @@
 .lbs-button {
-  transition: .2s background-color;
+  transition: .2s all;
   //border-radius: $lbs-border-radius;
   color: $lbs-black;
   background: $lbs-yellow;
@@ -47,7 +47,9 @@
     }
 
     &:hover {
-      background: rgba($lbs-green-1, .1);
+      border-color: $lbs-white;
+      color: $lbs-white;
+      background: rgba($lbs-green-1, 1);
     }
   }
 
