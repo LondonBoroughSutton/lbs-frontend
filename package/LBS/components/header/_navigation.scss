@@ -40,6 +40,12 @@
           align-items: center;
     }
 
+    &:focus-visible {
+      @include govuk-focused-text;
+      //color: $lbs-black;
+      //background: $lbs-yellow;
+    }
+
     & button {
       padding: 0;
       border: none;
@@ -107,6 +113,8 @@
             align-items: center;
 
         &[data-has-submenu="true"] {
+          text-decoration: none;
+
           &:hover,
           &[data-submenu-open="true"] {
             border-radius: $lbs-border-radius $lbs-border-radius 0 0;
@@ -116,7 +124,13 @@
               color: $lbs-white;
 
               &:focus {
-                color: initial;
+                outline: none;
+                background: initial;
+                box-shadow: none;
+              }
+
+              &:focus-visible {
+                @include govuk-focused-text;
               }
 
               &:after {
@@ -138,6 +152,8 @@
         display: block;
         color: $lbs-green-1;
         font-weight: 600;
+        text-decoration: none;
+
         @include govuk-media-query($until: desktop) {
           padding: $lbs-margin $lbs-margin / 2;
           background: rgba($lbs-white, 1);
@@ -168,6 +184,10 @@
       a {
         font-weight: normal;
 
+        &:focus {
+          @include govuk-focused-text;
+        }
+
         &:before {
           content: "";
           display: inline-block;
@@ -192,7 +212,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      min-height: 30vh;
+      //min-height: 30vh;
       padding: $lbs-margin $lbs-margin * 2;
       border-radius: 0 0 $lbs-border-radius $lbs-border-radius;
       box-shadow: 0 3px 5px rgba($lbs-black, .2);

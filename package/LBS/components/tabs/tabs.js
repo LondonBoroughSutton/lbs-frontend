@@ -109,7 +109,7 @@ Tabs.prototype.setupAccordion = function () {
     $panel.boundTabClick = this.onAccordionClick.bind(this);
 
     // Handle events
-    $panel.addEventListener('click', $panel.boundTabClick, true);
+    $panel.querySelector('.lbs-tabs__content__item__title').addEventListener('click', $panel.boundTabClick, true);
   }.bind(this));
 };
 
