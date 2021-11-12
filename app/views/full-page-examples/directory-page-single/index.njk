@@ -1,0 +1,96 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Parking checker',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Streets, transport and parking',
+        href: '#'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2>Ambleside Gardens</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+            text: "Eligible properties"
+          },
+            value: {
+            text: "All residential properties"
+          }
+          },
+          {
+            key: {
+            text: "Zone Identifier"
+          },
+            value: {
+            text: "GREEN (G)"
+          },
+            actions: {
+            items: [
+              {
+                href: "#",
+                text: "View map",
+                visuallyHiddenText: "G Zone on map"
+              }
+            ]
+          }
+          }, {
+            key: {
+              text: "Zone Name"
+            },
+            value: {
+              text: "SUTTON CONTROLLED PARKING ZONE"
+            }
+          },
+          {
+            key: {
+            text: "Zone Operational Days"
+          },
+            value: {
+            text: "Monday to Saturday"
+          }
+          },
+          {
+            key: {
+            text: "Zone Operational Hours"
+          },
+            value: {
+            text: "08:00 to 18:30"
+          }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        classes: 'lbs-button',
+        isStartButton: true,
+        text: 'Apply for permit'
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
