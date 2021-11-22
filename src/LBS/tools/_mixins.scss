@@ -70,7 +70,7 @@
 
 //  Background gradient mixin
 @mixin lbs-background-gradient($opacity: 1) {
-  background: linear-gradient(45deg, rgba($lbs-green-1, $opacity), rgba($lbs-green-2, $opacity));
+  background: linear-gradient(45deg, rgba($lbs-green-1, $opacity) 0%, rgba(darken($lbs-green-1, 4%), $opacity) 20%, rgba(darken($lbs-green-1, 0%), $opacity) 40%, rgba($lbs-green-2, $opacity));
 }
 
 @mixin lbs-background-gradient--yellow() {
@@ -97,7 +97,7 @@
       height: 35rem;
       transform: translateY(-50%);
       border-radius: 50%;
-      background: rgba($lbs-green-1, .5);
+      background: rgba($lbs-green-1, .9);
     }
 
     &:after {
