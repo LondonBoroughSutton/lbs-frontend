@@ -1,3 +1,6 @@
+//$page-header-border-colour: rgba($lbs-green-2, .4);
+$page-header-border-colour: adjust-color($lbs-green-1, $lightness: 2.5%);
+
 .lbs-page-header {
   @include lbs-background-gradient;
   display: flow-root;
@@ -85,6 +88,7 @@
 
         h1 {
           font-size: 2.5rem;
+          text-shadow: 1px 1px 3px adjust-color($lbs-green-1, $lightness: -5%);
         }
       }
     }
@@ -94,7 +98,7 @@
       button {
         border-width: 2px;
         border-color: rgba($lbs-green-1, 1);
-        box-shadow: 0 0 0 4px rgba($lbs-green-2, 1);
+        box-shadow: 0 0 0 4px $page-header-border-colour;
 
         &:focus {
           border-color: $lbs-black;
@@ -113,13 +117,18 @@
       position: relative;
       z-index: 2;
       top: 50%;
-      right: 0;
-      width: 30rem;
-      height: 30rem;
+      right: -10%;
+      width: 25rem;
+      height: 25rem;
       transform: translateY(-50%);
       border-radius: 50%;
       background: $lbs-green-1;
       background-size: contain;
+    }
+    @include govuk-media-query($from: wide) {
+      right: 0;
+      width: 30rem;
+      height: 30rem;
     }
   }
 }

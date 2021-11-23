@@ -139,7 +139,16 @@ $border-colour: $lbs-grey;
           border: none;
           border-radius: $lbs-border-radius $lbs-border-radius 0 0;
           color: $lbs-white;
-          background: rgba($lbs-white, .1);
+          //background: rgba($lbs-white, .1);
+          background: $lbs-green-1;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          height: 1px;
+          margin-top: -1px;
+          background: $lbs-white;
         }
       }
 
