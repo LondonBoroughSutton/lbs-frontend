@@ -1,3 +1,9 @@
+{% from "../page-feedback/macro.njk" import lbsPageFeedback %}
+{% if params.pageFeedback === true %}
+  <div class="govuk-width-container">
+    {{ lbsPageFeedback() }}
+  </div>
+{% endif %}
 <footer class="lbs-footer">
   <div class="lbs-row">
     <div class="lbs-row__container">
