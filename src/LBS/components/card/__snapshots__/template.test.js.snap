@@ -2,9 +2,11 @@
 
 exports[`Card default example matches snapshot 1`] = `
 <div class="lbs-card     ">
-  <p>
-    This is a description
-  </p>
+  <div class="lbs-card__content">
+    <p>
+      This is a description
+    </p>
+  </div>
 </div>
 `;
 

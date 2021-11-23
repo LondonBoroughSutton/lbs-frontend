@@ -102,18 +102,27 @@
       @include lbs-image-container;
 
       .lbs-card__image {
-        position: relative;
-        z-index: 2;
-        top: 50%;
-        right: 0;
-        width: 30rem;
-        height: 30rem;
-        -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-        border-radius: 50% 0 0 50%;
-        background: $lbs-green-1;
-        background-size: contain;
+
+        @include govuk-media-query($from: desktop) {
+          position: relative;
+          z-index: 2;
+          top: 50%;
+          right: -10%;
+          width: 25rem;
+          height: 25rem;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          border-radius: 50% 0 0 50%;
+          background: $lbs-green-1;
+          background-size: contain;
+        }
+
+        @include govuk-media-query($from: wide) {
+          right: 0;
+          width: 30rem;
+          height: 30rem;
+        }
       }
     }
   }

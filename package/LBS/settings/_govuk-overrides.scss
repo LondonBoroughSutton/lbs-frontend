@@ -20,6 +20,13 @@ $govuk-success-colour: $lbs-green-1;
 
 $govuk-error-colour: $lbs-red;
 
+$govuk-breakpoints: (
+  mobile:  320px,
+  tablet:  641px,
+  desktop: 769px,
+  wide: 1024px
+);
+
 ////$govuk-input-border-colour: $lbs-blue;
 ////$govuk-border-width-form-element: $lbs-grey;
 ////$govuk-border-colour: $lbs-blue-2;
