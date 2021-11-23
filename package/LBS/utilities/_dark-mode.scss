@@ -1,0 +1,51 @@
+$lbs-dark-body-background: rgb(41, 41, 41);
+$lbs-dark-body-color: rgb(220, 220, 220);
+$lbs-dark-link-color: rgb(141, 178, 229);
+
+@media (prefers-color-scheme: dark) {
+  body,
+  .govuk-template__body {
+    color: $lbs-dark-body-color;
+    background: $lbs-dark-body-background;
+
+    .govuk-body-m,
+    .govuk-body,
+    p,
+    li,
+    h2,
+    h3,
+    h4 {
+      color: $lbs-dark-body-color;
+    }
+
+    a {
+      color: $lbs-dark-link-color;
+    }
+
+    .lbs-header,
+    .lbs-footer {
+      background: transparent;
+
+      .lbs-row {
+        background: transparent;
+      }
+    }
+
+    .lbs-card {
+      border: 1px solid rgba($lbs-dark-body-color, .5);
+      background: transparent;
+
+      .lbs-card__date {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    .lbs-header__logo {
+      path {
+        fill: $lbs-white;
+      }
+    }
+  }
+}
