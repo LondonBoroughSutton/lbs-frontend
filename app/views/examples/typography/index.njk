@@ -1,5 +1,6 @@
 {% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 
 {% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
@@ -19,8 +20,15 @@
 
   <h2>Decorative heading</h2>
 
-  <h3 class="lbs-heading--decorative">I am a decorative heading</h3>
-
+  <h1 class="lbs-heading--decorative">I am a decorative heading</h1>
+  <h1 class="lbs-heading--gradient">I am a gradient heading</h1>
+  {{ govukTag({
+    text: "Experimental"
+  }) }}
+  <h1 class="lbs-heading--gradient lbs-heading--decorative">I have both treatments</h1>
+  {{ govukTag({
+    text: "Experimental"
+  }) }}
   <h2>Blockquote</h2>
 
   <blockquote>

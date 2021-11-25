@@ -102,3 +102,10 @@ blockquote {
     background-size: cover;
   }
 }
+
+.lbs-heading--gradient {
+  //display: initial;
+  background: linear-gradient(90deg, darken($lbs-green-1, 8%), lighten($lbs-green-2, 1%) $lbs-margin * 15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
