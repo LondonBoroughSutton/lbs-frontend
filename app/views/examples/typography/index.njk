@@ -1,0 +1,30 @@
+{% from 'govuk/components/back-link/macro.njk' import govukBackLink %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+  <h2>Decorative heading</h2>
+
+  <h3 class="lbs-heading--decorative">I am a decorative heading</h3>
+
+  <h2>Blockquote</h2>
+
+  <blockquote>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </blockquote>
+
+{% endblock %}
