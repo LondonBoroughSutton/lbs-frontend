@@ -1,6 +1,7 @@
 {% from "govuk/components/skip-link/macro.njk" import govukSkipLink -%}
 {% from "../../../src/LBS/components/header/macro.njk" import lbsHeader -%}
 {% from "../../../src/LBS/components/footer/macro.njk" import lbsFooter -%}
+{% from "../../../src/LBS/components/page-feedback/macro.njk" import lbsPageFeedback -%}
 {# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
 {%- set assetUrl = assetUrl | default(assetPath) -%}
 <!DOCTYPE html>
@@ -16,7 +17,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   {% block headIcons %}
-    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/img/favicons/favicon.ico"
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48"
+          href="{{ assetPath | default('/assets') }}/img/favicons/favicon.ico"
           type="image/x-icon">
     <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/govuk-mask-icon.svg"
           color="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
@@ -37,7 +39,7 @@
 <body
   class="govuk-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{ attribute }}="{{ value }}"{% endfor %}
 >
-<script{% if cspNonce %} nonce="{{ cspNonce }}"{% endif %}>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<script{% if cspNonce %} nonce="{{ cspNonce }}"{% endif %}>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled')</script>
 
 {% block bodyStart %}{% endblock %}
 
@@ -56,10 +58,14 @@
 
 {% block main %}
   <div class="{{ containerClasses }}">
-    {% block beforeContent %}{% endblock %}
-    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content"
-          role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-      {% block content %}{% endblock %}
+    <main role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      {% block beforeContent %}
+
+      {% endblock %}
+      <div class="govuk-main-wrapper {{ mainClasses }}" id="main-content">
+        {% block content %}{% endblock %}
+      </div>
+
     </main>
   </div>
 {% endblock %}

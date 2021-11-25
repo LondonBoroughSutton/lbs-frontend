@@ -3,60 +3,58 @@
 {% set overlappingTabs = params.overlappingTabs if params.overlappingTabs else false %}
 {% set overlappingTabs = true if params.tabs %}
 
-<div role="complementary">
-  <div
-    class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %} {% if params.image %} lbs-page-header--image{% endif %}">
-    <div class="govuk-width-container">
-      {% if params.breadCrumbItems %}
-        {{ govukBreadcrumbs({
-          items: params.breadCrumbItems
-        }) }}
-      {% endif %}
-      {% if params.homepage %}
-        {% include './homepage.njk' %}
-      {% else %}
-        {% if params.image %}
-          <div class="lbs-page-header__content">
-            <h1>{{ params.heading }}</h1>
-          </div>
-        {% else %}
-          <h1>{{ params.heading }}</h1>
-        {% endif %}
-      {% endif %}
+<div
+  class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %} {% if params.image %} lbs-page-header--image{% endif %}">
+  <div class="govuk-width-container">
+    {% if params.breadCrumbItems %}
+      {{ govukBreadcrumbs({
+        items: params.breadCrumbItems
+      }) }}
+    {% endif %}
+    {% if params.homepage %}
+      {% include './homepage.njk' %}
+    {% else %}
       {% if params.image %}
-        {% include './image.njk' %}
-      {% endif %}
-    </div>
-    {% if params.description or params.meta %}
-      {% if params.description %}
-        {% set content = params.description %}
-      {% endif %}
-      {% if params.meta %}
-        {% set content %}
-          <dl>
-            {% for item in params.meta %}
-              <dt>{{ item.key }}:</dt>
-              <dd>{{ item.value }}</dd>
-            {% endfor %}
-          </dl>
-        {% endset %}
-      {% endif %}
-      <div class="lbs-page-header__row lbs-page-header__row--light">
-        <div class="govuk-width-container">
-          {{ content | safe }}
+        <div class="lbs-page-header__content">
+          <h1>{{ params.heading }}</h1>
         </div>
-      </div>
+      {% else %}
+        <h1>{{ params.heading }}</h1>
+      {% endif %}
+    {% endif %}
+    {% if params.image %}
+      {% include './image.njk' %}
     {% endif %}
   </div>
-  {% if params.tabs %}
-    <div class="lbs-row">
-      <div class="lbs-row__container">
-        {{ lbsTabs({
-          id: "pageHeaderTabs",
-          overlapPageHeader: true,
-          items: params.tabs
-        }) }}
+  {% if params.description or params.meta %}
+    {% if params.description %}
+      {% set content = params.description %}
+    {% endif %}
+    {% if params.meta %}
+      {% set content %}
+        <dl>
+          {% for item in params.meta %}
+            <dt>{{ item.key }}:</dt>
+            <dd>{{ item.value }}</dd>
+          {% endfor %}
+        </dl>
+      {% endset %}
+    {% endif %}
+    <div class="lbs-page-header__row lbs-page-header__row--light">
+      <div class="govuk-width-container">
+        {{ content | safe }}
       </div>
     </div>
   {% endif %}
 </div>
+{% if params.tabs %}
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      {{ lbsTabs({
+        id: "pageHeaderTabs",
+        overlapPageHeader: true,
+        items: params.tabs
+      }) }}
+    </div>
+  </div>
+{% endif %}
