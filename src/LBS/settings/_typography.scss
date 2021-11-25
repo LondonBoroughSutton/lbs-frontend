@@ -62,12 +62,25 @@ a {
 }
 
 blockquote {
+  position: relative;
   margin: 0 0 $lbs-margin;
-  padding: $lbs-margin;
+  padding: $lbs-margin $lbs-margin $lbs-margin $lbs-margin * 3;
   border-radius: $lbs-border-radius;
   color: rgba($lbs-black, .75);
   background: rgba($lbs-green-1, .075);
   font-style: italic;
+
+  &:before {
+    content: "\0022";
+    position: absolute;
+    top: $lbs-margin / 2;
+    left: 0;
+    width: $lbs-margin;
+    opacity: .25;
+    color: $lbs-green-1;
+    font-size: 100px;
+    line-height: .85;
+  }
 
   p:last-child {
     margin-bottom: 0;
