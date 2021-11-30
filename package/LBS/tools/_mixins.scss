@@ -74,7 +74,11 @@
 }
 
 @mixin lbs-background-gradient--yellow($opacity: 1) {
-  background: linear-gradient(45deg, $lbs-yellow $opacity, $lbs-orange $opacity);
+  background: linear-gradient(45deg, rgba($lbs-yellow, $opacity), rgba($lbs-orange, $opacity));
+}
+
+@mixin lbs-background-gradient--grey($opacity: 1) {
+  background: linear-gradient(45deg, rgba(lighten($lbs-yellow, 25%), $opacity), rgba($lbs-green-2, $opacity));
 }
 
 @mixin lbs-image-container() {

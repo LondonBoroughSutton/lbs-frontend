@@ -210,8 +210,8 @@
     }
 
     &.lbs-card--alt {
-      //@include lbs-background-gradient--grey(.15);
-      background: rgba($lbs-grey, .1);
+      @include lbs-background-gradient--grey(.15);
+      //background: rgba($lbs-grey, .1);
     }
   }
 
