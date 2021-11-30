@@ -4,6 +4,7 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 ---
 
 {% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
 {% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
 
@@ -123,6 +124,53 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
       }) }}
     </div>
 
+  </div>
+
+
+  {% set cardCopy %}
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: {
+          text: "Telephone"
+        },
+          value: {
+          text: "0208 547 5007"
+        }
+        },
+        {
+          key: {
+          text: "Email"
+        },
+          value: {
+          text: "ctax@sutton.gov.uk"
+        }
+        },
+        {
+          key: {
+          text: "Address"
+        },
+          value: {
+          html: "72 Guild Street<br>London<br>SE23 6FH"
+        }
+        }
+      ]
+    }) }}
+  {% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {{ lbsCard({
+        heading: {
+          title: 'Contact the department',
+          classes: 'asd'
+        },
+        contact: true,
+        bgColour: true,
+        cardBodyHtml: cardCopy
+      }) }}
+    </div>
   </div>
 
 {% endblock %}
