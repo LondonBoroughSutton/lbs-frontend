@@ -192,6 +192,35 @@
     }
   }
 
+  &--contact {
+    border-bottom-color: rgba($lbs-green-2, .75);
+
+    h2,
+    h3,
+    h4 {
+      @extend .lbs-heading--decorative;
+      @extend .govuk-heading-s;
+      //color: $lbs-black;
+    }
+
+    .lbs-card__content {
+      .govuk-summary-list {
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+
+      .govuk-summary-list__key {
+        font-weight: 700;
+      }
+    }
+
+    &.lbs-card--alt {
+      @include lbs-background-gradient--grey(.15);
+      //background: rgba($lbs-grey, .1);
+    }
+  }
+
   &--naked {
     padding: unset;
     border: unset;
