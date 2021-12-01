@@ -78,7 +78,7 @@
 }
 
 @mixin lbs-background-gradient--grey($opacity: 1) {
-  background: linear-gradient(45deg, rgba(lighten($lbs-yellow, 25%), $opacity), rgba($lbs-green-2, $opacity));
+  background: radial-gradient(circle at 100%, rgba($lbs-grey, $opacity) 50%, rgba(lighten($lbs-grey, 40%), $opacity));
 }
 
 @mixin lbs-image-container() {
