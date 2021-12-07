@@ -2,6 +2,15 @@
   .lbs-row__container {
     @extend .govuk-width-container;
     padding: $lbs-margin 0;
+
+    @include govuk-media-query($until: desktop) {
+      padding: $lbs-margin / 2 0;
+    }
+
+    > h2,
+    > h3 {
+      margin-top: $lbs-margin / 2;
+    }
   }
 
   &--white {

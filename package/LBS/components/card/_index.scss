@@ -7,6 +7,10 @@
   background-color: $lbs-white;
   box-shadow: $lbs-shadow;
 
+  @include govuk-media-query($until: desktop) {
+    margin-bottom: $lbs-margin / 2;
+  }
+
   *:last-child {
     margin-bottom: 0;
   }
@@ -245,5 +249,9 @@
   .show-more-link {
     color: $lbs-green-1;
     cursor: pointer;
+  }
+
+  &.lbs-card--popular-item {
+    margin-bottom: $lbs-margin / 2;
   }
 }
