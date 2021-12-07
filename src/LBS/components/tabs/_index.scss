@@ -75,7 +75,7 @@ $border-colour: $lbs-grey;
         &--active {
           display: block;
           @include govuk-media-query($until: desktop) {
-            padding-bottom: $lbs-margin;
+            padding-bottom: $lbs-margin / 2;
             background: rgba($lbs-white, 1);
           }
 
