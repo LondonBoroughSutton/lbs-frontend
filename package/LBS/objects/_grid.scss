@@ -1,0 +1,6 @@
+.govuk-grid-column-one-third-from-wide {
+  @include govuk-media-query($from: tablet) {
+    @include govuk-grid-column($width: one-half, $at: tablet);
+  }
+  @include govuk-grid-column($width: one-third, $at: wide);
+}
