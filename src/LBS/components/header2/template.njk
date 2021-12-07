@@ -118,13 +118,13 @@
                 {%- include './navigation.njk' %}
             {% endif %}
         </div>
-{#        {% if params.search !== false %}#}
-{#            <div class="lbs-header__search" id="lbs-header__search">#}
-{#                {{ lbsSearch({#}
-{#                    fullWidth: true#}
-{#                }) }}#}
-{#            </div>#}
-{#        {% endif %}#}
+        {% if params.search !== false %}
+            <div class="lbs-header__search" id="lbs-header__search">
+                {{ lbsSearch({
+                    fullWidth: true
+                }) }}
+            </div>
+        {% endif %}
     </div>
   {% if params.phaseBanner %}
     <div class="lbs-row lbs-row--alt3 lbs-row--phase-banner">

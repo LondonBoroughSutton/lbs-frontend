@@ -1,0 +1,60 @@
+params:
+  - name: href
+    type: string
+    required: false
+    description: If href is set, it will become the value for the href attribute
+
+examples:
+  - name: default
+    description: Standard application of the header element.
+    data:
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+
+        - href: '#2'
+          text: Navigation item 2
+
+  - name: with no search
+    description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
+    data:
+      search: false
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+          active: true
+        - href: '#2'
+          text: Navigation item 2
+
+  - name: with no navigation
+    description: Header with no main navigation.
+    data:
+      navigation: false
+
+  - name: with no navigation or search
+    description: Header with no main navigation or search function.
+    data:
+      navigation: false
+      search: false
+
+
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    data:
+      href: '/'

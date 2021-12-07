@@ -1,0 +1,152 @@
+.lbs-header {
+  padding: $lbs-margin / 3 0;
+  border-bottom: 5px solid $lbs-green-1;
+  @include govuk-media-query($from: desktop) {
+    position: relative;
+    padding: $lbs-margin / 2 0;
+  }
+
+  &--with-phase-banner {
+    padding-bottom: 0;
+    border-bottom: none;
+
+    .lbs-row--phase-banner {
+      margin-top: $lbs-margin / 3;
+      border-top: 5px solid $lbs-green-1;
+    }
+  }
+
+  .govuk-width-container {
+    display: flex; // Floats or flex? Flex feels best but floats are better supported
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    @include govuk-media-query($from: desktop) {
+      flex-direction: row;
+      position: relative;
+      align-items: stretch;
+    }
+  }
+
+  &__logo {
+    align-self: center;
+    flex: 1 0 50%;
+    @include govuk-media-query($from: desktop) {
+      flex: 1 0 20%;
+    }
+
+    & > a {
+      display: inline-block;
+    }
+  }
+
+  &__nav-container {
+    flex: 1 0 50%;
+
+    @include govuk-media-query($from: desktop) {
+      flex: 1 0 40%;
+      //height: 100%;
+    }
+    @import "./navigation";
+
+    .lbs-header__mobile-icons {
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      @include govuk-media-query($from: desktop) {
+        display: none;
+      }
+
+      svg {
+        overflow: visible;
+        vertical-align: center;
+
+        rect,
+        path {
+          transition: all .2s linear;
+          fill: $lbs-green-1;
+          transform-origin: center center;
+        }
+      }
+
+      button {
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background: transparent;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:last-child {
+          margin-left: $lbs-margin;
+        }
+      }
+
+      #lbs-header__mobile__menu-btn {
+        &.active {
+          .lbs-header__mobile_burger-btn--1 {
+            transform: translate(-10px, 10px) rotate(45deg);
+          }
+
+          .lbs-header__mobile_burger-btn--2 {
+            transform: translateX(20px);
+            opacity: 0;
+          }
+
+          .lbs-header__mobile_burger-btn--3 {
+            transform: translate(-10px, -8px) rotate(-45deg);
+          }
+        }
+      }
+
+      #lbs-header__mobile__search-btn {
+        svg {
+          transform: scale(.8);
+
+          .lbs-header__mobile_search-btn--2,
+          .lbs-header__mobile_search-btn--3 {
+            opacity: 0;
+          }
+        }
+
+        &.active {
+          svg {
+            .lbs-header__mobile_search-btn--1 {
+              opacity: 0;
+            }
+
+            .lbs-header__mobile_search-btn--2 {
+              transform: translate(40px, 0) rotate(45deg);
+              opacity: 1;
+            }
+
+            .lbs-header__mobile_search-btn--3 {
+              transform: translate(-10px, -8px) rotate(-45deg);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__search {
+    flex: 1 0 100%;
+    align-self: center;
+    @include govuk-media-query($until: desktop) {
+      display: none;
+      padding: $lbs-margin / 2 0;
+
+      &.active {
+        display: block;
+      }
+    }
+    @include govuk-media-query($from: desktop) {
+      flex: 1 0 40%;
+    }
+  }
+}
