@@ -1,0 +1,260 @@
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 34px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #ffffff;
+  background: $lbs-green-1;
+  font-weight: 700;
+  text-decoration: underline;
+  //text-decoration-thickness: max(1px, .0625rem);
+  text-underline-offset: .1em;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration-skip-ink: none;
+    text-decoration-skip: none;
+    color: #003078;
+  }
+
+  &:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+      border-color: #ffdd00;
+      color: #0b0c0c;
+    }
+  }
+
+  &:active {
+    color: #0b0c0c;
+  }
+
+  &:not(:hover):not(:active) {
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    border-right-color: #0b0c0c;
+    border-bottom-color: #0b0c0c;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: #ffdd00;
+  color: #0b0c0c;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    border-right-color: #0b0c0c;
+    border-bottom-color: #0b0c0c;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) {
+  background: none;
+  box-shadow: none;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button:after {
+  content: "";
+  position: absolute;
+  top: auto;
+  right: 30px;
+  bottom: 0;
+  left: 25px;
+  height: 3px;
+  background: none;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:after {
+  background-color: #ffdd00;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: #ffdd00;
+  color: #0b0c0c;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    transform: translateY(1px) rotate(225deg) scale(1);
+    border-right-color: #0b0c0c;
+    border-bottom-color: #0b0c0c;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:after {
+  background-color: #ffdd00;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: #ffdd00;
+  color: #0b0c0c;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    transform: translateY(1px) rotate(225deg) scale(1);
+    border-right-color: #0b0c0c;
+    border-bottom-color: #0b0c0c;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button {
+  background: rgba($lbs-grey, .1);
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:after {
+  background-color: #1d70b8;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: rgba($lbs-grey, .1);
+  color: #1d70b8;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    //transform: translateY(-35%) rotate(45deg) scale(1);
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 0 2px;
+    transform: translateY(1px) rotate(225deg) scale(1);
+    border-right: 2px solid #1d70b8;
+    border-bottom: 2px solid #1d70b8;
+    vertical-align: middle;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) {
+  background: rgba($lbs-grey, .1);
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible):after {
+  background-color: #1d70b8;
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  border-color: rgba($lbs-grey, .1);
+  color: #1d70b8;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    //transform: translateY(-35%) rotate(45deg) scale(1);
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 0 2px;
+    transform: translateY(1px) rotate(225deg) scale(1);
+    border-right: 2px solid #1d70b8;
+    border-bottom: 2px solid #1d70b8;
+    vertical-align: middle;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner:before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 0 2px;
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    vertical-align: middle;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 15px 0;
+  color: #0b0c0c;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 22px;
+  pointer-events: none;
+  text-align: center;
+}
+
+.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
+  display: block;
+}
