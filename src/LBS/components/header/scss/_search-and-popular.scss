@@ -55,12 +55,12 @@
 @media (min-width: 48.0625em) {
   .gem-c-layout-super-navigation-header__search-items {
     margin: 0;
-  }
 
-  .js-module-initialised .gem-c-layout-super-navigation-header__search-items {
-    position: absolute;
-    right: 0;
-    left: 0;
+    .js-module-initialised & {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
   }
 }
 

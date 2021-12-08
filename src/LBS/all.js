@@ -14,8 +14,14 @@ function initAll (options) {
   // Defaults to the entire document if nothing is set.
   const scope = typeof options.scope !== 'undefined' ? options.scope : document
 
-  const $headers = scope.querySelectorAll('.lbs-header')
+  // const $headers = scope.querySelectorAll('.lbs-header')
+  // nodeListForEach($headers, function ($header) {
+  //   new Header($header).init()
+  // })
+
+  const $headers = scope.querySelectorAll('[data-module="super-navigation-mega-menu"]')
   nodeListForEach($headers, function ($header) {
+    // console.log('Initted')
     new Header($header).init()
   })
 
