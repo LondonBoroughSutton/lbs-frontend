@@ -38,7 +38,8 @@
     margin: 0;
     padding: 0;
     float: left;
-    background: #0b0c0c;
+    background: $lbs-white;
+    font-size: 1rem;
   }
 }
 
@@ -65,19 +66,37 @@
   &:hover {
     text-decoration-skip-ink: none;
     text-decoration-skip: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: auto;
+      right: 30px;
+      bottom: 0;
+      left: 25px;
+      height: 3px;
+      background: $lbs-green-1;
+    }
   }
 
   &:focus {
     outline: 3px solid transparent;
     color: #0b0c0c;
-    background-color: #ffdd00;
-    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    background-color: $lbs-yellow;
+    box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
     text-decoration: none;
   }
 
   @include govuk-media-query($from: desktop) {
     display: block;
+    position: relative;
+    height: 20px;
     margin: 0;
+    padding: 15px;
+    float: left;
+    font-size: 16px;
+    font-size: 1rem;
+    text-decoration: none;
   }
 
   &[hidden] {

@@ -1,9 +1,9 @@
 .lbs-header {
-  padding: $lbs-margin / 3 0;
+  //padding: $lbs-margin / 3 0;
   border-bottom: 5px solid $lbs-green-1;
   @include govuk-media-query($from: desktop) {
     position: relative;
-    padding: $lbs-margin / 2 0;
+    //padding: $lbs-margin / 2 0;
   }
 
   &--with-phase-banner {

@@ -3,6 +3,7 @@
   @include govuk-media-query($from: desktop) {
     display: flex;
     flex: 0 0 50%;
+    justify-content: flex-end;
     //display: block;
     //float: right;
   }

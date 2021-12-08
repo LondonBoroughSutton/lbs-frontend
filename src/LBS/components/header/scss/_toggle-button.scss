@@ -26,12 +26,12 @@
   &:focus {
     outline: 3px solid transparent;
     color: #0b0c0c;
-    background-color: #ffdd00;
-    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    background-color: $lbs-yellow;
+    box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
     text-decoration: none;
 
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      border-color: #ffdd00;
+      border-color: $lbs-yellow;
       color: #0b0c0c;
     }
   }
@@ -55,13 +55,13 @@
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible {
   outline: 3px solid transparent;
   color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  background-color: $lbs-yellow;
+  box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
   text-decoration: none;
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-color: #ffdd00;
+  border-color: $lbs-yellow;
   color: #0b0c0c;
 }
 
@@ -115,17 +115,17 @@
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  background-color: $lbs-yellow;
+  box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
   text-decoration: none;
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:after {
-  background-color: #ffdd00;
+  background-color: $lbs-yellow;
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-color: #ffdd00;
+  border-color: $lbs-yellow;
   color: #0b0c0c;
 }
 
@@ -140,17 +140,17 @@
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible {
   outline: 3px solid transparent;
   color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  background-color: $lbs-yellow;
+  box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
   text-decoration: none;
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible:after {
-  background-color: #ffdd00;
+  background-color: $lbs-yellow;
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus-visible .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-  border-color: #ffdd00;
+  border-color: $lbs-yellow;
   color: #0b0c0c;
 }
 
