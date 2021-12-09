@@ -10,6 +10,8 @@ function Header ($module) {
     this.$searchMenu = this.$module.querySelector('#super-search-menu'),
     this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]'),
     this.hiddenButtons = this.$module.querySelectorAll('button[hidden]'),
+    this.menuOpen = false,
+    this.searchOpen = false,
     this.lastWindowSize = null
 }
 
@@ -43,28 +45,79 @@ Header.prototype.setupMenu = function () {
   console.log('Set up')
   this.setAttributes()
   this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
+  this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
   this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
+  this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.teardownMenu = function () {
   console.log('Tear down')
-  this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').setAttribute('hidden', true)
+  this.unsetAttributes()
+  this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
 }
 
 Header.prototype.setAttributes = function () {
-  this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').removeAttribute('hidden')
+  this.$navigationToggle.removeAttribute('hidden')
+  this.$searchToggle.removeAttribute('hidden')
+  this.$navigationMenu.setAttribute('hidden', true)
+  this.$searchMenu.setAttribute('hidden', true)
+}
+
+Header.prototype.unsetAttributes = function () {
+  this.$navigationToggle.setAttribute('hidden', true)
+  this.$searchToggle.setAttribute('hidden', true)
+  this.$navigationMenu.removeAttribute('hidden')
+  this.$searchMenu.removeAttribute('hidden')
 }
 
 Header.prototype.handleMenuButtonClick = function () {
-  console.log('Clicked')
-  // this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').removeAttribute('hidden')
+  if (this.menuOpen === true) {
+    this.closeMenu(this.$navigationToggle, this.$navigationMenu)
+  } else {
+    this.openMenu(this.$navigationToggle, this.$navigationMenu)
+  }
+}
+
+Header.prototype.handleSearchButtonClick = function () {
+  if (this.menuOpen === true) {
+    this.closeSearch(this.$searchToggle, this.$searchMenu)
+  } else {
+    this.openSearch(this.$searchToggle, this.$searchMenu)
+  }
 }
 
 Header.prototype.openMenu = function ($button, $target) {
+  this.menuOpen = true
   $button.setAttribute('aria-expanded', !0)
+  $button.setAttribute('aria-label', 'Hide navigation menu')
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $target.removeAttribute('hidden')
-  // n(e, 'hide')
+  this.closeSearch(this.$searchToggle, this.$searchMenu)
+}
+
+Header.prototype.closeMenu = function ($button, $target) {
+  this.menuOpen = false
+  $button.setAttribute('aria-expanded', !1)
+  $button.setAttribute('aria-label', 'Show navigation menu')
+  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+  $target.setAttribute('hidden', !0)
+}
+
+Header.prototype.openSearch = function ($button, $target) {
+  this.searchOpen = true
+  $button.setAttribute('aria-expanded', !0)
+  $button.setAttribute('aria-label', 'Hide navigation menu')
+  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
+  $target.removeAttribute('hidden')
+  this.closeMenu(this.$navigationToggle, this.$navigationMenu)
+}
+
+Header.prototype.closeSearch = function ($button, $target) {
+  this.searchOpen = false
+  $button.setAttribute('aria-expanded', !1)
+  $button.setAttribute('aria-label', 'Show navigation menu')
+  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+  $target.setAttribute('hidden', !0)
 }
 
 //
@@ -176,13 +229,13 @@ Header.prototype.syncState = function (button, isVisible) {
  * When the search button is clicked, change the visibility of the search form and then
  * sync the accessibility state and search button state
  */
-Header.prototype.handleSearchButtonClick = function () {
-  const isVisible = this.$search.classList.toggle('active')
-  this.syncState(this.$searchButton, isVisible)
-  this.$module.querySelector('#lbs-search__box').focus()
-  if (this.$menu.classList.contains('active')) {
-    this.syncState(this.$menuButton, this.$menu.classList.toggle('active'))
-  }
-}
+// Header.prototype.handleSearchButtonClick = function () {
+//   const isVisible = this.$search.classList.toggle('active')
+//   this.syncState(this.$searchButton, isVisible)
+//   this.$module.querySelector('#lbs-search__box').focus()
+//   if (this.$menu.classList.contains('active')) {
+//     this.syncState(this.$menuButton, this.$menu.classList.toggle('active'))
+//   }
+// }
 
 export default Header
