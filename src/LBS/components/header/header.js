@@ -3,7 +3,7 @@ import { settings } from '../../common'
 // New bits
 
 function Header ($module) {
-    this.$module = $module,
+  this.$module = $module,
     this.$navigationToggle = this.$module.querySelector('#super-navigation-menu-toggle'),
     this.$navigationMenu = this.$module.querySelector('#super-navigation-menu'),
     this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle'),
@@ -17,7 +17,7 @@ Header.prototype.init = function () {
   if (!this.$module) {
     return
   }
-  this.$module.classList.add('js-module-initialised');
+  this.$module.classList.add('js-module-initialised')
   if (typeof window.matchMedia === 'function') {
     this.setupResponsiveChecks()
   } else {
@@ -41,11 +41,32 @@ Header.prototype.checkMode = function () {
 
 Header.prototype.setupMenu = function () {
   console.log('Set up')
+  this.setAttributes()
+  this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
+  this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
 }
 
 Header.prototype.teardownMenu = function () {
   console.log('Tear down')
+  this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').setAttribute('hidden', true)
 }
+
+Header.prototype.setAttributes = function () {
+  this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').removeAttribute('hidden')
+}
+
+Header.prototype.handleMenuButtonClick = function () {
+  console.log('Clicked')
+  // this.$module.querySelector('.gem-c-layout-super-navigation-header__navigation-top-toggle-button').removeAttribute('hidden')
+}
+
+Header.prototype.openMenu = function ($button, $target) {
+  $button.setAttribute('aria-expanded', !0)
+  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
+  $target.removeAttribute('hidden')
+  // n(e, 'hide')
+}
+
 //
 // var i = {
 //     breakpoint: {
@@ -120,7 +141,6 @@ Header.prototype.teardownMenu = function () {
 //   }), this.$module.classList.add('js-module-initialised')
 // }
 
-
 /**
  * Sync menu state
  *
@@ -142,13 +162,13 @@ Header.prototype.syncState = function (button, isVisible) {
  * When the menu button is clicked, change the visibility of the menu and then
  * sync the accessibility state and menu button state
  */
-Header.prototype.handleMenuButtonClick = function () {
-  const isVisible = this.$menu.classList.toggle('active')
-  this.syncState(this.$menuButton, isVisible)
-  if (this.$search.classList.contains('active')) {
-    this.syncState(this.$searchButton, this.$search.classList.toggle('active'))
-  }
-}
+// Header.prototype.handleMenuButtonClick = function () {
+//   const isVisible = this.$menu.classList.toggle('active')
+//   this.syncState(this.$menuButton, isVisible)
+//   if (this.$search.classList.contains('active')) {
+//     this.syncState(this.$searchButton, this.$search.classList.toggle('active'))
+//   }
+// }
 
 /**
  * Handle search button click
@@ -164,6 +184,5 @@ Header.prototype.handleSearchButtonClick = function () {
     this.syncState(this.$menuButton, this.$menu.classList.toggle('active'))
   }
 }
-
 
 export default Header
