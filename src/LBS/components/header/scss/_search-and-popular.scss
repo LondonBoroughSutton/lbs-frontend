@@ -1,13 +1,15 @@
 .gem-c-layout-super-navigation-header__search-and-popular {
-  display: none;
   padding-top: 20px;
   padding-bottom: 20px;
-  background: $lbs-red;
 }
 
 .gem-c-layout-super-navigation-header__search-items {
   margin: 0 -15px;
   background: rgba($lbs-grey, .1);
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .gem-c-layout-super-navigation-header__search-item-link-icon {

@@ -79,7 +79,7 @@ Header.prototype.handleMenuButtonClick = function () {
 }
 
 Header.prototype.handleSearchButtonClick = function () {
-  if (this.menuOpen === true) {
+  if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
