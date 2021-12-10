@@ -18,6 +18,12 @@
         "description": "If `breadcrumb` array is passed, values will appear in the `breadcrumb` component"
     },
     {
+        "name": "descriptionPosition",
+        "type": "string",
+        "required": false,
+        "description": "If present, determines whether provided content appears 'inside' or 'below' header"
+    },
+    {
         "name": "image",
         "type": "string",
         "required": false,
