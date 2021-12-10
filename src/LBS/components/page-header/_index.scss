@@ -39,6 +39,13 @@ $page-header-border-colour: adjust-color($lbs-green-1, $lightness: 2.5%);
     }
   }
 
+  .lbs-page-header__description {
+    margin-bottom: $lbs-margin;
+    @include govuk-media-query($from: desktop) {
+      font-size: 1.15rem;
+    }
+  }
+
   .lbs-page-header__row {
     position: relative;
     z-index: 2;
