@@ -31,7 +31,7 @@
   display: block;
   position: relative;
   margin: 0;
-  padding: 10px 15px;
+  padding: 0;
   @include govuk-media-query($from: tablet) {
     margin: 0 30px;
     padding: 10px 0;

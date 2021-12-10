@@ -45,7 +45,7 @@ Header.prototype.checkMode = function () {
 
 Header.prototype.setupMobileMenu = function () {
   console.log('Set up Mobile')
-  this.setAttributes()
+  this.setAttributes('mobile')
   this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
   this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
   this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
@@ -54,13 +54,13 @@ Header.prototype.setupMobileMenu = function () {
 
 Header.prototype.teardownMobileMenu = function () {
   console.log('Tear down Mobile')
-  this.unsetAttributes()
+  this.unsetAttributes('mobile')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
 }
 
 Header.prototype.setupDesktopMenu = function () {
   console.log('Set up Desktop')
-  this.setAttributes()
+  this.setAttributes('desktop')
   // this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
   this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
   // this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
@@ -69,22 +69,31 @@ Header.prototype.setupDesktopMenu = function () {
 
 Header.prototype.teardownDesktopMenu = function () {
   console.log('Tear down Desktop')
-  this.unsetAttributes()
+  this.unsetAttributes('desktop')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
 }
 
-Header.prototype.setAttributes = function () {
-  this.$navigationToggle.removeAttribute('hidden')
-  this.$searchToggle.removeAttribute('hidden')
-  this.$navigationMenu.setAttribute('hidden', true)
-  this.$searchMenu.setAttribute('hidden', true)
+Header.prototype.setAttributes = function ($type) {
+  if ($type === 'mobile') {
+    this.$navigationToggle.removeAttribute('hidden')
+    this.$searchToggle.removeAttribute('hidden')
+    this.$navigationMenu.setAttribute('hidden', true)
+    this.$searchMenu.setAttribute('hidden', true)
+    this.$searchMenu.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
+  } else {
+    console.log("Set for desktop")
+  }
 }
 
-Header.prototype.unsetAttributes = function () {
-  this.$navigationToggle.setAttribute('hidden', true)
-  this.$searchToggle.setAttribute('hidden', true)
-  this.$navigationMenu.removeAttribute('hidden')
-  this.$searchMenu.removeAttribute('hidden')
+Header.prototype.unsetAttributes = function ($type) {
+  if ($type === 'mobile') {
+    this.$navigationToggle.setAttribute('hidden', true)
+    this.$searchToggle.setAttribute('hidden', true)
+    this.$navigationMenu.removeAttribute('hidden')
+    this.$searchMenu.removeAttribute('hidden')
+  } else {
+    console.log("Unset for desktop")
+  }
 }
 
 Header.prototype.handleMenuButtonClick = function () {
@@ -126,6 +135,7 @@ Header.prototype.openSearch = function ($button, $target) {
   $button.setAttribute('aria-label', 'Hide navigation menu')
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $target.removeAttribute('hidden')
+  document.getElementById('lbs-search__box').focus()
   this.closeMenu(this.$navigationToggle, this.$navigationMenu)
 }
 

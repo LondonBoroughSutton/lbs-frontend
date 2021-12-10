@@ -188,25 +188,28 @@
     <div class="govuk-width-container gem-c-layout-super-navigation-header__search-and-popular">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <form class="gem-c-layout-super-navigation-header__search-form" id="search" action="/search" method="get" role="search" aria-label="Site-wide">
+          {{ lbsSearch({
+            fullWidth: true
+          }) }}
+{#          <form class="gem-c-layout-super-navigation-header__search-form" id="search" action="/search" method="get" role="search" aria-label="Site-wide">#}
 
-            <div class="gem-c-search govuk-!-display-none-print  gem-c-search--large gem-c-search--on-white gem-c-search--separate-label" data-module="gem-toggle-input-class-on-focus">
-              <label for="search-main-71e95671" class="govuk-label govuk-label--m">Search</label>
-              <div class="gem-c-search__item-wrapper">
-                <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle" id="search-main-71e95671" name="q" title="Search" type="search" value="">
-                <div class="gem-c-search__item gem-c-search__submit-wrapper">
-                  <button class="gem-c-search__submit" type="submit" data-track-category="headerClicked" data-track-action="searchSubmitted" data-track-label="/search/all" data-track-dimension="Search on GOV.UK" data-track-dimension-index="29" data-module="gem-track-click" enterkeyhint="search">
-                    Search
+{#            <div class="gem-c-search govuk-!-display-none-print  gem-c-search--large gem-c-search--on-white gem-c-search--separate-label" data-module="gem-toggle-input-class-on-focus">#}
+{#              <label for="search-main-71e95671" class="govuk-label govuk-label--m">Search</label>#}
+{#              <div class="gem-c-search__item-wrapper">#}
+{#                <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle" id="search-main-71e95671" name="q" title="Search" type="search" value="">#}
+{#                <div class="gem-c-search__item gem-c-search__submit-wrapper">#}
+{#                  <button class="gem-c-search__submit" type="submit" data-track-category="headerClicked" data-track-action="searchSubmitted" data-track-label="/search/all" data-track-dimension="Search on GOV.UK" data-track-dimension-index="29" data-module="gem-track-click" enterkeyhint="search">#}
+{#                    Search#}
 
-                    <svg class="gem-c-search__icon" width="27" height="27" viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
-                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
-                    </svg>
-                  </button>    </div>
-              </div>
-            </div>
+{#                    <svg class="gem-c-search__icon" width="27" height="27" viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">#}
+{#                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>#}
+{#                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>#}
+{#                    </svg>#}
+{#                  </button>    </div>#}
+{#              </div>#}
+{#            </div>#}
 
-          </form>
+{#          </form>#}
         </div>
       </div>
       <div class="govuk-grid-row">

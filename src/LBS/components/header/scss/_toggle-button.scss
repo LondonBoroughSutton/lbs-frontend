@@ -95,6 +95,20 @@
     border-left: none;
     background: #1d70b8;
   }
+
+  &.gem-c-layout-super-navigation-header__open-button {
+    color: $lbs-green-1;
+    background: rgba($lbs-grey, .1);
+
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
+      display: block;
+      color: $lbs-green-1;
+    }
+
+    .gem-c-layout-super-navigation-header__search-toggle-button-link-icon {
+      display: none;
+    }
+  }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {

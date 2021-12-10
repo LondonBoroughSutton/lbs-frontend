@@ -1,6 +1,12 @@
 .gem-c-layout-super-navigation-header__search-and-popular {
   padding-top: 20px;
   padding-bottom: 20px;
+  flex-direction: column;
+  align-items: stretch;
+
+  .lbs-search {
+    margin: $lbs-margin 0 $lbs-margin * 2;
+  }
 }
 
 .gem-c-layout-super-navigation-header__search-items {
