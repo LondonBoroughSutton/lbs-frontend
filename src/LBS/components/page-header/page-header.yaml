@@ -11,6 +11,10 @@ params:
     type: array
     required: false
     description: If `breadcrumb` array is passed, values will appear in the `breadcrumb` component
+  - name: descriptionPosition
+    type: string
+    required: false
+    description: If present, determines whether provided content appears 'inside' or 'below' header
   - name: image
     type: string
     required: false
@@ -40,8 +44,8 @@ examples:
         }
       ]
 
-  - name: with description
-    description: Page header with a description
+  - name: with description below
+    description: Page header with a description below
     data:
       heading: Test page example
       breadCrumbItems: [
@@ -55,6 +59,23 @@ examples:
         }
       ]
       description: This is an example of some description text
+
+  - name: with description inside
+    description: Page header with a description inside
+    data:
+      heading: Test page example
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
+      description: This is an example of some description text,
+      descriptionPosition: inside
 
   - name: with meta data
     description: Page header with a meta data
