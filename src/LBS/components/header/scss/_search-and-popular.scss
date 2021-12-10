@@ -12,6 +12,16 @@
   }
 }
 
+.js-module-initialised {
+  .gem-c-layout-super-navigation-header__search-items {
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
 .gem-c-layout-super-navigation-header__search-item-link-icon {
   width: 20px;
   height: 20px;

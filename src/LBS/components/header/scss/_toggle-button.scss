@@ -88,6 +88,13 @@
   font-weight: 700;
   line-height: 1.25;
   cursor: pointer;
+
+  @include govuk-media-query($from: desktop) {
+    position: relative;
+    border-bottom: 1px solid #003078;
+    border-left: none;
+    background: #1d70b8;
+  }
 }
 
 .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {

@@ -35,14 +35,16 @@ Header.prototype.setupResponsiveChecks = function () {
 
 Header.prototype.checkMode = function () {
   if (this.mql.matches) {
-    this.teardownMenu()
+    this.teardownMobileMenu()
+    this.setupDesktopMenu()
   } else {
-    this.setupMenu()
+    this.teardownDesktopMenu()
+    this.setupMobileMenu()
   }
 }
 
-Header.prototype.setupMenu = function () {
-  console.log('Set up')
+Header.prototype.setupMobileMenu = function () {
+  console.log('Set up Mobile')
   this.setAttributes()
   this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
   this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
@@ -50,8 +52,23 @@ Header.prototype.setupMenu = function () {
   this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
-Header.prototype.teardownMenu = function () {
-  console.log('Tear down')
+Header.prototype.teardownMobileMenu = function () {
+  console.log('Tear down Mobile')
+  this.unsetAttributes()
+  this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
+}
+
+Header.prototype.setupDesktopMenu = function () {
+  console.log('Set up Desktop')
+  this.setAttributes()
+  // this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
+  this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
+  // this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
+  this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
+}
+
+Header.prototype.teardownDesktopMenu = function () {
+  console.log('Tear down Desktop')
   this.unsetAttributes()
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
 }
