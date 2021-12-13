@@ -76,9 +76,7 @@ Header.prototype.teardownDesktopMenu = function () {
 Header.prototype.setAttributes = function ($type) {
   if ($type === 'mobile') {
     this.$navigationToggle.removeAttribute('hidden')
-    this.$searchToggle.removeAttribute('hidden')
     this.$navigationMenu.setAttribute('hidden', true)
-    this.$searchMenu.setAttribute('hidden', true)
     this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
@@ -89,7 +87,17 @@ Header.prototype.setAttributes = function ($type) {
   )
   } else {
     console.log("Set for desktop")
+    this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
+      item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
+      item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
+      item.addEventListener('click', function (e){
+        document.getElementById(e.target.getAttribute('aria-controls')).toggleAttribute('hidden')
+      })
+    })
   }
+  // For all
+  this.$searchMenu.setAttribute('hidden', true)
+  this.$searchToggle.removeAttribute('hidden')
 }
 
 Header.prototype.unsetAttributes = function ($type) {
@@ -101,6 +109,7 @@ Header.prototype.unsetAttributes = function ($type) {
   } else {
     console.log("Unset for desktop")
   }
+  // For all
 }
 
 Header.prototype.handleMenuButtonClick = function () {
@@ -120,8 +129,7 @@ Header.prototype.handleSearchButtonClick = function () {
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
-      let searchHeight = '100px'
-      this.$module.style.marginBottom = searchHeight
+      this.$module.style.marginBottom = this.$searchMenu.offsetHeight + 'px'
     }
   }
 }
@@ -152,7 +160,9 @@ Header.prototype.openSearch = function ($button, $target) {
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $target.removeAttribute('hidden')
   document.getElementById('lbs-search__box').focus()
-  this.closeMenu(this.$navigationToggle, this.$navigationMenu)
+  if (this.mql.matches !== true) {
+    this.closeMenu(this.$navigationToggle, this.$navigationMenu)
+  }
 }
 
 Header.prototype.closeSearch = function ($button, $target) {

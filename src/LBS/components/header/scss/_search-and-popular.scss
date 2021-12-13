@@ -23,6 +23,7 @@
     @include govuk-media-query($from: desktop) {
       position: absolute;
       right: 0;
+      bottom: 0;
       left: 0;
     }
   }
