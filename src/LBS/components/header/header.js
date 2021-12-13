@@ -80,7 +80,6 @@ Header.prototype.setAttributes = function ($type) {
     this.$navigationMenu.setAttribute('hidden', true)
     this.$searchMenu.setAttribute('hidden', true)
     this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
-      console.log("Hello")
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
       item.addEventListener('click', function (e){
@@ -129,6 +128,7 @@ Header.prototype.handleSearchButtonClick = function () {
 
 Header.prototype.openMenu = function ($button, $target) {
   this.menuOpen = true
+  $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $button.setAttribute('aria-expanded', !0)
   $button.setAttribute('aria-label', 'Hide navigation menu')
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
@@ -138,6 +138,7 @@ Header.prototype.openMenu = function ($button, $target) {
 
 Header.prototype.closeMenu = function ($button, $target) {
   this.menuOpen = false
+  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
   $button.setAttribute('aria-expanded', !1)
   $button.setAttribute('aria-label', 'Show navigation menu')
   $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
