@@ -79,7 +79,15 @@ Header.prototype.setAttributes = function ($type) {
     this.$searchToggle.removeAttribute('hidden')
     this.$navigationMenu.setAttribute('hidden', true)
     this.$searchMenu.setAttribute('hidden', true)
-    this.$searchMenu.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
+    this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
+      console.log("Hello")
+      item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
+      item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
+      item.addEventListener('click', function (e){
+        document.getElementById(e.target.getAttribute('aria-controls')).toggleAttribute('hidden')
+      })
+    }
+  )
   } else {
     console.log("Set for desktop")
   }
@@ -107,8 +115,15 @@ Header.prototype.handleMenuButtonClick = function () {
 Header.prototype.handleSearchButtonClick = function () {
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
+    if (this.mql.matches === true) {
+      this.$module.style.marginBottom = '0'
+    }
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
+    if (this.mql.matches === true) {
+      let searchHeight = '100px'
+      this.$module.style.marginBottom = searchHeight
+    }
   }
 }
 
