@@ -56,6 +56,7 @@ Header.prototype.teardownMobileMenu = function () {
   console.log('Tear down Mobile')
   this.unsetAttributes('mobile')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
+  this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.setupDesktopMenu = function () {
@@ -106,11 +107,14 @@ Header.prototype.setAttributes = function ($type) {
     })
   }
   // For all
-  this.$searchMenu.setAttribute('hidden', true)
-  this.$searchToggle.removeAttribute('hidden')
+  // if (this.searchOpen === false) {
+    this.$searchMenu.setAttribute('hidden', true)
+    this.$searchToggle.removeAttribute('hidden')
+  // }
 }
 
 Header.prototype.unsetAttributes = function ($type) {
+  this.$module.style.marginBottom = '0px'
   if ($type === 'mobile') {
     this.$navigationToggle.setAttribute('hidden', true)
     this.$searchToggle.setAttribute('hidden', true)
@@ -119,6 +123,7 @@ Header.prototype.unsetAttributes = function ($type) {
   } else {
     console.log("Unset for desktop")
   }
+  this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
   // For all
 }
 
