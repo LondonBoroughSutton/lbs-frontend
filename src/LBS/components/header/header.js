@@ -87,11 +87,21 @@ Header.prototype.setAttributes = function ($type) {
   )
   } else {
     console.log("Set for desktop")
+    let module = this.$module
+    let that = this
+    // let closeTheSearch = this.closeSearch(this.$searchToggle, this.$searchMenu)
+    this.$searchMenu.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
     this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
       item.addEventListener('click', function (e){
-        document.getElementById(e.target.getAttribute('aria-controls')).toggleAttribute('hidden')
+        const theTarget =document.getElementById(e.target.getAttribute('aria-controls'))
+        // Close other menu items
+        module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
+        theTarget.toggleAttribute('hidden')
+        module.style.marginBottom = theTarget.offsetHeight + 'px'
+        // Close The Search if open
+        that.closeSearch(that.$searchToggle, that.$searchMenu)
       })
     })
   }

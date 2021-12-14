@@ -29,7 +29,7 @@
   }
 
   &__logo {
-    align-self: center;
+    //align-self: center;
     flex: 1 0 50%;
     @include govuk-media-query($from: desktop) {
       flex: 1 0 20%;
