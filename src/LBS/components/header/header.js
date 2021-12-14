@@ -74,6 +74,8 @@ Header.prototype.teardownDesktopMenu = function () {
 }
 
 Header.prototype.setAttributes = function ($type) {
+  let module = this.$module
+  let that = this
   if ($type === 'mobile') {
     this.$navigationToggle.removeAttribute('hidden')
     this.$navigationMenu.setAttribute('hidden', true)
@@ -81,15 +83,13 @@ Header.prototype.setAttributes = function ($type) {
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
       item.addEventListener('click', function (e){
+        module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
         document.getElementById(e.target.getAttribute('aria-controls')).toggleAttribute('hidden')
       })
     }
   )
   } else {
     console.log("Set for desktop")
-    let module = this.$module
-    let that = this
-    // let closeTheSearch = this.closeSearch(this.$searchToggle, this.$searchMenu)
     this.$searchMenu.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
     this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
       item.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
@@ -133,6 +133,7 @@ Header.prototype.handleMenuButtonClick = function () {
 Header.prototype.handleSearchButtonClick = function () {
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
+    // Close open menus
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = '0'
     }
@@ -163,6 +164,10 @@ Header.prototype.closeMenu = function ($button, $target) {
   $target.setAttribute('hidden', !0)
 }
 
+Header.prototype.closeDesktopMenus = function () {
+  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu').forEach(x => x.setAttribute('hidden', true))
+}
+
 Header.prototype.openSearch = function ($button, $target) {
   this.searchOpen = true
   $button.setAttribute('aria-expanded', !0)
@@ -172,6 +177,8 @@ Header.prototype.openSearch = function ($button, $target) {
   document.getElementById('lbs-search__box').focus()
   if (this.mql.matches !== true) {
     this.closeMenu(this.$navigationToggle, this.$navigationMenu)
+  } else {
+    this.closeDesktopMenus()
   }
 }
 
