@@ -28,7 +28,7 @@ Header.prototype.init = function () {
 }
 
 Header.prototype.setupResponsiveChecks = function () {
-  this.mql = window.matchMedia('(min-width: ' + settings.minWidth + ')')
+  this.mql = window.matchMedia('(min-width: ' + settings.desktop + ')')
   this.mql.addListener(this.checkMode.bind(this))
   this.checkMode()
 }
