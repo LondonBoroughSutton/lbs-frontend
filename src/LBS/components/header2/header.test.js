@@ -18,62 +18,39 @@ describe('/components/header', () => {
       describe('on mobile devices', () => {
 
         describe('the search function', () => {
-          // it('clicking search button should give self \'open\' class', async () => {
-          //   await page.emulate(iPhone)
-          //   await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-          //
-          //   const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-          //   await page.click('button[aria-controls="super-search-menu"]')
-          //   const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-          //   expect(initialState).toBe(false)
-          //   expect(newState).toBe(true)
-          // })
-
-          // it('clicking search button should give \'lbs-header__search\' \'active\' class', async () => {
-          //   await page.emulate(iPhone)
-          //   await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-          //
-          //   const initialState = await page.evaluate(() => document.body.querySelector('#lbs-header__search').classList.contains('active'))
-          //   await page.click('#lbs-header__mobile__search-btn')
-          //   const newState = await page.evaluate(() => document.body.querySelector('#lbs-header__search').classList.contains('active'))
-          //   expect(initialState).toBe(false)
-          //   expect(newState).toBe(true)
-          // })
 
         })
 
         describe('the mobile nav function', () => {
-          it('clicking mobile nav button should give self \'active\' class', async () => {
-            await page.emulate(iPhone)
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
 
-            const initialState = await page.evaluate(() => document.body.querySelector('#lbs-header__mobile__menu-btn').classList.contains('active'))
-            await page.click('#lbs-header__mobile__menu-btn')
-            const newState = await page.evaluate(() => document.body.querySelector('#lbs-header__mobile__menu-btn').classList.contains('active'))
-            expect(initialState).toBe(false)
-            expect(newState).toBe(true)
+          it('the menu container should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+            expect(target).toEqual(true)
           })
 
-          it('clicking mobile nav button should give \'lbs-header__navigation_container\' \'active\' class', async () => {
+          it('the menu toggle button should not be hidden', async () => {
             await page.emulate(iPhone)
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
-            const initialState = await page.evaluate(() => document.body.querySelector('#lbs-header__navigation_container').classList.contains('active'))
-            await page.click('#lbs-header__mobile__menu-btn')
-            const newState = await page.evaluate(() => document.body.querySelector('#lbs-header__navigation_container').classList.contains('active'))
-            expect(initialState).toBe(false)
-            expect(newState).toBe(true)
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
+            expect(target).toEqual(false)
           })
 
-          it('clicking search button should move focus to search input', async () => {
+          it('the menu toggle button should have aria-expanded value of false', async () => {
             await page.emulate(iPhone)
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').getAttribute('aria-expanded'))
+            expect(target).toEqual(false)
+          })
 
-            const initialState = await page.evaluateHandle(() => document.activeElement)
-            await page.click('#lbs-header__mobile__search-btn')
-            const newState = await page.evaluateHandle(() => document.activeElement)
-            expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
-            expect(newState._remoteObject.className).toBe('HTMLInputElement')
+          it('the menu toggle button should expose navigation options when clicked', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            await page.click('button[aria-controls="super-navigation-menu"]')
+            const newState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            expect(initialState).toBe("true")
+            expect(newState).not.toBe("true")
           })
         })
 
@@ -81,51 +58,53 @@ describe('/components/header', () => {
 
       describe('on desktop devices', () => {
 
-        // describe('the search function', () => {
-        //   it('clicking search button should give self \'open\' class', async () => {
-        //     await page.emulate(iPhone)
-        //     await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-        //
-        //     const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-        //     await page.click('button[aria-controls="super-search-menu"]')
-        //     const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-        //     expect(initialState).toBe(false)
-        //     expect(newState).toBe(true)
-        //   })
-
-        })
-
-      describe('on all devices', () => {
-
-        describe('the search function', () => {
-          it('clicking search button should give self \'open\' class', async () => {
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
-            const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-            await page.click('button[aria-controls="super-search-menu"]')
-            const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-            expect(initialState).toBe(false)
-            expect(newState).toBe(true)
-          })
-
-          it('clicking search button should move focus to search input', async () => {
-            await page.emulate(iPhone)
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
-            const initialState = await page.evaluateHandle(() => document.activeElement)
-            await page.click('button[aria-controls="super-search-menu"]')
-            const newState = await page.evaluateHandle(() => document.activeElement)
-            expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
-            expect(newState._remoteObject.className).toBe('HTMLInputElement')
-          })
-        })
-
         describe('the navigation function', () => {
+          it('the menu toggle button should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+
+        })
+
+        describe('on all devices', () => {
+
+          describe('the search function', () => {
+            it('clicking search button should give self \'open\' class', async () => {
+              await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+              const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
+              await page.click('button[aria-controls="super-search-menu"]')
+              const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
+              expect(initialState).toBe(false)
+              expect(newState).toBe(true)
+            })
+
+            it('clicking search button should move focus to search input', async () => {
+              await page.emulate(iPhone)
+              await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+              const initialState = await page.evaluateHandle(() => document.activeElement)
+              await page.click('button[aria-controls="super-search-menu"]')
+              const newState = await page.evaluateHandle(() => document.activeElement)
+              expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
+              expect(newState._remoteObject.className).toBe('HTMLInputElement')
+            })
+
+            it('the search container should be hidden', async () => {
+              await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+              const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+              expect(target).toEqual(true)
+            })
+          })
+
+          describe('the navigation function', () => {
+
+          })
 
         })
 
       })
-
     })
 
     describe('when JavaScript is not available', () => {
@@ -176,6 +155,12 @@ describe('/components/header', () => {
           await page.click('.gem-c-layout-super-navigation-header__search-item-link')
           const newState = await page.evaluate(() => window.location.href)
           expect(initialState).not.toEqual(newState)
+        })
+
+        it('the search container should not be hidden', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+          const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+          expect(target).toEqual(false)
         })
       })
     })

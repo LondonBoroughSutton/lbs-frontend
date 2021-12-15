@@ -45,7 +45,6 @@ Header.prototype.checkMode = function () {
 }
 
 Header.prototype.setupMobileMenu = function () {
-  console.log('Set up Mobile')
   this.setAttributes('mobile')
   this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
   this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
@@ -54,65 +53,38 @@ Header.prototype.setupMobileMenu = function () {
 }
 
 Header.prototype.teardownMobileMenu = function () {
-  console.log('Tear down Mobile')
   this.unsetAttributes('mobile')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
   this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.setupDesktopMenu = function () {
-  console.log('Set up Desktop')
   this.setAttributes('desktop')
-  // this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
   this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
-  // this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
   this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.teardownDesktopMenu = function () {
-  console.log('Tear down Desktop')
   this.unsetAttributes('desktop')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
   this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.menuItemClick = function (e) {
-  console.log('Bound click')
   const theTarget = document.getElementById(e.target.getAttribute('aria-controls'))
-  // Close other menu items
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
   theTarget.toggleAttribute('hidden')
   if (this.mql.matches === true) {
     this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
   }
-  // Close The Search if open
-  this.closeSearch(this.$searchToggle, this.$searchMenu)
-}
-
-Header.prototype.menuSearchClick = function (e) {
-  console.log('Bound click')
-  const theTarget = document.getElementById(e.target.getAttribute('aria-controls'))
-  // Close other menu items
-  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
-  theTarget.toggleAttribute('hidden')
-  if (this.mql.matches === true) {
-    this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
-  }
-  // Close The Search if open
   this.closeSearch(this.$searchToggle, this.$searchMenu)
 }
 
 Header.prototype.setAttributes = function ($type) {
-  let module = this.$module
-  let that = this
   if ($type === 'mobile') {
     this.$navigationToggle.removeAttribute('hidden')
     this.$navigationMenu.setAttribute('hidden', true)
-  } else {
-    console.log('Set attr for desktop')
   }
-  // For all
-  // if (this.searchOpen === false) {
   this.$searchMenu.setAttribute('hidden', true)
   this.$searchToggle.setAttribute('aria-expanded', false)
   this.$searchToggle.setAttribute('aria-label', 'Show search menu')
@@ -127,7 +99,6 @@ Header.prototype.setAttributes = function ($type) {
     // Handle events
     $button.addEventListener('click', $button.boundMenuItemClick, true)
   }.bind(this))
-  // }
 }
 
 Header.prototype.unsetAttributes = function ($type) {
@@ -136,26 +107,15 @@ Header.prototype.unsetAttributes = function ($type) {
     this.$searchToggle.setAttribute('hidden', true)
     this.$navigationMenu.removeAttribute('hidden')
     this.$searchMenu.removeAttribute('hidden')
-  } else {
-    console.log('Unset for desktop')
   }
-  // For all
   this.$module.style.marginBottom = '0px'
   this.searchOpen = false
   this.menuOpen = false
   this.closeDesktopMenus()
   this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
   nodeListForEach(this.$menuButtons, function ($button) {
-    // $button.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
-    // $button.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
-    // // Save bounded functions to use when removing event listeners during teardown
-    // $button.boundMenuItemClick = this.menuItemClick.bind(this)
-    // Handle events
     $button.removeEventListener('click', $button.boundMenuItemClick, true)
   }.bind(this))
-  // this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item--with-children').forEach(item => {
-  //   item.removeEventListener('click')
-  // })
 }
 
 Header.prototype.handleMenuButtonClick = function () {
@@ -169,7 +129,6 @@ Header.prototype.handleMenuButtonClick = function () {
 Header.prototype.handleSearchButtonClick = function () {
   if (this.searchOpen === true) {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
-    // Close open menus
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = '0'
     }
@@ -226,123 +185,5 @@ Header.prototype.closeSearch = function ($button, $target) {
   $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
   $target.setAttribute('hidden', !0)
 }
-
-//
-// var i = {
-//     breakpoint: {
-//       desktop: 769
-//     },
-//     label: {
-//       hide: 'data-text-for-hide',
-//       show: 'data-text-for-show'
-//     }
-//   },
-//   n = function (e, t) {
-//     var n = e.getAttribute(i.label[t])
-//     n && e.setAttribute('aria-label', n)
-//   },
-//   u = function (e, t) {
-//     e.setAttribute('aria-expanded', !1), e.classList.remove('gem-c-layout-super-navigation-header__open-button'), t.setAttribute('hidden', 'hidden'), n(e, 'show')
-//   },
-//   o = function (e, t) {
-//     e.setAttribute('aria-expanded', !0), e.classList.add('gem-c-layout-super-navigation-header__open-button'), t.removeAttribute('hidden'), n(e, 'hide')
-//   },
-//   l = function (e, t) {
-//     var n = 'true' === e.getAttribute('aria-expanded'),
-//       i = e.getAttribute('data-tracking-key')
-//     n ? u(e, t) : o(e, t), window.GOVUK.analytics && window.GOVUK.analytics.trackEvent && i && window.GOVUK.analytics.trackEvent('headerClicked', i + (n ? 'Closed' : 'Opened'), {
-//       label: 'none'
-//     })
-//   },
-//   d = function (e, t) {
-//     return e.tagName.toLowerCase() === t.toLowerCase() ? e : d(e.parentNode, t)
-//   },
-//   r = function (e, t) {
-//     if (null === e) return null
-//     if (1 === e.nodeType && e.tagName.toLowerCase() === t.toLowerCase()) return e
-//     var n = e.previousElementSibling || e.previousSibling
-//     return r(n, t)
-//   },
-//   a = function (e) {
-//     return 0 < e.querySelectorAll('button[aria-expanded="true"]').length
-//   },
-//   s = function () {
-//     return document.documentElement.clientWidth >= i.breakpoint.desktop ? 'desktop' : 'mobile'
-//   }
-// t.prototype.windowSize = s, t.prototype.updateStates = function () {
-//   if ('mobile' === this.windowSize() && 'mobile' !== this.lastWindowSize && (this.$navigationToggle.removeAttribute('hidden'), a(this.$navigationMenu) || u(this.$navigationToggle, this.$navigationMenu), this.$module.style.marginBottom = '0'), 'desktop' === this.windowSize() && 'desktop' !== this.lastWindowSize && (this.$navigationToggle.setAttribute('hidden', 'hidden'), this.$navigationMenu.removeAttribute('hidden')), 'desktop' === s()) {
-//     var e = this.$module.querySelector('[aria-expanded="true"][data-toggle-desktop-group="top"]'),
-//       t = e ? this.$module.querySelector('#' + e.getAttribute('aria-controls')) : null,
-//       n = t ? t.offsetHeight : 0
-//     this.$module.style.marginBottom = n + 'px'
-//   }
-//   this.lastWindowSize = this.windowSize()
-// }, t.prototype.buttonHandler = function (e) {
-//   for (var t = d(e.target, 'button'), n = this.$module.querySelector('#' + t.getAttribute('aria-controls')), i = 'data-toggle-' + this.windowSize() + '-group', o = t.getAttribute(i), r = this.$module.querySelectorAll('[' + i + '="' + o + '"]'), a = 0; a < r.length; a++) {
-//     var s = r[a]
-//     if (s !== t) {
-//       var c = this.$module.querySelector('#' + s.getAttribute('aria-controls'))
-//       u(s, c)
-//     }
-//   }
-//   l(t, n), 'desktop' === this.windowSize() && (this.$module.style.marginBottom = n.offsetHeight + 'px')
-// }, t.prototype.init = function () {
-//   for (var e = 0; e < this.$buttons.length; e++) {
-//     this.$buttons[e].addEventListener('click', this.buttonHandler.bind(this), !0)
-//   }
-//   for (var t = 0; t < this.hiddenButtons.length; t++) {
-//     var n = this.hiddenButtons[t]
-//     n.removeAttribute('hidden')
-//     var i = r(n, 'a')
-//     i && i.setAttribute('hidden', 'hidden')
-//   }
-//   this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', 'hidden'), u(this.$searchToggle, this.$searchMenu), this.updateStates(), this.lastWindowSize = this.windowSize(), window.addEventListener('resize', this.updateStates.bind(this), {
-//     passive: !0
-//   }), this.$module.classList.add('js-module-initialised')
-// }
-
-/**
- * Sync menu state
- *
- * Sync the menu button class and the accessible state of the menu and the menu
- * button with the visible state of the menu
- *
- * @param {object} button The button sync is being applied to (search or menu)
- * @param {boolean} isVisible Whether the menu is currently visible
- */
-Header.prototype.syncState = function (button, isVisible) {
-  // console.log(button)
-  button.classList.toggle('active', isVisible)
-  button.setAttribute('aria-expanded', isVisible)
-}
-
-/**
- * Handle menu button click
- *
- * When the menu button is clicked, change the visibility of the menu and then
- * sync the accessibility state and menu button state
- */
-// Header.prototype.handleMenuButtonClick = function () {
-//   const isVisible = this.$menu.classList.toggle('active')
-//   this.syncState(this.$menuButton, isVisible)
-//   if (this.$search.classList.contains('active')) {
-//     this.syncState(this.$searchButton, this.$search.classList.toggle('active'))
-//   }
-// }
-
-/**
- * Handle search button click
- *
- * When the search button is clicked, change the visibility of the search form and then
- * sync the accessibility state and search button state
- */
-// Header.prototype.handleSearchButtonClick = function () {
-//   const isVisible = this.$search.classList.toggle('active')
-//   this.syncState(this.$searchButton, isVisible)
-//   this.$module.querySelector('#lbs-search__box').focus()
-//   if (this.$menu.classList.contains('active')) {
-//     this.syncState(this.$menuButton, this.$menu.classList.toggle('active'))
-//   }
-// }
 
 export default Header
