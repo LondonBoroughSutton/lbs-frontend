@@ -24,9 +24,57 @@ describe('/components/header', () => {
             expect(target).toEqual(true)
           })
 
+          it('the navigation buttons should expose child menu when clicked', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+            const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu__section-services').getAttribute('hidden'))
+            await page.click('button[aria-controls="super-navigation-menu__section-services"]')
+            const newState = await page.evaluate(() => document.getElementById('super-navigation-menu__section-services').getAttribute('hidden'))
+            expect(initialState).toBe('true')
+            expect(newState).not.toBe('true')
+          })
+
         })
 
       })
+
+      describe('on all devices', () => {
+
+        describe('the search function', () => {
+          it('clicking search button should give self \'open\' class', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+            const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
+            await page.click('button[aria-controls="super-search-menu"]')
+            const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
+            expect(initialState).toBe(false)
+            expect(newState).toBe(true)
+          })
+
+          it('clicking search button should move focus to search input', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+            const initialState = await page.evaluateHandle(() => document.activeElement)
+            await page.click('button[aria-controls="super-search-menu"]')
+            const newState = await page.evaluateHandle(() => document.activeElement)
+            expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
+            expect(newState._remoteObject.className).toBe('HTMLInputElement')
+          })
+
+          it('the search container should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+        })
+
+        describe('the navigation function', () => {
+
+        })
+
+      })
+
 
       describe('on mobile devices', () => {
 
@@ -65,45 +113,11 @@ describe('/components/header', () => {
             expect(initialState).toBe('true')
             expect(newState).not.toBe('true')
           })
-        })
 
-      })
-
-      describe('on all devices', () => {
-
-        describe('the search function', () => {
-          it('clicking search button should give self \'open\' class', async () => {
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
-            const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-            await page.click('button[aria-controls="super-search-menu"]')
-            const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
-            expect(initialState).toBe(false)
-            expect(newState).toBe(true)
-          })
-
-          it('clicking search button should move focus to search input', async () => {
+          it('the navigation buttons should expose child menu when clicked (mobile - after toggle has been clicked)', async () => {
             await page.emulate(iPhone)
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
-            const initialState = await page.evaluateHandle(() => document.activeElement)
-            await page.click('button[aria-controls="super-search-menu"]')
-            const newState = await page.evaluateHandle(() => document.activeElement)
-            expect(initialState._remoteObject.className).toBe('HTMLBodyElement')
-            expect(newState._remoteObject.className).toBe('HTMLInputElement')
-          })
-
-          it('the search container should be hidden', async () => {
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
-            expect(target).toEqual(true)
-          })
-        })
-
-        describe('the navigation function', () => {
-          it('the navigation buttons should expose child menu when clicked', async () => {
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
+            await page.click('button[aria-controls="super-navigation-menu"]')
             const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu__section-services').getAttribute('hidden'))
             await page.click('button[aria-controls="super-navigation-menu__section-services"]')
             const newState = await page.evaluate(() => document.getElementById('super-navigation-menu__section-services').getAttribute('hidden'))

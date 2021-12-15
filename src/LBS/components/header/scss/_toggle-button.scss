@@ -1,14 +1,17 @@
+$headerheight: 66px;
+
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
   box-sizing: border-box;
   position: absolute;
   z-index: 10;
   top: 0;
-  right: 34px;
-  height: 50px;
+  right: $headerheight;
+  //height: 50px;
+  height: $headerheight;
   margin: 0;
   padding: 0;
   border: 0;
-  color: #ffffff;
+  color: $lbs-white;
   background: transparent;
   font-size: 1rem;
   font-weight: 700;
@@ -20,19 +23,18 @@
   &:hover {
     text-decoration-skip-ink: none;
     text-decoration-skip: none;
-    color: #003078;
   }
 
   &:focus {
     outline: 3px solid transparent;
-    color: #0b0c0c;
+    color: $lbs-black;
     background-color: $lbs-yellow;
-    box-shadow: 0 -2px $lbs-yellow, 0 4px #0b0c0c;
+    box-shadow: 0 -2px $lbs-yellow, 0 4px $lbs-black;
     text-decoration: none;
 
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      border-color: $lbs-yellow;
-      color: #0b0c0c;
+      //border-color: $lbs-grey;
+      color: $lbs-black;
     }
   }
 
@@ -61,7 +63,7 @@
     padding: 10px 20px;
     border-right: 1px solid $lbs-white;
     border-left: 1px solid $lbs-white;
-    border-color: $lbs-yellow;
+    //border-color: $lbs-green-2;
     color: $lbs-green-1;
 
     &:before {
@@ -81,13 +83,15 @@
 .gem-c-layout-super-navigation-header__search-toggle-button {
   position: absolute;
   top: 0;
-  right: -15px;
-  width: 50px;
-  height: 50px;
+  right: 0;
+  width: $headerheight;
+  height: $headerheight;
   padding: 15px;
   border: 0;
-  color: $lbs-white;
-  background: $lbs-green-1;
+  color: $lbs-green-1;
+  background: $lbs-white;
+  //color: $lbs-white;
+  //background: $lbs-green-1;
   font-size: 16px;
   font-size: 1rem;
   font-weight: 700;
@@ -96,9 +100,9 @@
 
   @include govuk-media-query($from: desktop) {
     position: relative;
-    border-bottom: 1px solid #003078;
+    //border-bottom: 1px solid #003078;
     border-left: none;
-    background: #1d70b8;
+    //background: rgba($lbs-green-2, .1);
   }
 
   &.gem-c-layout-super-navigation-header__open-button {
