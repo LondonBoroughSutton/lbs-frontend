@@ -32,11 +32,16 @@
     //align-self: center;
     flex: 1 0 50%;
     @include govuk-media-query($from: desktop) {
-      flex: 1 0 20%;
+      flex: 0 0 20%;
     }
 
     & > a {
-      display: inline-block;
+      display: block;
+    }
+
+    svg {
+      display: block;
+      margin: $lbs-margin / 2 0;
     }
   }
 
