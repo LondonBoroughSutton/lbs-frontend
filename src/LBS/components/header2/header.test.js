@@ -97,5 +97,57 @@ describe('/components/header', () => {
         })
       })
     })
+
+    describe('when JavaScript is not available', () => {
+      beforeAll(async () => {
+        await page.setJavaScriptEnabled(false)
+      })
+
+      afterEach(async () => {
+        await page.evaluate(() => window.sessionStorage.clear())
+      })
+
+      describe('the menu items', () => {
+        it('clicking menu link should change the window location (mobile)', async () => {
+          await page.emulate(iPhone)
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.gem-c-layout-super-navigation-header__navigation-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('clicking menu link should change the window location (desktop)', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.gem-c-layout-super-navigation-header__navigation-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+      })
+
+      describe('the search function', () => {
+        it('clicking search link should change the window location (mobile)', async () => {
+          await page.emulate(iPhone)
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.gem-c-layout-super-navigation-header__search-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+
+        it('clicking search link should change the window location (desktop)', async () => {
+          await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+
+          const initialState = await page.evaluate(() => window.location.href)
+          await page.click('.gem-c-layout-super-navigation-header__search-item-link')
+          const newState = await page.evaluate(() => window.location.href)
+          expect(initialState).not.toEqual(newState)
+        })
+      })
+    })
   })
 })
