@@ -86,7 +86,9 @@ Header.prototype.menuItemClick = function (e) {
   // Close other menu items
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
   theTarget.toggleAttribute('hidden')
-  this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
+  if (this.mql.matches === true) {
+    this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
+  }
   // Close The Search if open
   this.closeSearch(this.$searchToggle, this.$searchMenu)
 }

@@ -7,6 +7,10 @@
     //display: block;
     //float: right;
   }
+
+  *[hidden] {
+    display: none;
+  }
 }
 
 // Navigation Top Toggle
