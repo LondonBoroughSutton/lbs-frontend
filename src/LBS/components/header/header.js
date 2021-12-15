@@ -58,11 +58,6 @@ Header.prototype.teardownMobileMenu = function () {
   this.unsetAttributes('mobile')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
   this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
-  this.$buttons.forEach(item => {
-    console.log('Remove click handlers')
-    console.log(item)
-    // item.removeEventListener('click', item.boundMenuItemClick)
-  })
 }
 
 Header.prototype.setupDesktopMenu = function () {
@@ -78,9 +73,23 @@ Header.prototype.teardownDesktopMenu = function () {
   console.log('Tear down Desktop')
   this.unsetAttributes('desktop')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
+  this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
 }
 
 Header.prototype.menuItemClick = function (e) {
+  console.log('Bound click')
+  const theTarget = document.getElementById(e.target.getAttribute('aria-controls'))
+  // Close other menu items
+  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + e.target.getAttribute('aria-controls') + ')').forEach(i => i.setAttribute('hidden', true))
+  theTarget.toggleAttribute('hidden')
+  if (this.mql.matches === true) {
+    this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
+  }
+  // Close The Search if open
+  this.closeSearch(this.$searchToggle, this.$searchMenu)
+}
+
+Header.prototype.menuSearchClick = function (e) {
   console.log('Bound click')
   const theTarget = document.getElementById(e.target.getAttribute('aria-controls'))
   // Close other menu items
@@ -105,6 +114,8 @@ Header.prototype.setAttributes = function ($type) {
   // For all
   // if (this.searchOpen === false) {
   this.$searchMenu.setAttribute('hidden', true)
+  this.$searchToggle.setAttribute('aria-expanded', false)
+  this.$searchToggle.setAttribute('aria-label', 'Show search menu')
   this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
   this.$module.querySelector('.gem-c-layout-super-navigation-header__search-and-popular').removeAttribute('hidden')
   this.$searchToggle.removeAttribute('hidden')
