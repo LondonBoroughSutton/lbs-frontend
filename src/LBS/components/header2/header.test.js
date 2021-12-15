@@ -15,47 +15,6 @@ describe('/components/header', () => {
         await page.evaluate(() => window.sessionStorage.clear())
       })
 
-      describe('on mobile devices', () => {
-
-        describe('the search function', () => {
-
-        })
-
-        describe('the mobile nav function', () => {
-
-          it('the menu container should be hidden', async () => {
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
-            expect(target).toEqual(true)
-          })
-
-          it('the menu toggle button should not be hidden', async () => {
-            await page.emulate(iPhone)
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
-            expect(target).toEqual(false)
-          })
-
-          it('the menu toggle button should have aria-expanded value of false', async () => {
-            await page.emulate(iPhone)
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').getAttribute('aria-expanded'))
-            expect(target).toEqual(false)
-          })
-
-          it('the menu toggle button should expose navigation options when clicked', async () => {
-            await page.emulate(iPhone)
-            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-            const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
-            await page.click('button[aria-controls="super-navigation-menu"]')
-            const newState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
-            expect(initialState).toBe("true")
-            expect(newState).not.toBe("true")
-          })
-        })
-
-      })
-
       describe('on desktop devices', () => {
 
         describe('the navigation function', () => {
@@ -105,6 +64,48 @@ describe('/components/header', () => {
         })
 
       })
+
+      describe('on mobile devices', () => {
+
+        describe('the search function', () => {
+
+        })
+
+        describe('the mobile nav function', () => {
+
+          it('the menu container should be hidden', async () => {
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
+            expect(target).toEqual(true)
+          })
+
+          it('the menu toggle button should not be hidden', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').hasAttribute('hidden'))
+            expect(target).toEqual(false)
+          })
+
+          it('the menu toggle button should have aria-expanded value of false', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const target = await page.evaluate(() => document.querySelector('button[aria-controls="super-navigation-menu"]').getAttribute('aria-expanded'))
+            expect(target).toBe('false')
+          })
+
+          it('the menu toggle button should expose navigation options when clicked', async () => {
+            await page.emulate(iPhone)
+            await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
+            const initialState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            await page.click('button[aria-controls="super-navigation-menu"]')
+            const newState = await page.evaluate(() => document.getElementById('super-navigation-menu').getAttribute('hidden'))
+            expect(initialState).toBe('true')
+            expect(newState).not.toBe('true')
+          })
+        })
+
+      })
+
     })
 
     describe('when JavaScript is not available', () => {

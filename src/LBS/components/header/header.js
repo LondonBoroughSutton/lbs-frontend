@@ -23,8 +23,6 @@ Header.prototype.init = function () {
   this.$module.classList.add('js-module-initialised')
   if (typeof window.matchMedia === 'function') {
     this.setupResponsiveChecks()
-  } else {
-    this.setupMenu()
   }
 }
 
@@ -83,6 +81,7 @@ Header.prototype.menuItemClick = function (e) {
 Header.prototype.setAttributes = function ($type) {
   if ($type === 'mobile') {
     this.$navigationToggle.removeAttribute('hidden')
+    this.$navigationToggle.setAttribute('aria-expanded', false)
     this.$navigationMenu.setAttribute('hidden', true)
   }
   this.$searchMenu.setAttribute('hidden', true)
