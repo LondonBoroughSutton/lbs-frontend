@@ -101,11 +101,12 @@ Header.prototype.setAttributes = function ($type) {
     this.$navigationMenu.setAttribute('hidden', true)
   } else {
     console.log('Set attr for desktop')
-    this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
   }
   // For all
   // if (this.searchOpen === false) {
   this.$searchMenu.setAttribute('hidden', true)
+  this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
+  this.$module.querySelector('.gem-c-layout-super-navigation-header__search-and-popular').removeAttribute('hidden')
   this.$searchToggle.removeAttribute('hidden')
   nodeListForEach(this.$menuButtons, function ($button) {
     $button.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
