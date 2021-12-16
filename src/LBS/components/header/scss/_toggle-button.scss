@@ -23,6 +23,7 @@ $headerheight: 66px;
   &:hover {
     text-decoration-skip-ink: none;
     text-decoration-skip: none;
+    cursor: pointer;
   }
 
   &:focus {
@@ -50,7 +51,8 @@ $headerheight: 66px;
     color: $lbs-white;
     background: rgba($lbs-grey, .1);
 
-    .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner,
+    &.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
       &:before {
         transform: translateY(5%) rotate(225deg) scale(1);
       }
@@ -76,6 +78,42 @@ $headerheight: 66px;
       border-right: 2px solid $lbs-green-1;
       border-bottom: 2px solid $lbs-green-1;
       vertical-align: middle;
+    }
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
+  border: 0;
+  color: $lbs-black;
+  background: none;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 0 2px;
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-right: 2px solid $lbs-green-1;
+    border-bottom: 2px solid $lbs-green-1;
+    vertical-align: middle;
+  }
+
+  &:focus {
+    //&:not(:focus-visible) {
+    //  background: none;
+    //}
+  }
+
+  &:hover {
+    &:after {
+      background: transparent;
+    }
+  }
+
+  &.gem-c-layout-super-navigation-header__open-button {
+    &:before {
+      transform: translateY(5%) rotate(225deg) scale(1);
     }
   }
 }

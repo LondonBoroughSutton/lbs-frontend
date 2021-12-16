@@ -72,10 +72,11 @@ Header.prototype.menuItemClick = function (e) {
   let theTargetID = e.target.getAttribute('aria-controls')
   if (e.target.classList.contains('gem-c-layout-super-navigation-header__navigation-toggle-wrapper')) {
     theTargetID = e.target.getElementsByTagName('button')[0].getAttribute('aria-controls')
-    e.target.getElementsByTagName('button')[0].classList.toggle('gem-c-layout-super-navigation-header__open-button')
+      e.target.getElementsByTagName('button')[0].classList.toggle('gem-c-layout-super-navigation-header__open-button')
   } else {
-    e.target.classList.toggle('gem-c-layout-super-navigation-header__open-button')
+      e.target.classList.toggle('gem-c-layout-super-navigation-header__open-button')
   }
+  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('gem-c-layout-super-navigation-header__open-button'))
   const theTarget = document.getElementById(theTargetID)
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
   document.getElementById(theTargetID).getAttribute('hidden') != null ? document.getElementById(theTargetID).removeAttribute('hidden') : document.getElementById(theTargetID).setAttribute('hidden', 'true')
