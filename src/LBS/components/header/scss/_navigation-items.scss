@@ -121,4 +121,21 @@
 .gem-c-layout-super-navigation-header__navigation-second-items {
   @extend .lbs-list--no-style;
   margin-left: $lbs-margin;
+  font-size: inherit;
+  @include govuk-media-query($from: desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      //margin: 0 $lbs-margin;
+      flex: 0 0 50%;
+    }
+  }
+
+  .gem-c-layout-super-navigation-header__dropdown-list-item {
+    p {
+      font-size: inherit;
+    }
+  }
 }

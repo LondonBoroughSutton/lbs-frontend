@@ -23,7 +23,7 @@
     justify-content: space-between;
     @include govuk-media-query($from: desktop) {
       flex-direction: row;
-      position: relative;
+      //position: relative;
       align-items: stretch;
     }
   }
