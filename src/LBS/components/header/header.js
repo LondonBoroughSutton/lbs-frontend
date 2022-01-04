@@ -3,18 +3,18 @@ import { nodeListForEach, settings } from '../../common'
 // New bits
 
 function Header ($module) {
-  this.$module = $module,
-    this.$navigationToggle = this.$module.querySelector('#super-navigation-menu-toggle'),
-    this.$navigationMenu = this.$module.querySelector('#super-navigation-menu'),
-    this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle'),
-    this.$searchMenu = this.$module.querySelector('#super-search-menu'),
-    this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]'),
-    this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item'),
-    // this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button'),
-    this.hiddenButtons = this.$module.querySelectorAll('button[hidden]'),
-    this.menuOpen = false,
-    this.searchOpen = false,
-    this.lastWindowSize = null
+  this.$module = $module
+  this.$navigationToggle = this.$module.querySelector('#super-navigation-menu-toggle')
+  this.$navigationMenu = this.$module.querySelector('#super-navigation-menu')
+  this.$searchToggle = this.$module.querySelector('#super-search-menu-toggle')
+  this.$searchMenu = this.$module.querySelector('#super-search-menu')
+  this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
+  this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item')
+  // this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button')
+  this.hiddenButtons = this.$module.querySelectorAll('button[hidden]')
+  this.menuOpen = false
+  this.searchOpen = false
+  this.lastWindowSize = null
 }
 
 Header.prototype.init = function () {
@@ -70,8 +70,7 @@ Header.prototype.teardownDesktopMenu = function () {
 }
 
 Header.prototype.menuItemClick = function (e) {
-  console.log(123)
-  let theTargetID = e.target.getAttribute('aria-controls')
+  const theTargetID = e.target.getAttribute('aria-controls')
   e.target.classList.toggle('gem-c-layout-super-navigation-header__open-button')
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('gem-c-layout-super-navigation-header__open-button'))
   const theTarget = document.getElementById(theTargetID)
@@ -119,7 +118,7 @@ Header.prototype.unsetAttributes = function ($type) {
   this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
   nodeListForEach(this.$menuButtons, function ($button) {
     $button.querySelector('button').removeEventListener('click', $button.boundMenuItemClick, true)
-  }.bind(this))
+  })
 }
 
 Header.prototype.handleMenuButtonClick = function () {

@@ -16,7 +16,6 @@ describe('/components/header', () => {
       })
 
       describe('on desktop devices', () => {
-
         describe('the navigation function', () => {
           it('the menu toggle button should be hidden', async () => {
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
@@ -33,17 +32,12 @@ describe('/components/header', () => {
             expect(initialState).toBe('true')
             expect(newState).not.toBe('true')
           })
-
         })
-
       })
-
       describe('on all devices', () => {
-
         describe('the search function', () => {
           it('clicking search button should give self \'open\' class', async () => {
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
-
             const initialState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
             await page.click('button[aria-controls="super-search-menu"]')
             const newState = await page.evaluate(() => document.body.querySelector('button[aria-controls="super-search-menu"]').classList.contains('gem-c-layout-super-navigation-header__open-button'))
@@ -68,22 +62,17 @@ describe('/components/header', () => {
             expect(target).toEqual(true)
           })
         })
-
-        describe('the navigation function', () => {
-
-        })
-
+        //
+        // describe('the navigation function', () => {
+        //
+        // })
       })
 
-
       describe('on mobile devices', () => {
-
-        describe('the search function', () => {
-
-        })
-
+        // describe('the search function', () => {
+        //
+        // })
         describe('the mobile nav function', () => {
-
           it('the menu container should be hidden', async () => {
             await page.goto(baseUrl + '/components/header/preview', { waitUntil: 'load' })
             const target = await page.evaluate(() => document.getElementById('super-search-menu').hasAttribute('hidden'))
@@ -125,11 +114,8 @@ describe('/components/header', () => {
             expect(newState).not.toBe('true')
           })
         })
-
       })
-
     })
-
     describe('when JavaScript is not available', () => {
       beforeAll(async () => {
         await page.setJavaScriptEnabled(false)
