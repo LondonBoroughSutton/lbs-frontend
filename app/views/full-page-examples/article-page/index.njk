@@ -10,6 +10,38 @@ notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausage
 
 {% extends "_generic.njk" %}
 
+{% block header %}
+  {{ lbsHeader({
+    phaseBanner: true,
+    "navigation": [
+      {
+        "href": "services",
+        "text": "Services",
+        "description": "Find information and services",
+        "subItems": [
+        {
+          "href": "#1-1",
+          "text": "Sub Item 1"
+        },
+        {
+          "href": "#1-2",
+          "text": "Sub Item 2"
+        },
+        {
+          "href": "#1-3",
+          "text": "Sub Item 3"
+        }
+      ]
+      },
+      {
+        "href": "#2",
+        "description": "Search for a department and find out what the council is doing",
+        "text": "Mayor and Council"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ lbsPageHeader({
     heading: 'Get rid of bulky items',
