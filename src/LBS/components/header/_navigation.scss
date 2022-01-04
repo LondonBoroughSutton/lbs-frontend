@@ -1,6 +1,14 @@
 $menu-main-bg-colour: rgba($lbs-green-1, .1);
 $menu-main-text-colour: $lbs-green-1;
 
+.gem-c-layout-super-navigation-header__width-container {
+  width: 100%;
+
+  .govuk-grid-row {
+    width: 100%;
+  }
+}
+
 .gem-c-layout-super-navigation-header__content {
   flex: 1 0 100%;
   @include govuk-media-query($from: desktop) {

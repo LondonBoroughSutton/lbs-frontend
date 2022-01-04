@@ -11,6 +11,7 @@ examples:
       navigation:
         - href: '#1'
           text: Navigation item 1
+          description: Find information and services
           subItems:
             - href: '#1-1'
               text: 'Sub Item 1'
@@ -18,9 +19,33 @@ examples:
               text: 'Sub Item 2'
             - href: '#1-3'
               text: 'Sub Item 3'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+            - href: '#1-5'
+              text: 'Sub Item 5'
+            - href: '#1-6'
+              text: 'Sub Item 6'
+            - href: '#1-7'
+              text: 'Sub Item 7'
+            - href: '#1-8'
+              text: 'Sub Item 8'
 
         - href: '#2'
           text: Navigation item 2
+          description: Search for a department and find out what the council is doing
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+              description: 'Description of service'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+              description: 'Description of service'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+              description: 'Description of service'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+              description: 'Description of service'
 
   - name: with no search
     description: Header with search capabilities removed. For example on page where search is very obviously available elsewhere.
@@ -29,6 +54,7 @@ examples:
       navigation:
         - href: '#1'
           text: Navigation item 1
+          description: Find information and services
           subItems:
             - href: '#1-1'
               text: 'Sub Item 1'
@@ -36,9 +62,34 @@ examples:
               text: 'Sub Item 2'
             - href: '#1-3'
               text: 'Sub Item 3'
-          active: true
+            - href: '#1-4'
+              text: 'Sub Item 4'
+            - href: '#1-5'
+              text: 'Sub Item 5'
+            - href: '#1-6'
+              text: 'Sub Item 6'
+            - href: '#1-7'
+              text: 'Sub Item 7'
+            - href: '#1-8'
+              text: 'Sub Item 8'
+
         - href: '#2'
           text: Navigation item 2
+          description: Search for a department and find out what the council is doing
+          subItems:
+            - href: '#1-1'
+              text: 'Sub Item 1'
+              description: 'Description of service'
+            - href: '#1-2'
+              text: 'Sub Item 2'
+              description: 'Description of service'
+            - href: '#1-3'
+              text: 'Sub Item 3'
+              description: 'Description of service'
+            - href: '#1-4'
+              text: 'Sub Item 4'
+              description: 'Description of service'
+
 
   - name: with no navigation
     description: Header with no main navigation.
