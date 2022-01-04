@@ -133,7 +133,8 @@ $headerheight: 66px;
     }
 
     @include govuk-media-query($from: desktop) {
-      background: $menu-main-bg-colour;
+      //background: $menu-main-bg-colour;
+      background: rgba($menu-main-bg-colour, .05);
 
       //&:after {
       //  background: $lbs-white;
