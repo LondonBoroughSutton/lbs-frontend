@@ -46,27 +46,35 @@ Header.prototype.checkMode = function () {
 Header.prototype.setupMobileMenu = function () {
   this.setAttributes('mobile')
   this.$navigationToggle.boundMenuClick = this.handleMenuButtonClick.bind(this)
-  this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
   this.$navigationToggle.addEventListener('click', this.$navigationToggle.boundMenuClick, true)
-  this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
+  if (this.$searchMenu != null) {
+    this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
+    this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
+  }
 }
 
 Header.prototype.teardownMobileMenu = function () {
   this.unsetAttributes('mobile')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
-  this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
+  if (this.$searchMenu != null) {
+    this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
+  }
 }
 
 Header.prototype.setupDesktopMenu = function () {
   this.setAttributes('desktop')
-  this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
-  this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
+  if (this.$searchMenu != null) {
+    this.$searchToggle.boundSearchClick = this.handleSearchButtonClick.bind(this)
+    this.$searchToggle.addEventListener('click', this.$searchToggle.boundSearchClick, true)
+  }
 }
 
 Header.prototype.teardownDesktopMenu = function () {
   this.unsetAttributes('desktop')
   this.$navigationToggle.removeEventListener('click', this.$navigationToggle.boundMenuClick, true)
-  this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
+  if (this.$searchMenu != null) {
+    this.$searchToggle.removeEventListener('click', this.$searchToggle.boundSearchClick, true)
+  }
 }
 
 Header.prototype.menuItemClick = function (e) {
@@ -79,7 +87,9 @@ Header.prototype.menuItemClick = function (e) {
   if (this.mql.matches === true) {
     this.$module.style.marginBottom = theTarget.offsetHeight + 'px'
   }
-  this.closeSearch(this.$searchToggle, this.$searchMenu)
+  if (this.$searchMenu != null) {
+    this.closeSearch(this.$searchToggle, this.$searchMenu)
+  }
 }
 
 Header.prototype.setAttributes = function ($type) {
@@ -88,12 +98,14 @@ Header.prototype.setAttributes = function ($type) {
     this.$navigationToggle.setAttribute('aria-expanded', false)
     this.$navigationMenu.setAttribute('hidden', true)
   }
-  this.$searchMenu.setAttribute('hidden', true)
-  this.$searchToggle.setAttribute('aria-expanded', false)
-  this.$searchToggle.setAttribute('aria-label', 'Show search menu')
-  this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
-  this.$module.querySelector('.gem-c-layout-super-navigation-header__search-and-popular').removeAttribute('hidden')
-  this.$searchToggle.removeAttribute('hidden')
+  if (this.$searchMenu != null) {
+    this.$searchMenu.setAttribute('hidden', true)
+    this.$searchToggle.setAttribute('aria-expanded', false)
+    this.$searchToggle.setAttribute('aria-label', 'Show search menu')
+    this.$module.querySelector('.gem-c-layout-super-navigation-header__search-item-link').setAttribute('hidden', true)
+    this.$module.querySelector('.gem-c-layout-super-navigation-header__search-and-popular').removeAttribute('hidden')
+    this.$searchToggle.removeAttribute('hidden')
+  }
   nodeListForEach(this.$menuButtons, function ($button) {
     $button.querySelector('.gem-c-layout-super-navigation-header__navigation-item-link').setAttribute('hidden', true)
     $button.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
@@ -107,15 +119,19 @@ Header.prototype.setAttributes = function ($type) {
 Header.prototype.unsetAttributes = function ($type) {
   if ($type === 'mobile') {
     this.$navigationToggle.setAttribute('hidden', true)
-    this.$searchToggle.setAttribute('hidden', true)
     this.$navigationMenu.removeAttribute('hidden')
-    this.$searchMenu.removeAttribute('hidden')
+    if (this.$searchMenu != null) {
+      this.$searchToggle.setAttribute('hidden', true)
+      this.$searchMenu.removeAttribute('hidden')
+    }
   }
   this.$module.style.marginBottom = '0px'
   this.searchOpen = false
   this.menuOpen = false
   this.closeDesktopMenus()
-  this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
+  if (this.$searchMenu != null) {
+    this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
+  }
   nodeListForEach(this.$menuButtons, function ($button) {
     $button.querySelector('button').removeEventListener('click', $button.boundMenuItemClick, true)
   })
@@ -150,7 +166,9 @@ Header.prototype.openMenu = function ($button, $target) {
   $button.setAttribute('aria-label', 'Hide navigation menu')
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $target.removeAttribute('hidden')
-  this.closeSearch(this.$searchToggle, this.$searchMenu)
+  if (this.$searchMenu != null) {
+    this.closeSearch(this.$searchToggle, this.$searchMenu)
+  }
 }
 
 Header.prototype.closeMenu = function ($button, $target) {
