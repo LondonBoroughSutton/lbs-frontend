@@ -1,3 +1,6 @@
+$menu-main-bg-colour: rgba($lbs-green-1, .1);
+$menu-main-text-colour: $lbs-green-1;
+
 .gem-c-layout-super-navigation-header__content {
   flex: 1 0 100%;
   @include govuk-media-query($from: desktop) {
@@ -20,16 +23,15 @@
 
 @import "scss/navigation-items";
 @import "scss/toggle-button";
-//@import "scss/search-toggle-button";
 @import "scss/search-and-popular";
 //@import "scss/second-items";
 
 .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
-  background: #f3f2f1;
   @include govuk-media-query($from: desktop) {
     position: absolute;
     right: 0;
     left: 0;
+    background: $menu-main-bg-colour;
   }
 }
 

@@ -175,6 +175,7 @@ Header.prototype.openSearch = function ($button, $target) {
   this.searchOpen = true
   $button.setAttribute('aria-expanded', !0)
   $button.setAttribute('aria-label', 'Hide navigation menu')
+  this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__open-button').forEach(x => x.classList.remove('gem-c-layout-super-navigation-header__open-button'))
   $button.classList.add('gem-c-layout-super-navigation-header__open-button')
   $target.removeAttribute('hidden')
   document.getElementById('lbs-search__box').focus()

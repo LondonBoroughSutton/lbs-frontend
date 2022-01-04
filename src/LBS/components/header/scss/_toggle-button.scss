@@ -27,6 +27,10 @@ $headerheight: 66px;
   }
 
   &:focus {
+    background: $menu-main-bg-colour;
+  }
+
+  &:focus-visible {
     outline: 3px solid transparent;
     color: $lbs-black;
     background-color: $lbs-yellow;
@@ -49,12 +53,20 @@ $headerheight: 66px;
 
   &.gem-c-layout-super-navigation-header__open-button {
     color: $lbs-white;
-    background: rgba($lbs-grey, .1);
+    background: $menu-main-bg-colour;
+
+    &:focus-visible {
+      //background: $lbs-yellow;
+    }
 
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner,
     &.gem-c-layout-super-navigation-header__navigation-second-toggle-button {
       &:before {
         transform: translateY(5%) rotate(225deg) scale(1);
+      }
+
+      &:focus {
+        box-shadow: none;
       }
     }
   }
@@ -103,9 +115,14 @@ $headerheight: 66px;
   }
 
   &:focus {
-    //&:not(:focus-visible) {
-    //  background: none;
-    //}
+    outline: 3px solid transparent;
+    //background: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    color: $lbs-black;
+    background: $lbs-yellow;
   }
 
   &:hover {
@@ -116,7 +133,7 @@ $headerheight: 66px;
     }
 
     @include govuk-media-query($from: desktop) {
-      background: rgba($lbs-grey, .1);
+      background: $menu-main-bg-colour;
 
       //&:after {
       //  background: $lbs-white;
@@ -126,7 +143,11 @@ $headerheight: 66px;
 
   &.gem-c-layout-super-navigation-header__open-button {
     @include govuk-media-query($from: desktop) {
-      background: rgba($lbs-grey, .1);
+      background: $menu-main-bg-colour;
+    }
+
+    &:focus-visible {
+      background: $lbs-yellow;
     }
 
     &:before {
@@ -160,9 +181,36 @@ $headerheight: 66px;
     //background: rgba($lbs-green-2, .1);
   }
 
+  &:hover {
+    background: $menu-main-bg-colour;
+  }
+
+  &:focus {
+    outline: 3px solid transparent;
+  }
+
+  &:focus-visible {
+    color: $lbs-black;
+    background: $lbs-yellow;
+  }
+
   &.gem-c-layout-super-navigation-header__open-button {
-    color: $lbs-green-1;
-    background: rgba($lbs-grey, .1);
+    color: $menu-main-text-colour;
+    background: $menu-main-bg-colour;
+
+    &:focus {
+      outline: 3px solid transparent;
+      color: $lbs-black;
+
+      svg {
+        fill: $lbs-black;
+      }
+    }
+
+    &:focus-visible {
+      color: $lbs-black;
+      background: $lbs-yellow;
+    }
 
     .gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon {
       display: block;

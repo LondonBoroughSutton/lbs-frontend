@@ -3,7 +3,7 @@
   display: block;
   margin: 0 -15px;
   padding: 0;
-  background: rgba($lbs-grey, .1);
+  background: $menu-main-bg-colour;
   list-style: none;
   @include govuk-media-query($from: tablet) {
     margin: 0 -30px;

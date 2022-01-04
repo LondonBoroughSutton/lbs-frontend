@@ -11,7 +11,7 @@
 
 .gem-c-layout-super-navigation-header__search-items {
   margin: 0 -15px;
-  background: rgba($lbs-grey, .1);
+  background: $menu-main-bg-colour;
 
   &[hidden] {
     display: none;
