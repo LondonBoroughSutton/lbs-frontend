@@ -10,6 +10,7 @@ function Header ($module) {
     this.$searchMenu = this.$module.querySelector('#super-search-menu'),
     this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]'),
     this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item'),
+    // this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button'),
     this.hiddenButtons = this.$module.querySelectorAll('button[hidden]'),
     this.menuOpen = false,
     this.searchOpen = false,
@@ -69,13 +70,14 @@ Header.prototype.teardownDesktopMenu = function () {
 }
 
 Header.prototype.menuItemClick = function (e) {
+  console.log(123)
   let theTargetID = e.target.getAttribute('aria-controls')
-  if (e.target.classList.contains('gem-c-layout-super-navigation-header__navigation-toggle-wrapper')) {
-    theTargetID = e.target.getElementsByTagName('button')[0].getAttribute('aria-controls')
-      e.target.getElementsByTagName('button')[0].classList.toggle('gem-c-layout-super-navigation-header__open-button')
-  } else {
+  // if (e.target.classList.contains('gem-c-layout-super-navigation-header__navigation-toggle-wrapper')) {
+  //   theTargetID = e.target.getElementsByTagName('button')[0].getAttribute('aria-controls')
+  //     e.target.getElementsByTagName('button')[0].classList.toggle('gem-c-layout-super-navigation-header__open-button')
+  // } else {
       e.target.classList.toggle('gem-c-layout-super-navigation-header__open-button')
-  }
+  // }
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button:not([aria-controls=' + theTargetID + '])').forEach(i => i.classList.remove('gem-c-layout-super-navigation-header__open-button'))
   const theTarget = document.getElementById(theTargetID)
   this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-dropdown-menu:not(#' + theTargetID + ')').forEach(i => i.setAttribute('hidden', true))
@@ -103,8 +105,10 @@ Header.prototype.setAttributes = function ($type) {
     $button.querySelector('.gem-c-layout-super-navigation-header__navigation-second-toggle-button').removeAttribute('hidden')
     // Save bounded functions to use when removing event listeners during teardown
     $button.boundMenuItemClick = this.menuItemClick.bind(this)
+    // $button.querySelector('button').boundMenuItemClick = this.menuItemClick.bind(this)
     // Handle events
-    $button.addEventListener('click', $button.boundMenuItemClick, true)
+    $button.querySelector('button').addEventListener('click', $button.boundMenuItemClick, true)
+    // $button.addEventListener('click', $button.boundMenuItemClick, true)
   }.bind(this))
 }
 
@@ -121,7 +125,8 @@ Header.prototype.unsetAttributes = function ($type) {
   this.closeDesktopMenus()
   this.$searchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button')
   nodeListForEach(this.$menuButtons, function ($button) {
-    $button.removeEventListener('click', $button.boundMenuItemClick, true)
+    // $button.removeEventListener('click', $button.boundMenuItemClick, true)
+    $button.querySelector('button').removeEventListener('click', $button.boundMenuItemClick, true)
   }.bind(this))
 }
 
