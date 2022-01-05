@@ -186,11 +186,13 @@ Header.prototype.openMenu = function ($button, $target) {
 Header.prototype.closeMenu = function ($button, $target) {
   this.menuOpen = false
   this.$module.style.marginBottom = '0px'
-  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
-  $button.setAttribute('aria-expanded', !1)
-  $button.setAttribute('aria-label', 'Show navigation menu')
-  $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
-  $target.setAttribute('hidden', !0)
+  if (this.$navigationMenu != null) {
+    $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+    $button.setAttribute('aria-expanded', !1)
+    $button.setAttribute('aria-label', 'Show navigation menu')
+    $button.classList.remove('gem-c-layout-super-navigation-header__open-button')
+    $target.setAttribute('hidden', !0)
+  }
 }
 
 Header.prototype.closeDesktopMenus = function () {

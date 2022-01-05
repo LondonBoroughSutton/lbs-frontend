@@ -59,6 +59,11 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-item-link,
+.gem-c-layout-super-navigation-header__search-item-link {
+  padding-left: $lbs-margin;
+}
+
+.gem-c-layout-super-navigation-header__navigation-item-link,
 .gem-c-layout-super-navigation-header__search-item-link,
 .gem-c-layout-super-navigation-header__navigation-second-toggle-button {
   display: inline-block;
