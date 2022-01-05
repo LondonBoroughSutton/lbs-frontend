@@ -10,6 +10,8 @@ function Header ($module) {
   this.$searchMenu = this.$module.querySelector('#super-search-menu')
   this.$buttons = this.$module.querySelectorAll('button[aria-controls][data-toggle-mobile-group][data-toggle-desktop-group]')
   this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-item')
+  this.$phaseBanner = document.querySelector('.lbs-row--phase-banner')
+  this.$header = document.querySelector('.lbs-header')
   // this.$menuButtons = this.$module.querySelectorAll('.gem-c-layout-super-navigation-header__navigation-second-toggle-button')
   this.hiddenButtons = this.$module.querySelectorAll('button[hidden]')
   this.menuOpen = false
@@ -162,11 +164,16 @@ Header.prototype.handleSearchButtonClick = function () {
     this.closeSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = '0'
+      // this.$searchMenu.style.top = '0'
     }
   } else {
     this.openSearch(this.$searchToggle, this.$searchMenu)
     if (this.mql.matches === true) {
       this.$module.style.marginBottom = this.$searchMenu.offsetHeight + 'px'
+      // this.$searchMenu.style.top = this.$navigationMenu.offsetHeight + 'px'
+      if (this.$phaseBanner) {
+        this.$searchMenu.style.bottom = this.$phaseBanner.offsetHeight + 'px'
+      }
     }
   }
 }

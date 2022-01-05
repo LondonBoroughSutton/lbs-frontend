@@ -8,6 +8,7 @@ examples:
   - name: default
     description: Standard application of the header element.
     data:
+      phaseBanner: true
       searchItems:
         - href: '#1'
           text: 'Popular search 1'
@@ -110,13 +111,16 @@ examples:
         - href: '#3'
           text: 'Popular search 3'
 
+  - name: with phasebanner
+    description: Default but with a phasebanner
+    data:
+      phaseBanner: true
+
   - name: with no navigation or search
     description: Header with no main navigation or search function.
     data:
       navigation: false
       search: false
-
-
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
