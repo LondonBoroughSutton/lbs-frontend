@@ -28,7 +28,8 @@ export function generateUniqueID () {
 }
 
 export const settings = {
-  minWidth: '40.0625em'
+  minWidth: '40.0625em',
+  desktop: '48.0625em'
 }
 
 // Common function to only show a subset of items and insert CTA to show them

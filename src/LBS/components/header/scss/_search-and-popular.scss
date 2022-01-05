@@ -1,0 +1,124 @@
+.gem-c-layout-super-navigation-header__search-and-popular {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  align-items: stretch;
+
+  .lbs-search {
+    margin: $lbs-margin 0 $lbs-margin * 2;
+  }
+}
+
+.gem-c-layout-super-navigation-header__search-items {
+  margin: 0 -15px;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.js-module-initialised {
+  .gem-c-layout-super-navigation-header__search-items {
+    background: $menu-main-bg-colour;
+
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.gem-c-layout-super-navigation-header__search-item-link-icon {
+  //width: 36px;
+  //height: 36px;
+  pointer-events: none;
+  @include govuk-media-query($until: desktop) {
+    @include govuk-visually-hidden;
+  }
+}
+
+.gem-c-layout-super-navigation-header__search-item-link {
+  &:link {
+    @include govuk-media-query($from: desktop) {
+      color: $lbs-green-1;
+      //color: $lbs-white;
+      //background: $lbs-green-1;
+    }
+
+    &:hover {
+      color: $lbs-green-1;
+      background: rgba($lbs-green-1, .1);
+
+      &:after {
+        background: $lbs-green-1;
+        @include govuk-media-query($from: desktop) {
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &:focus {
+      color: $lbs-black;
+      background: $lbs-yellow;
+    }
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-layout-super-navigation-header__search-items {
+    margin: 0 -30px;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__search-items {
+    margin: 0;
+
+    .js-module-initialised & {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+.gem-c-layout-super-navigation-header__search-form {
+  padding: 15px 0 30px;
+}
+
+.gem-c-layout-super-navigation-header__popular-item {
+  position: relative;
+  padding: 5px 0;
+}
+
+.gem-c-layout-super-navigation-header__popular-link {
+  display: inline-block;
+  padding: 0;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.gem-c-layout-super-navigation-header__popular-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: none;
+}
+
+.gem-c-layout-super-navigation-header__search-item-link-text {
+  @include govuk-media-query($from: desktop) {
+    @include govuk-visually-hidden;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__popular-link:after {
+    content: none;
+  }
+}

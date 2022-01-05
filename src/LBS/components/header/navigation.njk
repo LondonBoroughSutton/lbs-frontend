@@ -1,40 +1,127 @@
-<nav class="lbs-header__navigation" id="lbs-header__navigation_container" aria-label="{{ params.navigationLabel | default('Navigation menu') }}">
-    <ul class="lbs-header__navigation--level1"
-        id="lbs-header__navigation"
-        aria-label="{{ params.navigationLabel | default('Navigation menu') }}"
-    >
-        {% for item in params.navigation %}
-            <li class="" {% if item.subItems.length > 0 %}data-has-submenu="true" data-submenu-open="false"{% endif %}>
-                {% if item.subItems.length > 0 %}
-                    <a
-                            class="lbs-header__navigation__item--level1"
-                            href="#"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                        <span class="govuk-visually-hidden">Show menu for</span> {{ item.text }}
-                    </a>
-                    {% if item.subItems.length > 0 %}
-                        <ul
-                            class="lbs-header__navigation--level2"
-                        >
-                            {% for subItem in item.subItems %}
-                                <li>
-                                    <a
-                                        href="/{{ subItem.href }}/"
-                                    >
-                                        {{ subItem.text }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% else %}
-                    <a href="{{ item.href }}"
-                       class="lbs-header__navigation__item--level1">
-                        {{ item.text }}
-                    </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+<nav aria-labelledby="super-navigation-menu-heading"
+     class="gem-c-layout-super-navigation-header__content"
+     data-module="super-navigation-mega-menu">
+  {% if params.navigation !== false %}
+  <h2 id="super-navigation-menu-heading" class="govuk-visually-hidden">
+    Navigation menu
+  </h2>
+  <button aria-controls="super-navigation-menu" aria-expanded="true" aria-label="Show navigation menu"
+          class="gem-c-layout-super-navigation-header__navigation-top-toggle-button {% if params.search === false %}gem-c-layout-super-navigation-header__navigation-top-toggle-button--no-search{% endif %}" data-toggle-desktop-group="hidden"
+          data-toggle-mobile-group="top" data-tracking-key="menu" hidden id="super-navigation-menu-toggle"
+          type="button">
+        <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">
+          Menu
+        </span>
+  </button>
+  <ul id="super-navigation-menu" class="gem-c-layout-super-navigation-header__navigation-items">
+    {% for menuItem in params.navigation %}
+      <li
+        class="gem-c-layout-super-navigation-header__navigation-item gem-c-layout-super-navigation-header__navigation-item--with-children">
+        <div class="gem-c-layout-super-navigation-header__navigation-toggle-wrapper govuk-clearfix">
+          <a class="gem-c-layout-super-navigation-header__navigation-item-link"
+             href="/{{ menuItem.href }}">{{ menuItem.text }}</a>
+          <button aria-controls="super-navigation-menu__section-{{ loop.index }}"
+                  aria-expanded="false"
+                  aria-label="Show {{ menuItem.text }} menu"
+                  class="gem-c-layout-super-navigation-header__navigation-second-toggle-button"
+                  data-text-for-hide="Hide {{ menuItem.text }} menu"
+                  data-text-for-show="Show {{ menuItem.text }} menu"
+                  data-toggle-desktop-group="top"
+                  data-toggle-mobile-group="second"
+                  hidden="hidden"
+                  type="button">
+            {{ menuItem.text }}</button>
+        </div>
+        <div hidden class="gem-c-layout-super-navigation-header__navigation-dropdown-menu"
+             id="super-navigation-menu__section-{{ loop.index }}">
+          <div class="govuk-width-container gem-c-layout-super-navigation-header__width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third-from-desktop">
+                <p class="govuk-body-l gem-c-layout-super-navigation-header__menu-description">
+                  {{ menuItem.description }}
+                </p>
+              </div>
+              <div class="govuk-grid-column-two-thirds-from-desktop">
+                <ul
+                  class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--topics">
+                  {% for item in menuItem.subItems %}
+                    <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                      <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
+                         href="{{ item.href }}">{{ item.text }}</a>
+                      {% if item.description %}
+                        <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">
+                          {{ item.description }}</p>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if params.search !== false %}
+    <button aria-controls="super-search-menu" aria-expanded="true" aria-label="Hide search menu"
+            class="gem-c-layout-super-navigation-header__search-toggle-button" data-text-for-hide="Hide search menu"
+            data-text-for-show="Show search menu" data-toggle-mobile-group="top" data-toggle-desktop-group="top"
+            data-tracking-key="search" hidden id="super-search-menu-toggle" type="button">
+        <span class="govuk-visually-hidden">
+          Search GOV.UK
+        </span>
+
+      <svg class="gem-c-layout-super-navigation-header__search-toggle-button-link-icon" width="27" height="27"
+           viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+      </svg>
+      <span aria-hidden="true" class="gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon"
+            focusable="false">
+          ×
+        </span>
+    </button>
+
+    <div id="super-search-menu" class="gem-c-layout-super-navigation-header__search-items">
+      <h3 class="govuk-visually-hidden">
+        Search
+      </h3>
+      <div class="gem-c-layout-super-navigation-header__search-item">
+        <a class="gem-c-layout-super-navigation-header__search-item-link" href="/search">
+            <span class="gem-c-layout-super-navigation-header__search-item-link-text">
+              Search
+            </span>
+          <svg class="gem-c-layout-super-navigation-header__search-item-link-icon" width="27" height="27"
+               viewbox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="10.0161" cy="10.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+            <line x1="15.8668" y1="16.3587" x2="25.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+          </svg>
+        </a>
+      </div>
+
+      <div class="govuk-width-container gem-c-layout-super-navigation-header__search-and-popular" hidden>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            {{ lbsSearch({
+              fullWidth: true
+            }) }}
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m">Popular on Sutton.gov.uk</h3>
+            <ul class="govuk-list">
+              {% for item in params.searchItems %}
+                <li class="gem-c-layout-super-navigation-header__popular-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
+                     href="{{ item.href }}">{{ item.text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 </nav>
