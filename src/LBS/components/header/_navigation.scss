@@ -13,7 +13,7 @@ $menu-main-text-colour: $lbs-green-1;
   flex: 1 0 100%;
   @include govuk-media-query($from: desktop) {
     display: flex;
-    flex: 0 0 50%;
+    flex: 0 0 70%;
     justify-content: flex-end;
     //display: block;
     //float: right;
