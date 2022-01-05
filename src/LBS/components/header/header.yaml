@@ -8,6 +8,13 @@ examples:
   - name: default
     description: Standard application of the header element.
     data:
+      searchItems:
+        - href: '#1'
+          text: 'Popular search 1'
+        - href: '#2'
+          text: 'Popular search 2'
+        - href: '#3'
+          text: 'Popular search 3'
       navigation:
         - href: '#1'
           text: Navigation item 1
@@ -95,6 +102,13 @@ examples:
     description: Header with no main navigation.
     data:
       navigation: false
+      searchItems:
+        - href: '#1'
+          text: 'Popular search 1'
+        - href: '#2'
+          text: 'Popular search 2'
+        - href: '#3'
+          text: 'Popular search 3'
 
   - name: with no navigation or search
     description: Header with no main navigation or search function.
