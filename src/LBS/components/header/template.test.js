@@ -55,9 +55,9 @@ describe('Header', () => {
     it('renders without the search but with the nav', () => {
       const $ = render('header', examples['with no search'])
 
-      const $component = $('.lbs-header #lbs-header__search')
+      const $component = $('.lbs-header #super-search-menu')
       expect($component.length).not.toBeTruthy()
-      const $component2 = $('.lbs-header #lbs-header__navigation_container')
+      const $component2 = $('.lbs-header #super-navigation-menu')
       expect($component2.length).toBeTruthy()
       expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
     })
@@ -75,9 +75,9 @@ describe('Header', () => {
     it('renders without the nav but with the search', () => {
       const $ = render('header', examples['with no navigation'])
 
-      const $component = $('.lbs-header #lbs-header__search')
+      const $component = $('.lbs-header #super-search-menu')
       expect($component.length).toBeTruthy()
-      const $component2 = $('.lbs-header > #lbs-header__navigation_container')
+      const $component2 = $('.lbs-header > #super-navigation-menu')
       expect($component2.length).not.toBeTruthy()
       expect(htmlWithClassName($, '.lbs-header')).toMatchSnapshot()
     })

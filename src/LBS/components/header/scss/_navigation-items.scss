@@ -128,7 +128,7 @@
 }
 
 .gem-c-layout-super-navigation-header__navigation-second-items {
-  @extend .lbs-list--no-style;
+  @extend .lbs-list--no-style !optional;
   margin-left: $lbs-margin;
   font-size: inherit;
   @include govuk-media-query($from: desktop) {
