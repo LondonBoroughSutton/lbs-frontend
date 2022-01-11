@@ -19,7 +19,8 @@ function nodeListForEach (nodes, callback) {
 }
 
 const settings = {
-  minWidth: '40.0625em'
+  minWidth: '40.0625em',
+  desktop: '48.0625em'
 };
 
 function Tabs ($module) {

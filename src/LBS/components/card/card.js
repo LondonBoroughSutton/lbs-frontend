@@ -63,10 +63,8 @@ Cards.prototype.init = function () {
     return
   }
   if (typeof window.matchMedia === 'function') {
-    console.log(1)
     this.setupResponsiveChecks()
   } else {
-    console.log(2)
     this.setupCardWrapper()
   }
   if (this.$module.getAttribute('data-show-more')) {
@@ -84,13 +82,11 @@ Cards.prototype.setupResponsiveChecks = function () {
   const that = this
   this.checkMode()
   window.onresize = function () {
-    console.log('resize')
     that.checkMode()
   }
 }
 
 Cards.prototype.checkMode = function () {
-  console.log('Change')
   if (this.mql.matches) {
     this.setHeight()
     this.setupCardWrapper()
@@ -106,7 +102,6 @@ Cards.prototype.teardownCards = function () {
 }
 
 Cards.prototype.setHeight = function () {
-  console.log('Setting height')
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
   this.$module.querySelectorAll('.lbs-card').forEach(card => {
