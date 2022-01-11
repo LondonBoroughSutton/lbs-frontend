@@ -79,7 +79,11 @@ Cards.prototype.setupCardWrapper = function () {
 Cards.prototype.setupResponsiveChecks = function () {
   this.mql = window.matchMedia('(min-width: ' + settings.minWidth + ')')
   this.mql.addListener(this.checkMode.bind(this))
+  const that = this
   this.checkMode()
+  window.onresize = function () {
+    that.checkMode()
+  }
 }
 
 Cards.prototype.checkMode = function () {
@@ -101,6 +105,7 @@ Cards.prototype.setHeight = function () {
   // todo - consider adding parameter to ignore certain items (opt in)
   let tallestCard = 0
   this.$module.querySelectorAll('.lbs-card').forEach(card => {
+    card.style.minHeight = '0'
     if (card.clientHeight > tallestCard) {
       const cs = window.getComputedStyle(card)
       tallestCard = card.clientHeight - (parseFloat(cs.paddingBottom))
