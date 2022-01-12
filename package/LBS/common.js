@@ -50,13 +50,6 @@ ShowMore.prototype.init = function () {
   if (this.$module.getAttribute('data-show-more') && count !== '0') {
     if (this.$module.querySelector('.js__is-hidden')) {
       this.addCallToAction();
-      if (this.$module.getAttribute('data-show-more-type')) {
-        if (this.$module.getAttribute('data-show-more-position')) {
-          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
-        } else {
-          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
-        }
-      }
       this.addAriaAttributes();
     }
   }
@@ -70,8 +63,20 @@ ShowMore.prototype.hideItems = function (count) {
   });
 };
 
+ShowMore.prototype.classToAdd = function () {
+  console.log(this.$module);
+  if (this.$module.getAttribute('data-show-more-type')) {
+    if (this.$module.getAttribute('data-show-more-position')) {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+    } else {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+    }
+  }
+};
+
 ShowMore.prototype.addCallToAction = function () {
   const module = this.$module;
+  const that = this;
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length;
   const showMoreHtml = document.createElement('a');
   showMoreHtml.innerText = 'Show more items (' + itemCount + ')';
@@ -82,6 +87,7 @@ ShowMore.prototype.addCallToAction = function () {
   showMoreHtml.addEventListener('click', function (e) {
     e.preventDefault();
     module.classList.add('show-hidden');
+    that.addShowLessCallToAction();
     try {
       module.removeChild(this);
     } catch (err) {
@@ -95,6 +101,7 @@ ShowMore.prototype.addCallToAction = function () {
   } else {
     module.append(showMoreHtml);
   }
+  this.classToAdd();
 };
 
 ShowMore.prototype.addClassToCallToAction = function (classes, position) {
@@ -111,6 +118,36 @@ ShowMore.prototype.addClassToCallToAction = function (classes, position) {
   } else {
     module.querySelector('.show-more-link').classList.addMany(classes);
   }
+};
+
+ShowMore.prototype.addShowLessCallToAction = function () {
+  const module = this.$module;
+  const that = this;
+  console.log('Add a show less CTA');
+  const showLessHtml = document.createElement('a');
+  showLessHtml.innerText = 'Show less items';
+  showLessHtml.setAttribute('class', 'show-more-link');
+  showLessHtml.setAttribute('href', '#');
+  showLessHtml.setAttribute('aria-controls', module.id);
+  showLessHtml.setAttribute('role', 'button');
+  showLessHtml.addEventListener('click', function (e) {
+    e.preventDefault();
+    module.classList.remove('show-hidden');
+    that.hideItems();
+    that.addCallToAction();
+    try {
+      module.removeChild(this);
+    } catch (err) {
+      module.parentNode.removeChild(this);
+    }
+    module.setAttribute('aria-expanded', false);
+  });
+  if (this.$module.getAttribute('data-show-more-position') === 'after') {
+    module.insertAdjacentElement('afterend', showLessHtml);
+  } else {
+    module.append(showLessHtml);
+  }
+  this.classToAdd();
 };
 
 ShowMore.prototype.addAriaAttributes = function () {
