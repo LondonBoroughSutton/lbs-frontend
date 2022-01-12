@@ -2,6 +2,7 @@ import { nodeListForEach, ShowMore } from './common'
 import Card, { Cards } from './components/card/card'
 import Header from './components/header/header'
 import PageFeedback from './components/page-feedback/page-feedback'
+import PageGroupNavigation from './components/page-group-navigation/page-group-navigation'
 import Search from './components/search/search'
 import Tabs from './components/tabs/tabs'
 
@@ -45,6 +46,11 @@ function initAll (options) {
     new PageFeedback($pageFeedback).init()
   })
 
+  const $pageGroupNavigation = scope.querySelectorAll('.lbs-page-group__navigation')
+  nodeListForEach($pageGroupNavigation, function ($pageGroupNavigationItem) {
+    new PageGroupNavigation($pageGroupNavigationItem).init()
+  })
+
   // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
   //   new ShowMore($showMoreWrapper).init()
@@ -57,6 +63,7 @@ export {
   Cards,
   Header,
   PageFeedback,
+  PageGroupNavigation,
   Search,
   ShowMore,
   Tabs

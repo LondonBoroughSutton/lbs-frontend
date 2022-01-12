@@ -16,6 +16,10 @@
         justify-content: space-between;
       }
 
+      &.lbs-page-group__navigation__list--single-item {
+        justify-content: flex-end;
+      }
+
       .lbs-page-group__navigation__list-item--next {
         .lbs-page-group__navigation__list-item__container {
           @include govuk-media-query($from: desktop) {
