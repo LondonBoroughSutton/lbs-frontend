@@ -49,7 +49,6 @@ ShowMore.prototype.hideItems = function (count) {
 };
 
 ShowMore.prototype.classToAdd = function () {
-  console.log(this.$module);
   if (this.$module.getAttribute('data-show-more-type')) {
     if (this.$module.getAttribute('data-show-more-position')) {
       this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
@@ -556,6 +555,26 @@ PageFeedback.prototype.addHideButton = function (t) {
   this.$module.querySelector('form').prepend(closeForm);
 };
 
+function PageGroupNavigation ($module) {
+  this.$module = $module;
+}
+
+PageGroupNavigation.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+  if (this.$module.querySelectorAll('li').length === 1) {
+    this.handleSingleItem();
+  }
+};
+
+PageGroupNavigation.prototype.handleSingleItem = function () {
+  const theItem = this.$module.querySelector('li');
+  if (theItem.classList.contains('lbs-page-group__navigation__list-item--next')) {
+    this.$module.querySelector('ul').classList.add('lbs-page-group__navigation__list--single-item');
+  }
+};
+
 function Search ($module) {
   this.$module = $module;
 }
@@ -848,6 +867,11 @@ function initAll (options) {
     new PageFeedback($pageFeedback).init();
   });
 
+  const $pageGroupNavigation = scope.querySelectorAll('.lbs-page-group__navigation');
+  nodeListForEach($pageGroupNavigation, function ($pageGroupNavigationItem) {
+    new PageGroupNavigation($pageGroupNavigationItem).init();
+  });
+
   // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
   //   new ShowMore($showMoreWrapper).init()
@@ -859,6 +883,7 @@ exports.Card = Card;
 exports.Cards = Cards;
 exports.Header = Header;
 exports.PageFeedback = PageFeedback;
+exports.PageGroupNavigation = PageGroupNavigation;
 exports.Search = Search;
 exports.ShowMore = ShowMore;
 exports.Tabs = Tabs;

@@ -44,6 +44,10 @@
   }
 
   .lbs-page-group__navigation__list-item {
+    @include govuk-media-query($from: desktop) {
+      max-width: 45%;
+    }
+
     a {
       text-decoration: none;
     }

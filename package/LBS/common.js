@@ -64,7 +64,6 @@ ShowMore.prototype.hideItems = function (count) {
 };
 
 ShowMore.prototype.classToAdd = function () {
-  console.log(this.$module);
   if (this.$module.getAttribute('data-show-more-type')) {
     if (this.$module.getAttribute('data-show-more-position')) {
       this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
