@@ -35,13 +35,6 @@ ShowMore.prototype.init = function () {
   if (this.$module.getAttribute('data-show-more') && count !== '0') {
     if (this.$module.querySelector('.js__is-hidden')) {
       this.addCallToAction();
-      if (this.$module.getAttribute('data-show-more-type')) {
-        if (this.$module.getAttribute('data-show-more-position')) {
-          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
-        } else {
-          this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
-        }
-      }
       this.addAriaAttributes();
     }
   }
@@ -55,8 +48,19 @@ ShowMore.prototype.hideItems = function (count) {
   });
 };
 
+ShowMore.prototype.classToAdd = function () {
+  if (this.$module.getAttribute('data-show-more-type')) {
+    if (this.$module.getAttribute('data-show-more-position')) {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'), this.$module.getAttribute('data-show-more-position'));
+    } else {
+      this.addClassToCallToAction(this.$module.getAttribute('data-show-more-type'));
+    }
+  }
+};
+
 ShowMore.prototype.addCallToAction = function () {
   const module = this.$module;
+  const that = this;
   const itemCount = this.$module.querySelectorAll('.js__is-hidden').length;
   const showMoreHtml = document.createElement('a');
   showMoreHtml.innerText = 'Show more items (' + itemCount + ')';
@@ -67,6 +71,7 @@ ShowMore.prototype.addCallToAction = function () {
   showMoreHtml.addEventListener('click', function (e) {
     e.preventDefault();
     module.classList.add('show-hidden');
+    that.addShowLessCallToAction();
     try {
       module.removeChild(this);
     } catch (err) {
@@ -80,6 +85,7 @@ ShowMore.prototype.addCallToAction = function () {
   } else {
     module.append(showMoreHtml);
   }
+  this.classToAdd();
 };
 
 ShowMore.prototype.addClassToCallToAction = function (classes, position) {
@@ -96,6 +102,36 @@ ShowMore.prototype.addClassToCallToAction = function (classes, position) {
   } else {
     module.querySelector('.show-more-link').classList.addMany(classes);
   }
+};
+
+ShowMore.prototype.addShowLessCallToAction = function () {
+  const module = this.$module;
+  const that = this;
+  console.log('Add a show less CTA');
+  const showLessHtml = document.createElement('a');
+  showLessHtml.innerText = 'Show less items';
+  showLessHtml.setAttribute('class', 'show-more-link');
+  showLessHtml.setAttribute('href', '#');
+  showLessHtml.setAttribute('aria-controls', module.id);
+  showLessHtml.setAttribute('role', 'button');
+  showLessHtml.addEventListener('click', function (e) {
+    e.preventDefault();
+    module.classList.remove('show-hidden');
+    that.hideItems();
+    that.addCallToAction();
+    try {
+      module.removeChild(this);
+    } catch (err) {
+      module.parentNode.removeChild(this);
+    }
+    module.setAttribute('aria-expanded', false);
+  });
+  if (this.$module.getAttribute('data-show-more-position') === 'after') {
+    module.insertAdjacentElement('afterend', showLessHtml);
+  } else {
+    module.append(showLessHtml);
+  }
+  this.classToAdd();
 };
 
 ShowMore.prototype.addAriaAttributes = function () {
@@ -458,6 +494,7 @@ function PageFeedback ($module) {
   this.jshiddenClass = 'js_is-hidden';
   this.jsShowClass = 'js_show';
   this.prompt = 'lbs-page-feedback__prompt';
+  this.formController = this.$module.querySelector('[aria-controls=' + this.feedbackForm + ']');
   this.feedbackForm = 'lbs-page-feedback__form';
   this.formToggleButton = 'lbs-page-feedback__form';
 }
@@ -476,6 +513,7 @@ PageFeedback.prototype.init = function () {
   this.$module.querySelector('[aria-controls=' + this.feedbackForm + ']').addEventListener('click', function (t) {
     t.preventDefault();
     this.toggleForm(t.target);
+    this.addHideButton();
   }.bind(this));
 };
 
@@ -484,14 +522,57 @@ PageFeedback.prototype.setInitialAriaAttributes = function () {
 };
 
 PageFeedback.prototype.updateAriaAttributes = function (t) {
-  t.setAttribute('aria-expanded', !0);
-  document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !1);
+    if (t.getAttribute('aria-expanded') === 1) {
+      t.setAttribute('aria-expanded', !0);
+      document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !1);
+    } else {
+      t.setAttribute('aria-expanded', !1);
+      document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !0);
+    }
 };
 
 PageFeedback.prototype.toggleForm = function (t) {
   this.$module.querySelector('.lbs-page-feedback__form').classList.toggle(this.jsShowClass);
   this.$module.querySelector('.lbs-page-feedback__prompt').classList.toggle(this.jshiddenClass);
   this.updateAriaAttributes(t);
+};
+
+PageFeedback.prototype.addHideButton = function (t) {
+  const closeForm = document.createElement('a');
+  const module = this.$module;
+  const that = this;
+  closeForm.innerText = 'Close';
+  closeForm.setAttribute('class', 'lbs-button--secondary lbs-button govuk-button');
+  closeForm.setAttribute('id', 'lbs-feedback__form--hide-button');
+  closeForm.setAttribute('href', '#');
+  closeForm.setAttribute('aria-controls', this.feedbackForm);
+  closeForm.setAttribute('role', 'button');
+  closeForm.addEventListener('click', function (e) {
+    e.preventDefault();
+    module.querySelector('#lbs-feedback__form--hide-button').remove();
+    that.toggleForm(e.target);
+  });
+  this.$module.querySelector('form').prepend(closeForm);
+};
+
+function PageGroupNavigation ($module) {
+  this.$module = $module;
+}
+
+PageGroupNavigation.prototype.init = function () {
+  if (!this.$module) {
+    return
+  }
+  if (this.$module.querySelectorAll('li').length === 1) {
+    this.handleSingleItem();
+  }
+};
+
+PageGroupNavigation.prototype.handleSingleItem = function () {
+  const theItem = this.$module.querySelector('li');
+  if (theItem.classList.contains('lbs-page-group__navigation__list-item--next')) {
+    this.$module.querySelector('ul').classList.add('lbs-page-group__navigation__list--single-item');
+  }
 };
 
 function Search ($module) {
@@ -786,6 +867,11 @@ function initAll (options) {
     new PageFeedback($pageFeedback).init();
   });
 
+  const $pageGroupNavigation = scope.querySelectorAll('.lbs-page-group__navigation');
+  nodeListForEach($pageGroupNavigation, function ($pageGroupNavigationItem) {
+    new PageGroupNavigation($pageGroupNavigationItem).init();
+  });
+
   // let $showMoreWrappers = scope.querySelectorAll('[data-show-more]')
   // nodeListForEach($showMoreWrappers, function ($showMoreWrapper) {
   //   new ShowMore($showMoreWrapper).init()
@@ -797,6 +883,7 @@ exports.Card = Card;
 exports.Cards = Cards;
 exports.Header = Header;
 exports.PageFeedback = PageFeedback;
+exports.PageGroupNavigation = PageGroupNavigation;
 exports.Search = Search;
 exports.ShowMore = ShowMore;
 exports.Tabs = Tabs;

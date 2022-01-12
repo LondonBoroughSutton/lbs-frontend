@@ -18,6 +18,11 @@
             justify-content: space-between;
       }
 
+      &.lbs-page-group__navigation__list--single-item {
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+      }
+
       .lbs-page-group__navigation__list-item--next {
         .lbs-page-group__navigation__list-item__container {
           @include govuk-media-query($from: desktop) {
@@ -46,6 +51,10 @@
   }
 
   .lbs-page-group__navigation__list-item {
+    @include govuk-media-query($from: desktop) {
+      max-width: 45%;
+    }
+
     a {
       text-decoration: none;
     }
