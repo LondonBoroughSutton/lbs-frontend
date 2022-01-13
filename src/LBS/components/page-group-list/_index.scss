@@ -2,6 +2,10 @@
   overflow: hidden;
   border: 4px solid rgba($lbs-green-2, .2);
   border-radius: $lbs-border-radius;
+
+  @include govuk-media-query($media-type: print) {
+    border: none;
+  }
   //box-shadow: $lbs-shadow--l;
 
   &__title {
@@ -38,6 +42,14 @@
       padding: $lbs-margin / 1.5 $lbs-margin;
       border-top: 1px solid rgba($lbs-green-2, .2);
 
+      @include govuk-media-query($media-type: print) {
+        padding: $lbs-margin 0;
+        border: none;
+
+        &:after {
+          content: " (https://www.sutton.gov.uk" attr(href) ")";
+        }
+      }
       //&:before {
       //  content: "";
       //  display: inline-block;
