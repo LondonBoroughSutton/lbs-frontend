@@ -9,6 +9,9 @@
   &--with-phase-banner {
     padding-bottom: 0;
     border-bottom: none;
+    @include govuk-media-query($media-type: print) {
+      border-bottom: 5px solid $lbs-green-1;
+    }
 
     .lbs-row--phase-banner {
       //margin-top: $lbs-margin / 3;

@@ -5,6 +5,10 @@ $page-header-border-colour: adjust-color($lbs-green-1, $lightness: 2.5%);
   @include lbs-background-gradient;
   display: flow-root;
 
+  @include govuk-media-query($media-type: print) {
+    background: transparent;
+  }
+
   h1 {
     margin: $lbs-margin * 2 0;
     @include govuk-media-query($until: desktop) {
@@ -15,11 +19,28 @@ $page-header-border-colour: adjust-color($lbs-green-1, $lightness: 2.5%);
 
   *:not(input) {
     color: $lbs-white;
+    @include govuk-media-query($media-type: print) {
+      color: $lbs-black;
+    }
+  }
+
+  .govuk-breadcrumbs__list {
+    @include govuk-media-query($media-type: print) {
+      list-style: decimal;
+    }
   }
 
   .govuk-breadcrumbs__list-item {
     a {
       color: $lbs-white;
+      @include govuk-media-query($media-type: print) {
+        color: $govuk-link-colour;
+        text-decoration: none;
+
+        &:after {
+          content: " (https://www.sutton.gov.uk" attr(href) ")";
+        }
+      }
 
       &:focus {
         color: initial;
@@ -28,6 +49,13 @@ $page-header-border-colour: adjust-color($lbs-green-1, $lightness: 2.5%);
 
     &:before {
       border-color: rgba($lbs-white, .5);
+    }
+
+    @include govuk-media-query($media-type: print) {
+      display: block;
+      margin-left: 0;
+      padding-left: 0;
+      float: none;
     }
   }
 

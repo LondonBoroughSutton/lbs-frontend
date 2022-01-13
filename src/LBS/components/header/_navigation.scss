@@ -22,6 +22,10 @@ $menu-main-text-colour: $lbs-green-1;
   *[hidden] {
     display: none;
   }
+
+  @include govuk-media-query($media-type: print) {
+    @extend .govuk-\!-display-none-print;
+  }
 }
 
 // Navigation Top Toggle
