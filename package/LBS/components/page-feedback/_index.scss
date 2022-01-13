@@ -43,4 +43,8 @@
       display: block;
     }
   }
+
+  @include govuk-media-query($media-type: print) {
+    @extend .govuk-\!-display-none-print;
+  }
 }

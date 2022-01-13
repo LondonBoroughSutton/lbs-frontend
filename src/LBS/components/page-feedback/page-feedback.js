@@ -31,13 +31,13 @@ PageFeedback.prototype.setInitialAriaAttributes = function () {
 }
 
 PageFeedback.prototype.updateAriaAttributes = function (t) {
-    if (t.getAttribute('aria-expanded') === 1) {
-      t.setAttribute('aria-expanded', !0)
-      document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !1)
-    } else {
-      t.setAttribute('aria-expanded', !1)
-      document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !0)
-    }
+  if (t.getAttribute('aria-expanded') === 1) {
+    t.setAttribute('aria-expanded', !0)
+    document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !1)
+  } else {
+    t.setAttribute('aria-expanded', !1)
+    document.querySelector('#' + t.getAttribute('aria-controls')).setAttribute('aria-hidden', !0)
+  }
 }
 
 PageFeedback.prototype.toggleForm = function (t) {

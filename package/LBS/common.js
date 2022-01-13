@@ -122,7 +122,6 @@ ShowMore.prototype.addClassToCallToAction = function (classes, position) {
 ShowMore.prototype.addShowLessCallToAction = function () {
   const module = this.$module;
   const that = this;
-  console.log('Add a show less CTA');
   const showLessHtml = document.createElement('a');
   showLessHtml.innerText = 'Show less items';
   showLessHtml.setAttribute('class', 'show-more-link');
