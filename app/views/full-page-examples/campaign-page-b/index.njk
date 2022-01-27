@@ -1,0 +1,116 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing home-page' %}
+
+{% extends "_generic.njk" %}
+
+{% block header %}
+  {{ lbsHeader({
+    search: false,
+    phaseBanner: true
+  }) }}
+{% endblock %}
+
+{% set popularCard = false %}
+{% set popularCardAltBg = false %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: "Budget 2022 / 23",
+    description: "From adoption to zebra crossings, your council tax helps us to deliver hundreds of services in Sutton.",
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ]  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="lbs-row">
+  <div class="lbs-row__container govuk-grid-row">
+    <div class="govuk-grid-column-one-half-from-desktop">
+      <h2 class="govuk-heading-m">Heading</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+    </div>
+    <div class="govuk-grid-column-one-half-from-desktop">
+      <div class="lbs-video">
+        <iframe
+          src="https://www.youtube.com/embed/nPW49lt2sCw" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    {# {{ lbsCard({ #}
+    {# "featureCard": true, #}
+    {# "clickable": true, #}
+    {# altBg: true, #}
+    {# "video": "https://www.youtube.com/embed/nPW49lt2sCw", #}
+    {# "heading": { #}
+    {# "title": "Example heading", #}
+    {# "href": "#" #}
+    {# }, #}
+    {# "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>" #}
+    {# }) }} #}
+  </div>
+</div>
+
+
+<div class="lbs-row lbs-row--alt2">
+  <div class="lbs-row__container">
+    <h2 class="lbs-heading--decorative">Here are some of the stories, numbers and support services in Sutton.</h2>
+    <div class="govuk-grid-row lbs-card__wrapper">
+
+      <div class="govuk-grid-column-one-third-from-desktop">
+        {{ lbsCard({
+          heading: {
+            title: 'Read the stories behind our budget',
+            href: '#'
+          },
+          news: false,
+          image: '/public/assets/images/1.jpg',
+          cardBodyHtml: cardCopy,
+          clickable: true
+        }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third-from-desktop">
+        {{ lbsCard({
+          heading: {
+            title: 'Find out more about our budget',
+            href: '#'
+          },
+          news: false,
+          image: '/public/assets/images/2.jpg',
+          cardBodyHtml: "",
+          clickable: true
+        }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third-from-desktop">
+        {{ lbsCard({
+          heading: {
+            title: 'Get the support you need',
+            href: '#'
+          },
+          news: false,
+          image: '/public/assets/images/3.jpg',
+          cardBodyHtml: cardCopy,
+          clickable: true
+        }) }}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
