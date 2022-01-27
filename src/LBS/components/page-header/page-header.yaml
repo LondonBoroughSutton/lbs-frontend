@@ -27,6 +27,10 @@ params:
     type: array
     required: false
     description: If `tabs` array is passed, values will appear in the `tab` component along the bottom of the pageHeader
+  - name: heroVideo
+    type: object
+    required: false
+    description: if present, a video will be displayed in the header (intended to be used on campaign pages)
 
 examples:
   - name: default
@@ -155,6 +159,44 @@ examples:
           content: '22 22 22 22 22 22'
         }
       ]
+
+  - name: with image
+    description: Page header with image
+    data:
+      heading: Test page example
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
+      description: Page header with image
+      image: "/assets/img/home-image--1.jpg"
+
+  - name: with video
+    description: Page header with hero video
+    data:
+      heading: Test page example
+      breadCrumbItems: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Example",
+          href: "#"
+        }
+      ]
+      description: Page header with a hero video, likely used for campaigns
+      descriptionPosition: inside
+      heroVideo:
+        url: "https://www.youtube.com/embed/nPW49lt2sCw"
+
+
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
     hidden: true

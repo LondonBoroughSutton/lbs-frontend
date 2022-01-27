@@ -18,31 +18,58 @@
   {% endif %}
 {% endif %}
 <div
-  class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %} {% if params.image %} lbs-page-header--image{% endif %}">
+  class="lbs-page-header {% if overlappingTabs %}lbs-page-header--overlapping-tabs{% endif %}{% if params.homepage %} lbs-page-header--homepage{% endif %} {% if params.image %} lbs-page-header--image{% endif %}{% if params.heroVideo %} lbs-page-header--video{% endif %}">
   <div class="govuk-width-container">
-    {% if params.breadCrumbItems %}
-      {{ govukBreadcrumbs({
-        items: params.breadCrumbItems
-      }) }}
-    {% endif %}
-    {% if params.homepage %}
-      {% include './homepage.njk' %}
-    {% else %}
-      {% if params.image %}
-        <div class="lbs-page-header__content">
-          <h1>{{ params.heading }}</h1>
-        </div>
-      {% else %}
+    {% if params.heroVideo %}
+      <div class="lbs-page-header__content">
+        {% if params.breadCrumbItems %}
+          {{ govukBreadcrumbs({
+            items: params.breadCrumbItems
+          }) }}
+        {% endif %}
         <h1>{{ params.heading }}</h1>
-      {% endif %}
-    {% endif %}
-    {% if params.image %}
-      {% include './image.njk' %}
-    {% endif %}
-    {% if params.descriptionPosition === 'inside' and content %}
-      <div class="lbs-page-header__description">
-        {{ content | safe }}
+        {% if params.descriptionPosition === 'inside' and content %}
+          <div class="lbs-page-header__description">
+            {{ content | safe }}
+          </div>
+        {% endif %}
       </div>
+      {% if params.heroVideo %}
+        {% include './video.njk' %}
+      {% endif %}
+    {% else %}
+      {% if params.breadCrumbItems %}
+        {{ govukBreadcrumbs({
+          items: params.breadCrumbItems
+        }) }}
+      {% endif %}
+      {% if params.homepage %}
+        {% include './homepage.njk' %}
+      {% else %}
+        {% if params.image %}
+          <div class="lbs-page-header__content">
+            <h1>{{ params.heading }}</h1>
+            {% if params.descriptionPosition === 'inside' and content %}
+              <div class="lbs-page-header__description">
+                {{ content | safe }}
+              </div>
+            {% endif %}
+          </div>
+        {% else %}
+          <h1>{{ params.heading }}</h1>
+        {% endif %}
+      {% endif %}
+      {% if params.image %}
+        {% include './image.njk' %}
+      {% endif %}
+      {% if params.heroVideo %}
+        {% include './video.njk' %}
+      {% endif %}
+      {% if params.descriptionPosition === 'inside' and content and not params.heroVideo and not params.image %}
+        <div class="lbs-page-header__description">
+          {{ content | safe }}
+        </div>
+      {% endif %}
     {% endif %}
   </div>
   {% if params.descriptionPosition !== 'inside' and content %}

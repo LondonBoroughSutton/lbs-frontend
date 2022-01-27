@@ -1,0 +1,10 @@
+{% if params.heroVideo.url %}
+<div class="lbs-page-header__video-container">
+  <div class="lbs-page-header__video">
+    <iframe
+            src="{{ params.heroVideo.url }}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+</div>
+{% endif %}
