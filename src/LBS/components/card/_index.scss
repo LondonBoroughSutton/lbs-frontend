@@ -118,8 +118,8 @@
     }
 
     .lbs-card__container {
-      position: relative;
       z-index: 2;
+
       @include govuk-media-query($from: desktop) {
         max-width: 50%;
         padding: $lbs-margin;
