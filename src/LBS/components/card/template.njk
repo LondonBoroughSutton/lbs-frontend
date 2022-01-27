@@ -7,7 +7,7 @@
 </a>
 {% else %}
 <div
-  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.featureCard %}lbs-card--featured{% endif %} {% if params.news %}lbs-card--news{% endif %}{% if params.image and not params.featureCard %}lbs-card--image{% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %} {% if params.contact %}lbs-card--contact{% endif %}">
+  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.featureCard %}lbs-card--featured{% endif %} {% if params.news %}lbs-card--news {% endif %}{% if params.image and not params.featureCard %}lbs-card--image {% endif %}{% if params.video and params.featureCard%}lbs-card--featured--video {% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %} {% if params.contact %}lbs-card--contact{% endif %}">
   {% if params.featureCard %}
   <div class="lbs-card__container">
     {% endif %}
@@ -54,6 +54,16 @@
         <div class="lbs-card__image"
              style="background: url({{ params.image }}) no-repeat center; background-size: cover;">
           <!-- Container for the background image -->
+        </div>
+      </div>
+    {% endif %}
+    {% if params.featureCard and params.video %}
+      <div class="lbs-card__video-container">
+        <div class="lbs-card__video">
+          <iframe
+            src="{{ params.video }}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
     {% endif %}

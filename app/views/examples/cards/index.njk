@@ -341,6 +341,47 @@
 
   </div>
 
+  <h2>Image navigation card group</h2>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 1',
+          href: '#'
+        },
+        image: '/assets/img/home-image--1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        image: '/assets/img/home-image--1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {{ lbsCard({
+        heading: {
+          title: 'Example 2',
+          href: '#'
+        },
+        image: '/assets/img/home-image--1.jpg',
+        cardBodyHtml: cardCopy,
+        clickable: true
+      }) }}
+    </div>
+
+  </div>
+
   <h2>Contact card</h2>
 
   {% set cardCopy %}
@@ -388,5 +429,32 @@
       }) }}
     </div>
   </div>
+
+  <h2>Feature card with image</h2>
+
+  {{ lbsCard({
+    featureCard: true,
+    clickable: true,
+    image: "/assets/img/home-image--1.jpg",
+    heading: {
+      title: "Example heading",
+      href: "#"
+    },
+    cardBodyHtml: "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
+  }) }}
+
+
+  <h2>Feature card with video</h2>
+
+  {{ lbsCard({
+    featureCard: true,
+    clickable: true,
+    video: "https://www.youtube.com/embed/nPW49lt2sCw",
+    heading: {
+      title: "Example heading",
+      href: "#"
+    },
+    cardBodyHtml: "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
+  }) }}
 
 {% endblock %}

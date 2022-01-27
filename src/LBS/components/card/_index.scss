@@ -22,24 +22,28 @@
   }
 
   &--image {
-    h2 {
-      a {
-        display: flex;
-        color: $lbs-green-1;
-        align-items: center;
-        justify-content: space-between;
+    &:not(.lbs-card--news) {
+      border-bottom-color: rgba($lbs-green-1, .5);
 
-        &:after {
-          content: "";
-          display: inline-block;
-          width: 1rem;
-          height: 1.25rem;
-          margin-left: .25rem;
-          @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 7 15"><defs><path d="M9.9995 19c-.226 0-.453-.076-.64-.232-.424-.353-.481-.984-.128-1.408l4.476-5.371-4.315-5.362c-.346-.43-.278-1.06.152-1.406.431-.346 1.06-.278 1.407.152l4.828 6c.298.371.294.901-.011 1.267l-5 6c-.198.237-.482.36-.769.36" id="a"/></defs><use fill="' + $lbs-green-1 + '" fill-rule="nonzero" xlink:href="#a" transform="translate(-9 -4.5)"/></svg>');
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          vertical-align: middle;
+      h2 {
+        a {
+          display: flex;
+          color: $lbs-green-1;
+          align-items: center;
+          justify-content: space-between;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1.25rem;
+            margin-left: .25rem;
+            @include background-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 7 15"><defs><path d="M9.9995 19c-.226 0-.453-.076-.64-.232-.424-.353-.481-.984-.128-1.408l4.476-5.371-4.315-5.362c-.346-.43-.278-1.06.152-1.406.431-.346 1.06-.278 1.407.152l4.828 6c.298.371.294.901-.011 1.267l-5 6c-.198.237-.482.36-.769.36" id="a"/></defs><use fill="' + $lbs-green-1 + '" fill-rule="nonzero" xlink:href="#a" transform="translate(-9 -4.5)"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            vertical-align: middle;
+          }
         }
       }
     }
@@ -148,6 +152,63 @@
           right: 0;
           width: 30rem;
           height: 30rem;
+        }
+      }
+    }
+
+    &--video {
+      .lbs-card__container {
+        @extend .govuk-grid-column-one-half;
+      }
+
+      .lbs-card__video-container {
+        @extend .govuk-grid-column-one-half;
+
+        .lbs-card__video {
+          position: relative;
+          height: 0;
+          padding-bottom: 56.25%;
+
+          iframe {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        @include govuk-media-query($from: wide) {
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 20%;
+            left: 45%;
+            width: 35rem;
+            height: 35rem;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: rgba(darken($lbs-green-1, 5%), .3);
+          }
+        }
+
+        @include govuk-media-query($from: desktop) {
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: -15%;
+            right: -10%;
+            width: 25rem;
+            height: 25rem;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: rgba($lbs-white, .15);
+          }
         }
       }
     }

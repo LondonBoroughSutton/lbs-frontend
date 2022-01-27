@@ -31,6 +31,10 @@ params:
     type: string
     required: false
     description: If set, will display an image in the card
+  - name: video
+    type: string
+    required: false
+    description: If set, will display YouTube embed using the value as the URL
   - name: heading
     type: array
     required: true
@@ -203,6 +207,17 @@ examples:
       featureCard: true
       clickable: true
       image: /assets/img/home-image--1.jpg
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: '<p>This is a description</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">Find out more</a></p>'
+
+  - name: feature card with video
+    description: Version of the card reserved for featured content with a video.
+    data:
+      featureCard: true
+      clickable: true
+      video: https://www.youtube.com/embed/nPW49lt2sCw
       heading:
         title: Example heading
         href: '#'
