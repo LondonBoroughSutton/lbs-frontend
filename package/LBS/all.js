@@ -244,7 +244,7 @@ Cards.prototype.setHeight = function () {
   let tallestCard = 0;
   this.$module.querySelectorAll('.lbs-card').forEach(card => {
     card.style.minHeight = '0';
-      if (card.offsetHeight > tallestCard) {
+    if (card.offsetHeight > tallestCard) {
       const cs = window.getComputedStyle(card);
       tallestCard = card.offsetHeight - (parseFloat(cs.paddingBottom));
     }

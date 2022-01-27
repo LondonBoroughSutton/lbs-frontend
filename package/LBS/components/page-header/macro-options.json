@@ -40,5 +40,11 @@
         "type": "array",
         "required": false,
         "description": "If `tabs` array is passed, values will appear in the `tab` component along the bottom of the pageHeader"
+    },
+    {
+        "name": "heroVideo",
+        "type": "object",
+        "required": false,
+        "description": "if present, a video will be displayed in the header (intended to be used on campaign pages)"
     }
 ]
