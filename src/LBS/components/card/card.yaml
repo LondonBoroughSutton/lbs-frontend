@@ -212,6 +212,18 @@ examples:
         href: '#'
       cardBodyHtml: '<p>This is a description</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">Find out more</a></p>'
 
+  - name: alternative feature card
+    description: Alternative version of the card for featured content.
+    data:
+      featureCard: true
+      classes: 'lbs-card--featured--alt'
+      clickable: true
+      image: /assets/img/home-image--1.jpg
+      heading:
+        title: Example heading
+        href: '#'
+      cardBodyHtml: '<p>This is a description</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">Find out more</a></p>'
+
   - name: feature card with video
     description: Version of the card reserved for featured content with a video.
     data:
