@@ -85,6 +85,11 @@ module.exports = (options) => {
   // // Handle the banner component serverside.
   // require('./banner.js')(app)
 
+  // ModernGov page
+  app.get(['/ModernGov', '/ModernGov/', '/ModernGov/index'], (req, res, next) => {
+    res.render('ModernGov/index.html')
+  })
+
   // Define middleware for all routes
   app.use('*', function (request, response, next) {
     response.locals.legacy = (request.query.legacy === '1' || request.query.legacy === 'true')
