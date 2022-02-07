@@ -1,0 +1,65 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+{% from '../../../../src/LBS/components/page-group-list/macro.njk' import lbsPageGroupList %}
+{% from '../../../../src/LBS/components/page-group-navigation/macro.njk' import lbsPageGroupNavigation %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing govuk-width-container' %}
+
+{% extends "_generic.njk" %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    heading: 'Garden waste collection',
+    breadCrumbItems: [
+      {
+        text: 'Home',
+        href: '/'
+      },
+      {
+        text: 'Waste and recycling',
+        href: '#'
+      },
+      {
+        text: 'Bins and collections',
+        href: '#'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>content</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ lbsPageGroupList({
+        linkItems: [
+          {
+            text: 'Item 1',
+            href: '#'
+          },
+          {
+            text: 'Item 2',
+            href: '#'
+          },
+          {
+            text: 'Item 3',
+            href: '#',
+            current: true
+          },
+          {
+            text: 'Item 4',
+            href: '#'
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

@@ -99,6 +99,15 @@
     overflow: hidden;
     border: none;
 
+    &--alt {
+      color: $lbs-black;
+      background: rgba($lbs-grey, .2);
+
+      * {
+        color: $lbs-black;
+      }
+    }
+
     &:hover {
       a:not(.lbs-button) {
         color: $lbs-white;
