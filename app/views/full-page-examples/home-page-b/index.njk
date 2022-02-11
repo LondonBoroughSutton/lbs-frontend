@@ -1,0 +1,288 @@
+---
+scenario: You want to read this article about '2018’s oddest requests from Brits abroad'.
+notes: Based on https://www.gov.uk/government/news/strictly-vampires-and-sausages-2018s-oddest-requests-from-brits-abroad
+---
+
+{% from 'govuk/components/button/macro.njk' import govukButton %}
+{% from '../../../../src/LBS/components/card/macro.njk' import lbsCard %}
+{% from '../../../../src/LBS/components/page-header/macro.njk' import lbsPageHeader %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing home-page' %}
+
+{% extends "_generic.njk" %}
+
+{% block header %}
+  {{ lbsHeader({
+    search: false,
+    phaseBanner: true
+  }) }}
+{% endblock %}
+
+{% set popularCard = true %}
+{% set popularCardAltBg = true %}
+
+{% set popularItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Book visit to the
+        recycling centre</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Check your bin collection
+        days</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Contact us</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">COVID 19</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">View
+        planning applications</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Jobs and careers</a></li>
+  </ol>
+{% endset %}
+
+{% set reportItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report a missed bin
+        collection</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report an abandoned
+        vehicle</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report a safeguarding
+        concern</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report fly-tipping</a>
+    </li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report graffiti</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Report footway defects or
+        faults</a></li>
+  </ol>
+{% endset %}
+
+{% set payItems %}
+  <ol class="govuk-grid-row lbs-list--no-style lbs-list--grid-list lbs-card__wrapper">
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Council tax and business
+        rates</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Penalty charge notice
+        (PCN)</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Parking permits</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Garden waste
+        collections</a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Fixed Penalty notice (FPN)
+        Covid </a></li>
+    <li class="govuk-grid-column-one-third-from-desktop"><a href="#" class="lbs-link--action {% if popularCard %}lbs-card lbs-card--popular-item{% endif %} {% if popularCardAltBg and popularCard %}lbs-card--alt{% endif %}">Building control</a></li>
+  </ol>
+{% endset %}
+
+{% block beforeContent %}
+  {{ lbsPageHeader({
+    homepage: true,
+    image: '/assets/img/home-image--1.jpg',
+    breadcrumbs: false,
+    tabs: [
+      {
+        "label": "Popular",
+        "content": popularItems
+      },
+      {
+        "label": "Report an issue",
+        "content": reportItems
+      },
+      {
+        "label": "Pay for something",
+        "content": payItems
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="lbs-row lbs-row--alt5">
+    <div class="lbs-row__container">
+      <h2 class="lbs-heading--decorative">Services</h2>
+      <div class="govuk-grid-row lbs-card__wrapper" data-show-more="true" data-show-count="6"
+           data-show-more-type="govuk-button lbs-button lbs-button--tertiary" data-show-more-position="after" id="home-services">
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Waste and recycling',
+              href: '#',
+              icon: 'waste'
+            },
+            cardBodyHtml: "Check when to put your rubbish and recycling out for collection, report a missed collection, request new containers and find out more about how your waste collection service works.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Council Tax',
+              href: '#',
+              icon: 'council-tax'
+            },
+            cardBodyHtml: "Information about paying your council tax, your council tax band, applying for discounts and exemptions, and telling us about a house move.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Housing',
+              href: '#',
+              icon: 'housing'
+            },
+            cardBodyHtml: "Apply for and bid for social housing or find support for homelessness.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Jobs and careers',
+              href: '#',
+              icon: 'jobs'
+            },
+            cardBodyHtml: "Apply for jobs, apprenticeships and social care roles and find out more about working at the Council",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Planning and building',
+              href: '#',
+              icon: 'planning'
+            },
+            cardBodyHtml: "Apply for planning permission, view and comment on applications and information about building control.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Streets, Transport and Parking',
+              href: '#',
+              icon: 'parking'
+            },
+            cardBodyHtml: "Apply for or renew a parking permit, read about parking consultations, or report a street cleaning issue.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Adult Social Care',
+              href: '#'
+            },
+            cardBodyHtml: "This section facilitates you to get information about Care assessments and local services, Support for adults with certain needs and Support to live at home.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Children, Families and Young peoples',
+              href: '#'
+            },
+            cardBodyHtml: "Services for children, young people and families in Sutton, including information on children’s centres and childcare, supporting disabled children, fostering and child safeguarding.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Births, Deaths, Marriages',
+              href: '#'
+            },
+            cardBodyHtml: "Register a birth, deaths or stillbirth, and find out about marriages and civil partnerships and citizenship ceremonies.",
+            clickable: true,
+            bgColour: false
+          }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      <div class="sutton-scene-signup govuk-grid-row">
+        <h2 class="govuk-grid-column-one-quarter">
+          <img src="/assets/img/SuttonSceneLogo.svg" alt="Sutton Scene"/>
+        </h2>
+        <div class="govuk-grid-column-three-quarters-from-desktop govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body-s">Stay up-to-date with the latest news and events in Sutton by signing up to our
+              weekly newsletter</p>
+          </div>
+          <form class="sutton-scene-signup__form govuk-grid-column-one-half" action="/" method="post">
+            <label class="govuk-label govuk-label--l govuk-visually-hidden" for="sutton-scene-signup--home">
+              Sign up for Sutton Scene newsletter
+            </label>
+            <input type="email" name="sutton-scene-signup" class="govuk-input" id="sutton-scene-signup--home"
+                   placeholder="Enter your email address"/>
+            <button type="submit" class="lbs-button govuk-button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lbs-row">
+    <div class="lbs-row__container">
+      <h2 class="lbs-heading--decorative">Latest news</h2>
+      <div class="govuk-grid-row lbs-card__wrapper">
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 1',
+              href: '#'
+            },
+            news: true,
+            image: '/public/assets/images/1.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/public/assets/images/2.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ lbsCard({
+            heading: {
+              title: 'Example 2',
+              href: '#'
+            },
+            news: true,
+            image: '/public/assets/images/3.jpg',
+            cardBodyHtml: cardCopy,
+            clickable: true
+          }) }}
+        </div>
+    </div>
+      <a href="#" class="lbs-button govuk-button lbs-button--tertiary">View more news</a>
+  </div>
+    <div class="lbs-row">
+      <div class="lbs-row__container">
+        {{ lbsCard({
+          heading: {
+            title: 'Example 2',
+            href: '#'
+          },
+          featureCard: true,
+          image: '/assets/img/home-image--1.jpg',
+          cardBodyHtml: '<p>Get involved in local decisions, find contact information for your councillors, view committee minutes and more</p><p><a href="#" class="govuk-button lbs-button lbs-button--tertiary">Get involved</a></p>',
+          clickable: true
+        }) }}
+      </div>
+    </div>
+{% endblock %}

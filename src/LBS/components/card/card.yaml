@@ -90,6 +90,15 @@ examples:
         href: '#'
       cardBodyHtml: 'This is a description'
 
+  - name: card with link and icon in header
+    description: Standard application of a card with an icon link in the header.
+    data:
+      heading:
+        title: Example heading
+        icon: waste
+        href: '#'
+      cardBodyHtml: 'This is a description'
+
   - name: popular item
     description: Visual treatment for popular item
     data:
