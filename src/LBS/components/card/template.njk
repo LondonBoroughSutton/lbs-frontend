@@ -7,7 +7,7 @@
 </a>
 {% else %}
 <div
-  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.featureCard %}lbs-card--featured{% endif %} {% if params.news %}lbs-card--news {% endif %}{% if params.image and not params.featureCard %}lbs-card--image {% endif %}{% if params.video and params.featureCard%}lbs-card--featured--video {% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %} {% if params.contact %}lbs-card--contact{% endif %}{% if params.heading.icon %}lbs-card--icon{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}">
+  class="lbs-card {% if params.bgColour %}lbs-card--alt{% endif %} {% if params.featureCard %}lbs-card--featured{% endif %} {% if params.news %}lbs-card--news {% endif %}{% if params.image and not params.featureCard %}lbs-card--image {% endif %}{% if params.video and params.featureCard%}lbs-card--featured--video {% endif %}{% if params.naked %} lbs-card--naked{% endif %} {% if params.clickable %}lbs-card--clickable{% endif %} {% if params.popularItem %}lbs-card--popular-item{% endif %} {% if params.contact %}lbs-card--contact{% endif %}{% if params.heading.icon %}lbs-card--with-icon{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}">
   {% if params.featureCard %}
   <div class="lbs-card__container">
     {% endif %}
@@ -22,7 +22,7 @@
     {% if params.news %}
       <div class="lbs-card__date">30 October 2021</div>
     {% endif %}
-      <h{{ headingLevel }} class="govuk-heading-m {% if params.heading.icon %}lbs-card--icon-{{params.heading.icon}}{% endif %}">
+      <h{{ headingLevel }} class="govuk-heading-m {% if params.heading.icon %}lbs-card__icon--{{params.heading.icon}}{% endif %}">
         {% if params.heading.href %}
           <a href="{{ params.heading.href }}" {% if params.heading.externalLink %}rel="external"{% endif %}>
             {{ params.heading.title }}

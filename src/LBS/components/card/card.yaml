@@ -95,7 +95,7 @@ examples:
     data:
       heading:
         title: Example heading
-        icon: 1
+        icon: waste
         href: '#'
       cardBodyHtml: 'This is a description'
 
