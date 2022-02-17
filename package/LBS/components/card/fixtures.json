@@ -9,7 +9,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          Example heading\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          Example heading\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -21,7 +21,20 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "card with link and icon in header",
+            "options": {
+                "heading": {
+                    "title": "Example heading",
+                    "icon": "waste",
+                    "href": "#"
+                },
+                "cardBodyHtml": "This is a description"
+            },
+            "html": "<div\n  class=\"lbs-card      lbs-card--with-icon\">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m lbs-card__icon--waste\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -57,7 +70,7 @@
                     }
                 ]
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n        </ul>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n        </ul>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -94,7 +107,7 @@
                     }
                 ]
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 4</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 5</a></li>\n            \n          \n            \n          \n        </ul>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 4</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 5</a></li>\n            \n          \n            \n          \n        </ul>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -131,7 +144,7 @@
                     }
                 ]
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 4</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 5</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 6</a></li>\n            \n          \n        </ul>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          Example heading\n        \n      </h2>\n        <ul>\n          \n            \n              <li ><a\n                  href=\"#\">Item 1</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 2</a></li>\n            \n          \n            \n              <li ><a\n                  href=\"#\">Item 3</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 4</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 5</a></li>\n            \n          \n            \n              <li class=\"js__is-hidden\"><a\n                  href=\"#\">Item 6</a></li>\n            \n          \n        </ul>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -144,7 +157,7 @@
                 "cardBodyHtml": "This is a description",
                 "clickable": true
             },
-            "html": "<div\n  class=\"lbs-card    lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card    lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -158,7 +171,7 @@
                 "cardBodyHtml": "This is a description",
                 "clickable": true
             },
-            "html": "<div\n  class=\"lbs-card    lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"https://google.com\" rel=\"external\">\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card    lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"https://google.com\" rel=\"external\">\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -172,7 +185,7 @@
                 "clickable": true,
                 "naked": true
             },
-            "html": "<div\n  class=\"lbs-card    lbs-card--naked lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card    lbs-card--naked lbs-card--clickable  \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -185,7 +198,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n  class=\"lbs-card lbs-card--alt     \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card lbs-card--alt     \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -200,7 +213,7 @@
                 },
                 "cardBodyHtml": "This is a description"
             },
-            "html": "<div\n  class=\"lbs-card   lbs-card--news lbs-card--image  lbs-card--clickable  \">\n  \n    \n    <div class=\"lbs-image__wrapper\">\n      <img src=\"/assets/img/home-image--1.jpg\" alt=\"Description of the image would go here\"/>\n    </div>\n    \n    \n    <div class=\"lbs-card__container\">\n    \n    \n      <div class=\"lbs-card__date\">30 October 2021</div>\n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    </div>\n    \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card   lbs-card--news lbs-card--image  lbs-card--clickable  \">\n  \n    \n    <div class=\"lbs-image__wrapper\">\n      <img src=\"/assets/img/home-image--1.jpg\" alt=\"Description of the image would go here\"/>\n    </div>\n    \n    \n    <div class=\"lbs-card__container\">\n    \n    \n      <div class=\"lbs-card__date\">30 October 2021</div>\n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p>This is a description</p>\n        </div>\n      \n    </div>\n    \n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -215,7 +228,23 @@
                 },
                 "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
             },
-            "html": "<div\n  class=\"lbs-card  lbs-card--featured  lbs-card--clickable  \">\n  \n  <div class=\"lbs-card__container\">\n    \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p><p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p></p>\n        </div>\n      \n    </div>\n    \n    \n      <div class=\"lbs-card__image-container\">\n        <div class=\"lbs-card__image\"\n             style=\"background: url(/assets/img/home-image--1.jpg) no-repeat center; background-size: cover;\">\n          <!-- Container for the background image -->\n        </div>\n      </div>\n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card  lbs-card--featured  lbs-card--clickable  \">\n  \n  <div class=\"lbs-card__container\">\n    \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p><p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p></p>\n        </div>\n      \n    </div>\n    \n    \n      <div class=\"lbs-card__image-container\">\n        <div class=\"lbs-card__image\"\n             style=\"background: url(/assets/img/home-image--1.jpg) no-repeat center; background-size: cover;\">\n          <!-- Container for the background image -->\n        </div>\n      </div>\n    \n    \n  </div>",
+            "hidden": false
+        },
+        {
+            "name": "alternative feature card",
+            "options": {
+                "featureCard": true,
+                "classes": "lbs-card--featured--alt",
+                "clickable": true,
+                "image": "/assets/img/home-image--1.jpg",
+                "heading": {
+                    "title": "Example heading",
+                    "href": "#"
+                },
+                "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
+            },
+            "html": "<div\n  class=\"lbs-card  lbs-card--featured  lbs-card--clickable   lbs-card--featured--alt\">\n  \n  <div class=\"lbs-card__container\">\n    \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p><p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p></p>\n        </div>\n      \n    </div>\n    \n    \n      <div class=\"lbs-card__image-container\">\n        <div class=\"lbs-card__image\"\n             style=\"background: url(/assets/img/home-image--1.jpg) no-repeat center; background-size: cover;\">\n          <!-- Container for the background image -->\n        </div>\n      </div>\n    \n    \n  </div>",
             "hidden": false
         },
         {
@@ -230,7 +259,7 @@
                 },
                 "cardBodyHtml": "<p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p>"
             },
-            "html": "<div\n  class=\"lbs-card  lbs-card--featured lbs-card--featured--video  lbs-card--clickable  \">\n  \n  <div class=\"lbs-card__container\">\n    \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p><p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p></p>\n        </div>\n      \n    </div>\n    \n    \n    \n      <div class=\"lbs-card__video-container\">\n        <div class=\"lbs-card__video\">\n          <iframe\n            src=\"https://www.youtube.com/embed/nPW49lt2sCw\" title=\"YouTube video player\" frameborder=\"0\"\n            allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n            allowfullscreen></iframe>\n        </div>\n      </div>\n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card  lbs-card--featured lbs-card--featured--video  lbs-card--clickable  \">\n  \n  <div class=\"lbs-card__container\">\n    \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          <a href=\"#\" >\n            Example heading\n          </a>\n        \n      </h2>\n        <div class=\"lbs-card__content\">\n          <p><p>This is a description</p><p><a href=\"#\" class=\"govuk-button lbs-button lbs-button--tertiary\">Find out more</a></p></p>\n        </div>\n      \n    </div>\n    \n    \n    \n      <div class=\"lbs-card__video-container\">\n        <div class=\"lbs-card__video\">\n          <iframe\n            src=\"https://www.youtube.com/embed/nPW49lt2sCw\" title=\"YouTube video player\" frameborder=\"0\"\n            allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n            allowfullscreen></iframe>\n        </div>\n      </div>\n    \n  </div>",
             "hidden": false
         },
         {
@@ -238,7 +267,7 @@
             "options": {
                 "href": "/"
             },
-            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m\">\n        \n          \n        \n      </h2>\n      \n    \n    \n  </div>",
+            "html": "<div\n  class=\"lbs-card      \">\n  \n    \n    \n    \n      <h2 class=\"govuk-heading-m \">\n        \n          \n        \n      </h2>\n      \n    \n    \n  </div>",
             "hidden": true
         }
     ]
